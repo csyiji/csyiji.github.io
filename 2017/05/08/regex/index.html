@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="LUGs7ergfT6FdihT47LWqyb750X9Tyok23jD8_pq8nM">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6792631366558351",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <meta name="description" content="你有你的规则，我有我的正则  开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。 正则规则 分四大类来说明: 常用符号说明、符号数目匹配、逻辑语句符号匹配、目标匹配符号。 一、常用符号说明 ^: 匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹">
+<meta name="keywords" content="Regex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="https://www.godjiyi.cn/2017/05/08/regex/index.html">
+<meta property="og:site_name" content="戈吉">
+<meta property="og:description" content="你有你的规则，我有我的正则  开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。 正则规则 分四大类来说明: 常用符号说明、符号数目匹配、逻辑语句符号匹配、目标匹配符号。 一、常用符号说明 ^: 匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-13T09:25:54.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="你有你的规则，我有我的正则  开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。 正则规则 分四大类来说明: 常用符号说明、符号数目匹配、逻辑语句符号匹配、目标匹配符号。 一、常用符号说明 ^: 匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.godjiyi.cn/2017/05/08/regex/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>正则表达式 | 戈吉</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eefdb8dad09797f8e3a6223b337a3a9b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+     <a href="https://github.com/jiyiren"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">戈吉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">thinkings</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.godjiyi.cn/2017/05/08/regex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="戈吉">
+      <meta itemprop="description" content="go my own way">
+      <meta itemprop="image" content="http://img.godjiyi.cn/blogjiyiheaderl.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="戈吉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">正则表达式
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-08 22:00:40" itemprop="dateCreated datePublished" datetime="2017-05-08T22:00:40+08:00">2017-05-08</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Regex/" itemprop="url" rel="index"><span itemprop="name">Regex</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/08/regex/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/05/08/regex/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">21k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">19 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p align="center" style="margin: 30px 0 35px;">你有你的规则，我有我的正则</p>
+
+<p>开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。</p>
+<h2 id="正则规则"><a href="#正则规则" class="headerlink" title="正则规则"></a>正则规则</h2><hr>
+<p>分四大类来说明: <strong>常用符号说明</strong>、<strong>符号数目匹配</strong>、<strong>逻辑语句符号匹配</strong>、<strong>目标匹配符号</strong>。</p>
+<h3 id="一、常用符号说明"><a href="#一、常用符号说明" class="headerlink" title="一、常用符号说明"></a>一、常用符号说明</h3><ol>
+<li><code>^</code>: <strong>匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹配。</strong></li>
+<li><code>$</code>: <strong>匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与”\n”或”\r”之前的位置匹配。</strong></li>
+<li><code>\</code>: <strong>将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，”n”匹配字符”n”。”\n”匹配换行符</strong></li>
+</ol>
+<a id="more"></a>
+<h3 id="二、符号数目匹配"><a href="#二、符号数目匹配" class="headerlink" title="二、符号数目匹配"></a>二、符号数目匹配</h3><ol>
+<li><code>*</code>: <em>零次或多次</em> 匹配前面的字符或子表达式。例如，”zo*“ 匹配”z”和”zoo”。* 等效于<code>{0,}</code>。</li>
+<li><code>+</code>: <em>一次或多次</em> 匹配前面的字符或子表达式。例如，”zo+”与”zo”和”zoo”匹配，但与”z”不匹配。+ 等效于 <code>{1,}</code>。</li>
+<li><code>?</code>: <em>零次或一次</em> 匹配前面的字符或子表达式。例如，”do(es)?”匹配”do”或”does”中的”do”。? 等效于 <code>{0,1}</code>。</li>
+<li><code>{n}</code>: <strong>n 是非负整数。正好匹配 n 次。例如，”o{2}”表示此匹配两个o</strong></li>
+<li><code>{n,}</code>: <strong>n 是非负整数。至少匹配 n 次。</strong></li>
+<li><code>{n,m}</code>: <strong>n 和 m 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。</strong></li>
+</ol>
+<h3 id="三、逻辑语句符号匹配"><a href="#三、逻辑语句符号匹配" class="headerlink" title="三、逻辑语句符号匹配"></a>三、逻辑语句符号匹配</h3><ol>
+<li><code>x|y</code>: <strong>匹配 x 或 y。例如，’z|food’ 匹配”z”或”food”。’(z|f)ood’ 匹配”zood”或”food”。</strong></li>
+<li><p><code>()</code>: <strong>括号</strong></p>
+<ul>
+<li><code>(pattern)</code>: 匹配 pattern 并捕获该匹配的子表达式</li>
+<li><code>(?:pattern)</code>: 匹配 pattern 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。例如，<code>industr(?:y|ies)</code> 是比 <code>industry|industries</code> 更经济的表达式。</li>
+<li><code>(?=pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?=pattern</a></li>
+<li><code>(?!pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?!pattern</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="四、目标匹配符号"><a href="#四、目标匹配符号" class="headerlink" title="四、目标匹配符号"></a>四、目标匹配符号</h3><ol>
+<li><code>[xyz]</code>: <strong>字符集。匹配包含的任一字符。例如，”[abc]”代表当前位只能是abc三个字符中的一个</strong></li>
+<li><code>[^xyz]</code>: <strong>反向字符集。匹配未包含的任何字符。例如，”<code>[^abc]</code>“ 则当前位不能是abc中的任意一个。</strong></li>
+<li><p><code>[a-z]</code>: <strong>字符范围。匹配指定范围内的任何字符。如：</strong></p>
+<ul>
+<li><code>[a-z]</code>: 当前位匹配从a到z字符</li>
+<li><code>[A-Z]</code>: 当前位匹配从A到Z字符</li>
+<li><code>[0-9]</code>: 当前位匹配从0到9字符</li>
+<li><code>[a-zA-Z0-9]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符</li>
+<li><code>[a-zA-Z0-9_]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>字符</li>
+<li><code>[a-zA-Z0-9_-]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>与<em>-</em>字符</li>
+</ul>
+</li>
+<li><p><code>[^a-z]</code>: <strong>反向范围字符。匹配不在指定的范围内的任何字符.</strong></p>
+</li>
+<li><code>\d</code>: <strong>匹配数字，与<code>[0-9]</code>等效.</strong></li>
+<li><code>\D</code>: <strong>匹配非数字字符，与<code>[^0-9]</code>等效.</strong></li>
+<li><code>\w</code>: <strong>匹配任何字类字符，包括下划线。与”<code>[A-Za-z0-9_]</code>“等效.</strong></li>
+<li><code>\W</code>: <strong>与任何非单词字符匹配。与”<code>[^A-Za-z0-9_]</code>“等效。</strong></li>
+<li><code>.</code>: <strong>匹配除”\r\n”之外的任何单个字符。若要匹配包括”\r\n”在内的任意字符，请使用诸如”[\s\S]”之类的模式。</strong></li>
+<li><code>\b</code>: <strong>匹配一个字边界，即字与空格间的位置。例如，”er\b”匹配”never”中的”er”，但不匹配”verb”中的”er”。多用于java中的正则查找与替换</strong>。</li>
+<li><code>\B</code>: <strong>非字边界匹配。”er\B”匹配”verb”中的”er”，但不匹配”never”中的”er”。</strong></li>
+<li><code>\s</code>: <strong>匹配任何空白字符，包括空格、制表符、换页符等。与 <code>[\f\n\r\t\v]</code> 等效。</strong></li>
+<li><code>\S</code>: <strong>匹配任何非空白字符。与 <code>[^\f\n\r\t\v]</code>等效。</strong></li>
+<li><p>各种空白符：</p>
+<ul>
+<li><code>\f</code>: 换页符匹配。等效于 \x0c 和 \cL。</li>
+<li><code>\n</code>: 换行符匹配。等效于 \x0a 和 \cJ。</li>
+<li><code>\r</code>: 匹配一个回车符。等效于 \x0d 和 \cM。</li>
+<li><code>\t</code>: 制表符匹配。与 \x09 和 \cI 等效。</li>
+<li><code>\v</code>: 垂直制表符匹配。与 \x0b 和 \cK 等效。</li>
+</ul>
+</li>
+<li><p><code>\xn</code>: <strong>匹配 n，此处的 n 是一个十六进制转义码。十六进制转义码必须正好是<em>两位</em>数长。例如，”\x41”匹配”A”。允许在正则表达式中使用 ASCII 代码。</strong></p>
+</li>
+<li><code>\un</code>: <strong>匹配 n，其中 n 是以<em>四位</em>十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。附：<a href="http://jiyiren.github.io/2016/03/22/Java_encode/" target="_blank" rel="noopener">Unicode编码说明</a>,<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">汉字Unicode编码表</a></strong> </li>
+</ol>
+<h2 id="常见正则"><a href="#常见正则" class="headerlink" title="常见正则"></a>常见正则</h2><hr>
+<p>下面分别对常见的邮箱和手机号举例。</p>
+<h3 id="邮箱："><a href="#邮箱：" class="headerlink" title="邮箱："></a>邮箱：</h3><p>常见邮箱形式：</p>
+<ol>
+<li><a href="mailto:`zhangshan@163.com" target="_blank" rel="noopener">`zhangshan@163.com</a>`</li>
+<li><a href="mailto:`abc@sina.com.cn" target="_blank" rel="noopener">`abc@sina.com.cn</a>`</li>
+<li><a href="mailto:`zhangshna.Mr@163.com" target="_blank" rel="noopener">`zhangshna.Mr@163.com</a>`</li>
+<li><a href="mailto:`abc_Wang.dd@sian.com" target="_blank" rel="noopener">`abc_Wang.dd@sian.com</a>`</li>
+<li><a href="mailto:`abc_Wang.dd.cc@sian.com" target="_blank" rel="noopener">`abc_Wang.dd.cc@sian.com</a>`</li>
+</ol>
+<p>网络上正则，仅仅能匹配 1，2 两种格式:</p>
+<p><code>^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></p>
+<p>满足需求正则:</p>
+<ol>
+<li>匹配全部：<code>^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$</code></li>
+<li>等价匹配：<code>^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></li>
+<li>或者：<code>^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$</code></li>
+<li>注意java代码里需要将所有 \ 转义，要在所有 \ 前多加一个 \</li>
+</ol>
+<p>java 代码:</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isEmail</span><span class="params">(String email)</span> </span>&#123;</span><br><span class="line">	String regex = <span class="string">"^(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w&#123;2,3&#125;)&#123;1,3&#125;)$"</span>;</span><br><span class="line">	<span class="keyword">return</span> email.matches(regex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码:"></a>手机号码:</h3><p>手机基本格式如下：</p>
+<ol>
+<li>共11位：</li>
+<li><strong>13(0-9)</strong>:13开头手机号第三位0-9全可以</li>
+<li><strong>14(5,7)</strong>:14开头的第三位只有5(联通)，7(移动)</li>
+<li><strong>15(-4)</strong>:15开头的第三位除了4，其他都有，因为(154有谐音“要我死”)</li>
+<li><strong>17(3,5,6,7,8)</strong>:17开头的三位有3,5,6,7,8;其中3,7为电信，5,6为联通,8为移动。</li>
+<li><strong>18(0-9)</strong>:18开头的第三位0-9均可以</li>
+<li><p>而170和171的为虚拟运营商:</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1700/1701/1702(电信)</span><br><span class="line">1703/1705/1706(移动)</span><br><span class="line">1704/1707/1708/1709(联通)</span><br><span class="line">171（联通)</span><br></pre></td></tr></table></figure></div>
+</li>
+</ol>
+<p>虚拟商除外，匹配前三个位置数字正则：</p>
+<ol>
+<li>1与5可以一起写: <strong>1[3,8][0-9]</strong></li>
+<li>第二种: <strong>14[5,7]</strong></li>
+<li>第三种: <strong>15[^4]</strong></li>
+<li>第四种: <strong>17[3,5-8]</strong></li>
+<li>合并为: <code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\d{8}$</code></li>
+<li>注意：\d代表数字，如果要写入 java 代码，则需要多加一条 \ 来转义。如果不想写转义因为\d等价于[0-9]所以也可以换为：<code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]{8}$</code></li>
+</ol>
+<p>Java 代码：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isChinaPhoneLegal</span><span class="params">(String str)</span> <span class="keyword">throws</span> PatternSyntaxException </span>&#123;  </span><br><span class="line">	String regExp = <span class="string">"^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\\d&#123;8&#125;$"</span>; </span><br><span class="line">	<span class="comment">//String regExp = "^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]&#123;8&#125;$";  </span></span><br><span class="line">	Pattern p = Pattern.compile(regExp);  </span><br><span class="line">	Matcher m = p.matcher(str);  </span><br><span class="line">	<span class="keyword">return</span> m.matches();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="占用端口进程"><a href="#占用端口进程" class="headerlink" title="占用端口进程"></a>占用端口进程</h3><p>我们用 Linux 命令获取占用 22 端口信息如下：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># netstat -tnlp | grep ':22 '</span></span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd          </span><br><span class="line">tcp6       0      0 :::22                   :::*                    LISTEN      21392/sshd</span><br></pre></td></tr></table></figure></div>
+<p>只需要用 Python 中 commands 包执行对应命令，取得第一行结果即可得到字符串，我们直接使用该字符用正则提出进程名：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tcp_str = <span class="string">"tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd"</span></span><br><span class="line">reg_p = re.compile(<span class="string">r'.+ (\d+)/(\w+)'</span>)</span><br><span class="line">m = reg_p.match(tcp_str)</span><br><span class="line">ps_str = m.group(<span class="number">2</span>) <span class="comment"># 0 为原字符串，1为进程ID，2为进程名，这里为 sshd</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="获取磁盘挂载信息"><a href="#获取磁盘挂载信息" class="headerlink" title="获取磁盘挂载信息"></a>获取磁盘挂载信息</h3><h4 id="fdisk-命令"><a href="#fdisk-命令" class="headerlink" title="fdisk 命令"></a>fdisk 命令</h4><p>获取插入主机的所有磁盘 <code>fdisk</code> 命令:</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l</span></span><br><span class="line"></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk label <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x0008b9e9</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *        2048     1026047      512000   83  Linux</span><br><span class="line">/dev/vda2         1026048    83886079    41430016   8e  Linux LVM</span><br><span class="line"></span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-root: 40.2 GB, 40227569664 bytes, 78569472 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br></pre></td></tr></table></figure></div>
+<p>我们只需要 <code>/dev/vdx</code> 这样的信息，因此需要过滤：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]' | awk -F: '&#123;print $1&#125;' | awk '&#123;print $2&#125;'</span></span><br><span class="line">/dev/vda</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div>
+<p>其中 <code>egrep</code> 是选取符合的行如下：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]'</span></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br></pre></td></tr></table></figure></div>
+<p>后面两个 <code>awk</code> 则不断 <strong>split</strong> 字符串选取出最终的字符。</p>
+<h4 id="df-命令"><a href="#df-命令" class="headerlink" title="df 命令"></a>df 命令</h4><p>上面的 <code>fdisk</code> 是获取所有的磁盘信息，包括已经挂载以及未挂载的磁盘，而 <code>df</code> 则获取仅仅挂载的信息，这样对于企业中的监控获取未挂载的磁盘，则只需用 <code>fdisk</code> 结果减 <code>df</code> 的结果，这里只介绍用 <code>df</code> 获取磁盘信息：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -h</span></span><br><span class="line">Filesystem               Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/centos-root   38G  6.5G   32G  18% /</span><br><span class="line">devtmpfs                 3.9G     0  3.9G   0% /dev</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /dev/shm</span><br><span class="line">tmpfs                    3.9G  401M  3.5G  11% /run</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1                497M  150M  348M  31% /boot</span><br><span class="line">/dev/vdb                  99G   61M   94G   1% /data</span><br><span class="line">tmpfs                    783M     0  783M   0% /run/user/0</span><br></pre></td></tr></table></figure></div>
+<p>我们也只需要 <code>/dev/vdx</code> 这样的信息：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -Th | /usr/bin/egrep '^/dev/[a-z]d[a-z]\d*' | awk '&#123;print $1&#125;'</span></span><br><span class="line">/dev/vda1</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div>
+<h4 id="proc-partitions-文件"><a href="#proc-partitions-文件" class="headerlink" title="/proc/partitions 文件"></a>/proc/partitions 文件</h4><p>这个文件也记录了 Centos 系统的磁盘挂载信息，与 fdisk 命令的结果一致，但是用文件搜索方式比通过 commands 包调用 fdisk 命令效率更高，因此，推荐用此方式来查系统挂载信息：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/partitions | egrep ' [a-z]d[a-z]+$' | awk '&#123;print $4&#125;'</span></span><br><span class="line">vda</span><br><span class="line">vdb</span><br></pre></td></tr></table></figure></div>
+<h4 id="proc-mounts-文件"><a href="#proc-mounts-文件" class="headerlink" title="/proc/mounts 文件"></a>/proc/mounts 文件</h4><p>这个文件则是与 <code>df</code> 命令相似，只记录已经挂载的磁盘信息，并且效率高于 <code>df</code> 命令：</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/mounts | egrep '^/dev/[a-z]d[a-z]+\d*'</span></span><br><span class="line">/dev/vda1 /boot xfs rw,relatime,attr2,inode64,noquota 0 0</span><br><span class="line">/dev/vdb /data ext4 rw,relatime,data=ordered 0 0</span><br></pre></td></tr></table></figure></div>
+<p>这个先查询出行，再用 <code>awk</code> 对行进行截取，这个我就不写了，自己大家可以 <code>awk</code>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">java正则</a></li>
+<li><a href="http://www.cnblogs.com/liaojie970/p/5714050.html" target="_blank" rel="noopener">回车与换行</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_4c925dca01009h1a.html" target="_blank" rel="noopener">js正则</a></li>
+<li><a href="http://www.cnblogs.com/hsqdboke/p/4944823.html" target="_blank" rel="noopener">邮箱正则</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>苟且一下</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="戈吉 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="戈吉 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>戈吉</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.godjiyi.cn/2017/05/08/regex/" title="正则表达式">https://www.godjiyi.cn/2017/05/08/regex/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Regex/" rel="tag"># Regex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/24/lamp/" rel="next" title="LAMP 以及 Tomcat 服务器环境搭建">
+                <i class="fa fa-chevron-left"></i> LAMP 以及 Tomcat 服务器环境搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/24/spbootapi/" rel="prev" title="Spring项目整合">
+                Spring项目整合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 评论区横向ad -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6792631366558351" data-ad-slot="4119003056" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://img.godjiyi.cn/blogjiyiheaderl.jpg" alt="戈吉">
+            
+              <p class="site-author-name" itemprop="name">戈吉</p>
+              <p class="site-description motion-element" itemprop="description">go my own way</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/jiyiren" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/jiyi1459050189" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:jiyi1459050189@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/104009877082699626125" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/jiyiren" target="_blank" title="Twitter" rel="external nofollow"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/jiyiren" target="_blank" title="FB Page" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/hellojiyi" target="_blank" title="Instagram" rel="external nofollow"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://hillychen.github.io/" title="hillychen" target="_blank">hillychen</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://kirosummer.github.io/" title="Kirosummer" target="_blank">Kirosummer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.csdn.net/idkevin" title="idkevin" target="_blank">idkevin</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://tianhaoo.github.io/" title="tianhaoo" target="_blank">tianhaoo</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则规则"><span class="nav-number">1.</span> <span class="nav-text">正则规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、常用符号说明"><span class="nav-number">1.1.</span> <span class="nav-text">一、常用符号说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、符号数目匹配"><span class="nav-number">1.2.</span> <span class="nav-text">二、符号数目匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、逻辑语句符号匹配"><span class="nav-number">1.3.</span> <span class="nav-text">三、逻辑语句符号匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、目标匹配符号"><span class="nav-number">1.4.</span> <span class="nav-text">四、目标匹配符号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见正则"><span class="nav-number">2.</span> <span class="nav-text">常见正则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#邮箱："><span class="nav-number">2.1.</span> <span class="nav-text">邮箱：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机号码"><span class="nav-number">2.2.</span> <span class="nav-text">手机号码:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#占用端口进程"><span class="nav-number">2.3.</span> <span class="nav-text">占用端口进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取磁盘挂载信息"><span class="nav-number">2.4.</span> <span class="nav-text">获取磁盘挂载信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fdisk-命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">fdisk 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df-命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">df 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proc-partitions-文件"><span class="nav-number">2.4.3.</span> <span class="nav-text">/proc/partitions 文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proc-mounts-文件"><span class="nav-number">2.4.4.</span> <span class="nav-text">/proc/mounts 文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">戈吉</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">145k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:12</span>
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a></div>
+
+
+  <div class="footer-custom"><a href="http://www.beian.miit.gov.cn/" target="_blank" style="color:#000000;">苏ICP备17010322号-1</a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//cdn.bootcss.com/valine/1.3.9/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'RYN7zMqOmY1URHMwY4LdKsJa-gzGzoHsz',
+        appKey: 'T4SkqaoIKtki4WMBRLsgzQPT',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'monsterid',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+</body>
+</html>
