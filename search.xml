@@ -5,14 +5,14 @@
     <url>/2016/03/22/Java_encode/</url>
     <content><![CDATA[<p>今天写 <strong>Java</strong> 读文件时遇到编码问题，搜索了一晚上终于搞懂了这块问题。下面记录一下自己的笔记。</p>
 <h2 id="一、问题："><a href="#一、问题：" class="headerlink" title="一、问题："></a>一、问题：</h2><p>今天用 <strong>Java</strong> 写了一个读文件的，我用 <em>eclipse</em> 新建一个 utf-8 无 bom 编码的 txt 文件，叫做 <strong>ch.txt</strong>, 只写一个汉字: <strong>吉</strong>, 完成后内容：</p>
-<p><img src="http://img.godjiyi.cn/javafile1.png" alt="ch.txt内容"></p>
+<p><img src="https://img.godjiyi.cn/javafile1.png" alt="ch.txt内容"></p>
 <p>然后右击查看文件的属性：</p>
-<p><img src="http://img.godjiyi.cn/javafile222.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/javafile222.png" alt="enter image description here"></p>
 <a id="more"></a>
 <p>读文件的代码为：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jiyiren.fileio;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;	</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mfread</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		FileReader fr=<span class="keyword">null</span>;</span><br><span class="line">		File f1=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			f1=<span class="keyword">new</span> File(<span class="string">"ch.txt"</span>);</span><br><span class="line">			fr=<span class="keyword">new</span> FileReader(f1);</span><br><span class="line">			<span class="keyword">char</span>[] c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>((len=fr.read(c))!=-<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">					System.out.println(c[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(fr!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					fr.close();</span><br><span class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">					<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>输出结果为：</p>
-<p><img src="http://img.godjiyi.cn/javafile3.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/javafile3.png" alt="enter image description here"></p>
 <p>上面的代码与结果完全正确，那问题是什么呢？我们都知道 <strong>Java</strong> 中的 <em>char</em> 是 2 个字节，但是我们文件里保存的那个中文为 3 字节，读文件时我们也只用</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
 <p><em>一个 char 类型读，但是结果为什么正确呢？java 中的 char 类型是Unicode 型的 2 个字节又是什么意思？文件保存的 utf-8格式与 Unicode 有什么关系呢？</em> 下面我就讲下我的理解。</p>
@@ -69,7 +69,7 @@
 <p><strong>计算dp的方法:</strong></p>
 <ul>
 <li>通常来说，我们写程序时几乎没用到计算dp，就是直接凭着自己的感觉写的。此处计算dp只是为了大家更好理解dp，如果有的人想精确设置控件大小，也可以这样计算的。</li>
-<li>我直接画张图吧：<br><img src="http://img.godjiyi.cn/csdnblogImage.png" alt></li>
+<li>我直接画张图吧：<br><img src="https://img.godjiyi.cn/csdnblogImage.png" alt></li>
 <li>计算dp往往是由程序员完成的，是创造的过程，顺叙的过程。但是写程序总会有两个历程的，一个是进行写，一个是返回读，这个读的话就用到了将 <em>dp</em> 转换了。</li>
 </ul>
 <p><strong>dp转px—(最常用的方法):</strong></p>
@@ -80,7 +80,7 @@
 </ul>
 <h3 id="手机屏幕dp最大值是多少？"><a href="#手机屏幕dp最大值是多少？" class="headerlink" title="手机屏幕dp最大值是多少？"></a>手机屏幕dp最大值是多少？</h3><ul>
 <li>那么问题来了，一个手机屏幕最大有多大的dp呢，我能不能设置成 <em>100000dp</em> 呢？其实这也是我所思考的，下面我慢慢来讲。</li>
-<li>假如现在将控件宽度设置为 160dp, 那不同 <em>dpi</em> 的手机所得到的像素是多少呢？<br><img src="http://img.godjiyi.cn/csdnblogt.png" alt><br><strong>从中可以看出最后所得像素值与dpi值相同，也就是说不管什么屏幕160dp，就相当于1英寸。</strong></li>
+<li>假如现在将控件宽度设置为 160dp, 那不同 <em>dpi</em> 的手机所得到的像素是多少呢？<br><img src="https://img.godjiyi.cn/csdnblogt.png" alt><br><strong>从中可以看出最后所得像素值与dpi值相同，也就是说不管什么屏幕160dp，就相当于1英寸。</strong></li>
 <li>所以要得到全屏最长的的dp，就等于<strong>160*宽(或者高英寸长)</strong><br>如第三个 1080*1920例子，160*3 = 480dp，所以 0-480dp 就是宽的 dp 范围。因为480*360/160=1080 个像素，正好等于宽的最大像素数量。</li>
 </ul>
 ]]></content>
@@ -115,7 +115,7 @@
 <h3 id="什么是-procedure-存储过程-？"><a href="#什么是-procedure-存储过程-？" class="headerlink" title="什么是 procedure ( 存储过程 ) ？"></a>什么是 procedure ( 存储过程 ) ？</h3><p>存储过程？当我听到这个词的时候，以为它是 <strong>MySQL</strong> 存储数据的一个流程而不是一个名词，但是当我网上了解时，才知道这个词是翻译过来的，原生词为 <strong>Procedure</strong>, 实际上它的含义就是相当于我们面向对象里的方法或者说是 <strong>函数</strong>，在它里面可以完成多个 <code>sql</code> 语句的操作，并且可以定义参数传值等，与一般的单条 <code>sql</code> 语句的区别主要在这里，详细了解 <a href="http://xdj651897373-126-com.iteye.com/blog/1819924" target="_blank" rel="noopener">点我</a>。</p>
 <h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><p>先上一段创建存储过程代码：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="keyword">test</span>;</span><br><span class="line">delimiter //</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> test_proce()</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> weuse(<span class="keyword">name</span>,created_at,updated_at) <span class="keyword">values</span>(<span class="string">'hello'</span>,<span class="keyword">now</span>(),<span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">end</span>//</span><br><span class="line">delimiter ;</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/mysql4.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql4.png" alt="enter image description here"></p>
 <p>上面的代码说明：</p>
 <p>(1). <code>use test;</code> : 这个谁都知道，使用某个数据库，这里要强调的是存储过程一定是对于某个数据库而言的，所以必须要选中一个数据库才能创建成功。</p>
 <p>(2). <code>delimiter //</code> : 这个是将 <strong>MySQL</strong> 中以 <strong>;(分号)</strong> 结尾的规定修改为以 <strong>//(双斜杠)</strong> 为语句结束符，因为存储过程里可以有多条 <code>sql</code> 语句，里面的 <code>sql</code> 语句都以 <strong>;</strong> 号结尾，如果回车了那么系统会当做 <code>sql</code> 语句直接执行了，我们希望的是先定义这一系列 <code>sql</code> 语句而先不执行，所以要改下操作结束符。当然你在改后一定要改回来，大家可以看到最后一行有对应的修改回来的语句。</p>
@@ -125,7 +125,7 @@
 <p>上面创建存储过程实际上是为 <strong>定时任务</strong> 做铺垫的，因为上面只说明了怎么创建存储过程，但是未说明怎么调用，那这里就用到了调用存储过程了。</p>
 <h3 id="创建定时任务-event-事件"><a href="#创建定时任务-event-事件" class="headerlink" title="创建定时任务 event ( 事件 )"></a>创建定时任务 event ( 事件 )</h3><p>依旧先上创建定时任务事件代码：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">event</span> second_event</span><br><span class="line"><span class="keyword">on</span> schedule every <span class="number">1</span> <span class="keyword">second</span></span><br><span class="line"><span class="keyword">on</span> completion <span class="keyword">preserve</span> <span class="keyword">disable</span></span><br><span class="line"><span class="keyword">do</span> <span class="keyword">call</span> test_proce();</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/mysql5.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql5.png" alt="enter image description here"></p>
 <p>代码说明：</p>
 <ol>
 <li>上面为整体代码，敲完再写分号；</li>
@@ -136,10 +136,10 @@
 </ol>
 <h3 id="查看定时任务-event-事件"><a href="#查看定时任务-event-事件" class="headerlink" title="查看定时任务 event ( 事件 )"></a>查看定时任务 event ( 事件 )</h3><p>查看本机所有的事件：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> event_name,event_definition,interval_value,interval_field,<span class="keyword">status</span> <span class="keyword">FROM</span> information_schema.EVENTS;</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/mysql6.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql6.png" alt="enter image description here"></p>
 <h3 id="开启已经创建好的-event-事件"><a href="#开启已经创建好的-event-事件" class="headerlink" title="开启已经创建好的 event ( 事件 )"></a>开启已经创建好的 event ( 事件 )</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">event</span> second_event <span class="keyword">on</span> completion <span class="keyword">preserve</span> <span class="keyword">enable</span>;//开启定时任务</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">event</span> second_event <span class="keyword">on</span> completion <span class="keyword">preserve</span> <span class="keyword">disable</span>;//关闭定时任务</span><br></pre></td></tr></table></figure></div>
 <p>当我们用第一句命令开启定时任务时，可以就可以查看数据库情况，已经实现了 <strong>每秒钟执行一次</strong> 了，如图：</p>
-<p><img src="http://img.godjiyi.cn/mysql7.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql7.png" alt="enter image description here"></p>
 <p>要想关闭定时任务只要执行上面的第二句命令，关闭需要关闭的定时任务就可以了。</p>
 <h3 id="常见周期定时规则"><a href="#常见周期定时规则" class="headerlink" title="常见周期定时规则"></a>常见周期定时规则</h3><p><strong>① 周期执行 – 关键字 EVERY</strong></p>
 <p>单位有：<strong>second, minute, hour, day, week(周), quarter(季度), month, year</strong>，如：</p>
@@ -151,12 +151,12 @@
 <h2 id="效率工具"><a href="#效率工具" class="headerlink" title="效率工具"></a>效率工具</h2><hr>
 <h3 id="MysqlWorkBench"><a href="#MysqlWorkBench" class="headerlink" title="MysqlWorkBench"></a>MysqlWorkBench</h3><p>是官方推荐的免费可视化 <strong>MySQL</strong> 操作工具，方便建模，<em>ER</em> 图操作，经我发现好像只能可视化操作存储过程，没看到有定时任务的 ( 也可能是自己没找到 )。</p>
 <p>存储过程示例如下：</p>
-<p><img src="http://img.godjiyi.cn/mysql8.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql8.png" alt="enter image description here"></p>
 <p>对于 <strong>Event</strong> 事件，可以查看，用 <code>sql</code> 命令</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> information_schema.EVENTS;	// 查看所有事件属性</span><br><span class="line"><span class="keyword">SELECT</span> event_name,event_definition,interval_value,interval_field,<span class="keyword">status</span> <span class="keyword">FROM</span> information_schema.EVENTS;	// 查看主要几个属性</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/mysql9.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql9.png" alt="enter image description here"></p>
 <h4 id="Navicat"><a href="#Navicat" class="headerlink" title="Navicat"></a>Navicat</h4><p>这个是收费的软件，但是可视化操作比较轻量级，功能也很多，它可以可视化操作存储过程和<strong>Event</strong> 事件，详细操作大家可以自己摸索啊！！</p>
-<p><img src="http://img.godjiyi.cn/mysql10.png" alt="enter image description here"></p>
+<p><img src="https://img.godjiyi.cn/mysql10.png" alt="enter image description here"></p>
 ]]></content>
       <categories>
         <category>MySQL</category>
@@ -169,12 +169,12 @@
   <entry>
     <title>Android 中多选 ListView 的实现</title>
     <url>/2015/07/25/android-multiselected-listview/</url>
-    <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><h3 id="开始效果"><a href="#开始效果" class="headerlink" title="开始效果"></a>开始效果</h3><p><img src="http://img.godjiyi.cn/csdnblog11.png" alt></p>
+    <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><h3 id="开始效果"><a href="#开始效果" class="headerlink" title="开始效果"></a>开始效果</h3><p><img src="https://img.godjiyi.cn/csdnblog11.png" alt></p>
 <a id="more"></a>
-<h3 id="多选后点击按钮效果"><a href="#多选后点击按钮效果" class="headerlink" title="多选后点击按钮效果"></a>多选后点击按钮效果</h3><p><img src="http://img.godjiyi.cn/csdnblog22.png" alt></p>
+<h3 id="多选后点击按钮效果"><a href="#多选后点击按钮效果" class="headerlink" title="多选后点击按钮效果"></a>多选后点击按钮效果</h3><p><img src="https://img.godjiyi.cn/csdnblog22.png" alt></p>
 <h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><h3 id="添加ListView"><a href="#添加ListView" class="headerlink" title="添加ListView"></a>添加ListView</h3><p>layout布局中添加ListView，将 <code>android:choiceMode=&quot;multipleChoice&quot;</code>属性设置成这样</p>
 <h3 id="自定义item布局"><a href="#自定义item布局" class="headerlink" title="自定义item布局"></a>自定义item布局</h3><p>自定义ListView的item布局，这个布局和非多选的ListView的item布局设置一样。效果如下：</p>
-<p><img src="http://img.godjiyi.cn/csdnblog33.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblog33.png" alt></p>
 <h3 id="自定义itemview"><a href="#自定义itemview" class="headerlink" title="自定义itemview"></a>自定义itemview</h3><p>为ListView的item布局写一个自定义View。正常的ListView实现时，item的布局是在自定义adapter里实现的，但是因为本ListView 是多选，如果只在adapter里调用item的Layout布局则不能实现多选。因为多选的ListView要求单个item的最外层布局要实现<code>Checkable</code>接口，这样多选ListView就能自己调用实现好的接口提供多选结果给我们。<br>自己写的View如下：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> JIYI</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MultipleChoiceListItem</span> <span class="keyword">extends</span> <span class="title">LinearLayout</span> <span class="keyword">implements</span> <span class="title">Checkable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> CheckBox mCheckBox;</span><br><span class="line">	<span class="keyword">private</span> TextView mTextView;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MultipleChoiceListItem</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(context);</span><br><span class="line">		initview(context);</span><br><span class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MultipleChoiceListItem</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(context, attrs);</span><br><span class="line">		initview(context);</span><br><span class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MultipleChoiceListItem</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyle)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(context, attrs, defStyle);</span><br><span class="line">		initview(context);</span><br><span class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initview</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">		LayoutInflater inflater=LayoutInflater.from(context);</span><br><span class="line">		View v=inflater.inflate(R.layout.choicelistitem, <span class="keyword">this</span>,<span class="keyword">true</span>);</span><br><span class="line">		mCheckBox=(CheckBox) v.findViewById(R.id.syminfo_item_cb);</span><br><span class="line">		mTextView=(TextView) v.findViewById(R.id.syminfo_item_tv);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setText</span><span class="params">(String text)</span></span>&#123;</span><br><span class="line">		mTextView.setText(text);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setChecked</span><span class="params">(<span class="keyword">boolean</span> checked)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		mCheckBox.setChecked(checked);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isChecked</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> mCheckBox.isChecked();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toggle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		mCheckBox.toggle();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <h3 id="自定义-Adapter"><a href="#自定义-Adapter" class="headerlink" title="自定义 Adapter"></a>自定义 Adapter</h3><p>主要是 <code>getView()</code> 方法里要用到刚刚自定义的 <em>View</em>. 为什么直接new 一个对象，就是让 item 的最外层布局是实现了 <code>Checkable</code> 接口的控件。</p>
@@ -207,9 +207,9 @@
   <entry>
     <title>Android 下拉图片变大的 ScrollView</title>
     <url>/2015/08/13/android-scrollview/</url>
-    <content><![CDATA[<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="http://img.godjiyi.cn/csdnblogGIF33.gif" alt></p>
+    <content><![CDATA[<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="https://img.godjiyi.cn/csdnblogGIF33.gif" alt></p>
 <a id="more"></a>
-<h1 id="实现简介"><a href="#实现简介" class="headerlink" title="实现简介"></a>实现简介</h1><h2 id="布局结构"><a href="#布局结构" class="headerlink" title="布局结构"></a>布局结构</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://img.godjiyi.cn/csdnblogjiegou.png" alt></p>
+<h1 id="实现简介"><a href="#实现简介" class="headerlink" title="实现简介"></a>实现简介</h1><h2 id="布局结构"><a href="#布局结构" class="headerlink" title="布局结构"></a>布局结构</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="https://img.godjiyi.cn/csdnblogjiegou.png" alt></p>
 <h3 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h3><p><a href="https://git.oschina.net/jiyiren/PullToZoomScrollView/tree/master/app/src/main/java/app/jiyi/com/pulltozoomscrollview" target="_blank" rel="noopener">gitosc代码结构链接</a></p>
 <p>一个主 <em>Activity</em>, 一个 <em>PullToZoomScrollView</em> ( 即自定义的 <em>ScrollView</em> )，还有一个工具类（ 可以忽略 ）</p>
 <h3 id="布局结构-1"><a href="#布局结构-1" class="headerlink" title="布局结构"></a>布局结构</h3><p><a href="https://git.oschina.net/jiyiren/PullToZoomScrollView/tree/master/app/src/main/res/layout?dir=1&amp;filepath=app%2Fsrc%2Fmain%2Fres%2Flayout&amp;oid=96e02bbd650bf6e2f0a7b9bfd02c3848f6303180&amp;sha=6cbb8b692e73f28e28cbbb1a6b7542835850f405" target="_blank" rel="noopener">gitosc布局结构链接</a></p>
@@ -321,17 +321,17 @@
 <h4 id="git-工具的安装"><a href="#git-工具的安装" class="headerlink" title="git 工具的安装"></a>git 工具的安装</h4><p><a href="http://git-scm.com/" target="_blank" rel="noopener">git官网</a></p>
 <p><a href="http://git-scm.com/downloads" target="_blank" rel="noopener">git官网下载</a></p>
 <a id="more"></a>
-<p><img src="http://img.godjiyi.cn/csdnblog1.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblog1.png" alt></p>
 <p>安装后通常用到的 <strong>git bash</strong>. 你可以同过电脑的开始菜单里找到 <strong>git bash</strong>，或者通过桌面，但通常有一种方便的是在文件夹里右击就会有 git bash 的选项的（ 这个的好处就是自动将工作目录切换到你所在文件夹 ）</p>
-<p><img src="http://img.godjiyi.cn/csdnblog2.png" alt></p>
-<p><img src="http://img.godjiyi.cn/csdnblog3.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblog2.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblog3.png" alt></p>
 <p>测试 <code>git</code> 环境成功，打开 git bash 输入 <code>git --version</code>, 出现版本号就行:</p>
-<p><img src="http://img.godjiyi.cn/csdnblog4.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblog4.png" alt></p>
 <h4 id="Node-js环境的安装"><a href="#Node-js环境的安装" class="headerlink" title="Node.js环境的安装"></a>Node.js环境的安装</h4><p><a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js官网</a></p>
 <p><a href="https://nodejs.org/download/" target="_blank" rel="noopener">Node.js官网下载</a></p>
-<p><img src="http://img.godjiyi.cn/csdnblognodejs2.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblognodejs2.png" alt></p>
 <p>根据自己电脑位数选择，下载完后双击安装就行，测试 <em>nodejs</em> 环境成功，还是打开 <strong>git bash</strong>，输入 <code>node -v</code>, 输出版本号就行：</p>
-<p><img src="http://img.godjiyi.cn/csdnblognodejs4.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblognodejs4.png" alt></p>
 <p>如果没有出现版本号，请将 <code>nodejs</code> 的安装目录加入电脑环境变量。</p>
 <h4 id="Hexo环境的安装"><a href="#Hexo环境的安装" class="headerlink" title="Hexo环境的安装"></a>Hexo环境的安装</h4><p>经过上面的两步，这一步就十分的轻松了，依旧打开 <strong>git bash</strong> 输入安装命令就行，通常下面的这句就行了：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure></div>
@@ -339,24 +339,24 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.cnpmjs.org</span><br><span class="line"><span class="comment"># 输入完后测试命令如下</span></span><br><span class="line">npm info underscore</span><br><span class="line"><span class="comment"># 这句输入后会有字符串输出就行了</span></span><br></pre></td></tr></table></figure></div>
 <p>现在再用 <strong>git bash</strong> 用安装命令试试，就可以安装成功了，有时安装第一行出现 <em>fault</em>，没关系的。</p>
 <p>测试在 <strong>git bash</strong> 里输入 <code>hexo -v</code>，第一行为版本号就行了，到此Hexo环境配置完成。</p>
-<p><img src="http://img.godjiyi.cn/csdnbloghexo1.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnbloghexo1.png" alt></p>
 <h3 id="2、在-github-上创建自己唯一的项目空间"><a href="#2、在-github-上创建自己唯一的项目空间" class="headerlink" title="2、在 github 上创建自己唯一的项目空间"></a>2、在 github 上创建自己唯一的项目空间</h3><p>这一步骤不多说，只介绍注意点：</p>
 <h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p>注册时的账号邮箱尽量是微软，谷歌等国外大公司邮箱，国内的邮箱通常收不到消息。</p>
 <h4 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h4><p>创建项目是的项目名称必须是 <code>UserName.github.io</code> 前面的 <code>UserName</code> 是你 <em>github</em> 的用户名，后面的 .<code>github.io</code> 是一定的，不变的，也就是每个用户只能建立一个这样的仓库的。</p>
-<p><img src="http://img.godjiyi.cn/csdnbloggithub2.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnbloggithub2.png" alt></p>
 <h3 id="3、本地测试部署"><a href="#3、本地测试部署" class="headerlink" title="3、本地测试部署"></a>3、本地测试部署</h3><p>目的：把本地当服务器运行项目</p>
 <h4 id="初始化Hexo项目"><a href="#初始化Hexo项目" class="headerlink" title="初始化Hexo项目"></a>初始化Hexo项目</h4><p>首先创建一个文件夹，然后在这个文件夹里右击 – 选择 <strong>git bash</strong>，然后执行如下命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">hexo init		<span class="comment"># 自动创建所需文件</span></span><br><span class="line">npm install hexo-server --save	<span class="comment"># 安装 server 命令工具</span></span><br><span class="line">npm install	<span class="comment"># 这句很重要，安装其他辅助工具</span></span><br></pre></td></tr></table></figure></div>
 <h4 id="运行本地测试"><a href="#运行本地测试" class="headerlink" title="运行本地测试"></a>运行本地测试</h4><p>在新建的文件夹内，右击<strong> git bash</strong>，输入如下命令，访问 <code>localhost:4000</code>，效果如图。</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/csdnbloghexo2.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnbloghexo2.png" alt></p>
 <h3 id="4、首次远程测试部署"><a href="#4、首次远程测试部署" class="headerlink" title="4、首次远程测试部署"></a>4、首次远程测试部署</h3><p>目的：把项目部署到 <em>github</em> 的项目里</p>
 <h4 id="网站配置文件配置"><a href="#网站配置文件配置" class="headerlink" title="网站配置文件配置"></a>网站配置文件配置</h4><p>文件夹里有 <code>_config.yml</code> 文件，这个是配置整个网站的配置文件，下面会有主题中的<code>_config.yml</code>, 那个只是配置具体文章和显示的配置文件，不要搞混了。用编辑器打开，找到最后，该为如下样式 ( 请把两个 <em>jiyiren</em> 换为你的 github 名称就行了 )：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="YML"><figure class="iseeu highlight /yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/jiyiren/jiyiren.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></div>
 <h3 id="生成部署"><a href="#生成部署" class="headerlink" title="生成部署"></a>生成部署</h3><p>输入下面两个命令即可，它会自动部署到 <em>github</em> 上，成功后就可以访问 <code>UserName.github.io</code> 看到效果了。</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">hexo g		<span class="comment"># 生成静态页面</span></span><br><span class="line">hexo d		<span class="comment"># 部署静态页面到 github 项目</span></span><br></pre></td></tr></table></figure></div>
 <h3 id="5、创建第一个测试博客并部署运行"><a href="#5、创建第一个测试博客并部署运行" class="headerlink" title="5、创建第一个测试博客并部署运行"></a>5、创建第一个测试博客并部署运行</h3><h4 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h4><p>创建博客通常在 <code>sources</code> 目录下的 <code>_posts</code> 目录下，新建 <code>.md</code> 的后缀名就可以直接写了。</p>
-<p><img src="http://img.godjiyi.cn/csdnbloghexo4.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnbloghexo4.png" alt></p>
 <h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><p>假如新建名为 <code>helloeveryone.md</code> 文件，文件内容如下，然后保存，回到主目录，<em>git bash</em>，然后 <code>hexo server</code>，浏览器输入 <code>localhost:4000</code>，看看有哪些变化吧。</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="YML"><figure class="iseeu highlight /yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">HelloEveryone</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2015</span><span class="bullet">-07</span><span class="bullet">-23</span> <span class="number">21</span><span class="string">:45:40</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Begin</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">这是主体部分</span></span><br></pre></td></tr></table></figure></div>
 <h3 id="6、整体博客配置介绍"><a href="#6、整体博客配置介绍" class="headerlink" title="6、整体博客配置介绍"></a>6、整体博客配置介绍</h3><p>博客主 <code>_config.yml</code> 配置：我是初学者，可能写的不好，所以就大家推荐看 <a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">官网config说明</a> 我就是照着这个学会一点点的。</p>
@@ -375,6 +375,24 @@
       </tags>
   </entry>
   <entry>
+    <title>2019-07-28 日志</title>
+    <url>/2019/07/28/life_work/</url>
+    <content><![CDATA[<p>最近，我也毕业入职了，用了一个月时间熟悉了身边新环境，虽说还可以，但仍旧心有不安。</p>
+<p>今年都说工作形式不好，多家互联网企业被爆裁员。互联网，曾今是多么充满活力的名词，基本上是”万众创业”的根本，而现在给人的则是”赢者通吃”的感觉，再无敢与巨头相争，百花齐放的景象了。</p>
+<p>虽说现在巨头当道，创业热情没有以前的高，但互联网仍然是最大的创业领域。目前，移动互联的创业确实少了，但是 5G、IoT、人工智能的创业项目却有很多。</p>
+<p>很多时候我们都在以我们自己能看到的信息进行评判和决策的，由于我们都处于历史长河中的一部分，在那一部分中我们的绝大部分技能、信息都聚焦于某一种东西上，如果时代改变了这种东西的价值，那我们自身的价值也会相应变化，最坏的情况就是贬值，而这正是互联网的特性。</p>
+<p>心有不安，不安在时代正在极速地改变着最吃香的技能，而自己的技能却在逐步被淘汰！很多人怕的不是被裁，而是怕自己已经适应不了社会的需求了！</p>
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+        <tag>日志</tag>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mjoke App 全部开发过程</title>
     <url>/2015/09/18/mjokeapp/</url>
     <content><![CDATA[<h2 id="MJoke-APP上架"><a href="#MJoke-APP上架" class="headerlink" title="MJoke APP上架"></a>MJoke APP上架</h2><ol>
@@ -382,9 +400,9 @@
 <li>360手机应用中心：搜索 <strong>mjoke</strong> 即可下载。或者<a href="http://shouji.360tpcdn.com/150917/806c975d3c51250c605ac6970cff9da9/app.jiyi.com.mjoke_2.apk" target="_blank" rel="noopener">点我下载</a></li>
 <li>豌豆荚手机应用中心：搜索 <strong>mjoke</strong> 即可下载。或者<a href="http://www.wandoujia.com/apps/app.jiyi.com.mjoke" target="_blank" rel="noopener">点我下载</a></li>
 </ol>
-<h2 id="Mjoke界面展示"><a href="#Mjoke界面展示" class="headerlink" title="Mjoke界面展示"></a>Mjoke界面展示</h2><p><img src="http://img.godjiyi.cn/123.jpg" alt="1"></p>
+<h2 id="Mjoke界面展示"><a href="#Mjoke界面展示" class="headerlink" title="Mjoke界面展示"></a>Mjoke界面展示</h2><p><img src="https://img.godjiyi.cn/123.jpg" alt="1"></p>
 <a id="more"></a>
-<p><img src="http://img.godjiyi.cn/456.jpg" alt="4"></p>
+<p><img src="https://img.godjiyi.cn/456.jpg" alt="4"></p>
 <h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><ul>
 <li>JavaSDK: <em>JDK:1.7</em>；</li>
 <li>服务器端：<em>Myeclipse + Tomcat7.0</em>；</li>
@@ -392,7 +410,7 @@
 <li>客户端：<em>AndroidStudio + SDK19</em></li>
 <li>部署服务器：阿里云 <em>ACE</em> ( 云引擎 ) + 云数据库 <em>RDS</em> ( Mysql ) + 对象存储 ( <em>oss</em> )</li>
 </ul>
-<h3 id="服务器端开发"><a href="#服务器端开发" class="headerlink" title="服务器端开发"></a>服务器端开发</h3><h4 id="项目结构如下："><a href="#项目结构如下：" class="headerlink" title="项目结构如下："></a>项目结构如下：</h4><p><img src="http://img.godjiyi.cn/csdnblogserver1.png" alt> </p>
+<h3 id="服务器端开发"><a href="#服务器端开发" class="headerlink" title="服务器端开发"></a>服务器端开发</h3><h4 id="项目结构如下："><a href="#项目结构如下：" class="headerlink" title="项目结构如下："></a>项目结构如下：</h4><p><img src="https://img.godjiyi.cn/csdnblogserver1.png" alt> </p>
 <ul>
 <li>bean 包为数据库里各个表对象</li>
 <li>config包为配置包</li>
@@ -417,7 +435,7 @@
 </li>
 </ul>
 <h3 id="Android客户端开发"><a href="#Android客户端开发" class="headerlink" title="Android客户端开发"></a>Android客户端开发</h3><p><strong>项目结构</strong>：</p>
-<p><img src="http://img.godjiyi.cn/csdnblogclient.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogclient.png" alt></p>
 <ul>
 <li>最主要的是 <em>net</em> 包–网络操作；<em>utiltool</em> 包–工具类；<em>utilview</em> – 自定义view;最后那个是微信分享的。</li>
 <li>图片加载显示的我用了Volley框架，这个是google官方给的网络操作框架。视频学习<a href="http://www.imooc.com/learn/468" target="_blank" rel="noopener">慕课网volley</a>;大神博客<a href="http://blog.csdn.net/guolin_blog/article/details/17482095" target="_blank" rel="noopener">AndroidVolley完全解析</a></li>
@@ -450,24 +468,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2019-07-28 日志</title>
-    <url>/2019/07/28/life_work/</url>
-    <content><![CDATA[<p>最近，我也毕业入职了，用了一个月时间熟悉了身边新环境，虽说还可以，但仍旧心有不安。</p>
-<p>今年都说工作形式不好，多家互联网企业被爆裁员。互联网，曾今是多么充满活力的名词，基本上是”万众创业”的根本，而现在给人的则是”赢者通吃”的感觉，再无敢与巨头相争，百花齐放的景象了。</p>
-<p>虽说现在巨头当道，创业热情没有以前的高，但互联网仍然是最大的创业领域。目前，移动互联的创业确实少了，但是 5G、IoT、人工智能的创业项目却有很多。</p>
-<p>很多时候我们都在以我们自己能看到的信息进行评判和决策的，由于我们都处于历史长河中的一部分，在那一部分中我们的绝大部分技能、信息都聚焦于某一种东西上，如果时代改变了这种东西的价值，那我们自身的价值也会相应变化，最坏的情况就是贬值，而这正是互联网的特性。</p>
-<p>心有不安，不安在时代正在极速地改变着最吃香的技能，而自己的技能却在逐步被淘汰！很多人怕的不是被裁，而是怕自己已经适应不了社会的需求了！</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
-      <tags>
-        <tag>Life</tag>
-        <tag>日志</tag>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>同个电脑多个 SSH Key 的配置使用</title>
     <url>/2015/07/26/multiple-ssh-key/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">多平台代码仓库，多账号免密登录</p>
@@ -495,7 +495,7 @@
 <p>出现 <code>Enter file in which to save the key</code> 时输入</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">/c/Users/用户名/.ssh/github/id_rsa</span><br></pre></td></tr></table></figure></div>
 <p>也就是将密钥保存在 <em>github</em> 文件夹下</p>
-<p><img src="http://img.godjiyi.cn/csdnblogresultssk.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogresultssk.jpg" alt></p>
 <p>这样生成密钥完成</p>
 <h2 id="创建-config-文件"><a href="#创建-config-文件" class="headerlink" title="创建 config 文件"></a>创建 config 文件</h2><p>在 <strong>C盘/Users/用户名/.ssh</strong> 目录下新建 <em>config</em> 文件，该文件没有后缀名的，这是为了配置映射功能的，在里面填入下面代码：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">#github的配置</span><br><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/github/id_rsa</span><br><span class="line">	User git</span><br></pre></td></tr></table></figure></div>
@@ -506,13 +506,13 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ssh -t git@github.com</span><br></pre></td></tr></table></figure></div>
 <p>返回成功信息：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Hi youname! You<span class="string">'ve successfully authenticated, but Github does not provide shell access.</span></span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/csdnblogsskgithub.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogsskgithub.jpg" alt></p>
 <p>当然有的时候会问你是否授权连接，选 <em>y</em> 即可。</p>
 <p>测试开源中国的 <em>GitOschina</em>:</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.oschina.net</span><br></pre></td></tr></table></figure></div>
 <p>返回成功信息为：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">Welcome to Git@OSC, yourname!</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/csdnblogsskgitosc.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogsskgitosc.jpg" alt></p>
 <p>这样在项目中就可以用多个 <strong>Git</strong> 平台的 <em>ssh</em> 了。</p>
 ]]></content>
       <categories>
@@ -535,23 +535,23 @@
 <h2 id="一、官方镜像"><a href="#一、官方镜像" class="headerlink" title="一、官方镜像"></a>一、官方镜像</h2><h3 id="1、官方镜像地址"><a href="#1、官方镜像地址" class="headerlink" title="1、官方镜像地址"></a>1、官方镜像地址</h3><p>下载地址：<a href="https://developers.google.com/android/nexus/images" target="_blank" rel="noopener">https://developers.google.com/android/nexus/images</a> ( 代理访问，下载时可以将链接复制到百度云离线下载，就不需要代理了 )</p>
 <p>里面列出了谷歌旗下的所有设备的镜像下载链接。</p>
 <p>我的设备是 <strong>Nexus 7 2012 年 wifi 版本</strong> 的。所以选择 <strong>“nakasi” for Nexus 7 (Wi-Fi)</strong> 栏目里的任意一个 Android 版本下载。</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus7_down.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus7_down.png" alt></p>
 <blockquote>
 <p><strong>注：</strong> Nexus 7 分为两代，一代为 2012 年出的，一代为 2013 年出的；每一代都有两个版本，一个是 wifi 版本，一个是 mobile 版本。大家注意选择。</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="2、下载后的文件"><a href="#2、下载后的文件" class="headerlink" title="2、下载后的文件"></a>2、下载后的文件</h3><p>我下载 Android 5.0 的版本后的文件为：</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus7_50.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus7_50.png" alt></p>
 <blockquote>
 <p>注：名称是有规律的，<strong>nakasi</strong> 为你设备的谷歌代号名, <strong>lrx21p</strong> 为版本名]</p>
 </blockquote>
 <p>解压该文件后内容为</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus_jieyahou.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus_jieyahou.png" alt></p>
 <h3 id="3、环境设置"><a href="#3、环境设置" class="headerlink" title="3、环境设置"></a>3、环境设置</h3><p>下载 <em>Android SDK</em> 并加入环境变量。</p>
 <p>地址：<a href="http://tools.android-studio.org/index.php/sdk" target="_blank" rel="noopener">http://tools.android-studio.org/index.php/sdk</a> ( 国内可访问，用百度云下载 )</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus_sdk.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus_sdk.png" alt></p>
 <p>我是 <em>Linux</em> 所以下载 <em>Linux</em> 的。下载后解压到 <strong>home/Android/sdk</strong> 目录下，如图：</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus_sdk_jieya.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus_sdk_jieya.png" alt></p>
 <p>我们要加入环境变量的是 <em>platform-tools</em> 目录。</p>
 <p>打开终端输入：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br></pre></td></tr></table></figure></div>
@@ -565,12 +565,12 @@
 <blockquote>
 <p>(或者按住按住设备的电源键和音量减键，两个要一起按住不放，知道重启到 <strong>bootloader</strong> 界面)</p>
 </blockquote>
-<p><img src="http://img.godjiyi.cn/nexus7nexus7_bootloader.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus7_bootloader.png" alt></p>
 <p>最下面的红字为 <strong>LOCK STATE - UNLOCKED</strong>, 就说明 <em>bootloader</em> 解锁了，但是通常的设备在出厂之前都是未解锁；但是不管解锁没解锁都可以用下面的命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">fastboot oem unlock</span><br></pre></td></tr></table></figure></div>
 <p>我建议大家都应该输入该命令。</p>
 <p>然后切换到之前下载镜像解压后的目录：</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus7_jieyajingxiang.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus7_jieyajingxiang.png" alt></p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads/nexus7/google/nakasi-5.0/nakasi-lrx21p</span><br></pre></td></tr></table></figure></div>
 <p>执行刷机命令 ( 执行的是 <em>flash-all.sh</em> 后缀是 <strong>.sh</strong> 不要执行成 bat 了 )</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">./flash-all.sh</span><br></pre></td></tr></table></figure></div>
@@ -586,9 +586,9 @@
 <p><em>你如果用百度搜，前面10左右都是广告,😶</em></p>
 </blockquote>
 <h3 id="6、进入系统"><a href="#6、进入系统" class="headerlink" title="6、进入系统"></a>6、进入系统</h3><p>下拉菜单</p>
-<p><img src="http://img.godjiyi.cn/nexus7nexus7_5.0finish.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus7nexus7_5.0finish.png" alt></p>
 <p>任务管理器</p>
-<p><img src="http://img.godjiyi.cn/nexus733333.png" alt></p>
+<p><img src="https://img.godjiyi.cn/nexus733333.png" alt></p>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -605,43 +605,43 @@
 <h1 id="pixabay"><a href="#pixabay" class="headerlink" title="pixabay"></a>pixabay</h1><ul>
 <li><strong>推荐</strong>：★★★★★</li>
 <li>地址：<a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-pixabay.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pixabay.jpg" alt></li>
 </ul>
 <h1 id="pexels"><a href="#pexels" class="headerlink" title="pexels"></a>pexels</h1><ul>
 <li><strong>推荐</strong>：★★★★★</li>
 <li>地址：<a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-pexels.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pexels.jpg" alt></li>
 </ul>
 <a id="more"></a>
 <h1 id="isorepublic"><a href="#isorepublic" class="headerlink" title="isorepublic"></a>isorepublic</h1><ul>
 <li><strong>推荐</strong>：★★★★★</li>
 <li>地址：<a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-isorepublic.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-isorepublic.jpg" alt></li>
 </ul>
 <h1 id="gratisography"><a href="#gratisography" class="headerlink" title="gratisography"></a>gratisography</h1><ul>
 <li><strong>推荐</strong>：★★★★</li>
 <li>地址：<a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-gratisography.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-gratisography.jpg" alt></li>
 </ul>
 <h1 id="rawpixel"><a href="#rawpixel" class="headerlink" title="rawpixel"></a>rawpixel</h1><ul>
 <li><strong>推荐</strong>：★★★★</li>
 <li>地址：<a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-rawpixel.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-rawpixel.jpg" alt></li>
 </ul>
 <h1 id="polayoutu"><a href="#polayoutu" class="headerlink" title="polayoutu"></a>polayoutu</h1><ul>
 <li><strong>推荐</strong>：★★★★</li>
 <li>地址：<a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-polayoutu.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-polayoutu.jpg" alt></li>
 </ul>
 <h1 id="pxhere"><a href="#pxhere" class="headerlink" title="pxhere"></a>pxhere</h1><ul>
 <li><strong>推荐</strong>：★★★★</li>
 <li>地址：<a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-pxhere.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pxhere.jpg" alt></li>
 </ul>
 <h1 id="picjumbo"><a href="#picjumbo" class="headerlink" title="picjumbo"></a>picjumbo</h1><ul>
 <li><strong>推荐</strong>：★★★</li>
 <li>地址：<a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
-<li>主页：<img src="http://img.godjiyi.cn/jy_open-picjumbo.jpg" alt></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-picjumbo.jpg" alt></li>
 </ul>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li><a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
@@ -667,7 +667,7 @@
     <title>博客界面更新</title>
     <url>/2017/10/06/picture-group/</url>
     <content><![CDATA[<p><strong>博客界面更新，应用个性化 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题</strong></p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="http://img.godjiyi.cn/nextpicdd.jpg" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://img.godjiyi.cn/nextpicee.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://img.godjiyi.cn/nextpica.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="http://img.godjiyi.cn/nextpicf.jpg" alt></div></div></div></div>]]></content>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="https://img.godjiyi.cn/nextpicdd.jpg" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicee.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpica.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicf.jpg" alt></div></div></div></div>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -681,13 +681,13 @@
     <url>/2019/09/15/project-doc/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">基于 Gitbook 的开源生态，更具美观的项目文档设计</p>
 
-<p><img src="http://img.godjiyi.cn/jy_blog-project-doc.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_blog-project-doc.jpg" alt></p>
 <p><strong>项目源码地址</strong>：<a href="https://github.com/jiyiren/ProjectDoc" target="_blank" rel="noopener">https://github.com/jiyiren/ProjectDoc</a></p>
 <p><strong>有色Demo预览地址</strong>：<a href="https://jiyiren.github.io/project-doc/" target="_blank" rel="noopener">https://jiyiren.github.io/project-doc/</a></p>
 <p><strong>无色Demo预览地址</strong>：<a href="https://jiyiren.github.io/project-doc-plain/" target="_blank" rel="noopener">https://jiyiren.github.io/project-doc-plain/</a></p>
 <a id="more"></a>
 <p>无色样式：</p>
-<p><img src="http://img.godjiyi.cn/jy_blog-project-doc-plain.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_blog-project-doc-plain.jpg" alt></p>
 <h2 id="基本环境"><a href="#基本环境" class="headerlink" title="基本环境"></a>基本环境</h2><h3 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h3><ul>
 <li>全球官网：<a href="https://nodejs.org/en" target="_blank" rel="noopener">https://nodejs.org/en</a></li>
 <li>中文官网：<a href="http://nodejs.cn/" target="_blank" rel="noopener">http://nodejs.cn/</a></li>
@@ -725,11 +725,11 @@
 <li><strong>pluginsConfig</strong>: 配置插件的配置项，为一些插件传入参数的;</li>
 </ul>
 <h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><p>上面最基本的 <strong>book.json</strong>，对默认界面基本无变动，其界面显示为：</p>
-<p><img src="http://img.godjiyi.cn/jy_projectddocbasic.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_projectddocbasic.jpg" alt></p>
 <p>我们来一个简单 gitbook 定制，<strong>book.json</strong> 如下：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"title"</span>: <span class="string">"ProjectDoc"</span>,</span><br><span class="line">	<span class="attr">"author"</span>: <span class="string">"jiyiren"</span>,</span><br><span class="line">	<span class="attr">"description"</span>: <span class="string">"ProjectDoc"</span>,</span><br><span class="line">	<span class="attr">"language"</span>: <span class="string">"zh-hans"</span>,</span><br><span class="line">	<span class="attr">"links"</span>: &#123;</span><br><span class="line">	  <span class="attr">"sidebar"</span>: &#123;</span><br><span class="line">	    <span class="attr">"本文托管"</span>: <span class="string">"https://github.com/jiyiren/ProjectDoc"</span></span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">"styles"</span>: &#123;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">"plugins"</span>: [</span><br><span class="line">	    <span class="string">"anchor-navigation-ex@0.1.8"</span></span><br><span class="line">	],</span><br><span class="line">	<span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">	    <span class="attr">"anchor-navigation-ex"</span>: &#123;</span><br><span class="line">	        <span class="attr">"isRewritePageTitle"</span>: <span class="literal">true</span>,</span><br><span class="line">	        <span class="attr">"isShowTocTitleIcon"</span>: <span class="literal">true</span>,</span><br><span class="line">	        <span class="attr">"tocLevel1Icon"</span>: <span class="string">"fa fa-hand-o-right"</span>,</span><br><span class="line">	        <span class="attr">"tocLevel2Icon"</span>: <span class="string">"fa fa-hand-o-right"</span>,</span><br><span class="line">	        <span class="attr">"tocLevel3Icon"</span>: <span class="string">"fa fa-hand-o-right"</span></span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>其界面为如下，多出左侧栏 <strong>本文托管</strong>，和文章右侧的 <strong>目录以及回到开头</strong> 按钮。</p>
-<p><img src="http://img.godjiyi.cn/jy_projectdocselfdefine.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_projectdocselfdefine.jpg" alt></p>
 <h2 id="必备插件"><a href="#必备插件" class="headerlink" title="必备插件"></a>必备插件</h2><p>插件使用</p>
 <ul>
 <li><p>插件添加：插件的使用就放在 <strong>book.json</strong> 的 <strong>plugins</strong> 和 <strong>pluginsConfig</strong> 键中，形式如：<code>pluginName@versionName</code> 也就是<strong>插件名@版本</strong>，当然没有版本时，采用最新默认版本。</p>
@@ -790,33 +790,33 @@
 <p><strong>Python 2.X版本</strong></p>
 <p>此版本对应旧版本，其默认执行命令是 <code>python</code>, 因此我们在终端输入 <code>python --version</code> 通常会显示 2.X 的版本字样。</p>
 <p>通过 <code>which python</code> 命令查看 <strong>Python</strong> 路径，然后用 <code>ls -l</code> 可查看该路径的 <strong>Python</strong> 执行文件属性如下：</p>
-<p><img src="http://img.godjiyi.cn/pyset1.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset1.jpg" alt></p>
 <p>上图显示 <strong>/usr/bin/python</strong> 文件非软链接文件，由于我们自己安装的 <strong>Python</strong> 通常是用软链接的方式链接到安装目录，因此这里的 <strong>python</strong> 应该属于本机自带的 <strong>Python</strong>, 其安装位置即为 <strong>/usr/bin/python</strong>.</p>
 <p><strong>Python 3.X版本</strong></p>
 <p>此版本对应新版本，其默认执行命令是 <code>python3</code>, 不是完全兼容旧版本的，但是代表了 <strong>Python</strong> 的发展方向，新人的话建议直接学习此版本。</p>
 <p>通过 <code>which python3</code> 命令查看 <strong>Python3</strong> 路径，然后用 <code>ls -l</code> 查看路径的的文件属性：</p>
-<p><img src="http://img.godjiyi.cn/pyset2.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset2.jpg" alt></p>
 <p>上图显示 <strong>/usr/local/bin/python3</strong> 文件为软链接文件，链接的源位置为 <strong>/Library/Frameworks/Python.framework/Versions/3.5/bin/python3</strong>, 因此这就是 <strong>Python3</strong> 的安装位置，由此也可以知道当前 <strong>Python3</strong> 的版本是 <strong>3.5</strong>.</p>
 <p>实际上系统自带的命令通常安装在 <strong>/usr/bin/</strong> 目录下，而用户自己安装的命令通常在 <strong>/usr/local/bin/</strong> 目录下，这通常是因为普通安装命令都是在 <strong>/usr/local/bin/</strong> 下有写的权限的。</p>
 <h3 id="pip-命令识别"><a href="#pip-命令识别" class="headerlink" title="pip 命令识别"></a>pip 命令识别</h3><p><strong>Python</strong> 版本的不同导致 <strong>Python</strong> 下的包管理工具 <strong>pip</strong> 命令也不同，因此使得 <strong>pip</strong> 命令也产生很多的 <em>pipX</em> 命令。通常而言，对于 <strong>Python2x</strong> 版本其对应的 <strong>pip</strong> 命令为 <em>pip</em>, 而对于 <strong>Python3.X</strong> 版本其对应的 <strong>pip</strong> 命令为<em>pip3</em>. 此外，还有一种可同时执行不同版本 <strong>Python</strong> 的 <strong>pip</strong> 方式：<em>python -m pip install xxx</em> 或者 <em>python3 -m pip install xxx</em>, 这就不需要用不同的命令了，但是前提还是需要摸清自己本机的环境。</p>
 <p><strong>Python2.X 版本的 pip</strong></p>
 <p>通过 <code>which pip</code> 查看 <strong>pip</strong> 路径，然后用 <code>ll</code> 查看文件属性，该文件为非链接文件，其与上面的 <strong>Python</strong> 相对应</p>
-<p><img src="http://img.godjiyi.cn/pyset3.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset3.jpg" alt></p>
 <p>我们也可以通过命令来查看 <strong>pip</strong> 目录中有哪些 <code>pip</code>:</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/bin | grep pip</span><br></pre></td></tr></table></figure></div>
 <p>结果：</p>
-<p><img src="http://img.godjiyi.cn/pyset4.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset4.jpg" alt></p>
 <p>我们看到上图有好多 <code>pip</code> 命令，到底哪些可用或者一致呢？我们可以看这些命令的 <strong>创建时间</strong> 基本可以判断前三个 <code>pip</code> 是同一时刻安装的，最后一个是另外时间安装的 <code>pip</code> 工具，我们可以通过 <code>pip</code> 命令安装一个已经存在的模块查看其已经安装的模块路径如下图，我们可以知道 <em>pip, pip2, pip2.7</em> 都是 <em>Python2.X 版本的</em> <code>python</code> 命令所对应的 <code>pip</code>.</p>
-<p><img src="http://img.godjiyi.cn/pyset5.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset5.jpg" alt></p>
 <p><strong>Python3.X 版本的 pip3</strong></p>
 <p>通过 <code>which pip3</code>查看 <strong>pip</strong> 路径，然后用 <code>ll</code> 查看文件属性如下图，然而，<code>pip3</code> 并没有此命令，但我们从之前的查看命令可知存在 <code>pip3.5</code> 命令</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/bin | grep pip</span><br></pre></td></tr></table></figure></div>
 <p>再次执行 <code>which pip3.5</code>，情况如下：</p>
-<p><img src="http://img.godjiyi.cn/pyset7.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset7.jpg" alt></p>
 <p>我们天真地以为 <code>pip3.5</code> 命令就是我们 <strong>Python3.X 版本的</strong> <code>pip</code>，我们执行安装命令试试 <code>pip3.5 install numpy</code>，结果如下：</p>
-<p><img src="http://img.godjiyi.cn/pyset9.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset9.jpg" alt></p>
 <p>执行报错，这错误网上有解决方法 <a href="http://blog.chinaunix.net/uid-20940095-id-4304535.html" target="_blank" rel="noopener">这里</a>, 但是我们这里不确定此 <strong>Python3.5</strong> 是否关联我们本机的 <strong>Python3</strong>，因为这有可能是自己以前安装了 <strong>Python3.5</strong> 又卸载后存留的。这里我们再试试另外一种可能，<em>就是本机 Python3 的 pip 在另外地方，只不过它没有在环境变量中</em>，我们可以如下测试 <code>python3 -m pip --version</code>, 我们也可以尝试安装一个包，如图，可以确定通过 <strong>Python3</strong> 内部的 <strong>pip</strong> 可以将模块安装在内部目录里。</p>
-<p><img src="http://img.godjiyi.cn/pyset10.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset10.jpg" alt></p>
 <p>至此可以确定，<strong>Python3</strong> 对应的 <code>pip</code> 在自己安装路径内部，而不通过环境变量直接定位，需要通过 <code>python3 -m pip install xxxx</code> 来安装模块。</p>
 <h3 id="pip模块安装路径确定"><a href="#pip模块安装路径确定" class="headerlink" title="pip模块安装路径确定"></a>pip模块安装路径确定</h3><p>到这里我想大家已经知道如何确定 <strong>pip</strong> 模块的安装位置了，主要要首先确定 <strong>Python</strong> 各个版本对应的 <strong>pip</strong>，然后通过 <strong>pip</strong> 的重复安装即可确定模块安装位置。</p>
 <blockquote>
@@ -840,7 +840,7 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">brew install python <span class="comment"># 安装python2.X</span></span><br><span class="line">brew install python3 <span class="comment"># 安装python3.X</span></span><br></pre></td></tr></table></figure></div>
 <p>这种方式安装是先将包下载在 <strong>/usr/local/Cellar</strong> 目录下，然后自动在 <strong>/usr/local/bin/</strong> 下新建一个执行链接到 <strong>/usr/local/Cellar</strong>.</p>
 <p>如：我们安装一个wget 工具：<code>brew install wget</code>，然后我们可以查看<em>wget</em>的原路径：</p>
-<p><img src="http://img.godjiyi.cn/pyset11.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/pyset11.jpg" alt></p>
 <p>对于安装用 <strong>brew</strong> 安装 <strong>Python3</strong>，其也会自动下载对应的 <strong>pip3</strong> 的，并且都会将其放置在 <strong>/usr/local/bin/目录下</strong>，以软链接的形式链接到 <strong>/usr/local/Cellar下的对应文件</strong>.</p>
 <p><em>(3). 通过源码包</em>: 这会自动放置在 <strong>/usr/local/bin</strong> 目录下，且不会用软链接。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
@@ -862,9 +862,9 @@
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">A LaTeX Template for Report, With Supporting Chinese Language</p>
 
 
-<p><img src="http://img.godjiyi.cn/jy_hothit.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_hothit.jpg" alt></p>
 <p><strong>项目源码地址</strong>：<a href="https://github.com/jiyiren/ReportPaper" target="_blank" rel="noopener">https://github.com/jiyiren/ReportPaper</a></p>
-<p><strong>文档预览地址</strong>：<a href="http://img.godjiyi.cn/report_paper.pdf" target="_blank" rel="noopener">http://img.godjiyi.cn/report_paper.pdf</a></p>
+<p><strong>文档预览地址</strong>：<a href="https://img.godjiyi.cn/report_paper.pdf" target="_blank" rel="noopener">https://img.godjiyi.cn/report_paper.pdf</a></p>
 <a id="more"></a>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>需要先安装 LaTeX 环境，而支持中文的 LaTeX 为 <a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTeX</a>，CTeX 也只是一种标准定义，其通常分为两个发行版：</p>
 <ul>
@@ -912,7 +912,7 @@
 <p>最终生成的 pdf 文档示例：</p>
 <ul>
 <li>github: <a href="https://github.com/jiyiren/ReportPaper/blob/master/report_paper.pdf" target="_blank" rel="noopener">report_paper.pdf</a></li>
-<li>七牛：<a href="http://img.godjiyi.cn/report_paper.pdf" target="_blank" rel="noopener">report_paper.pdf</a></li>
+<li>七牛：<a href="https://img.godjiyi.cn/report_paper.pdf" target="_blank" rel="noopener">report_paper.pdf</a></li>
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTeX</a></li>
@@ -941,12 +941,12 @@
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><hr>
 <p>项目代码地址: <a href="https://github.com/jiyiren/SpbootApi" target="_blank" rel="noopener">https://github.com/jiyiren/SpbootApi</a></p>
 <p>这个仓库主要是集成 <strong>Spring-boot, Spring-mvc, Mysql, Mybatis, C3p0, <a href="https://swagger.io/" target="_blank" rel="noopener">Swagger2</a></strong> 的项目架构,为便于每次新建项目不用从零开始,直接基于此项目结构可快速地进行项目二次开发，免去了 <strong>pom</strong> 内容的复制和配置文件的编写。</p>
-<h3 id="整体项目结构"><a href="#整体项目结构" class="headerlink" title="整体项目结构"></a>整体项目结构</h3><p><img src="http://img.godjiyi.cn/spbootapi-arc.png" alt="项目结构"></p>
+<h3 id="整体项目结构"><a href="#整体项目结构" class="headerlink" title="整体项目结构"></a>整体项目结构</h3><p><img src="https://img.godjiyi.cn/spbootapi-arc.png" alt="项目结构"></p>
 <a id="more"></a>
 <h3 id="Swagger-API-UI-页面"><a href="#Swagger-API-UI-页面" class="headerlink" title="Swagger API UI 页面"></a>Swagger API UI 页面</h3><p>默认访问地址: <em><a href="http://127.0.0.1:8899/swagger-ui.html" target="_blank" rel="noopener">http://127.0.0.1:8899/swagger-ui.html</a></em></p>
-<p><img src="http://img.godjiyi.cn/spbootapi-swaggerui.png" alt="SwaggerUi"></p>
+<p><img src="https://img.godjiyi.cn/spbootapi-swaggerui.png" alt="SwaggerUi"></p>
 <h3 id="Demo接口"><a href="#Demo接口" class="headerlink" title="Demo接口"></a>Demo接口</h3><p>测试接口: <em><a href="http://127.0.0.1:8899/user/1" target="_blank" rel="noopener">http://127.0.0.1:8899/user/1</a></em></p>
-<p><img src="http://img.godjiyi.cn/spbootapi-json.png" alt="json"></p>
+<p><img src="https://img.godjiyi.cn/spbootapi-json.png" alt="json"></p>
 <h2 id="二次开发实践"><a href="#二次开发实践" class="headerlink" title="二次开发实践"></a>二次开发实践</h2><hr>
 <p>下载项目:</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jiyiren/SpbootApi.git</span><br></pre></td></tr></table></figure></div>
@@ -1020,7 +1020,7 @@
 <p>下面我简单介绍在本地搭建一个博客系统的过程！</p>
 <h2 id="下载官方源码"><a href="#下载官方源码" class="headerlink" title="下载官方源码"></a>下载官方源码</h2><p>官网地址：<a href="https://cn.wordpress.org/" target="_blank" rel="noopener">https://cn.wordpress.org/</a></p>
 <p>点击右下角的</p>
-<p><img src="http://img.godjiyi.cn/wpwinwp.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwinwp.png" alt></p>
 <p>百度云地址:<a href="http://pan.baidu.com/s/1i401g6x" target="_blank" rel="noopener">http://pan.baidu.com/s/1i401g6x</a></p>
 <p>百度云备用地址:<a href="http://pan.baidu.com/s/1eQK9KII" target="_blank" rel="noopener">http://pan.baidu.com/s/1eQK9KII</a></p>
 <p>百度云里的是 <em>4.4</em> 的，如果大家以后下载可以将在官方的下载地址复制到百度云里的离线下载里下载到百度云，再从百度云里下载就更快了！</p>
@@ -1030,35 +1030,35 @@
 <p>百度云地址:<a href="http://pan.baidu.com/s/1qXsLuBa" target="_blank" rel="noopener">http://pan.baidu.com/s/1qXsLuBa</a></p>
 <p>备用百度云链接:<a href="http://pan.baidu.com/s/1bnT3uZd" target="_blank" rel="noopener">http://pan.baidu.com/s/1bnT3uZd</a></p>
 <p>下载完后是这样的：</p>
-<p><img src="http://img.godjiyi.cn/wpxamppwp.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpxamppwp.png" alt></p>
 <p>直接双击安装就行了，打开软件会在电脑右下角有个图标，单击启动所有服务直到图标变为绿色</p>
-<p><img src="http://img.godjiyi.cn/wpwpstart.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwpstart.png" alt></p>
 <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>单击右下角图标，鼠标放到 <strong>MySQL</strong> 上，点击 <strong>MySQL</strong> 控制台：</p>
-<p><img src="http://img.godjiyi.cn/wpwpmysql.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwpmysql.png" alt></p>
 <p>进入一个 <em>cmd</em> 的窗口，默认密码为空，所以直接回车就进入 <strong>MySQL</strong> 数据库操作界面了:</p>
-<p><img src="http://img.godjiyi.cn/wpmysqlenter.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpmysqlenter.png" alt></p>
 <p>敲入以下命令以创建数据库名为 <strong>wpblog</strong> 的数据库 ( 注意输入的时候标点符号都要是在英文状态！最后的分号不要忘掉 )</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> wpblog <span class="keyword">default</span> <span class="built_in">character</span> <span class="keyword">set</span> <span class="string">'utf8'</span> <span class="keyword">collate</span> <span class="string">'utf8_general_ci'</span>;</span><br></pre></td></tr></table></figure></div>
 <p>敲入以上命令直接回车，就可以创建数据库了，返回 <em>Query OK</em> 就说明创建成功，也可以用以下命令查看已经创建好的数据库：<code>show databases;</code></p>
-<p><img src="http://img.godjiyi.cn/wpmysqlsuccess.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpmysqlsuccess.png" alt></p>
 <h2 id="安装-WordPress"><a href="#安装-WordPress" class="headerlink" title="安装 WordPress"></a>安装 WordPress</h2><h3 id="解压压缩文件"><a href="#解压压缩文件" class="headerlink" title="解压压缩文件"></a>解压压缩文件</h3><p>解压前面下载的 <strong>WordPress</strong> 压缩文件到 <strong>WAMP</strong> 安装目录下的 <em>www</em> 目录， <strong>WAMP</strong> 下的目录：</p>
-<p><img src="http://img.godjiyi.cn/wpwampwww.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwampwww.png" alt></p>
 <p><strong>www</strong> 下的目录：</p>
-<p><img src="http://img.godjiyi.cn/wampwwwwp.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wampwwwwp.png" alt></p>
 <p><strong>WordPress</strong> 下的目录:</p>
-<p><img src="http://img.godjiyi.cn/wpwamppwpwww.png" alt="wordpress目录"></p>
+<p><img src="https://img.godjiyi.cn/wpwamppwpwww.png" alt="wordpress目录"></p>
 <h3 id="安装-WordPress-1"><a href="#安装-WordPress-1" class="headerlink" title="安装 WordPress"></a>安装 WordPress</h3><p>浏览器访问 <a href="http://127.0.0.1/wordpress" target="_blank" rel="noopener">http://127.0.0.1/wordpress</a> 出现如下界面说明你离安装成功就差一步了：</p>
-<p><img src="http://img.godjiyi.cn/wpwordpresshome.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwordpresshome.png" alt></p>
 <p>点击现在开始，然后出现的页面是配置数据库的，按照如下填写 ( 由于默认 <strong>MySQL</strong> 数据库密码为空，这里大家可以空着不需要填试试，如果可以下一步则没有问题，如果不可以则需要 <a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=sitehao123&amp;wd=%E4%BF%AE%E6%94%B9mysql%20root%E5%AF%86%E7%A0%81&amp;oq=wamp&amp;rsv_pq=d9090c190001bbbf&amp;rsv_t=48b2tY59ovj0zY8l%2FH9CnnbBZghinvZIlmqilrcq6sGnLZFCW82LcA6he0c88Be6uQ&amp;rsv_enter=1&amp;inputT=1650&amp;rsv_sug3=18&amp;rsv_sug1=17&amp;bs=wamp" target="_blank" rel="noopener">更改mysql的root密码</a> )：</p>
-<p><img src="http://img.godjiyi.cn/wpsetupwp.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpsetupwp.png" alt></p>
 <p>点击提交出现如下界面，点击进行安装:</p>
-<p><img src="http://img.godjiyi.cn/wpsuwpsetup.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpsuwpsetup.png" alt></p>
 <p>出现如下网站配置界面,按照要求填好后，点击安装：</p>
-<p><img src="http://img.godjiyi.cn/wpwelcomewp.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwelcomewp.png" alt></p>
 <p>最后就成功了，点击登录，进入后台界面，输入之前的 <em>admin</em>, 和密码 <em>123admin</em>，就进入了你网站的后台了。一个网站就搭建好了！</p>
-<p><img src="http://img.godjiyi.cn/wpwpwplogin.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwpwplogin.png" alt></p>
 <p>要想看看前台，点击左上角 <strong>WPBlog</strong> 就进入了前台了，当然你是以管理员登录的。你也可以用另外一个浏览器直接访问 <a href="http://127.0.0.1/wordpress" target="_blank" rel="noopener">http://127.0.0.1/wordpress</a> 进入前台。</p>
-<p><img src="http://img.godjiyi.cn/wpwpfront.png" alt></p>
+<p><img src="https://img.godjiyi.cn/wpwpfront.png" alt></p>
 ]]></content>
       <categories>
         <category>WordPress</category>
@@ -1184,42 +1184,42 @@
 <h2 id="正式部署–可视化集群配置"><a href="#正式部署–可视化集群配置" class="headerlink" title="正式部署–可视化集群配置"></a>正式部署–可视化集群配置</h2><hr>
 <p>等待 Cloudera Manager <strong>Server</strong> 和 <strong>Agent</strong> 启动完毕后，就可以进行 <strong>CDH5</strong> 的可视化界面安装了，在浏览器打开 <a href="http://master:7180" target="_blank" rel="noopener">http://master:7180</a>, 注意，如果这是在 <strong>master, slave[1-3]</strong> 主机上时可以直接在浏览器里输入这个 url, 但如果 <strong>不在 master 和 slave[1-3]</strong> 节点上访问此 url，则需要修改主机的 <strong>hosts</strong> 文件，修改方法见 <em>正式部署环境配置</em> 中的 <strong>hosts</strong> 配置。</p>
 <h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>默认用户名和密码都是：<em>admin</em></p>
-<p><img src="http://img.godjiyi.cn/cloudera01.jpg" alt></p>
-<h3 id="同意条款"><a href="#同意条款" class="headerlink" title="同意条款"></a>同意条款</h3><p><img src="http://img.godjiyi.cn/cloudera02.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera01.jpg" alt></p>
+<h3 id="同意条款"><a href="#同意条款" class="headerlink" title="同意条款"></a>同意条款</h3><p><img src="https://img.godjiyi.cn/cloudera02.jpg" alt></p>
 <h3 id="选择版本"><a href="#选择版本" class="headerlink" title="选择版本"></a>选择版本</h3><p>选择中间的试用版本，肯定要体验最全的功能</p>
-<p><img src="http://img.godjiyi.cn/cloudera03.jpg" alt> </p>
+<p><img src="https://img.godjiyi.cn/cloudera03.jpg" alt> </p>
 <h3 id="选择集群机器"><a href="#选择集群机器" class="headerlink" title="选择集群机器"></a>选择集群机器</h3><p>这里只显示启动了Agent进程的主机</p>
-<p><img src="http://img.godjiyi.cn/cloudera05.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera05.jpg" alt></p>
 <h3 id="选择集群安装方式"><a href="#选择集群安装方式" class="headerlink" title="选择集群安装方式"></a>选择集群安装方式</h3><p>这里选择 <strong>Parcel</strong>, 我们之前已经把离线包下载好并放在了 <strong>master</strong> 的仓库目录下，因此这里直接显示了我们已经下载的 <strong>CDH5</strong></p>
-<p><img src="http://img.godjiyi.cn/cloudera06.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera06.jpg" alt></p>
 <h3 id="分发-Parcel-包到各个结点"><a href="#分发-Parcel-包到各个结点" class="headerlink" title="分发 Parcel 包到各个结点"></a>分发 Parcel 包到各个结点</h3><p>这里自动由 <strong>master</strong> 将 <strong>CDH</strong> 包分发到 <strong>slave[1-3]</strong></p>
-<p><img src="http://img.godjiyi.cn/cloudera07.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera07.jpg" alt></p>
 <h3 id="检测安装环境"><a href="#检测安装环境" class="headerlink" title="检测安装环境"></a>检测安装环境</h3><p>这里出现下面警告，通过在所有主机上执行 <code>echo 10 &gt; /proc/sys/vm/swappiness</code>, 然后再重新检测下环境即可</p>
-<p><img src="http://img.godjiyi.cn/cloudera08.jpg" alt></p>
-<p><img src="http://img.godjiyi.cn/cloudera09.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera08.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera09.jpg" alt></p>
 <h3 id="选择安装服务"><a href="#选择安装服务" class="headerlink" title="选择安装服务"></a>选择安装服务</h3><p>这里我就选择核心服务，因为后面管理界面可以任意 <em>增加、删除</em> 各个服务。</p>
-<p><img src="http://img.godjiyi.cn/cloudera10.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera10.jpg" alt></p>
 <h3 id="角色配置"><a href="#角色配置" class="headerlink" title="角色配置"></a>角色配置</h3><p>这里默认即可</p>
-<p><img src="http://img.godjiyi.cn/cloudera11.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera11.jpg" alt></p>
 <h3 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h3><p>这里是最重要也是最容易出错的地方，配置数据库前，需要先创建数据库,我们只需要在 <strong>master</strong> 主机上创建，这里主要需要创建 <em>四个数据库 ( hive, rman, ozzie, hue )</em> 和 <em>四个用户名 ( hive, rman, ozzie, hue )</em>.</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># master主机</span></span><br><span class="line">mysql -u root -p <span class="comment"># 连接mysql数据库</span></span><br><span class="line"><span class="comment"># 创建四个数据</span></span><br><span class="line">create database hive DEFAULT CHARSET utf8; </span><br><span class="line">create database rman DEFAULT CHARSET utf8;</span><br><span class="line">create database oozie DEFAULT CHARSET utf8;</span><br><span class="line">create database hue DEFAULT CHARSET utf8;</span><br><span class="line"><span class="comment"># 创建四个用户名</span></span><br><span class="line">grant all on hive.* TO <span class="string">'hive'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'123456'</span>;</span><br><span class="line">grant all on rman.* TO <span class="string">'rman'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'123456'</span>;</span><br><span class="line">grant all on oozie.* TO <span class="string">'oozie'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'123456'</span>;</span><br><span class="line">grant all on hue.* TO <span class="string">'hue'</span>@<span class="string">'%'</span> IDENTIFIED BY <span class="string">'123456'</span>;</span><br></pre></td></tr></table></figure></div>
 <p>此外，这里还常常出现 <strong>Hue</strong> 测试连接数据库时失败，这种情况是因为 <em>依赖包</em> 没有安装，这里给出我测试成功需要的依赖包，更详细的依赖包查看 <a href="https://www.cloudera.com/documentation/enterprise/5-9-x/topics/cm_ig_install_path_c.html" target="_blank" rel="noopener">官网的 Install Package Dependencies 说明</a>：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 仅master主机</span></span><br><span class="line">apt-get install python-mysqldb</span><br><span class="line">apt-get install libxslt1.1</span><br><span class="line">apt-get install apache2</span><br><span class="line">apt-get install libssl-dev</span><br></pre></td></tr></table></figure></div>
 <p>然后，点击 <em>测试连接</em>，成功后进行下一步</p>
-<p><img src="http://img.godjiyi.cn/cloudera13.jpg" alt></p>
-<h3 id="进行安装"><a href="#进行安装" class="headerlink" title="进行安装"></a>进行安装</h3><p><img src="http://img.godjiyi.cn/cloudera14.jpg" alt></p>
-<h3 id="安装成功"><a href="#安装成功" class="headerlink" title="安装成功"></a>安装成功</h3><p><img src="http://img.godjiyi.cn/cloudera15.jpg" alt></p>
-<h3 id="集群界面"><a href="#集群界面" class="headerlink" title="集群界面"></a>集群界面</h3><p><img src="http://img.godjiyi.cn/cloudera16.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera13.jpg" alt></p>
+<h3 id="进行安装"><a href="#进行安装" class="headerlink" title="进行安装"></a>进行安装</h3><p><img src="https://img.godjiyi.cn/cloudera14.jpg" alt></p>
+<h3 id="安装成功"><a href="#安装成功" class="headerlink" title="安装成功"></a>安装成功</h3><p><img src="https://img.godjiyi.cn/cloudera15.jpg" alt></p>
+<h3 id="集群界面"><a href="#集群界面" class="headerlink" title="集群界面"></a>集群界面</h3><p><img src="https://img.godjiyi.cn/cloudera16.jpg" alt></p>
 <h3 id="添加服务"><a href="#添加服务" class="headerlink" title="添加服务"></a>添加服务</h3><p>点击 <em>集群右侧倒三角，选择添加服务</em></p>
-<p><img src="http://img.godjiyi.cn/cloudera17.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera17.jpg" alt></p>
 <p>出现服务选择界面，自己根据需求选择 <em>Hadoop 生态中的应用</em>：</p>
-<p><img src="http://img.godjiyi.cn/cloudera18.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera18.jpg" alt></p>
 <h3 id="添加主机到集群"><a href="#添加主机到集群" class="headerlink" title="添加主机到集群"></a>添加主机到集群</h3><p>点击菜单栏上的 <em>主机–所有主机</em></p>
-<p><img src="http://img.godjiyi.cn/cloudera19.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera19.jpg" alt></p>
 <p>会看到当前集群的所有主机列表，点击右上角的 <em>向集群添加新主机</em></p>
-<p><img src="http://img.godjiyi.cn/cloudera20.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera20.jpg" alt></p>
 <p>进入添加主机流程，大家一步一步下一步安装即可</p>
-<p><img src="http://img.godjiyi.cn/cloudera21.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/cloudera21.jpg" alt></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://www.cloudera.com/documentation/enterprise/5-9-x/topics/cm_ig_install_path_c.html" target="_blank" rel="noopener">Installation Path C - Manual Installation Using Cloudera Manager Tarballs</a></li>
 <li><a href="https://christchen.me/archives/217.html" target="_blank" rel="noopener">CDH-5.12.0 分布式集群的离线部署</a></li>
@@ -1238,7 +1238,7 @@
   <entry>
     <title>Git 学习笔记</title>
     <url>/2015/10/25/Gitstudy/</url>
-    <content><![CDATA[<h2 id="一、Git简介"><a href="#一、Git简介" class="headerlink" title="一、Git简介"></a>一、Git简介</h2><p><img src="http://img.godjiyi.cn/gitstudy0.jpg" alt="git"></p>
+    <content><![CDATA[<h2 id="一、Git简介"><a href="#一、Git简介" class="headerlink" title="一、Git简介"></a>一、Git简介</h2><p><img src="https://img.godjiyi.cn/gitstudy0.jpg" alt="git"></p>
 <p><strong>Git</strong> 是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何大小项目的版本管理。与 <strong>CVS</strong> 相比，它不是把版本库放在集中的存储服务器，而是每个开发者电脑上都是一个版本库，无须联网就可以管理代码版本，并且分支管理更高效，切换更快捷方便，已经成为现在开发者主流版本控制工具。</p>
 <h2 id="二、前言"><a href="#二、前言" class="headerlink" title="二、前言"></a>二、前言</h2><p><strong>Git</strong> 仓库初始的创建通常有两种方式，<strong>一种是自己本地创建项目</strong>，再链接到远程仓库。<strong>另一种是先创建远程仓库</strong>，再将远程仓库克隆 ( <code>git clone</code> ) 到本地。接下来我就分别从这两个方式讲解。</p>
 <a id="more"></a>
@@ -1271,7 +1271,7 @@
 <li><strong>一种是新添加文件后</strong>，显示 <em>Untracked files(提示有未跟踪的文件)</em></li>
 </ul>
 <h4 id="2-git-diff"><a href="#2-git-diff" class="headerlink" title="(2). git diff"></a>(2). git diff</h4><p><code>$ git diff</code>命令描述图为:</p>
-<p><img src="http://img.godjiyi.cn/gitstudygitstudy-diff.png" alt="diff"></p>
+<p><img src="https://img.godjiyi.cn/gitstudygitstudy-diff.png" alt="diff"></p>
 <ul>
 <li><p>这个命令的理解点就是在参照物，也就是对比双方是谁。</p>
 </li>
@@ -1284,9 +1284,9 @@
 <h4 id="3-git-log"><a href="#3-git-log" class="headerlink" title="(3). git log"></a>(3). git log</h4><p><code>git log</code> 主要显示提交版本历史记录</p>
 <ul>
 <li><code>$ git log</code> 或者 <code>$ git log --pretty=oneline</code> 可以显示我们提交版本的记录，按照从近到远的版本显示。</li>
-<li><p><code>$ git log --graph --pretty=oneline</code> 可以显示分支状态：<br><img src="http://img.godjiyi.cn/gitstudygitstudy-gitlog.png" alt="gitlog"></p>
+<li><p><code>$ git log --graph --pretty=oneline</code> 可以显示分支状态：<br><img src="https://img.godjiyi.cn/gitstudygitstudy-gitlog.png" alt="gitlog"></p>
 </li>
-<li><p><code>$ git log --graph --pretty=oneline --abbrev-commit</code>这个是简短形式：<br><img src="http://img.godjiyi.cn/gitstudygitstudy-gitshortlog.png" alt="shortlog"></p>
+<li><p><code>$ git log --graph --pretty=oneline --abbrev-commit</code>这个是简短形式：<br><img src="https://img.godjiyi.cn/gitstudygitstudy-gitshortlog.png" alt="shortlog"></p>
 </li>
 <li><p>主要是 <code>git log</code> 结合多种参数显示各种结果具体参数请看 <a href="http://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2" target="_blank" rel="noopener">git log参数</a></p>
 </li>
@@ -1319,7 +1319,7 @@
 <p><strong>解决冲突:</strong></p>
 <p>很多时候用Fast-forward方式直接提交是不成功的，因为有冲突存在，所以我们要手动解决冲突</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">git merge feature1 //合并feature1分支</span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/gitstudygitstudy-merge.png" alt="merge"></p>
+<p><img src="https://img.godjiyi.cn/gitstudygitstudy-merge.png" alt="merge"></p>
 <p>不成功的结果如上图，Git用 <code>&lt;&lt;&lt;&lt;&lt;</code> 这个箭头表示 <em>HEAD</em> 当前分支，<code>====</code> 这个为分隔线，<code>&gt;&gt;&gt;&gt;&gt;&gt;</code> 这个为 <em>feature1</em> 分支里的内容，只要手动删除这三处并自己选择内容作为最终结果。</p>
 <p><strong>合并分支禁ff模式合并:</strong></p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">git merge --no-ff -m <span class="string">"merge no ff"</span> dev //采用no ff模式合并并添加了信息提示</span><br></pre></td></tr></table></figure></div>
@@ -1353,9 +1353,9 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">git tag -d v0.9 //删除标签0.9，创建的分支默认都在本地，不会自动推送到远程。</span><br><span class="line">git push origin v1.0 //将标签1.0推送到远程</span><br><span class="line">git push origin --tags //一次性将全部未推送的标签推送到远程</span><br><span class="line">//要删除远程标签，有点麻烦的</span><br><span class="line">git tag -d v0.9 //先从本地删除标签</span><br><span class="line">git push origin :refs/tags/v0.9 //然后再从远程删除标签</span><br></pre></td></tr></table></figure></div>
 <h2 id="九、图形化界面"><a href="#九、图形化界面" class="headerlink" title="九、图形化界面"></a>九、图形化界面</h2><hr>
 <h3 id="1-Git-自带图形化界面的"><a href="#1-Git-自带图形化界面的" class="headerlink" title="1. Git 自带图形化界面的"></a>1. Git 自带图形化界面的</h3><p>(1). 在 <em>git bash</em> 里输入 <code>git gui</code> 就会显示图形化界面。</p>
-<p><img src="http://img.godjiyi.cn/gitstudygitstudy-gitgui.png" alt="gui"></p>
+<p><img src="https://img.godjiyi.cn/gitstudygitstudy-gitgui.png" alt="gui"></p>
 <p>(2). 在git bash里输入<code>gitk</code> 就会显示图形化的log界面</p>
-<p><img src="http://img.godjiyi.cn/gitstudygitstudy-gitloggui.png" alt="guilog"></p>
+<p><img src="https://img.godjiyi.cn/gitstudygitstudy-gitloggui.png" alt="guilog"></p>
 <h3 id="2-SourceTree"><a href="#2-SourceTree" class="headerlink" title="2. SourceTree"></a>2. SourceTree</h3><p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a> </p>
 <p>这个自己看吧，这个工具在生产环境中应该用的最多的，但是就是下载后注册需要翻墙的，这里不多介绍，<strong>Mac</strong> 版本的比较容易使用。</p>
 <h2 id="十、Git-教程链接"><a href="#十、Git-教程链接" class="headerlink" title="十、Git 教程链接"></a>十、Git 教程链接</h2><ol>
@@ -1397,7 +1397,7 @@
 <p>关闭服务：<code>net stop mysql</code></p>
 <p>如果大家按照第四部安装的，通常默认服务是开机自启动的，默认可以正常使用，如果用了什么安全管家加速电脑开机关闭了 <strong>MySQL</strong> 的服务，则就需要在使用 <strong>MySQL</strong> 服务前先开启下 <strong>MySQL</strong> 服务。</p>
 <p>大家可以 [ 右击我的电脑 – 管理 – 服务和应用程序展开 – 服务 ] 里面就可以找到 <strong>MySQL</strong> 服务，如果大家想禁止开机自启或者想开机自启都可以在这里设置。</p>
-<p><img src="http://img.godjiyi.cn/1.png" alt="mysql服务"></p>
+<p><img src="https://img.godjiyi.cn/1.png" alt="mysql服务"></p>
 <h3 id="登录使用-MySQL"><a href="#登录使用-MySQL" class="headerlink" title="登录使用 MySQL"></a>登录使用 MySQL</h3><p>开启服务后，用 <code>mysql -u root -p</code> 回车后会让输入密码，默认密码为空，直接再回车就进入了 <strong>MySQL</strong> 数据库操作里了。</p>
 <h2 id="MySQL-编码设置"><a href="#MySQL-编码设置" class="headerlink" title="MySQL 编码设置"></a>MySQL 编码设置</h2><h3 id="配置文件设置"><a href="#配置文件设置" class="headerlink" title="配置文件设置"></a>配置文件设置</h3><p>在 <strong>my.ini</strong> 文件里写入以下配置</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure></div>
@@ -1478,7 +1478,7 @@
 <p>排序算法实现很简单，其重点是要实现安卓 <strong>View</strong> 跟随排序的动态变化。</p>
 <p>由于计算机执行排序算法的高效性，对一定数量的数组排序都是 <strong>毫秒级</strong> 的，因此我们要考虑 <strong>放大排序时间</strong>，给可视化界面完整的动态过程。</p>
 <h2 id="一、总体功能界面"><a href="#一、总体功能界面" class="headerlink" title="一、总体功能界面"></a>一、总体功能界面</h2><hr>
-<h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="http://img.godjiyi.cn/jysortwelcome.gif" alt="maingif"></p>
+<h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="https://img.godjiyi.cn/jysortwelcome.gif" alt="maingif"></p>
 <a id="more"></a>
 <h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
 <li>六种排序算法完成</li>
@@ -1506,12 +1506,12 @@
 <p>因此，我们需要让排序算法尽可能地延长一定时间，达到界面的变化可视化级别。</p>
 <p>我们在数组交换数据时发送消息给 <strong>Handler</strong> 处进行了一定的时间延迟，当然不会过长，此处设置了 <strong>10ms</strong>。( 也同时因为这样的设置，界面显示的耗时操作实际上并非算法真正的排序时间，而应该减去延迟时间乘以延迟操作的次数。)</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//交换的信号</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sleepAndSendMessage</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">    	 <span class="comment">//此处延迟10ms</span></span><br><span class="line">        Thread.sleep(<span class="number">10</span>);</span><br><span class="line">        Message message=<span class="keyword">new</span> Message();</span><br><span class="line">        message.what=WHAT_SORT_SWAP_VIEW;</span><br><span class="line">        message.arg1=i;</span><br><span class="line">        message.arg2=j;</span><br><span class="line">        handler.sendMessage(message);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h2 id="三、动画演示"><a href="#三、动画演示" class="headerlink" title="三、动画演示"></a>三、动画演示</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><img src="http://img.godjiyi.cn/jysortfast.gif" alt="fast"></p>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><img src="http://img.godjiyi.cn/jysortheap.gif" alt="heap"></p>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><img src="http://img.godjiyi.cn/jysortmerge.gif" alt="merge"></p>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p><img src="http://img.godjiyi.cn/jysortinsert.gif" alt="insert"></p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><img src="http://img.godjiyi.cn/jysortbubble.gif" alt="bubble"></p>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p><img src="http://img.godjiyi.cn/jysortselect.gif" alt="select"></p>
+<h2 id="三、动画演示"><a href="#三、动画演示" class="headerlink" title="三、动画演示"></a>三、动画演示</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><img src="https://img.godjiyi.cn/jysortfast.gif" alt="fast"></p>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><img src="https://img.godjiyi.cn/jysortheap.gif" alt="heap"></p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><img src="https://img.godjiyi.cn/jysortmerge.gif" alt="merge"></p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p><img src="https://img.godjiyi.cn/jysortinsert.gif" alt="insert"></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><img src="https://img.godjiyi.cn/jysortbubble.gif" alt="bubble"></p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p><img src="https://img.godjiyi.cn/jysortselect.gif" alt="select"></p>
 <h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><h3 id="项目-1"><a href="#项目-1" class="headerlink" title="项目"></a>项目</h3><ol>
 <li>Android图形化排序地址：<a href="https://github.com/jiyiren/JYSort" target="_blank" rel="noopener">https://github.com/jiyiren/JYSort</a></li>
 <li>C实现排序项目地址：<a href="https://github.com/jiyiren/CSort" target="_blank" rel="noopener">https://github.com/jiyiren/CSort</a></li>
@@ -1794,7 +1794,7 @@
 <p>普通方法的同步与静态方法的同步互不冲突。也就是说 <em>Thread1</em> 获得该类的一个对象并调用了 a1 方法，Thread2 线程则不能调用 a1, a2 方法，但是可以调用 b1, b2, c 方法！</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一个类的对象锁和另一个类的对象锁是没有关联的，当一个线程获得 <em>A</em> 类的对象锁时，它同时也可以获得 <em>B</em> 类的对象锁。</p>
 <p>判断哪些方法可以调用，哪些资源可以访问主要看 <code>synchronized</code> 修饰的是什么！我画了张图仅供参考：</p>
-<p><img src="http://img.godjiyi.cn/synchronize_kind.jpg" alt="synchronized分类图"></p>
+<p><img src="https://img.godjiyi.cn/synchronize_kind.jpg" alt="synchronized分类图"></p>
 <p>如果还是很难理解，<a href="http://www.cnblogs.com/GnagWang/archive/2011/02/27/1966606.html" target="_blank" rel="noopener">http://www.cnblogs.com/GnagWang/archive/2011/02/27/1966606.html</a> 这里面有例子大家可以参考看下！</p>
 ]]></content>
       <categories>
@@ -1863,9 +1863,9 @@
 <li><em>Kafka Cluster</em>: 由多个 <strong>Borker</strong> 和一套 <strong>Zookeeper</strong> 组成，<strong>Broker</strong> 之间无主从关系，地位平等，可任意增删节点，这主要由 <strong>Zookeeper</strong> 维护；</li>
 <li><em>Consumer</em>: 数据的消费客户端，用于从 <strong>Broker</strong> 中订阅/拉取消息；</li>
 </ol>
-<p><img src="http://img.godjiyi.cn/csdnblog20180805003823.png" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblog20180805003823.png" alt></p>
 <h2 id="微观设计"><a href="#微观设计" class="headerlink" title="微观设计"></a>微观设计</h2><p>Kafka <strong>内部消息传递流程</strong> 如下图所示：</p>
-<p><img src="http://img.godjiyi.cn/csdnblogkafka-arc.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogkafka-arc.jpg" alt></p>
 <h3 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a>Topic</h3><p>一个 <strong>消息主题</strong>，也就是一个分布式业务消息队列。不同的生产者将不同的业务消息分发到不同的 <strong>topic</strong> 上，这样，消费者就可以根据 <strong>topic</strong> 进行对应的业务消息消费了。</p>
 <h3 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h3><p>这个就是 topic 分布式的体现，由于一个 topic 就是一个业务消息，这些消息可能会源源不断来，并且有可能会同时并发很大地进入队列，将这些消息合理地分布在分布式机器中则可以保证机器的负载均衡性，同时也可以使得不同的消费者可以同时拉取不同 partition 中的消息，可提升消费者并发性能，这里总结下 <strong>partition</strong> 特性：</p>
 <ul>
@@ -1905,7 +1905,7 @@
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">开源一族，与众不同</p>
 
 <p>最近频繁使用服务器环境，以前也搭建过，但那些命令以及配置都不能铭记于心，因此今天借此记录下，以便于以后参考。记录主要有：<strong>LAMP</strong> ( <em>Linux, Apache, Mysql, Php</em> ) 以及 <strong>Git</strong>, <strong>Java</strong>, <strong>Tomcat</strong>, <strong>Ftp</strong> 等安装命令及配置过程。</p>
-<div align="center"><br><img src="http://img.godjiyi.cn/lamp.jpg" align="center"><br></div>
+<div align="center"><br><img src="https://img.godjiyi.cn/lamp.jpg" align="center"><br></div>
 
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
 <p>作为程序员，对于服务器的部署还是有必要会的，因为这决定了自己独立的高度。目前而言，服务器操作系统性能最好的还是 Linux，不要说自己不会，没有不会的程序员，只有懒惰的程序员。</p>
@@ -2229,12 +2229,12 @@
 
 <p>最近重新把老旧的台式机拿来耍，重新安装了 <strong>Ubuntu 16.04</strong>,但感觉自带的桌面效果不是很好，于是就查找网上的优化博客按套路来整合，这里记录下自己的实现过程。</p>
 <p>先看下效果</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-1.png" alt="desktop"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-1.png" alt="desktop"></p>
 <a id="more"></a>
-<p><img src="http://img.godjiyi.cn/ubuntu-5.png" alt="workspace"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-5.png" alt="workspace"></p>
 <h2 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h2><p>主要对系统默认的设置进行一些配置优化,我推荐系统语言为英语，但是可以安装中文输入法。</p>
 <h3 id="一、选择软件源"><a href="#一、选择软件源" class="headerlink" title="一、选择软件源"></a>一、选择软件源</h3><p><strong>System Setting(系统设置)–&gt;Software &amp; Updates(软件更新)–&gt;Ubuntu Software(ubuntu软件)–&gt;Download from(下载源)</strong></p>
-<p><img src="http://img.godjiyi.cn/ubuntu-06.jpg" alt="源设置"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-06.jpg" alt="源设置"></p>
 <ul>
 <li><em>上图的 3</em>: 系统会根据所有服务器的延迟自动选择最快的服务器</li>
 <li><em>上图的 4</em>: 为中国区的一些服务器，大家可以根据自身喜好选择自己喜欢的服务器镜像</li>
@@ -2253,7 +2253,7 @@
 <p><strong>更新源与软件</strong>:</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update <span class="comment">#更新源</span></span><br><span class="line">sudo apt-get upgrade <span class="comment">#更新所有软件版本到源版本</span></span><br></pre></td></tr></table></figure></div>
 <h3 id="三、安装中文输入法"><a href="#三、安装中文输入法" class="headerlink" title="三、安装中文输入法"></a>三、安装中文输入法</h3><p><strong>System Setting(系统设置) –&gt; Language Support(语言支持) –&gt; Language(语言版块) –&gt; Install/Remove Languages(安装添加语言包) –&gt; Chinese(simplified)[中文(简体中文)] –&gt; Apply(应用)</strong></p>
-<h4 id="添加中文语言包"><a href="#添加中文语言包" class="headerlink" title="添加中文语言包"></a>添加中文语言包</h4><p><img src="http://img.godjiyi.cn/ubuntu-07.jpg" alt="添加中文语言包"></p>
+<h4 id="添加中文语言包"><a href="#添加中文语言包" class="headerlink" title="添加中文语言包"></a>添加中文语言包</h4><p><img src="https://img.godjiyi.cn/ubuntu-07.jpg" alt="添加中文语言包"></p>
 <h4 id="Ibus框架输入法"><a href="#Ibus框架输入法" class="headerlink" title="Ibus框架输入法"></a>Ibus框架输入法</h4><p>安装 <strong>ibush</strong> 框架：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4</span><br></pre></td></tr></table></figure></div>
 <p>启动 <strong>ibus</strong> 框架：</p>
@@ -2263,10 +2263,10 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ibus-sunpinyin <span class="comment">#sun拼音</span></span><br><span class="line">sudo apt-get install ibus-pinyin <span class="comment">#简单拼音</span></span><br><span class="line">sudo apt-get install ibus-googlepinyin <span class="comment">#谷歌拼音</span></span><br><span class="line">sudo apt-get install ibus-table-wubi <span class="comment">#五笔输入引擎</span></span><br></pre></td></tr></table></figure></div>
 <p>设置ibus框架：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ibus-setup <span class="comment">#调出ibus设置界面</span></span><br></pre></td></tr></table></figure></div>
-<p><img src="http://img.godjiyi.cn/ibus-set.jpg" alt="ibus设置界面"></p>
+<p><img src="https://img.godjiyi.cn/ibus-set.jpg" alt="ibus设置界面"></p>
 <p>配置系统输入法：</p>
 <p><em>System Setting(系统设置) –&gt; Text Entry(输入法)</em></p>
-<p><img src="http://img.godjiyi.cn/text-entry.jpg" alt="Text Entry设置"></p>
+<p><img src="https://img.godjiyi.cn/text-entry.jpg" alt="Text Entry设置"></p>
 <h4 id="Fcitx-框架输入法"><a href="#Fcitx-框架输入法" class="headerlink" title="Fcitx 框架输入法"></a>Fcitx 框架输入法</h4><p>安装 <strong>Fcitx</strong> 框架：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install fcitx</span><br></pre></td></tr></table></figure></div>
 <p>安装 <strong>Fcitx</strong> 的配置工具：</p>
@@ -2274,28 +2274,28 @@
 <p>安装输入法引擎：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install fcitx-sunpinyin <span class="comment">#sun拼音</span></span><br><span class="line">sudo apt-get install fcitx-pinyin    <span class="comment">#简单拼音</span></span><br><span class="line">sudo apt-get install fcitx-googlepinyin <span class="comment">#谷歌拼音</span></span><br><span class="line">sudo apt-get install fcitx-table-wbpy  <span class="comment">#五笔输入</span></span><br></pre></td></tr></table></figure></div>
 <p>设置系统输入法框架：</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-08.jpg" alt="fcitx框架"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-08.jpg" alt="fcitx框架"></p>
 <p>重启或者注销，以使之生效</p>
 <p>配置系统输入法：</p>
 <p><em>System Setting(系统设置) –&gt; Text Entry(输入法)</em></p>
-<p><img src="http://img.godjiyi.cn/ubuntu-09.jpg" alt="选择源"><br><img src="http://img.godjiyi.cn/ubuntu-10.jpg" alt="添加输入法"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-09.jpg" alt="选择源"><br><img src="https://img.godjiyi.cn/ubuntu-10.jpg" alt="添加输入法"></p>
 <p>添加搜狗输入法：</p>
 <p>下载地址:<a href="http://pinyin.sogou.com/linux/" target="_blank" rel="noopener">http://pinyin.sogou.com/linux/</a></p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb <span class="comment">#后面名称替换为自己</span></span><br></pre></td></tr></table></figure></div>
 <h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><p>主要安装主题、字体、图标、软件来进行风格的设置，整体软件的配置也会增加系统的美观性</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-1.png" alt="desktop"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-1.png" alt="desktop"></p>
 <h3 id="一、主题工具"><a href="#一、主题工具" class="headerlink" title="一、主题工具"></a>一、主题工具</h3><h4 id="unity-tweak-tool"><a href="#unity-tweak-tool" class="headerlink" title="unity-tweak-tool"></a>unity-tweak-tool</h4><p>github地址:<a href="https://github.com/freyja-dev/unity-tweak-tool" target="_blank" rel="noopener">https://github.com/freyja-dev/unity-tweak-tool</a></p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install unity-tweak-tool</span><br></pre></td></tr></table></figure></div>
 <p>安装后在搜索中搜索unity-tweak-tool,点击打开，界面如下:</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-11.jpg" alt="unity-tweak-tool"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-11.jpg" alt="unity-tweak-tool"></p>
 <h4 id="Flatabulous-主题安装"><a href="#Flatabulous-主题安装" class="headerlink" title="Flatabulous 主题安装"></a>Flatabulous 主题安装</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/themes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install flatabulous-theme</span><br></pre></td></tr></table></figure></div>
 <h4 id="ultra-flat-icons-图标安装"><a href="#ultra-flat-icons-图标安装" class="headerlink" title="ultra-flat-icons 图标安装"></a>ultra-flat-icons 图标安装</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/icons</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ultra-flat-icons</span><br></pre></td></tr></table></figure></div>
 <h4 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h4><p>打开 <strong>unity-tweak-tool</strong>, 选择 <strong>Appearance</strong> ( 外观 ) 下的 <strong>Theme</strong> ( 主题 ):</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-14.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-14.jpg" alt></p>
 <p>主题选择:</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-12.jpg" alt="Flatabulous主题"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-12.jpg" alt="Flatabulous主题"></p>
 <p>图标选择:</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-13.jpg" alt="ultra-flat"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-13.jpg" alt="ultra-flat"></p>
 <h4 id="爱壁纸"><a href="#爱壁纸" class="headerlink" title="爱壁纸"></a>爱壁纸</h4><p>官网地址:<a href="http://www.lovebizhi.com/linux.html" target="_blank" rel="noopener">http://www.lovebizhi.com/linux.html</a></p>
 <p>推荐下载 deb 版的软件包，因为我们可以安装一个便捷的 deb 安装管理器 – <strong>GDebi 安装器</strong></p>
 <p>大家可以在ubuntu软件中心下载也可以用以下命令安装:</p>
@@ -2304,7 +2304,7 @@
 <p>当然你可以不用此工具，直接用命令安装也可以的:</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i LoveWallpaper4Linux.deb</span><br></pre></td></tr></table></figure></div>
 <p>安装好后，在搜索中搜索 <strong>Love</strong>，打开爱壁纸界面:</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-15.jpg" alt="爱壁纸"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-15.jpg" alt="爱壁纸"></p>
 <h3 id="二、开发工具"><a href="#二、开发工具" class="headerlink" title="二、开发工具"></a>二、开发工具</h3><p><strong>git</strong> 工具：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></div>
 <p><strong>vim</strong> 工具：</p>
@@ -2325,12 +2325,12 @@
 <p>重新登录的默认 <strong>zsh</strong> 就交给 <strong>oh-my-zsh</strong> 管理了，我们用 <strong>oh-my-zsh</strong> 主要是使用其主题，因此我们可以修改配置文件 <code>~/.zshrc</code></p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="comment">#将ZSH_THEME="robbyrussell",修改为如下:</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br></pre></td></tr></table></figure></div>
 <p>最终效果：</p>
-<p><img src="http://img.godjiyi.cn/ubuntu-3.png" alt="program"></p>
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><h3 id="桌面"><a href="#桌面" class="headerlink" title="桌面"></a>桌面</h3><p><img src="http://img.godjiyi.cn/ubuntu-1.png" alt="desktop"></p>
-<h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="http://img.godjiyi.cn/ubuntu-2.png" alt="command"></p>
-<h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><p><img src="http://img.godjiyi.cn/ubuntu-3.png" alt="program"></p>
-<h3 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h3><p><img src="http://img.godjiyi.cn/ubuntu-4.png" alt="window"></p>
-<h3 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h3><p><img src="http://img.godjiyi.cn/ubuntu-5.png" alt="workspace"></p>
+<p><img src="https://img.godjiyi.cn/ubuntu-3.png" alt="program"></p>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><h3 id="桌面"><a href="#桌面" class="headerlink" title="桌面"></a>桌面</h3><p><img src="https://img.godjiyi.cn/ubuntu-1.png" alt="desktop"></p>
+<h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><p><img src="https://img.godjiyi.cn/ubuntu-2.png" alt="command"></p>
+<h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><p><img src="https://img.godjiyi.cn/ubuntu-3.png" alt="program"></p>
+<h3 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h3><p><img src="https://img.godjiyi.cn/ubuntu-4.png" alt="window"></p>
+<h3 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h3><p><img src="https://img.godjiyi.cn/ubuntu-5.png" alt="workspace"></p>
 <h2 id="丰富的其他应用"><a href="#丰富的其他应用" class="headerlink" title="丰富的其他应用"></a>丰富的其他应用</h2><p>(1). 网易云音乐</p>
 <p>下载地址:<a href="http://music.163.com/#/download" target="_blank" rel="noopener">http://music.163.com/#/download</a></p>
 <p>(2). WPS文档工具</p>
@@ -2542,9 +2542,9 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">java -jar jvmexit-example.jar</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure></div>
 <p>我们可以看到工作线程每隔 <strong>1</strong> 秒输出一个数字，此时如果我们来通过正常和强制执行看看他们相应的输出。</p>
 <p>正常结束 <code>kill -2 [PID]</code> 或者 <code>kill -15 [PID]</code>：</p>
-<p><img src="http://img.godjiyi.cn/csdnblogjvmexit01.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogjvmexit01.jpg" alt></p>
 <p>强制结束 <code>kill -9 [PID]</code> :</p>
-<p><img src="http://img.godjiyi.cn/csdnblogjvmexit02.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogjvmexit02.jpg" alt></p>
 <p>从中我们可以看出 <strong>正常结束</strong> 方式，会 <em>先调用收尾线程</em>，然后再结束，而 <strong>强制结束</strong> 则直接 <em>杀死所有线程</em>。因此，这里给出优雅结束进程说明：</p>
 <ul>
 <li>先定义自己的 <strong>收尾线程</strong> 要完成的任务，比如：清理内存，将未完成的 IO 操作完成，删除缓存文件等等；</li>
@@ -2563,7 +2563,7 @@
 <p>执行结果是一样的，每秒输出一个数字，那我们来分别执行:</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">// pid 换成自己的进程 ID</span><br><span class="line">kill -2 [PID]</span><br><span class="line">kill -15 [PID]</span><br><span class="line">kill -12 [PID]</span><br><span class="line">kill -9 [PID]</span><br></pre></td></tr></table></figure></div>
 <p>得到的结果如下：</p>
-<p><img src="http://img.godjiyi.cn/csdnblogjvmexit03.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogjvmexit03.jpg" alt></p>
 <p>从中我们可以看出自定义的信号处理方式，<strong>正常结束的信号</strong> ( <strong>SIGINT(2)</strong> 和 <strong>SIGTERM(15)</strong> ) 都不会结束进程，而只是执行自己自定义的方法，然而 <strong>强制结束信号</strong> ( <strong>SIGKILL(9)</strong> ) 则不会被自定义监控，大家自己可以尝试下在 <em>Main</em> 函数中注册 <em>KILL</em> 信号，如下：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">Signal.handle(<span class="keyword">new</span> Signal(<span class="string">"KILL"</span>), signalHandlerImp);    <span class="comment">// 9 : 强制终止</span></span><br></pre></td></tr></table></figure></div>
 <p>这个在运行的时候就会报错，因此 <strong>SIGKILL(9)</strong> 信号是唯一不能够被自定义的信号。</p>
@@ -2584,7 +2584,7 @@
 </ol>
 <p>那这两种方式哪个更好点？或者说适应性更广泛一点？</p>
 <p>这里我参考了 <a href="https://tech.imdada.cn/2017/06/18/jvm-safe-exit/" target="_blank" rel="noopener">JVM 安全退出</a> 这篇文章，它给出了 JVM 关闭的不止有 <strong>正常关闭</strong>、<strong>强制关闭</strong> 还有一种 <strong>异常关闭</strong> 如下图：</p>
-<p><img src="http://img.godjiyi.cn/csdnblogjvmexit04.bmp" alt></p>
+<p><img src="https://img.godjiyi.cn/csdnblogjvmexit04.bmp" alt></p>
 <p>这种方式还是会调用以 <code>Runtime.getRuntime().addShutdownHook(new ShudownHookThread());</code> 此方法注册的 <strong>收尾线程</strong> 的，而不会触发自定义的信号通信的。因此，还是第一种默认信号处理机制，通过 <strong>Hook</strong> 线程方式适应性更广泛。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://tech.imdada.cn/2017/06/18/jvm-safe-exit/" target="_blank" rel="noopener">JVM 安全退出</a></li>
@@ -2628,11 +2628,11 @@
 <p><em>注意</em>：这个网址 <em>不是免费的</em>，各大高校访问会根据学校 ip 自动登录就可以检索了，因为高校通常购买了使用权，但如果使用的普通外网则不能够访问。</p>
 </blockquote>
 <p>官网首页–默认为 <strong>Web of Science</strong> 板块,查询 <strong>SCI</strong> 文章:</p>
-<p><img src="http://img.godjiyi.cn/sciarticle2.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle2.jpg" alt></p>
 <p>其次– <strong>JCR</strong> 板块，查询期刊影响因子:</p>
-<p><img src="http://img.godjiyi.cn/sciarticle3.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle3.jpg" alt></p>
 <p>另外– <strong>ESI</strong> 板块，查询论文、作者、机构等排名:</p>
-<p><img src="http://img.godjiyi.cn/sciarticle4.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle4.jpg" alt></p>
 <h3 id="EI"><a href="#EI" class="headerlink" title="EI"></a>EI</h3><p><strong>EI</strong> 即 <em>The Engineering Index</em> 为 <strong>《工程索引》</strong>，由 <em>美国工程师学会联合会</em> 于 1884 年创办的历史上最悠久的一部大型综合性检索工具,<strong>EI</strong> 每月出版1期，文摘 1.3 万至 1.4 万条；每期附有主题索引与作者索引；每年还另外出版年卷本和年度索引，年度索引还增加了作者单位索引。收录文献几乎涉及 <strong>工程技术</strong> 各个领域。例如：动力、电工、电子、自动控制、矿冶、金属工艺、机械制造、土建、水利等。它具有综合性强、资料来源广、地理覆盖面广、报道量大、报道质量高、权威性强等特点。</p>
 <ul>
 <li>这个是 <em>EI数据库官网</em>：<a href="http://www.engineeringvillage.com" target="_blank" rel="noopener">http://www.engineeringvillage.com</a></li>
@@ -2648,16 +2648,16 @@
 <li>与IEEE相似概念的有：<strong>ACM</strong> (<em>Association for Computing Machinery</em> ) 中文：<em>国际计算机学会</em>。ACM是一个世界性的计算机从业员专业组织，创立于1947年。 <strong>CCF</strong> (<em>China Computer Federation</em>),<em>中国计算机学会</em>,成立于1962年，是中国计算机科学与技术领域群众性学术团体。</li>
 </ol>
 <h3 id="CCF"><a href="#CCF" class="headerlink" title="CCF"></a>CCF</h3><p><strong>CCF</strong> : 即 <em>China Computer Federation</em> 为 <strong>中国计算机学会</strong>，成立于 1962 年，是中国 <strong>计算机科学与技术领域</strong> 群众性学术团体。注意此处是专注 <strong>计算机科学与技术</strong>，因此很多计算机专业的学院都会要求发表的论文为 <em><a href="http://www.ccf.org.cn/xspj/gyml/" target="_blank" rel="noopener">CCF推荐会议或期刊</a></em> 论文,CCF自动将各个期刊和会议分为 <em>A、B、C类</em>，A 类为顶会期刊或会议。</p>
-<p><img src="http://img.godjiyi.cn/sciarticle5.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle5.jpg" alt></p>
 <h3 id="中科院JCR期刊分区"><a href="#中科院JCR期刊分区" class="headerlink" title="中科院JCR期刊分区"></a>中科院JCR期刊分区</h3><p><strong>中科院JCR期刊分区</strong> : 分区是为了区别期刊的影响力等级，这与 <strong>CCF</strong> 中的 A类、B类、C类是同一个意思，只不过这里通常划分为四个分区。而分区主要还是基于 <em>汤森路透公司</em>(ISI隶属于此公司)的 <em>JCR(《期刊引用报告》)</em>, JCR 中定义了的 <em>影响因子</em> ( Impact Factor 简称 IF )就是决定分区方法的主要因素。分区也主要分为两种分区方式，一个就是汤森路透公司自己的分区方法 – <strong>汤森路透分区法</strong>，另外就是我们中国中科院的分区方法– <strong>中国科学院分区法</strong>，两者分区区别请看 <a href="http://blog.163.com/ly7148@126/blog/static/16646527620153154302991/" target="_blank" rel="noopener">SCI汤森路透分区法和中国科学院分区法的区别</a></p>
 <p>(1). <strong>汤森路透分区法</strong> : 检索是通过上文提到的 <em><a href="http://www.webofknowledge.com" target="_blank" rel="noopener">Web of Knowledge</a></em> 中的 JCR模块查询。</p>
 <p>(2). <strong>中科院JCR期刊分区</strong> : 检索地址为：<a href="http://www.fenqubiao.com/" target="_blank" rel="noopener">http://www.fenqubiao.com/</a>,这也需要账号的，高校通常会提供。</p>
 <p><em>首页登录</em></p>
-<p><img src="http://img.godjiyi.cn/sciarticle6.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle6.jpg" alt></p>
 <p><em>浏览期刊排名</em></p>
-<p><img src="http://img.godjiyi.cn/sciarticle7.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle7.jpg" alt></p>
 <p><em>检索服务</em></p>
-<p><img src="http://img.godjiyi.cn/sciarticle8.jpg" alt><br><img src="http://img.godjiyi.cn/sciarticle9.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle8.jpg" alt><br><img src="https://img.godjiyi.cn/sciarticle9.jpg" alt></p>
 <h3 id="国内索引服务"><a href="#国内索引服务" class="headerlink" title="国内索引服务"></a>国内索引服务</h3><p>上面讲的核心都是国外提供的索引服务，对于国内的，也是有的,下面这些来源于知乎，地址：<a href="https://www.zhihu.com/question/31558495" target="_blank" rel="noopener">https://www.zhihu.com/question/31558495</a></p>
 <ol>
 <li><strong>中文核心期刊要目总览</strong> ( <em>PKU</em> ): 因是北京大学 图书馆主持发布的，俗称中文核心，北大核心。内容包含全面，既有自然科学类又有人文社会科学类。(<em>北大图书馆带领一堆专家玩小聚会，玩出了境界，门类齐全但每个门类都很少，两千种左右。武林至尊谁敢不从，一般没有特别要求的核心都是说它</em>)</li>
@@ -2675,7 +2675,7 @@
 <li><strong>新华文摘</strong>，新华文摘是人民出版社主办的是一个大型的综合性、学术性、资料性的文摘半月刊，其选登文章代表了诸领域的前沿思想。同上，收录的也是其他期刊已经发表的优秀文章。在有的职称评选条件中，人大复印资料和新华文摘被承认国家级核心刊物。</li>
 </ol>
 <h3 id="本校要求的索引平台"><a href="#本校要求的索引平台" class="headerlink" title="本校要求的索引平台"></a>本校要求的索引平台</h3><p>下面是我自己学校研究生论文要求平台而提供的说明：</p>
-<p><img src="http://img.godjiyi.cn/sciarticle10.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/sciarticle10.jpg" alt></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://www.zhihu.com/question/21111557" target="_blank" rel="noopener">SCI、EI、IEEE 是什么关系？国际会议、期刊、快报又有什么区别？</a></li>
 <li><a href="http://blog.sciencenet.cn/blog-408109-548440.html" target="_blank" rel="noopener">Web of Knowledge 与 Web of Science 以及 SCIE 之间的关系</a></li>
@@ -2713,7 +2713,7 @@
 <li>W3C: 万维网联盟</li>
 </ul>
 <p>时间线图示:</p>
-<p><img src="http://img.godjiyi.cn/jy_20200509001118.png" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_20200509001118.png" alt></p>
 <p>下面会分别对各个组织进行详细介绍。</p>
 <a id="more"></a>
 <h2 id="国际电工委员会-IEC"><a href="#国际电工委员会-IEC" class="headerlink" title="国际电工委员会( IEC )"></a>国际电工委员会( IEC )</h2><ul>
@@ -2842,7 +2842,7 @@
 <h2 id="一、如何学习Struts2框架"><a href="#一、如何学习Struts2框架" class="headerlink" title="一、如何学习Struts2框架"></a>一、如何学习Struts2框架</h2><h3 id="1、入手"><a href="#1、入手" class="headerlink" title="1、入手"></a>1、入手</h3><p>官网下载</p>
 <p>所有我们所要学习的目标，我们都要找到其最原始的地方，通常都有其自己的官网。<em>Struts2</em> 官网地址：<a href="http://struts.apache.org/" target="_blank" rel="noopener">http://struts.apache.org/</a>, 下载 zip 包到本地，解压后目录如下</p>
 <a id="more"></a>
-<p><img src="http://img.godjiyi.cn/strut21.png" alt></p>
+<p><img src="https://img.godjiyi.cn/strut21.png" alt></p>
 <p>目录介绍</p>
 <ul>
 <li><strong>apps</strong>为利用 <em>Struts2</em> 框架写的项目，后缀都是 <em>war</em>, 所以可以把他们放到 <em>Tomcat</em> 的 <em>webapps</em> 目录下直接运行。</li>
@@ -2853,7 +2853,7 @@
 <h3 id="2、使用-Struts2-框架"><a href="#2、使用-Struts2-框架" class="headerlink" title="2、使用 Struts2 框架"></a>2、使用 Struts2 框架</h3><p><em>使用框架实际上就是利用他们提供的依赖，使用他们的接口。所以我们只需将所用的框架的依赖添加到自己项目里，然后配置使用。</em></p>
 <p><strong>手动添加 jar 包</strong></p>
 <p>对于 <em>Struts2</em> 的依赖包都在 lib 文件夹里，但是 <em>lib</em> 下有很多包，当然不是每一个都加入项目。我们可以打开 <em>apps</em> 目录下的 <strong>struts2-blank.war</strong> 文件，直接解压缩得到文件夹，打开 <code>WEB-INF\lib</code> 目录，下面的包就是核心的几个需要包：</p>
-<p><img src="http://img.godjiyi.cn/strut22.png" alt></p>
+<p><img src="https://img.godjiyi.cn/strut22.png" alt></p>
 <p>把他们复制到自己的 web 项目 <code>WEB-INF/lib</code> 目录下面就可以用了。</p>
 <p><strong>Maven 管理 jar 包</strong></p>
 <p>用 <em>Maven</em> 管理则很简单，只需要在 <em>dependencies</em> 里加入</p>
