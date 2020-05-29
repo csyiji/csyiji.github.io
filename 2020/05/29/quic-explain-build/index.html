@@ -126,20 +126,21 @@
 <meta property="og:site_name" content="戈吉">
 <meta property="og:description" content="HTTP 已不再是全基于 TCP 了，QUIC 的发展终将带来 HTTP3  互联网的世界绝大部分的数据传输都是基于 HTTP 协议。自从 1990 年伯纳斯·李发明这 超文本传输协议(HTTP, HyperText Transfer Protocol) 后，于 1999 年 IETF 才正式发布 HTTP1.1(RFC 2616) 协议版本，而这个版本一用就是 15 年，至 2015 年 IET">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img.godjiyi.cn/jy_quic.png">
+<meta property="og:image" content="https://img.godjiyi.cn/jy_quic.jpg">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20200524171622.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20200524181808.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20200524183342.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20200524184711.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20200524195419.png">
-<meta property="og:image" content="http://img.godjiyi.cn/jy_quic46.png">
-<meta property="og:image" content="http://img.godjiyi.cn/jy_quic50.png">
-<meta property="og:image" content="http://img.godjiyi.cn/jy_http3.png">
-<meta property="og:updated_time" content="2020-05-29T14:20:02.846Z">
+<meta property="og:image" content="https://img.godjiyi.cn/jy_quic-lib.jpg">
+<meta property="og:image" content="https://img.godjiyi.cn/jy_quic46.png">
+<meta property="og:image" content="https://img.godjiyi.cn/jy_quic50.png">
+<meta property="og:image" content="https://img.godjiyi.cn/jy_http3.png">
+<meta property="og:updated_time" content="2020-05-29T14:49:17.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QUIC&#x2F;HTTP3 协议说明与站点构建">
 <meta name="twitter:description" content="HTTP 已不再是全基于 TCP 了，QUIC 的发展终将带来 HTTP3  互联网的世界绝大部分的数据传输都是基于 HTTP 协议。自从 1990 年伯纳斯·李发明这 超文本传输协议(HTTP, HyperText Transfer Protocol) 后，于 1999 年 IETF 才正式发布 HTTP1.1(RFC 2616) 协议版本，而这个版本一用就是 15 年，至 2015 年 IET">
-<meta name="twitter:image" content="https://img.godjiyi.cn/jy_quic.png">
+<meta name="twitter:image" content="https://img.godjiyi.cn/jy_quic.jpg">
 
 
 
@@ -474,7 +475,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">17k</span>
+                <span title="本文字数">14k</span>
               
 
               
@@ -488,7 +489,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">16 分钟</span>
+                <span title="阅读时长">12 分钟</span>
               
             </div>
           
@@ -515,7 +516,7 @@
 <li>本文将实现支持 QUIC/HTTP3 协议站点: <a href="https://http3.godjiyi.cn:9445/" target="_blank" rel="noopener">https://http3.godjiyi.cn:9445/</a></li>
 <li>个人实现 HTTP1.1/HTTP2/HTTP3 速度对比示例: <a href="https://demo.godjiyi.cn" target="_blank" rel="noopener">https://demo.godjiyi.cn</a></li>
 </ul>
-<p><img src="https://img.godjiyi.cn/jy_quic.png" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_quic.jpg" alt></p>
 <a id="more"></a>
 <h2 id="QUIC-与-HTTP3"><a href="#QUIC-与-HTTP3" class="headerlink" title="QUIC 与 HTTP3"></a>QUIC 与 HTTP3</h2><p>相信大家很早听说的下一代协议是 <strong>QUIC</strong>, 即 Quick UDP Internet Connections，意为<strong>快速UDP网络连接</strong>。该协议最早是由谷歌于 2013 推出的，项目首页: <a href="https://www.chromium.org/quic" target="_blank" rel="noopener">https://www.chromium.org/quic</a>，并且在谷歌自家的 Youtube 和搜索引擎上试验，有兴趣的可以看下 <a href="https://dl.acm.org/doi/pdf/10.1145/3098822.3098842" target="_blank" rel="noopener">The QUIC Transport Protocol - Design and Internet-Scale Deployment</a> 这篇谷歌发表的论文。下图是谷歌应用 QUIC 于搜索引擎的的搜索延迟降低的百分比。(标1的地方是当时谷歌发现了 Bug，到 标2处修复后重新上线。标3处则是谷歌进行了一次优化，所以性能有了逐步提高) 整体上能降低搜索 6% 的延迟。</p>
 <p><img alt="logo" width="500" height="300" src="https://img.godjiyi.cn/jy_20200524171622.png"></p>
@@ -580,55 +581,13 @@
 <li><a href="https://github.com/quicwg/base-drafts/wiki/Tools" target="_blank" rel="noopener">官方工作给的QUIC调试Tool</a></li>
 </ul>
 <p>大家可以看下，我自己对比了比较常用和著名的库，表格如下，希望对大家选择有帮助。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">库名</th>
-<th style="text-align:center">gQUIC/H3版本</th>
-<th style="text-align:center">最近更新</th>
-<th style="text-align:center">测试地址</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">建议</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="https://github.com/chromium/chromium" target="_blank" rel="noopener">chromium</a></td>
-<td style="text-align:center">Q043, Q046, Q050, Draft-25, Draft-27</td>
-<td style="text-align:center">几小时前</td>
-<td style="text-align:center"><a href="https://quic\.rocks:4433/" target="_blank" rel="noopener">https://quic\.rocks:4433/</a></td>
-<td style="text-align:center">谷歌开源浏览器内核，实现gQUIC和IETF手稿</td>
-<td style="text-align:center">推荐，但要难度大👍👍</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/devsisters/libquic" target="_blank" rel="noopener">libquic</a></td>
-<td style="text-align:center">Q030, Q031, Q032, Q033, Q033, Q034, Q035, Q036</td>
-<td style="text-align:center">4年前</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">从Chromium源码中提取的QUIC实现</td>
-<td style="text-align:center">×</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://github.com/devsisters/goquic" target="_blank" rel="noopener">goquic</a></td>
-<td style="text-align:center">Q030, Q031, Q032, Q033, Q033, Q034, Q035, Q036</td>
-<td style="text-align:center">4年前</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">基于 libquic，用 Go 实现</td>
-<td style="text-align:center">×</td>
-</tr>
-</tbody>
-</table>
-<p>| <a href="https://github.com/litespeedtech/lsquic" target="_blank" rel="noopener">lsquic</a>        | Q043, Q046, Q050, Draft-25, Draft-27         | 6天前  | www.litespeedtech.com:443  | LiteSpeed 公司的开源库           | 强烈推荐👍👍👍    |<br>| <a href="https://github.com/cloudflare/quiche" target="_blank" rel="noopener">quiche</a>        | Draft-23, Draft-24, Draft-25, Draft-27     | 几小时前 | <a href="https://quic\.tech:8443/" target="_blank" rel="noopener">https://quic\.tech:8443/</a>     | Cloudflare 公司开源的库          | 推荐👍👍        |<br>| <a href="https://github.com/ngtcp2/nghttp3" target="_blank" rel="noopener">nghttp3</a>       | Draft-27                                      | 几天前  | <a href="https://nghttp2\.org:4433/" target="_blank" rel="noopener">https://nghttp2\.org:4433/</a>   | 基于 C 实现的库，CURL 代码可编译支持QUIC |               |<br>| <a href="https://github.com/lucas-clemente/quic-go" target="_blank" rel="noopener">quic-go</a>      | Draft-23，Draft-24                            | 1月前  | 无                            | 谷歌一位工程师实现的库。Caddy 使用了此库    |               |<br>| <a href="https://github.com/caddyserver/caddy" target="_blank" rel="noopener">caddy</a>         | Draft-23，Draft-24                            | 几天前  | 无                            | 基于Go语言，Caddy 2.0 支持 QUIC  | 测试用较好👍       |<br>| <a href="https://github.com/evansun922/nginx-quic" target="_blank" rel="noopener">nginx-quic</a>   | Q043, Q046                                     | 几月前  | 无                            | 搜狐工程师实现的Nginx集成方案          | 推荐部署方式👍      |<br>| <a href="https://github.com/litespeedtech/openlitespeed" target="_blank" rel="noopener">openlitespeed</a> | Q043, Q046, Q050, Draft-25, Draft-27         | 几天前  |                              | LiteSpeed 公司的开源高性能服务器      | 推荐，部署简单👍👍👍 |</p>
+<p><img src="https://img.godjiyi.cn/jy_quic-lib.jpg" alt></p>
 <p>今天我们先用 <strong>openlitespeed</strong> 库进行部署支持 QUIC 协议的 WEB 网站。因为该库官网放出性能是 Nginx 的几倍，且支持 gQUIC 和 HTTP3 协议。</p>
 <h3 id="QUIC-部署"><a href="#QUIC-部署" class="headerlink" title="QUIC 部署"></a>QUIC 部署</h3><p><strong>openlitespeed</strong> 安装很简单，可以看官方教程: <a href="https://openlitespeed.org/kb/install-ols-from-litespeed-repositories/" target="_blank" rel="noopener">Install OpenLiteSpeed</a>, 为防止部分人看不到，我记录了下：</p>
-<ul>
-<li><p>先根据系统安装 repo 源:</p>
-  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CentOS 5</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el5.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 6</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el6.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 7</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el7.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 8</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm</span><br><span class="line"><span class="comment"># Debian 7, 8 &amp; Ubuntu 12,14,16,18</span></span><br><span class="line">wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | bash</span><br><span class="line"><span class="comment"># Amazon Linux</span></span><br><span class="line">wget http://rpms.litespeedtech.com/centos/litespeed.repo -P /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>再执行安装命令(根据自己的系统选择安装命令)</p>
-  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CentOS</span></span><br><span class="line">yum install openlitespeed</span><br><span class="line"><span class="comment"># Debian &amp; Ubuntu </span></span><br><span class="line">apt-get install openlitespeed</span><br></pre></td></tr></table></figure></div>
-</li>
-</ul>
+<p>先根据系统安装 repo 源:</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CentOS 5</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el5.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 6</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el6.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 7</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el7.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 8</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm</span><br><span class="line"><span class="comment"># Debian 7, 8 &amp; Ubuntu 12,14,16,18</span></span><br><span class="line">wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | bash</span><br><span class="line"><span class="comment"># Amazon Linux</span></span><br><span class="line">wget http://rpms.litespeedtech.com/centos/litespeed.repo -P /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></div>
+<p>再执行安装命令(根据自己的系统选择安装命令)</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CentOS</span></span><br><span class="line">yum install openlitespeed</span><br><span class="line"><span class="comment"># Debian &amp; Ubuntu </span></span><br><span class="line">apt-get install openlitespeed</span><br></pre></td></tr></table></figure></div>
 <p>安装完了就进行配置，配置说明请参考官方文档: <a href="https://openlitespeed.org/kb/" target="_blank" rel="noopener">Configuration</a></p>
 <p>说实话，这个库是有后台的，是可视化配置，但是比较难用，需要自己熟悉才行。为避免大家浪费时间，我将整个服务安装好，并配置好了，构建了一个基础镜像：<a href="https://hub.docker.com/r/jiyiren/http-base-quic" target="_blank" rel="noopener">https://hub.docker.com/r/jiyiren/http-base-quic</a>，如何配置自己的服务呢，下面简单讲下。</p>
 <p>部署和配置代码已放 Github 上：<a href="https://github.com/jiyiren/quic-web" target="_blank" rel="noopener">https://github.com/jiyiren/quic-web</a></p>
@@ -642,9 +601,9 @@
 </li>
 </ul>
 <p>但不论怎样，这些协议思想一致，都是 UDP 进行传输，握手 RTT 很低，大家通过上面的速度加载对比就能看出来 HTTP3 的快速，当然在弱网情况下效果会更好点。</p>
-<p><img src="http://img.godjiyi.cn/jy_quic46.png" alt></p>
-<p><img src="http://img.godjiyi.cn/jy_quic50.png" alt></p>
-<p><img src="http://img.godjiyi.cn/jy_http3.png" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_quic46.png" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_quic50.png" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_http3.png" alt></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://ictar.xyz/2019/01/31/trans-http-3-from-root-to-tip/" target="_blank" rel="noopener">QUICIETF工作历时</a></li>
 <li><a href="https://www.mf8.biz/use-http-3/" target="_blank" rel="noopener">LiteSpeed 部署</a></li>
@@ -1198,7 +1157,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">157k</span>
+    <span title="站点总字数">156k</span>
   
 
   
@@ -1209,7 +1168,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:22</span>
   
 </div>
 
