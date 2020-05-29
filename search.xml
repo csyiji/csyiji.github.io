@@ -46,55 +46,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Android 开发中 dp、dpi、px 的区别</title>
-    <url>/2015/07/26/android-dp-dip/</url>
-    <content><![CDATA[<h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><ul>
-<li><strong>dp</strong>：安卓中的相对大小</li>
-<li><strong>dpi</strong>：( <em>dot per inch</em> )每英寸像素多少</li>
-<li><strong>px</strong>：像素点</li>
-</ul>
-<h2 id="二、详细说明"><a href="#二、详细说明" class="headerlink" title="二、详细说明"></a>二、详细说明</h2><h3 id="px和dpi"><a href="#px和dpi" class="headerlink" title="px和dpi"></a>px和dpi</h3><p><strong>px</strong></p>
-<p>平常所说的 <em>1920×1080</em> 只是像素数量，也就是 1920px×1080px, 代表手机高度上有 1920 个像素点，宽度上有 1080 个像素点。</p>
-<a id="more"></a>
-<p><strong>dpi</strong></p>
-<p>要想判别手机屏幕的显示好坏，还要考虑屏幕的宽高(英寸)，也就是用 <em>dpi</em> 即每英寸多少像素来评价屏幕的显示效果。（不然假如手机分辨率是 1920×1080, 但是屏幕是几十寸的，那显示效果将不会很好，甚至你有可能看到小的像素块，那将更影响视觉效果。）</p>
-<p><strong>dp</strong></p>
-<p><em>怎样理解 dp 才好呢 ?</em></p>
-<ul>
-<li>其实 dp 就是为了使得开发者设置的长度能够根据不同屏幕( 分辨率/尺寸也就是 dpi )获得不同的像素 ( px ) 数量。比如：我将一个控件设置长度为 1dp, 那么在 <em>160dpi</em> 上该控件长度为 1px, 在 <em>240dpi</em> 的屏幕上该控件的长度为 1 * 240 / 160 = 1.5 个像素点。</li>
-<li><strong>也就是dp会随着不同屏幕而改变控件长度的像素数量。</strong></li>
-<li>关于dp的官方叙述为当屏幕每英寸有 160个 像素时( 也就是 <em>160dpi</em> )，dp与px等价的。那如果每英寸 240 个像素呢？1dp —&gt;1*240/160=1.5px，即 1dp 与 1.5px 等价了。</li>
-<li>其实记住一点，<strong>dp 最终都要化为像素数量来衡量大小的，因为只有像素数量最直观。</strong></li>
-</ul>
-<p><strong>计算dp的方法:</strong></p>
-<ul>
-<li>通常来说，我们写程序时几乎没用到计算dp，就是直接凭着自己的感觉写的。此处计算dp只是为了大家更好理解dp，如果有的人想精确设置控件大小，也可以这样计算的。</li>
-<li>我直接画张图吧：<br><img src="https://img.godjiyi.cn/csdnblogImage.png" alt></li>
-<li>计算dp往往是由程序员完成的，是创造的过程，顺叙的过程。但是写程序总会有两个历程的，一个是进行写，一个是返回读，这个读的话就用到了将 <em>dp</em> 转换了。</li>
-</ul>
-<p><strong>dp转px—(最常用的方法):</strong></p>
-<ul>
-<li>前面已经看到一个例子了如下(注：等号都是等价，是理解上的等于，不是直接的等于的)：安卓中如果手机每英寸有 <em>160px</em>，即手机是 <em>160dpi</em>，那么此时1dp就可以理解为1px，假如现在手机是240dpi，那么1dp=240/160 px=1.5px，<br><strong>从上可以看出dp转px只与屏幕的dpi有关。</strong></li>
-<li>对于 <strong>Android</strong> 来说，最终我们能读懂或者衡量的都是px，所以最后我们都将dp化为px好理解一点。我总结了dp转px的公式如下：</li>
-<li><strong>公式：dp值×（当前dpi/160dpi）=&gt;得出当前的像素数目</strong></li>
-</ul>
-<h3 id="手机屏幕dp最大值是多少？"><a href="#手机屏幕dp最大值是多少？" class="headerlink" title="手机屏幕dp最大值是多少？"></a>手机屏幕dp最大值是多少？</h3><ul>
-<li>那么问题来了，一个手机屏幕最大有多大的dp呢，我能不能设置成 <em>100000dp</em> 呢？其实这也是我所思考的，下面我慢慢来讲。</li>
-<li>假如现在将控件宽度设置为 160dp, 那不同 <em>dpi</em> 的手机所得到的像素是多少呢？<br><img src="https://img.godjiyi.cn/csdnblogt.png" alt><br><strong>从中可以看出最后所得像素值与dpi值相同，也就是说不管什么屏幕160dp，就相当于1英寸。</strong></li>
-<li>所以要得到全屏最长的的dp，就等于<strong>160*宽(或者高英寸长)</strong><br>如第三个 1080*1920例子，160*3 = 480dp，所以 0-480dp 就是宽的 dp 范围。因为480*360/160=1080 个像素，正好等于宽的最大像素数量。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>dp</tag>
-        <tag>px</tag>
-        <tag>像素</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL 中的定时任务</title>
     <url>/2016/03/27/Mysql_schedule/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">MySQL 5 开启定时任务</p>
@@ -205,6 +156,55 @@
       </tags>
   </entry>
   <entry>
+    <title>Android 开发中 dp、dpi、px 的区别</title>
+    <url>/2015/07/26/android-dp-dip/</url>
+    <content><![CDATA[<h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><ul>
+<li><strong>dp</strong>：安卓中的相对大小</li>
+<li><strong>dpi</strong>：( <em>dot per inch</em> )每英寸像素多少</li>
+<li><strong>px</strong>：像素点</li>
+</ul>
+<h2 id="二、详细说明"><a href="#二、详细说明" class="headerlink" title="二、详细说明"></a>二、详细说明</h2><h3 id="px和dpi"><a href="#px和dpi" class="headerlink" title="px和dpi"></a>px和dpi</h3><p><strong>px</strong></p>
+<p>平常所说的 <em>1920×1080</em> 只是像素数量，也就是 1920px×1080px, 代表手机高度上有 1920 个像素点，宽度上有 1080 个像素点。</p>
+<a id="more"></a>
+<p><strong>dpi</strong></p>
+<p>要想判别手机屏幕的显示好坏，还要考虑屏幕的宽高(英寸)，也就是用 <em>dpi</em> 即每英寸多少像素来评价屏幕的显示效果。（不然假如手机分辨率是 1920×1080, 但是屏幕是几十寸的，那显示效果将不会很好，甚至你有可能看到小的像素块，那将更影响视觉效果。）</p>
+<p><strong>dp</strong></p>
+<p><em>怎样理解 dp 才好呢 ?</em></p>
+<ul>
+<li>其实 dp 就是为了使得开发者设置的长度能够根据不同屏幕( 分辨率/尺寸也就是 dpi )获得不同的像素 ( px ) 数量。比如：我将一个控件设置长度为 1dp, 那么在 <em>160dpi</em> 上该控件长度为 1px, 在 <em>240dpi</em> 的屏幕上该控件的长度为 1 * 240 / 160 = 1.5 个像素点。</li>
+<li><strong>也就是dp会随着不同屏幕而改变控件长度的像素数量。</strong></li>
+<li>关于dp的官方叙述为当屏幕每英寸有 160个 像素时( 也就是 <em>160dpi</em> )，dp与px等价的。那如果每英寸 240 个像素呢？1dp —&gt;1*240/160=1.5px，即 1dp 与 1.5px 等价了。</li>
+<li>其实记住一点，<strong>dp 最终都要化为像素数量来衡量大小的，因为只有像素数量最直观。</strong></li>
+</ul>
+<p><strong>计算dp的方法:</strong></p>
+<ul>
+<li>通常来说，我们写程序时几乎没用到计算dp，就是直接凭着自己的感觉写的。此处计算dp只是为了大家更好理解dp，如果有的人想精确设置控件大小，也可以这样计算的。</li>
+<li>我直接画张图吧：<br><img src="https://img.godjiyi.cn/csdnblogImage.png" alt></li>
+<li>计算dp往往是由程序员完成的，是创造的过程，顺叙的过程。但是写程序总会有两个历程的，一个是进行写，一个是返回读，这个读的话就用到了将 <em>dp</em> 转换了。</li>
+</ul>
+<p><strong>dp转px—(最常用的方法):</strong></p>
+<ul>
+<li>前面已经看到一个例子了如下(注：等号都是等价，是理解上的等于，不是直接的等于的)：安卓中如果手机每英寸有 <em>160px</em>，即手机是 <em>160dpi</em>，那么此时1dp就可以理解为1px，假如现在手机是240dpi，那么1dp=240/160 px=1.5px，<br><strong>从上可以看出dp转px只与屏幕的dpi有关。</strong></li>
+<li>对于 <strong>Android</strong> 来说，最终我们能读懂或者衡量的都是px，所以最后我们都将dp化为px好理解一点。我总结了dp转px的公式如下：</li>
+<li><strong>公式：dp值×（当前dpi/160dpi）=&gt;得出当前的像素数目</strong></li>
+</ul>
+<h3 id="手机屏幕dp最大值是多少？"><a href="#手机屏幕dp最大值是多少？" class="headerlink" title="手机屏幕dp最大值是多少？"></a>手机屏幕dp最大值是多少？</h3><ul>
+<li>那么问题来了，一个手机屏幕最大有多大的dp呢，我能不能设置成 <em>100000dp</em> 呢？其实这也是我所思考的，下面我慢慢来讲。</li>
+<li>假如现在将控件宽度设置为 160dp, 那不同 <em>dpi</em> 的手机所得到的像素是多少呢？<br><img src="https://img.godjiyi.cn/csdnblogt.png" alt><br><strong>从中可以看出最后所得像素值与dpi值相同，也就是说不管什么屏幕160dp，就相当于1英寸。</strong></li>
+<li>所以要得到全屏最长的的dp，就等于<strong>160*宽(或者高英寸长)</strong><br>如第三个 1080*1920例子，160*3 = 480dp，所以 0-480dp 就是宽的 dp 范围。因为480*360/160=1080 个像素，正好等于宽的最大像素数量。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>dp</tag>
+        <tag>px</tag>
+        <tag>像素</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android 下拉图片变大的 ScrollView</title>
     <url>/2015/08/13/android-scrollview/</url>
     <content><![CDATA[<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="https://img.godjiyi.cn/csdnblogGIF33.gif" alt></p>
@@ -289,27 +289,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br><a id="more"></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用 Hexo 搭建 github 博客</title>
     <url>/2015/07/26/hexogithub/</url>
     <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>本篇将介绍使用 <em>Hexo</em> 框架和 <em>github pages</em> 来搭建简单的博客，主要涉及 <strong>环境搭建、github 空间创建、主题运用(新浪微博秀、多说评论，About 的完成)</strong> 等，其实这也就是个人博客最主要，最核心的组件的。</p>
@@ -368,28 +347,31 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Git</tag>
+        <tag>Hexo</tag>
         <tag>Github</tag>
         <tag>NodeJS</tag>
       </tags>
   </entry>
   <entry>
-    <title>2019-07-28 日志</title>
-    <url>/2019/07/28/life_work/</url>
-    <content><![CDATA[<p>最近，我也毕业入职了，用了一个月时间熟悉了身边新环境，虽说还可以，但仍旧心有不安。</p>
-<p>今年都说工作形式不好，多家互联网企业被爆裁员。互联网，曾今是多么充满活力的名词，基本上是”万众创业”的根本，而现在给人的则是”赢者通吃”的感觉，再无敢与巨头相争，百花齐放的景象了。</p>
-<p>虽说现在巨头当道，创业热情没有以前的高，但互联网仍然是最大的创业领域。目前，移动互联的创业确实少了，但是 5G、IoT、人工智能的创业项目却有很多。</p>
-<p>很多时候我们都在以我们自己能看到的信息进行评判和决策的，由于我们都处于历史长河中的一部分，在那一部分中我们的绝大部分技能、信息都聚焦于某一种东西上，如果时代改变了这种东西的价值，那我们自身的价值也会相应变化，最坏的情况就是贬值，而这正是互联网的特性。</p>
-<p>心有不安，不安在时代正在极速地改变着最吃香的技能，而自己的技能却在逐步被淘汰！很多人怕的不是被裁，而是怕自己已经适应不了社会的需求了！</p>
+    <title>Hello World</title>
+    <url>/2015/07/23/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br><a id="more"></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>日志</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Life</tag>
-        <tag>日志</tag>
-        <tag>Work</tag>
+        <tag>Hexo</tag>
+        <tag>Begain</tag>
       </tags>
   </entry>
   <entry>
@@ -599,81 +581,21 @@
       </tags>
   </entry>
   <entry>
-    <title>无版权图库资源收集</title>
-    <url>/2019/09/15/openimage/</url>
-    <content><![CDATA[<p>我平常自己在写文档时，常常会搭配一些图片来展示。一般我都会去 <strong>无版权图片库</strong> 找一张搭配，毕竟程序员老是敲代码和文字打交道，已经苦不堪言了，来一点 <em>色彩图像</em> 刺激真的会让人耳目一新。很多时候程序员不仅仅应该是实现功能方，我们也应该要把自己当做甲方或者用户，去体验什么样的设计才能让自己感觉舒适。<strong>我喜欢有自己的个性，有自己的配色配图</strong>。</p>
-<h1 id="pixabay"><a href="#pixabay" class="headerlink" title="pixabay"></a>pixabay</h1><ul>
-<li><strong>推荐</strong>：★★★★★</li>
-<li>地址：<a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-pixabay.jpg" alt></li>
-</ul>
-<h1 id="pexels"><a href="#pexels" class="headerlink" title="pexels"></a>pexels</h1><ul>
-<li><strong>推荐</strong>：★★★★★</li>
-<li>地址：<a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-pexels.jpg" alt></li>
-</ul>
-<a id="more"></a>
-<h1 id="isorepublic"><a href="#isorepublic" class="headerlink" title="isorepublic"></a>isorepublic</h1><ul>
-<li><strong>推荐</strong>：★★★★★</li>
-<li>地址：<a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-isorepublic.jpg" alt></li>
-</ul>
-<h1 id="gratisography"><a href="#gratisography" class="headerlink" title="gratisography"></a>gratisography</h1><ul>
-<li><strong>推荐</strong>：★★★★</li>
-<li>地址：<a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-gratisography.jpg" alt></li>
-</ul>
-<h1 id="rawpixel"><a href="#rawpixel" class="headerlink" title="rawpixel"></a>rawpixel</h1><ul>
-<li><strong>推荐</strong>：★★★★</li>
-<li>地址：<a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-rawpixel.jpg" alt></li>
-</ul>
-<h1 id="polayoutu"><a href="#polayoutu" class="headerlink" title="polayoutu"></a>polayoutu</h1><ul>
-<li><strong>推荐</strong>：★★★★</li>
-<li>地址：<a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-polayoutu.jpg" alt></li>
-</ul>
-<h1 id="pxhere"><a href="#pxhere" class="headerlink" title="pxhere"></a>pxhere</h1><ul>
-<li><strong>推荐</strong>：★★★★</li>
-<li>地址：<a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-pxhere.jpg" alt></li>
-</ul>
-<h1 id="picjumbo"><a href="#picjumbo" class="headerlink" title="picjumbo"></a>picjumbo</h1><ul>
-<li><strong>推荐</strong>：★★★</li>
-<li>地址：<a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
-<li>主页：<img src="https://img.godjiyi.cn/jy_open-picjumbo.jpg" alt></li>
-</ul>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
-<li><a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
-<li><a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
-<li><a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
-<li><a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
-<li><a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
-<li><a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></li>
-<li><a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
-<li><a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
-<li><a href="https://www.yuque.com/ruanyf/weekly/free-photos" target="_blank" rel="noopener">https://www.yuque.com/ruanyf/weekly/free-photos</a></li>
-</ol>
+    <title>2019-07-28 日志</title>
+    <url>/2019/07/28/life_work/</url>
+    <content><![CDATA[<p>最近，我也毕业入职了，用了一个月时间熟悉了身边新环境，虽说还可以，但仍旧心有不安。</p>
+<p>今年都说工作形式不好，多家互联网企业被爆裁员。互联网，曾今是多么充满活力的名词，基本上是”万众创业”的根本，而现在给人的则是”赢者通吃”的感觉，再无敢与巨头相争，百花齐放的景象了。</p>
+<p>虽说现在巨头当道，创业热情没有以前的高，但互联网仍然是最大的创业领域。目前，移动互联的创业确实少了，但是 5G、IoT、人工智能的创业项目却有很多。</p>
+<p>很多时候我们都在以我们自己能看到的信息进行评判和决策的，由于我们都处于历史长河中的一部分，在那一部分中我们的绝大部分技能、信息都聚焦于某一种东西上，如果时代改变了这种东西的价值，那我们自身的价值也会相应变化，最坏的情况就是贬值，而这正是互联网的特性。</p>
+<p>心有不安，不安在时代正在极速地改变着最吃香的技能，而自己的技能却在逐步被淘汰！很多人怕的不是被裁，而是怕自己已经适应不了社会的需求了！</p>
 ]]></content>
       <categories>
-        <category>资源</category>
+        <category>日志</category>
       </categories>
       <tags>
-        <tag>无版权</tag>
-        <tag>图片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客界面更新</title>
-    <url>/2017/10/06/picture-group/</url>
-    <content><![CDATA[<p><strong>博客界面更新，应用个性化 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题</strong></p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="https://img.godjiyi.cn/nextpicdd.jpg" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicee.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpica.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicf.jpg" alt></div></div></div></div>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
+        <tag>Life</tag>
+        <tag>日志</tag>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -773,6 +695,84 @@
       </tags>
   </entry>
   <entry>
+    <title>无版权图库资源收集</title>
+    <url>/2019/09/15/openimage/</url>
+    <content><![CDATA[<p>我平常自己在写文档时，常常会搭配一些图片来展示。一般我都会去 <strong>无版权图片库</strong> 找一张搭配，毕竟程序员老是敲代码和文字打交道，已经苦不堪言了，来一点 <em>色彩图像</em> 刺激真的会让人耳目一新。很多时候程序员不仅仅应该是实现功能方，我们也应该要把自己当做甲方或者用户，去体验什么样的设计才能让自己感觉舒适。<strong>我喜欢有自己的个性，有自己的配色配图</strong>。</p>
+<h1 id="pixabay"><a href="#pixabay" class="headerlink" title="pixabay"></a>pixabay</h1><ul>
+<li><strong>推荐</strong>：★★★★★</li>
+<li>地址：<a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pixabay.jpg" alt></li>
+</ul>
+<h1 id="pexels"><a href="#pexels" class="headerlink" title="pexels"></a>pexels</h1><ul>
+<li><strong>推荐</strong>：★★★★★</li>
+<li>地址：<a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pexels.jpg" alt></li>
+</ul>
+<a id="more"></a>
+<h1 id="isorepublic"><a href="#isorepublic" class="headerlink" title="isorepublic"></a>isorepublic</h1><ul>
+<li><strong>推荐</strong>：★★★★★</li>
+<li>地址：<a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-isorepublic.jpg" alt></li>
+</ul>
+<h1 id="gratisography"><a href="#gratisography" class="headerlink" title="gratisography"></a>gratisography</h1><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>地址：<a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-gratisography.jpg" alt></li>
+</ul>
+<h1 id="rawpixel"><a href="#rawpixel" class="headerlink" title="rawpixel"></a>rawpixel</h1><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>地址：<a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-rawpixel.jpg" alt></li>
+</ul>
+<h1 id="polayoutu"><a href="#polayoutu" class="headerlink" title="polayoutu"></a>polayoutu</h1><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>地址：<a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-polayoutu.jpg" alt></li>
+</ul>
+<h1 id="pxhere"><a href="#pxhere" class="headerlink" title="pxhere"></a>pxhere</h1><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>地址：<a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pxhere.jpg" alt></li>
+</ul>
+<h1 id="picjumbo"><a href="#picjumbo" class="headerlink" title="picjumbo"></a>picjumbo</h1><ul>
+<li><strong>推荐</strong>：★★★</li>
+<li>地址：<a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-picjumbo.jpg" alt></li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
+<li><a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
+<li><a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
+<li><a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
+<li><a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
+<li><a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></li>
+<li><a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
+<li><a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
+<li><a href="https://www.yuque.com/ruanyf/weekly/free-photos" target="_blank" rel="noopener">https://www.yuque.com/ruanyf/weekly/free-photos</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>资源</category>
+      </categories>
+      <tags>
+        <tag>无版权</tag>
+        <tag>图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客界面更新</title>
+    <url>/2017/10/06/picture-group/</url>
+    <content><![CDATA[<p><strong>博客界面更新，应用个性化 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题</strong></p>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="https://img.godjiyi.cn/nextpicdd.jpg" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicee.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpica.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicf.jpg" alt></div></div></div></div>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MacOS 下多 Python 版本说明</title>
     <url>/2017/10/31/python_environmet/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">好的配置环境是保证产能的前提</p>
@@ -857,6 +857,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring项目整合</title>
+    <url>/2017/07/24/spbootapi/</url>
+    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">No Repeating, Just Coding</p>
+
+
+<p>最近用 <code>Spring</code> 写后台较多，每次新建一个项目要从原来项目里拷贝很多配置文件，因此就想整合一个配置好的的基本项目架构。<code>Spring boot</code> 融合了 <code>tomcat</code>, 使用后爱不释手，因此主要基于 <strong>Spring boot + MVC</strong> 以及一些其他必要功能进行配置使用。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><hr>
+<p>项目代码地址: <a href="https://github.com/jiyiren/SpbootApi" target="_blank" rel="noopener">https://github.com/jiyiren/SpbootApi</a></p>
+<p>这个仓库主要是集成 <strong>Spring-boot, Spring-mvc, Mysql, Mybatis, C3p0, <a href="https://swagger.io/" target="_blank" rel="noopener">Swagger2</a></strong> 的项目架构,为便于每次新建项目不用从零开始,直接基于此项目结构可快速地进行项目二次开发，免去了 <strong>pom</strong> 内容的复制和配置文件的编写。</p>
+<h3 id="整体项目结构"><a href="#整体项目结构" class="headerlink" title="整体项目结构"></a>整体项目结构</h3><p><img src="https://img.godjiyi.cn/spbootapi-arc.png" alt="项目结构"></p>
+<a id="more"></a>
+<h3 id="Swagger-API-UI-页面"><a href="#Swagger-API-UI-页面" class="headerlink" title="Swagger API UI 页面"></a>Swagger API UI 页面</h3><p>默认访问地址: <em><a href="http://127.0.0.1:8899/swagger-ui.html" target="_blank" rel="noopener">http://127.0.0.1:8899/swagger-ui.html</a></em></p>
+<p><img src="https://img.godjiyi.cn/spbootapi-swaggerui.png" alt="SwaggerUi"></p>
+<h3 id="Demo接口"><a href="#Demo接口" class="headerlink" title="Demo接口"></a>Demo接口</h3><p>测试接口: <em><a href="http://127.0.0.1:8899/user/1" target="_blank" rel="noopener">http://127.0.0.1:8899/user/1</a></em></p>
+<p><img src="https://img.godjiyi.cn/spbootapi-json.png" alt="json"></p>
+<h2 id="二次开发实践"><a href="#二次开发实践" class="headerlink" title="二次开发实践"></a>二次开发实践</h2><hr>
+<p>下载项目:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jiyiren/SpbootApi.git</span><br></pre></td></tr></table></figure></div>
+<p>命令运行项目:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> SpbootApi</span><br><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure></div>
+<p>IDE 运行项目 ( 推荐 Intellij IDEA ):</p>
+<p>打开ApiApplication.class，内部包含main函数，右击 <code>Run ApiApplication</code>.</p>
+<p>测试</p>
+<p>访问:<a href="http://127.0.0.1:8899" target="_blank" rel="noopener">http://127.0.0.1:8899</a> 返回 <strong>Hello World!</strong></p>
+<p>访问:<a href="http://127.0.0.1:8899/user/1" target="_blank" rel="noopener">http://127.0.0.1:8899/user/1</a> 返回 <strong>json</strong> 数据</p>
+<p>修改包名(下面为包含包名的文件)</p>
+<ul>
+<li><em>resources/application.propertis</em> : 项目总配置文件</li>
+<li><em>java/包名/Swagger2.class</em> : <strong>swagger-ui</strong> 配置文件</li>
+<li><em>java/包名/c3p0/C3p0AutoConfiguration.class</em> : <strong>c3p0</strong> 连接池配置文件</li>
+</ul>
+<h2 id="POM依赖包"><a href="#POM依赖包" class="headerlink" title="POM依赖包"></a>POM依赖包</h2><hr>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--properties--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">jacksonVersion</span>&gt;</span>2.8.8<span class="tag">&lt;/<span class="name">jacksonVersion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">c3p0Version</span>&gt;</span>0.9.5.2<span class="tag">&lt;/<span class="name">c3p0Version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- web --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--jdbc--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--aop--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--测试--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- mysql包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--jackson包 jackson-core,jackson-databind,jackson-annotations --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;jacksonVersion&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--mybatis--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- c3p0 和 mchange-commons-java --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;c3p0Version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- swagger --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.jianshu.com/p/8033ef83a8ed" target="_blank" rel="noopener">Spring Boot中使用Swagger2构建强大的RESTful API文档</a></li>
+<li><a href="http://www.cnblogs.com/xiaosiyuan/p/6255292.html" target="_blank" rel="noopener">springboot 使用c3p0数据库连接池的方法
+</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一份 LaTeX 报告形式模板</title>
     <url>/2018/12/13/report_paper/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">A LaTeX Template for Report, With Supporting Chinese Language</p>
@@ -929,54 +977,6 @@
       <tags>
         <tag>report</tag>
         <tag>latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring项目整合</title>
-    <url>/2017/07/24/spbootapi/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">No Repeating, Just Coding</p>
-
-
-<p>最近用 <code>Spring</code> 写后台较多，每次新建一个项目要从原来项目里拷贝很多配置文件，因此就想整合一个配置好的的基本项目架构。<code>Spring boot</code> 融合了 <code>tomcat</code>, 使用后爱不释手，因此主要基于 <strong>Spring boot + MVC</strong> 以及一些其他必要功能进行配置使用。</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><hr>
-<p>项目代码地址: <a href="https://github.com/jiyiren/SpbootApi" target="_blank" rel="noopener">https://github.com/jiyiren/SpbootApi</a></p>
-<p>这个仓库主要是集成 <strong>Spring-boot, Spring-mvc, Mysql, Mybatis, C3p0, <a href="https://swagger.io/" target="_blank" rel="noopener">Swagger2</a></strong> 的项目架构,为便于每次新建项目不用从零开始,直接基于此项目结构可快速地进行项目二次开发，免去了 <strong>pom</strong> 内容的复制和配置文件的编写。</p>
-<h3 id="整体项目结构"><a href="#整体项目结构" class="headerlink" title="整体项目结构"></a>整体项目结构</h3><p><img src="https://img.godjiyi.cn/spbootapi-arc.png" alt="项目结构"></p>
-<a id="more"></a>
-<h3 id="Swagger-API-UI-页面"><a href="#Swagger-API-UI-页面" class="headerlink" title="Swagger API UI 页面"></a>Swagger API UI 页面</h3><p>默认访问地址: <em><a href="http://127.0.0.1:8899/swagger-ui.html" target="_blank" rel="noopener">http://127.0.0.1:8899/swagger-ui.html</a></em></p>
-<p><img src="https://img.godjiyi.cn/spbootapi-swaggerui.png" alt="SwaggerUi"></p>
-<h3 id="Demo接口"><a href="#Demo接口" class="headerlink" title="Demo接口"></a>Demo接口</h3><p>测试接口: <em><a href="http://127.0.0.1:8899/user/1" target="_blank" rel="noopener">http://127.0.0.1:8899/user/1</a></em></p>
-<p><img src="https://img.godjiyi.cn/spbootapi-json.png" alt="json"></p>
-<h2 id="二次开发实践"><a href="#二次开发实践" class="headerlink" title="二次开发实践"></a>二次开发实践</h2><hr>
-<p>下载项目:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jiyiren/SpbootApi.git</span><br></pre></td></tr></table></figure></div>
-<p>命令运行项目:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> SpbootApi</span><br><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure></div>
-<p>IDE 运行项目 ( 推荐 Intellij IDEA ):</p>
-<p>打开ApiApplication.class，内部包含main函数，右击 <code>Run ApiApplication</code>.</p>
-<p>测试</p>
-<p>访问:<a href="http://127.0.0.1:8899" target="_blank" rel="noopener">http://127.0.0.1:8899</a> 返回 <strong>Hello World!</strong></p>
-<p>访问:<a href="http://127.0.0.1:8899/user/1" target="_blank" rel="noopener">http://127.0.0.1:8899/user/1</a> 返回 <strong>json</strong> 数据</p>
-<p>修改包名(下面为包含包名的文件)</p>
-<ul>
-<li><em>resources/application.propertis</em> : 项目总配置文件</li>
-<li><em>java/包名/Swagger2.class</em> : <strong>swagger-ui</strong> 配置文件</li>
-<li><em>java/包名/c3p0/C3p0AutoConfiguration.class</em> : <strong>c3p0</strong> 连接池配置文件</li>
-</ul>
-<h2 id="POM依赖包"><a href="#POM依赖包" class="headerlink" title="POM依赖包"></a>POM依赖包</h2><hr>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--properties--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">jacksonVersion</span>&gt;</span>2.8.8<span class="tag">&lt;/<span class="name">jacksonVersion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">c3p0Version</span>&gt;</span>0.9.5.2<span class="tag">&lt;/<span class="name">c3p0Version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- web --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--jdbc--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--aop--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--测试--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- mysql包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--jackson包 jackson-core,jackson-databind,jackson-annotations --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;jacksonVersion&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--mybatis--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- c3p0 和 mchange-commons-java --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;c3p0Version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- swagger --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.jianshu.com/p/8033ef83a8ed" target="_blank" rel="noopener">Spring Boot中使用Swagger2构建强大的RESTful API文档</a></li>
-<li><a href="http://www.cnblogs.com/xiaosiyuan/p/6255292.html" target="_blank" rel="noopener">springboot 使用c3p0数据库连接池的方法
-</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
@@ -1529,6 +1529,54 @@
       </tags>
   </entry>
   <entry>
+    <title>依赖倒置原则，接口隔离原则</title>
+    <url>/2016/08/31/dip_isp/</url>
+    <content><![CDATA[<h2 id="三、依赖倒置原则"><a href="#三、依赖倒置原则" class="headerlink" title="三、依赖倒置原则"></a>三、依赖倒置原则</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>依赖倒置原则(Dependence Inversion Principle ,DIP):<strong>高层模块不应该依赖低层模块，应该依赖其抽象，抽象不应该依赖其细节，细节应该依赖其抽象。</strong></p>
+<p>理解：<strong>低层模块</strong>：具体细化的 <strong>Java</strong> 类。<strong>高层模块</strong>：是由多个低层模块组成的。<strong>抽象</strong>：指的是接口或者抽象类。<strong>依赖</strong>：存在类 A 的一个方法 S, S 传入的参数是另一个类 B 的实例，那么类 A 依赖于类 B, 也就是类 A 中引用了类 B, 则 A 依赖 B, 因为 A 类中缺少了 B 类就无法正常运行了！</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>先举一个反例子：一个司机开宝马车。正常思维是定义一个司机类 Driver, 并实现一个开车 <code>void drive(BMWCar bmwcar)</code> 的方法，该方法传入的是宝马车的一个实例！</p>
+<a id="more"></a>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//宝马车类，实现run()方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BMWCar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"宝马车开动了...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//司机类，实现开车方法，传入宝马车实例参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(BMWCar bmwcar)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机开车..."</span>);</span><br><span class="line">        bmwcar.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Driver driver=<span class="keyword">new</span> Driver();</span><br><span class="line">		driver.drive(<span class="keyword">new</span> BMWCar());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>运行结果</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">司机开车...</span><br><span class="line">宝马车开动了....</span><br></pre></td></tr></table></figure></div>
+<p>结果得到没有问题！但现在我们更改需求了，司机现在改开奔驰了，那么如果在这个类的基础上更改，我们需要给司机提供一个 <code>drive(BenCar bencar)</code> 的方法。而如果后续要司机开各种车难道都要实现一个方法吗？这不免造成依赖性太强和冗余过度情况！</p>
+<p>现在的解决方案：定义接口 <em>ICar</em>, 让 <em>BMWCar</em> 等其他车类都实现 <em>ICar</em> 接口，而司机 <em>Driver</em> 类只需在 <code>drive(ICar car)</code> 的方法里传入 <em>ICar</em> 类型即可实现司机开各种车型的功能！</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ICar</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BMWCar</span> <span class="keyword">implements</span> <span class="title">ICar</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"宝马开动了。。。"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BenCar</span> <span class="keyword">implements</span> <span class="title">ICar</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"奔驰开动了。。。"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>司机Driver类</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(ICar car)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"司机开车。。。"</span>);</span><br><span class="line">		car.run();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DipMain</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Driver driver=<span class="keyword">new</span> Driver();</span><br><span class="line">		BMWCar bmwcar=<span class="keyword">new</span> BMWCar();</span><br><span class="line">		BenCar bencar=<span class="keyword">new</span> BenCar();</span><br><span class="line">		driver.drive(bmwcar);</span><br><span class="line">		driver.drive(bencar);<span class="comment">//实现司机开大奔了！</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>上面就遵循了依赖倒置原则，另外上面依赖的传递是通过参数直接传的！实际上依赖传递分为三种情况：</p>
+<blockquote>
+<blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1、通过构造方法传递</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ICar car;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Driver2</span><span class="params">(ICar car)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.car = car;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机发动车了..."</span>);</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、通过setter方法传递</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ICar car;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机开车....."</span>);</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCar</span><span class="params">(ICar car)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.car = car;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3、通过接口传递(也就是我们上面例子的使用方法)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(ICar car)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机发动车了..."</span>);</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</blockquote>
+</blockquote>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>在实际编程中，我们一般需要做到如下3点：</p>
+<p>1、<strong>低层模块尽量都要有抽象类或接口，或者两者都有</strong>。<br>2、<strong>变量的声明类型尽量是抽象类或接口</strong>。<br>3、<strong>使用继承时遵循里氏替换原则</strong>。</p>
+<p>依赖倒置原则的核心就是要我们面向接口编程，理解了面向接口编程，也就理解了依赖倒置。</p>
+<h2 id="四、接口隔离原则"><a href="#四、接口隔离原则" class="headerlink" title="四、接口隔离原则"></a>四、接口隔离原则</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>接口隔离原则 ( Interface Segregation Principle ): <strong>客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上</strong>。</p>
+<p>理解：将臃肿的接口根据其他类需要使用的方法拆分为独立的几个接口。也就是采用接口隔离原则。实际上该原则与单一职责原则有点相似，都是将方法拆分成多份！不同点是单一职责通常适用于类，并且根据职责拆分；而接口隔离原则主要适用于接口，根据其他类的使用需求拆分！</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p>首先定义了一个接口 I, 并定义 5 个方法, 并定义类 A 类 C, 这两个类依赖 I；类A依赖于接口I中的 method1(), method2(), method3()三个方法；类 C 依赖接口I中的 method1(), method()4, method5() 三个方法。</p>
+<p>类 B, 类 D 则是 A, B 依赖接口I的具体方法实现。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method2();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method3();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method4();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method5();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">implements</span> <span class="title">I</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I的方法2"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I的方法3"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//对于类B来说，method4和method5不是必需的，但是由于接口A中有这两个方法，</span></span><br><span class="line">	<span class="comment">//所以在实现过程中即使这两个方法的方法体为空，也要将这两个没有作用的方法进行实现。</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> <span class="keyword">implements</span> <span class="title">I</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//对于类D来说，method2和method3不是必需的，但是由于接口A中有这两个方法，</span></span><br><span class="line">	<span class="comment">//所以在实现过程中即使这两个方法的方法体为空，也要将这两个没有作用的方法进行实现。</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I的方法4"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I的方法5"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		a.depend1(<span class="keyword">new</span> B());</span><br><span class="line">		a.depend2(<span class="keyword">new</span> B());</span><br><span class="line">		a.depend3(<span class="keyword">new</span> B());</span><br><span class="line">		C c = <span class="keyword">new</span> C();</span><br><span class="line">		c.depend1(<span class="keyword">new</span> D());</span><br><span class="line">		c.depend2(<span class="keyword">new</span> D());</span><br><span class="line">		c.depend3(<span class="keyword">new</span> D());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>可以看到，如果接口过于臃肿，只要接口中出现的方法，不管对依赖于它的类有没有用处，实现类中都必须去实现这些方法，这显然不是好的设计。如果将这个设计修改为符合接口隔离原则，就必须对接口 I 进行拆分。</p>
+<p>我们将接口 I 拆分为三个接口 I1, I2, I3; 而类 B, 类 D 的实现则不用完全实现 I 了，而只需实现自己需要的方法接口了！</p>
+<blockquote>
+<blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">implements</span> <span class="title">I1</span>, <span class="title">I2</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I1的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I2的方法2"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I2的方法3"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> <span class="keyword">implements</span> <span class="title">I1</span>, <span class="title">I3</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I1的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I3的方法4"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I3的方法5"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//同时A,C中的方法参数类型改为对应的接口即可！</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I1 i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I2 i)</span></span>&#123;</span><br><span class="line">		i.method2();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I2 i)</span></span>&#123;</span><br><span class="line">		i.method3();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I1 i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I3 i)</span></span>&#123;</span><br><span class="line">		i.method4();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I3 i)</span></span>&#123;</span><br><span class="line">		i.method5();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</blockquote>
+</blockquote>
+<p>本文例子中，将一个庞大的接口变更为3个专用的接口所采用的就是接口隔离原则。在程序设计中，依赖几个专用的接口要比依赖一个综合的接口更灵活。接口是设计时对外部设定的“契约”，通过分散定义多个接口，可以预防外来变更的扩散，提高系统的灵活性和可维护性。</p>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>接口隔离原则的含义是：<strong>建立单一接口，不要建立庞大臃肿的接口，尽量细化接口，接口中的方法尽量少</strong>。也就是说，我们要为各个类建立专用的接口，而不要试图去建立一个很庞大的接口供所有依赖它的类去调用。</p>
+<p>采用接口隔离原则对接口进行约束时，要注意以下几点：</p>
+<p>1、接口尽量小，但是要有限度。对接口进行细化可以提高程序设计灵活性是不挣的事实，但是如果过小，则会造成接口数量过多，使设计复杂化。所以一定要适度。<br>2、为依赖接口的类定制服务，只暴露给调用的类它需要的方法，它不需要的方法则隐藏起来。只有专注地为一个模块提供定制服务，才能建立最小的依赖关系。<br>3、提高内聚，减少对外交互。使接口用最少的方法去完成最多的事情。</p>
+]]></content>
+      <categories>
+        <category>Design</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C 语言实现各排序算法</title>
     <url>/2016/11/24/csort/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">面试官：“ 先手写一个快速排序吧！”</p>
@@ -1580,54 +1628,6 @@
       </categories>
       <tags>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>依赖倒置原则，接口隔离原则</title>
-    <url>/2016/08/31/dip_isp/</url>
-    <content><![CDATA[<h2 id="三、依赖倒置原则"><a href="#三、依赖倒置原则" class="headerlink" title="三、依赖倒置原则"></a>三、依赖倒置原则</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>依赖倒置原则(Dependence Inversion Principle ,DIP):<strong>高层模块不应该依赖低层模块，应该依赖其抽象，抽象不应该依赖其细节，细节应该依赖其抽象。</strong></p>
-<p>理解：<strong>低层模块</strong>：具体细化的 <strong>Java</strong> 类。<strong>高层模块</strong>：是由多个低层模块组成的。<strong>抽象</strong>：指的是接口或者抽象类。<strong>依赖</strong>：存在类 A 的一个方法 S, S 传入的参数是另一个类 B 的实例，那么类 A 依赖于类 B, 也就是类 A 中引用了类 B, 则 A 依赖 B, 因为 A 类中缺少了 B 类就无法正常运行了！</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>先举一个反例子：一个司机开宝马车。正常思维是定义一个司机类 Driver, 并实现一个开车 <code>void drive(BMWCar bmwcar)</code> 的方法，该方法传入的是宝马车的一个实例！</p>
-<a id="more"></a>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//宝马车类，实现run()方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BMWCar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"宝马车开动了...."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//司机类，实现开车方法，传入宝马车实例参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(BMWCar bmwcar)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机开车..."</span>);</span><br><span class="line">        bmwcar.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Driver driver=<span class="keyword">new</span> Driver();</span><br><span class="line">		driver.drive(<span class="keyword">new</span> BMWCar());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>运行结果</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line">司机开车...</span><br><span class="line">宝马车开动了....</span><br></pre></td></tr></table></figure></div>
-<p>结果得到没有问题！但现在我们更改需求了，司机现在改开奔驰了，那么如果在这个类的基础上更改，我们需要给司机提供一个 <code>drive(BenCar bencar)</code> 的方法。而如果后续要司机开各种车难道都要实现一个方法吗？这不免造成依赖性太强和冗余过度情况！</p>
-<p>现在的解决方案：定义接口 <em>ICar</em>, 让 <em>BMWCar</em> 等其他车类都实现 <em>ICar</em> 接口，而司机 <em>Driver</em> 类只需在 <code>drive(ICar car)</code> 的方法里传入 <em>ICar</em> 类型即可实现司机开各种车型的功能！</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ICar</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BMWCar</span> <span class="keyword">implements</span> <span class="title">ICar</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"宝马开动了。。。"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BenCar</span> <span class="keyword">implements</span> <span class="title">ICar</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"奔驰开动了。。。"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>司机Driver类</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(ICar car)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"司机开车。。。"</span>);</span><br><span class="line">		car.run();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DipMain</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Driver driver=<span class="keyword">new</span> Driver();</span><br><span class="line">		BMWCar bmwcar=<span class="keyword">new</span> BMWCar();</span><br><span class="line">		BenCar bencar=<span class="keyword">new</span> BenCar();</span><br><span class="line">		driver.drive(bmwcar);</span><br><span class="line">		driver.drive(bencar);<span class="comment">//实现司机开大奔了！</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>上面就遵循了依赖倒置原则，另外上面依赖的传递是通过参数直接传的！实际上依赖传递分为三种情况：</p>
-<blockquote>
-<blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1、通过构造方法传递</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ICar car;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Driver2</span><span class="params">(ICar car)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.car = car;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机发动车了..."</span>);</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2、通过setter方法传递</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ICar car;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机开车....."</span>);</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCar</span><span class="params">(ICar car)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.car = car;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3、通过接口传递(也就是我们上面例子的使用方法)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drive</span><span class="params">(ICar car)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"司机发动车了..."</span>);</span><br><span class="line">        car.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</blockquote>
-</blockquote>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>在实际编程中，我们一般需要做到如下3点：</p>
-<p>1、<strong>低层模块尽量都要有抽象类或接口，或者两者都有</strong>。<br>2、<strong>变量的声明类型尽量是抽象类或接口</strong>。<br>3、<strong>使用继承时遵循里氏替换原则</strong>。</p>
-<p>依赖倒置原则的核心就是要我们面向接口编程，理解了面向接口编程，也就理解了依赖倒置。</p>
-<h2 id="四、接口隔离原则"><a href="#四、接口隔离原则" class="headerlink" title="四、接口隔离原则"></a>四、接口隔离原则</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>接口隔离原则 ( Interface Segregation Principle ): <strong>客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上</strong>。</p>
-<p>理解：将臃肿的接口根据其他类需要使用的方法拆分为独立的几个接口。也就是采用接口隔离原则。实际上该原则与单一职责原则有点相似，都是将方法拆分成多份！不同点是单一职责通常适用于类，并且根据职责拆分；而接口隔离原则主要适用于接口，根据其他类的使用需求拆分！</p>
-<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p>首先定义了一个接口 I, 并定义 5 个方法, 并定义类 A 类 C, 这两个类依赖 I；类A依赖于接口I中的 method1(), method2(), method3()三个方法；类 C 依赖接口I中的 method1(), method()4, method5() 三个方法。</p>
-<p>类 B, 类 D 则是 A, B 依赖接口I的具体方法实现。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method2();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method3();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method4();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I i)</span></span>&#123;</span><br><span class="line">		i.method5();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">implements</span> <span class="title">I</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I的方法2"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I的方法3"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//对于类B来说，method4和method5不是必需的，但是由于接口A中有这两个方法，</span></span><br><span class="line">	<span class="comment">//所以在实现过程中即使这两个方法的方法体为空，也要将这两个没有作用的方法进行实现。</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> <span class="keyword">implements</span> <span class="title">I</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//对于类D来说，method2和method3不是必需的，但是由于接口A中有这两个方法，</span></span><br><span class="line">	<span class="comment">//所以在实现过程中即使这两个方法的方法体为空，也要将这两个没有作用的方法进行实现。</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I的方法4"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I的方法5"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		a.depend1(<span class="keyword">new</span> B());</span><br><span class="line">		a.depend2(<span class="keyword">new</span> B());</span><br><span class="line">		a.depend3(<span class="keyword">new</span> B());</span><br><span class="line">		C c = <span class="keyword">new</span> C();</span><br><span class="line">		c.depend1(<span class="keyword">new</span> D());</span><br><span class="line">		c.depend2(<span class="keyword">new</span> D());</span><br><span class="line">		c.depend3(<span class="keyword">new</span> D());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>可以看到，如果接口过于臃肿，只要接口中出现的方法，不管对依赖于它的类有没有用处，实现类中都必须去实现这些方法，这显然不是好的设计。如果将这个设计修改为符合接口隔离原则，就必须对接口 I 进行拆分。</p>
-<p>我们将接口 I 拆分为三个接口 I1, I2, I3; 而类 B, 类 D 的实现则不用完全实现 I 了，而只需实现自己需要的方法接口了！</p>
-<blockquote>
-<blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">I3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">implements</span> <span class="title">I1</span>, <span class="title">I2</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I1的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I2的方法2"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类B实现接口I2的方法3"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> <span class="keyword">implements</span> <span class="title">I1</span>, <span class="title">I3</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I1的方法1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I3的方法4"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"类D实现接口I3的方法5"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//同时A,C中的方法参数类型改为对应的接口即可！</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I1 i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I2 i)</span></span>&#123;</span><br><span class="line">		i.method2();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I2 i)</span></span>&#123;</span><br><span class="line">		i.method3();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend1</span><span class="params">(I1 i)</span></span>&#123;</span><br><span class="line">		i.method1();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend2</span><span class="params">(I3 i)</span></span>&#123;</span><br><span class="line">		i.method4();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depend3</span><span class="params">(I3 i)</span></span>&#123;</span><br><span class="line">		i.method5();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</blockquote>
-</blockquote>
-<p>本文例子中，将一个庞大的接口变更为3个专用的接口所采用的就是接口隔离原则。在程序设计中，依赖几个专用的接口要比依赖一个综合的接口更灵活。接口是设计时对外部设定的“契约”，通过分散定义多个接口，可以预防外来变更的扩散，提高系统的灵活性和可维护性。</p>
-<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h3><p>接口隔离原则的含义是：<strong>建立单一接口，不要建立庞大臃肿的接口，尽量细化接口，接口中的方法尽量少</strong>。也就是说，我们要为各个类建立专用的接口，而不要试图去建立一个很庞大的接口供所有依赖它的类去调用。</p>
-<p>采用接口隔离原则对接口进行约束时，要注意以下几点：</p>
-<p>1、接口尽量小，但是要有限度。对接口进行细化可以提高程序设计灵活性是不挣的事实，但是如果过小，则会造成接口数量过多，使设计复杂化。所以一定要适度。<br>2、为依赖接口的类定制服务，只暴露给调用的类它需要的方法，它不需要的方法则隐藏起来。只有专注地为一个模块提供定制服务，才能建立最小的依赖关系。<br>3、提高内聚，减少对外交互。使接口用最少的方法去完成最多的事情。</p>
-]]></content>
-      <categories>
-        <category>Design</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2696,6 +2696,176 @@
         <tag>SCI</tag>
         <tag>EI</tag>
         <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QUIC/HTTP3 协议说明与站点构建</title>
+    <url>/2020/05/29/quic-explain-build/</url>
+    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">HTTP 已不再是全基于 TCP 了，QUIC 的发展终将带来 HTTP3</p>
+
+<p>互联网的世界绝大部分的数据传输都是基于 HTTP 协议。自从 1990 年<strong>伯纳斯·李</strong>发明这 <strong>超文本传输协议(HTTP, HyperText Transfer Protocol)</strong> 后，于 1999 年 IETF 才正式发布 <strong>HTTP1.1</strong>(<a href="https://tools.ietf.org/html/rfc2616" target="_blank" rel="noopener">RFC 2616</a>) 协议版本，而这个版本一用就是 15 年，至 2015 年 IETF 才正式发布 <strong>HTTP2</strong>(<a href="https://tools.ietf.org/html/rfc7540" target="_blank" rel="noopener">RFC 7540</a>) 协议版本。其中 HTTP2 相比 HTTP1.1 的优化，我将会专门写个文章详细说明下。而今天我们会谈未来的 HTTP 协议 – <strong>QUIC/HTTP3</strong>。</p>
+<ul>
+<li>本文将实现支持 QUIC/HTTP3 协议站点: <a href="https://http3.godjiyi.cn:9445/" target="_blank" rel="noopener">https://http3.godjiyi.cn:9445/</a></li>
+<li>个人实现 HTTP1.1/HTTP2/HTTP3 速度对比示例: <a href="https://demo.godjiyi.cn" target="_blank" rel="noopener">https://demo.godjiyi.cn</a></li>
+</ul>
+<p><img src="https://img.godjiyi.cn/jy_quic.png" alt></p>
+<a id="more"></a>
+<h2 id="QUIC-与-HTTP3"><a href="#QUIC-与-HTTP3" class="headerlink" title="QUIC 与 HTTP3"></a>QUIC 与 HTTP3</h2><p>相信大家很早听说的下一代协议是 <strong>QUIC</strong>, 即 Quick UDP Internet Connections，意为<strong>快速UDP网络连接</strong>。该协议最早是由谷歌于 2013 推出的，项目首页: <a href="https://www.chromium.org/quic" target="_blank" rel="noopener">https://www.chromium.org/quic</a>，并且在谷歌自家的 Youtube 和搜索引擎上试验，有兴趣的可以看下 <a href="https://dl.acm.org/doi/pdf/10.1145/3098822.3098842" target="_blank" rel="noopener">The QUIC Transport Protocol - Design and Internet-Scale Deployment</a> 这篇谷歌发表的论文。下图是谷歌应用 QUIC 于搜索引擎的的搜索延迟降低的百分比。(标1的地方是当时谷歌发现了 Bug，到 标2处修复后重新上线。标3处则是谷歌进行了一次优化，所以性能有了逐步提高) 整体上能降低搜索 6% 的延迟。</p>
+<p><img alt="logo" width="500" height="300" src="https://img.godjiyi.cn/jy_20200524171622.png"></p>
+<p>正因为 QUIC 的优势(为什么会有这优势，下面会进行说明)，谷歌已经逐步将 QUIC 推广到自家的各个服务中了。</p>
+<p>而当时 IETF 组织正忙于 HTTP2 协议的标准化，最终于<strong>2015年5月</strong>正式发布 HTTP2 规范(<a href="https://tools.ietf.org/html/rfc7540" target="_blank" rel="noopener">RFC 7540</a>)。在 HTTP2 标准化完后，IETF 终于有时间进行下一代 HTTP 标准化，也就是 HTTP3。 而谷歌也有意将 QUIC 作为普适性协议进行推广。因而，于<strong>同年6月</strong>，谷歌提交 QUIC 草案给 IETF，以期作为下一代 HTTP 协议标准进行普及。</p>
+<p>至 <strong>2018年</strong>，IETF组织中专门制定 HTTP 协议的组织(HTTP WG)正式确定将基于 <strong>QUIC 的 HTTP (HTTP Over QUIC)</strong> 作为下一代 HTTP 协议，并重命名为 <strong>HTTP3</strong>。并且 HTTPWG 认为标准化的 QUIC 协议应该支持 HTTP 以外的应用层协议。因此，IETF 将 QUIC 作为单独的传输层进行标准化，并成立了专门的 QUIC 协议标准化小组。</p>
+<p>这里 QUIC 出现的频次较多，由于历史原因，导致大家会很难理解 QUIC 的具体含义，这里着重讲解下。</p>
+<ul>
+<li>HTTP3 确立标准化之前，QUIC 代表的都是谷歌的 QUIC，表示完整的 HTTP 实现，其又分为两种；<ul>
+<li>HTTP2 协议标准化之前: 传输层 UDP 实现类 TCP 特性协议 + Spedy;</li>
+<li>HTTP2 协议标准化之后: 传输层 UDP 实现类 TCP 特性协议 + HTTP2;</li>
+</ul>
+</li>
+<li>HTTP3 确立标准化之后，QUIC 既指代谷歌的 QUIC 也指代 IETF 的 QUIC, IETF 的 QUIC 仅仅表示传输层 QUIC，不包含应用层的实现;</li>
+</ul>
+<p>为便于更好地区分 HTTP3 标准化前后两种 QUIC，现在，一般我们现在将谷歌的 QUIC 改称为 <strong>gQUIC</strong>，而 QUIC 则仅仅指代 IETF 的传输层 QUIC。文字不好理解，我特意画了张图。</p>
+<p><img src="https://img.godjiyi.cn/jy_20200524181808.png" alt></p>
+<p>虽然现在我们知道这 QUIC 应该指 IETF 的基于 UDP 的<strong>上层 “传输层协议”</strong>，但是由于 HTTP3 还没有出正式标准，且了解 IETF 中规范的 QUIC 标准很少，因此互联网上所说的 QUIC 一般都是 gQUIC。下文除非特别说明，QUIC 一律指 gQUIC。</p>
+<h2 id="QUIC-HTTP3-特性"><a href="#QUIC-HTTP3-特性" class="headerlink" title="QUIC/HTTP3 特性"></a>QUIC/HTTP3 特性</h2><p>对于 QUIC 的特性这里简单说下，以后会对每个点进行详细解释。</p>
+<p>我们直接看谷歌 QUIC 官方首页：<a href="https://www.chromium.org/quic" target="_blank" rel="noopener">https://www.chromium.org/quic</a></p>
+<p><img src="https://img.godjiyi.cn/jy_20200524183342.png" alt></p>
+<p>一共总结四点：</p>
+<ol>
+<li>大大减少建立连接时间;</li>
+<li>增强的拥塞控制;</li>
+<li>无队头阻塞的多路复用;</li>
+<li>连接迁移;</li>
+</ol>
+<p>通过整理了网上的特性说明，我将转换了下说法：</p>
+<ol>
+<li>1/0 RTT;</li>
+<li>优化拥塞控制;</li>
+<li>无队头阻塞;</li>
+<li>连接迁移;</li>
+</ol>
+<p>对应的图示如下:</p>
+<p><img src="https://img.godjiyi.cn/jy_20200524184711.png" alt></p>
+<h3 id="1-0-RTT"><a href="#1-0-RTT" class="headerlink" title="1/0 RTT"></a>1/0 RTT</h3><p><strong>RTT</strong> 是指互联网上两个点建立连接的一次往返时间(round-trip time)。QUIC 建立握手的时间能达到 1 或 0 RTT。这是因为原有的 HTTP 是基于 TCP 的方式中：</p>
+<ul>
+<li>① 裸 HTTP 需要 <strong>1.5 RTT</strong>；</li>
+<li>② HTTPS 方式需要 <strong>3 RTT</strong>；</li>
+</ul>
+<p>而 QUIC 则是基于 UDP 的，UDP 无需建立握手就能传输数据，那 1 RTT 只指 SSL 的建立时间。因此建立连接效率比原有 HTTP 快。这个我会专门写篇文章介绍。</p>
+<p>而裸 HTTP 是不安全的，谷歌表示未来的协议都将默认加入安全传输 SSL 协议，因此 QUIC 本身就是要基于加密的，目前的大多数 QUIC 协议的实现也都默认含有加密的，因此，对于 QUIC 的对比，一般都是以 HTTPS 进行对比的。</p>
+<h3 id="优化拥塞控制"><a href="#优化拥塞控制" class="headerlink" title="优化拥塞控制"></a>优化拥塞控制</h3><p>我们知道 TCP 的拥塞控制是内嵌于操作系统的，Linux 内核从 <strong>2.6.19</strong> 开始就是用 <strong>Cubic</strong> 拥塞控制算法。而谷歌于 2016 年发明了全新的 TCP 拥塞控制算法 – <strong>BBR</strong> (Bottleneck Bandwidth and RTT)，这个已经验证是比 Cubic 性能更好的拥塞控制算法。因此，Linux 内核从 <strong>4.19</strong> 开始加入了 BBR 算法。</p>
+<p>每一次的拥塞控制算法的更新都要更新内核，这使得新算法的迭代和普及极其缓慢。而 QUIC 协议则是基于 UDP 实现的类似 TCP 的协议，诸如有序控制、拥塞避免、拥塞控制都进行了重新实现。从宏观上来看，QUIC 则就是应用层协议，这对于拥塞控制算法的更新极其容易，不用更新操作系统。</p>
+<p>此外 QUIC 中的拥塞控制是可拔插式的，这可更进一步优化和迭代各种新的拥塞控制算法。这也是 QUIC 极具吸引人的地方。</p>
+<h3 id="无队头阻塞"><a href="#无队头阻塞" class="headerlink" title="无队头阻塞"></a>无队头阻塞</h3><p>这里的消除队头阻塞在 QUIC 上是彻底地消除了。我们都知道 HTTP2 协议的规范上也说了消除队头阻塞。但那仅仅是消除了 HTTP 连接的队头阻塞，而根本上的 TCP 队头阻塞是没有消除的。因为只要基于 TCP 就铁定有 TCP 队头阻塞的。而 QUIC 是基于 UDP 的，非面向连接的，从而自动消除 TCP 队头阻塞。</p>
+<p><img src="https://img.godjiyi.cn/jy_20200524195419.png" alt></p>
+<ul>
+<li><strong>多路复用</strong>是 HTTP2 的一大特定，也是相比 HTTP1.1 的提升体现。一个 web 站点在使用 HTTP2 协议时，只需要建立一个 TCP 连接，所有的数据通过帧进行发送，多个 HTTP 连接里的帧可以并行通过一个 TCP 连接发送。而原有的 HTTP1.1 则是一个 HTTP 连接就只能在一个 TCP 连接里发送，多个 HTTP 连接不能并行发送。一般 Chrome 浏览器对于 HTTP1.1 协议允许一个网站建立最多 6 个 TCP 连接。</li>
+<li>虽然 HTTP2 的多路复用可解决 HTTP 连接并行问题，但解决不了 TCP 的队头阻塞问题。我们知道 TCP 需要包有序到达，当无序的时候，接收方会等待缺少的包，直至包到达。这是 TCP 的优点，也是缺点。</li>
+<li>谷歌为了解决 TCP 握手和这种天生的缺陷，就基于 UDP 实现了类 TCP 各种特性的新协议，并将此协议<strong>融入 QUIC</strong>，这也就是 QUIC 天生就无队头阻塞的原因。</li>
+</ul>
+<h3 id="连接迁移"><a href="#连接迁移" class="headerlink" title="连接迁移"></a>连接迁移</h3><p><strong>连接迁移</strong>这个就是指手机在 4G/5G 流量网络与 WIFI 网络之间可以无缝切换，而无需重建连接。</p>
+<p>我们知道原有的基于 TCP 的 HTTP 协议，在切换网络时，都需要我们的手机与服务器进行重新建立 TCP 连接，然后才能重新发送 HTTP 数据包。</p>
+<p>而 QUIC 协议是基于 UDP 的，天生无面向连接之说，但是我们还是需要维持客户端与服务的<strong>逻辑连接的</strong>。QUIC 中在数据包的头部加了 <strong>ConnectionID</strong>，这样每个 UDP 包里都有同一个连接的 ID，即使手机从 4G 切为 WIFI 了，手机在发送包时，仍然正常发送，而服务器可以根据 <strong>ConnectionID</strong> 进行组装即可，这也就是<strong>无缝连接迁移</strong>。</p>
+<p>废话不多说，看谷歌给的连接迁移 Demo: <a href="https://drive.google.com/file/d/1DlMI_3MOxnWarvEVfzKxFqmD7c-u1cYG/view?usp=sharing" target="_blank" rel="noopener">QUIC Connection Migration demo</a></p>
+<h2 id="构建-QUIC-HTTP3-服务"><a href="#构建-QUIC-HTTP3-服务" class="headerlink" title="构建 QUIC/HTTP3 服务"></a>构建 QUIC/HTTP3 服务</h2><h3 id="QUIC库选择"><a href="#QUIC库选择" class="headerlink" title="QUIC库选择"></a>QUIC库选择</h3><p>由于 HTTP3 协议还在制定中，目前还没有正式的标准出台，只有每年定期举行的会议会给出 Draft 手稿。 <a href="https://quicwg.org/" target="_blank" rel="noopener">IETF 官方 QUIC 工作组</a>有统计在协议设计期间的各种实现库：</p>
+<ul>
+<li><a href="https://github.com/quicwg/base-drafts/wiki/Implementations" target="_blank" rel="noopener">官方工作组给的QUIC实现</a></li>
+<li><a href="https://github.com/quicwg/base-drafts/wiki/Tools" target="_blank" rel="noopener">官方工作给的QUIC调试Tool</a></li>
+</ul>
+<p>大家可以看下，我自己对比了比较常用和著名的库，表格如下，希望对大家选择有帮助。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">库名</th>
+<th style="text-align:center">gQUIC/H3版本</th>
+<th style="text-align:center">最近更新</th>
+<th style="text-align:center">测试地址</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://github.com/chromium/chromium" target="_blank" rel="noopener">chromium</a></td>
+<td style="text-align:center">Q043, Q046, Q050, Draft-25, Draft-27</td>
+<td style="text-align:center">几小时前</td>
+<td style="text-align:center"><a href="https://quic\.rocks:4433/" target="_blank" rel="noopener">https://quic\.rocks:4433/</a></td>
+<td style="text-align:center">谷歌开源浏览器内核，实现gQUIC和IETF手稿</td>
+<td style="text-align:center">推荐，但要难度大👍👍</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/devsisters/libquic" target="_blank" rel="noopener">libquic</a></td>
+<td style="text-align:center">Q030, Q031, Q032, Q033, Q033, Q034, Q035, Q036</td>
+<td style="text-align:center">4年前</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">从Chromium源码中提取的QUIC实现</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/devsisters/goquic" target="_blank" rel="noopener">goquic</a></td>
+<td style="text-align:center">Q030, Q031, Q032, Q033, Q033, Q034, Q035, Q036</td>
+<td style="text-align:center">4年前</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">基于 libquic，用 Go 实现</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<p>| <a href="https://github.com/litespeedtech/lsquic" target="_blank" rel="noopener">lsquic</a>        | Q043, Q046, Q050, Draft-25, Draft-27         | 6天前  | www.litespeedtech.com:443  | LiteSpeed 公司的开源库           | 强烈推荐👍👍👍    |<br>| <a href="https://github.com/cloudflare/quiche" target="_blank" rel="noopener">quiche</a>        | Draft-23, Draft-24, Draft-25, Draft-27     | 几小时前 | <a href="https://quic\.tech:8443/" target="_blank" rel="noopener">https://quic\.tech:8443/</a>     | Cloudflare 公司开源的库          | 推荐👍👍        |<br>| <a href="https://github.com/ngtcp2/nghttp3" target="_blank" rel="noopener">nghttp3</a>       | Draft-27                                      | 几天前  | <a href="https://nghttp2\.org:4433/" target="_blank" rel="noopener">https://nghttp2\.org:4433/</a>   | 基于 C 实现的库，CURL 代码可编译支持QUIC |               |<br>| <a href="https://github.com/lucas-clemente/quic-go" target="_blank" rel="noopener">quic-go</a>      | Draft-23，Draft-24                            | 1月前  | 无                            | 谷歌一位工程师实现的库。Caddy 使用了此库    |               |<br>| <a href="https://github.com/caddyserver/caddy" target="_blank" rel="noopener">caddy</a>         | Draft-23，Draft-24                            | 几天前  | 无                            | 基于Go语言，Caddy 2.0 支持 QUIC  | 测试用较好👍       |<br>| <a href="https://github.com/evansun922/nginx-quic" target="_blank" rel="noopener">nginx-quic</a>   | Q043, Q046                                     | 几月前  | 无                            | 搜狐工程师实现的Nginx集成方案          | 推荐部署方式👍      |<br>| <a href="https://github.com/litespeedtech/openlitespeed" target="_blank" rel="noopener">openlitespeed</a> | Q043, Q046, Q050, Draft-25, Draft-27         | 几天前  |                              | LiteSpeed 公司的开源高性能服务器      | 推荐，部署简单👍👍👍 |</p>
+<p>今天我们先用 <strong>openlitespeed</strong> 库进行部署支持 QUIC 协议的 WEB 网站。因为该库官网放出性能是 Nginx 的几倍，且支持 gQUIC 和 HTTP3 协议。</p>
+<h3 id="QUIC-部署"><a href="#QUIC-部署" class="headerlink" title="QUIC 部署"></a>QUIC 部署</h3><p><strong>openlitespeed</strong> 安装很简单，可以看官方教程: <a href="https://openlitespeed.org/kb/install-ols-from-litespeed-repositories/" target="_blank" rel="noopener">Install OpenLiteSpeed</a>, 为防止部分人看不到，我记录了下：</p>
+<ul>
+<li><p>先根据系统安装 repo 源:</p>
+  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># CentOS 5</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el5.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 6</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el6.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 7</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el7.noarch.rpm</span><br><span class="line"><span class="comment"># CentOS 8</span></span><br><span class="line">rpm -Uvh http://rpms.litespeedtech.com/centos/litespeed-repo-1.1-1.el8.noarch.rpm</span><br><span class="line"><span class="comment"># Debian 7, 8 &amp; Ubuntu 12,14,16,18</span></span><br><span class="line">wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | bash</span><br><span class="line"><span class="comment"># Amazon Linux</span></span><br><span class="line">wget http://rpms.litespeedtech.com/centos/litespeed.repo -P /etc/yum.repos.d/</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>再执行安装命令(根据自己的系统选择安装命令)</p>
+  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># CentOS</span></span><br><span class="line">yum install openlitespeed</span><br><span class="line"><span class="comment"># Debian &amp; Ubuntu </span></span><br><span class="line">apt-get install openlitespeed</span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<p>安装完了就进行配置，配置说明请参考官方文档: <a href="https://openlitespeed.org/kb/" target="_blank" rel="noopener">Configuration</a></p>
+<p>说实话，这个库是有后台的，是可视化配置，但是比较难用，需要自己熟悉才行。为避免大家浪费时间，我将整个服务安装好，并配置好了，构建了一个基础镜像：<a href="https://hub.docker.com/r/jiyiren/http-base-quic" target="_blank" rel="noopener">https://hub.docker.com/r/jiyiren/http-base-quic</a>，如何配置自己的服务呢，下面简单讲下。</p>
+<p>部署和配置代码已放 Github 上：<a href="https://github.com/jiyiren/quic-web" target="_blank" rel="noopener">https://github.com/jiyiren/quic-web</a></p>
+<p>效果展示，我部署在我自己的服务器上: <a href="https://http3.godjiyi.cn:9445/" target="_blank" rel="noopener">https://http3.godjiyi.cn:9445/</a> 。</p>
+<p>并且我也写了一个 HTTP1.1 、HTTP2、HTTP3 速度加载对比示例: <a href="https://demo.godjiyi.cn" target="_blank" rel="noopener">https://demo.godjiyi.cn</a></p>
+<p>分别用 Chrome 浏览器和 Firefox 浏览器进行测试。这里说明下：</p>
+<ul>
+<li><p>目前 Chrome 浏览器支持谷歌自家的 QUIC 协议，而谷歌家的 QUIC 原来单叫 QUIC，比如 gQUIC/46。在提交草案给 IETF 后，IETF 也开始了标准化，因此逐渐地谷歌开始将自家的 QUIC 像 IETF 标准靠，因此为 gQUIC-h3-50，相信以后 Chrome 会逐渐替换到 HTTP3 来。</p>
+</li>
+<li><p>而 Firefox 浏览器本身就和 Chrome 是竞争关系，所以虽然 QUIC 好，但没有国际组织的支持 Firefox 也不会支持的。而在谷歌提交草案后，得到了 IETF 的认可，并且 IETF 在进行标准化了，因此 Firefox 直接实现了 IETF 正规的 Draft 版本协议。所以 Firefox 浏览器标识时正规的 HTTP3 协议。</p>
+</li>
+</ul>
+<p>但不论怎样，这些协议思想一致，都是 UDP 进行传输，握手 RTT 很低，大家通过上面的速度加载对比就能看出来 HTTP3 的快速，当然在弱网情况下效果会更好点。</p>
+<p><img src="http://img.godjiyi.cn/jy_quic46.png" alt></p>
+<p><img src="http://img.godjiyi.cn/jy_quic50.png" alt></p>
+<p><img src="http://img.godjiyi.cn/jy_http3.png" alt></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://ictar.xyz/2019/01/31/trans-http-3-from-root-to-tip/" target="_blank" rel="noopener">QUICIETF工作历时</a></li>
+<li><a href="https://www.mf8.biz/use-http-3/" target="_blank" rel="noopener">LiteSpeed 部署</a></li>
+<li><a href="https://www.litespeedtech.com/latest-techs/http-3-is-coming" target="_blank" rel="noopener">LiteSpeedTech官网介绍</a></li>
+<li><a href="https://tools.ietf.org/html/draft-ietf-quic-transport-20" target="_blank" rel="noopener">IETF草稿议案-20版</a></li>
+<li><a href="http://www.ccsa.org.cn/organization/index.php3" target="_blank" rel="noopener">中国通信协会标准化组织介绍</a></li>
+<li><a href="https://www.chromium.org/quic" target="_blank" rel="noopener">Chromium项目对QUIC介绍</a></li>
+<li><a href="https://en.wikipedia.org/wiki/QUIC" target="_blank" rel="noopener">Wikipedia对QUIC介绍</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9FUDP%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5" target="_blank" rel="noopener">Wikipedi对QUIC中文介绍</a></li>
+<li><a href="https://github.com/litespeedtech/lsquic" target="_blank" rel="noopener">https://github.com/litespeedtech/lsquic</a></li>
+<li><a href="https://docs.google.com/document/d/1RNHkx_VvKWyWg6Lr8SZ-saqsQx7rFV-ev2jRFUoVD34/edit" target="_blank" rel="noopener">QUIC设计文档</a></li>
+<li><a href="https://docs.google.com/document/d/1WJvyZflAO2pq77yOLbp9NsGjC1CHetAXV8I0fQe-B_U/edit#" target="_blank" rel="noopener">QUIC传输格式设计文档</a></li>
+<li><a href="http://http2.github.io/http2-spec/" target="_blank" rel="noopener">HTTP2发布</a></li>
+<li><a href="https://blog.csdn.net/hursing/article/details/22785475" target="_blank" rel="noopener">博客-SPDY、HTTP2、QUIC协议介绍</a></li>
+<li><a href="https://blog.csdn.net/liujianfei526/article/details/53289350" target="_blank" rel="noopener">博客-HTTP发展史</a></li>
+<li><a href="https://home.cern/science/computing/birth-web" target="_blank" rel="noopener">The birth of the web</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP" target="_blank" rel="noopener">Http 演化</a></li>
+<li><a href="https://www.infoq.cn/article/kU4OkqR8vH123a8dLCCJ" target="_blank" rel="noopener">InfoQHttp进化</a></li>
+<li><a href="https://hpbn.co/brief-history-of-http/" target="_blank" rel="noopener">brief-history-of-http</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>HTTP</category>
+      </categories>
+      <tags>
+        <tag>quic</tag>
+        <tag>http3</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
