@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java 中的编码问题</title>
-    <url>/2016/03/22/Java_encode/</url>
-    <content><![CDATA[<p>今天写 <strong>Java</strong> 读文件时遇到编码问题，搜索了一晚上终于搞懂了这块问题。下面记录一下自己的笔记。</p>
-<h2 id="一、问题："><a href="#一、问题：" class="headerlink" title="一、问题："></a>一、问题：</h2><p>今天用 <strong>Java</strong> 写了一个读文件的，我用 <em>eclipse</em> 新建一个 utf-8 无 bom 编码的 txt 文件，叫做 <strong>ch.txt</strong>, 只写一个汉字: <strong>吉</strong>, 完成后内容：</p>
-<p><img src="https://img.godjiyi.cn/javafile1.png" alt="ch.txt内容"></p>
-<p>然后右击查看文件的属性：</p>
-<p><img src="https://img.godjiyi.cn/javafile222.png" alt="enter image description here"></p>
+    <title>Android 开发中 dp、dpi、px 的区别</title>
+    <url>/2015/07/26/android-dp-dip/</url>
+    <content><![CDATA[<h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><ul>
+<li><strong>dp</strong>：安卓中的相对大小</li>
+<li><strong>dpi</strong>：( <em>dot per inch</em> )每英寸像素多少</li>
+<li><strong>px</strong>：像素点</li>
+</ul>
+<h2 id="二、详细说明"><a href="#二、详细说明" class="headerlink" title="二、详细说明"></a>二、详细说明</h2><h3 id="px和dpi"><a href="#px和dpi" class="headerlink" title="px和dpi"></a>px和dpi</h3><p><strong>px</strong></p>
+<p>平常所说的 <em>1920×1080</em> 只是像素数量，也就是 1920px×1080px, 代表手机高度上有 1920 个像素点，宽度上有 1080 个像素点。</p>
 <a id="more"></a>
-<p>读文件的代码为：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jiyiren.fileio;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;	</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mfread</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		FileReader fr=<span class="keyword">null</span>;</span><br><span class="line">		File f1=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			f1=<span class="keyword">new</span> File(<span class="string">"ch.txt"</span>);</span><br><span class="line">			fr=<span class="keyword">new</span> FileReader(f1);</span><br><span class="line">			<span class="keyword">char</span>[] c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>((len=fr.read(c))!=-<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">					System.out.println(c[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(fr!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					fr.close();</span><br><span class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">					<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>输出结果为：</p>
-<p><img src="https://img.godjiyi.cn/javafile3.png" alt="enter image description here"></p>
-<p>上面的代码与结果完全正确，那问题是什么呢？我们都知道 <strong>Java</strong> 中的 <em>char</em> 是 2 个字节，但是我们文件里保存的那个中文为 3 字节，读文件时我们也只用</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
-<p><em>一个 char 类型读，但是结果为什么正确呢？java 中的 char 类型是Unicode 型的 2 个字节又是什么意思？文件保存的 utf-8格式与 Unicode 有什么关系呢？</em> 下面我就讲下我的理解。</p>
-<h2 id="二、Unicode-编码"><a href="#二、Unicode-编码" class="headerlink" title="二、Unicode 编码"></a>二、Unicode 编码</h2><p><strong>Unicode</strong> 编码的出现是为了解决世界上各种不同字符编码不一致的问题的，因为互联网的兴起，迫切需要这种统一世界上所有字符的编码。<strong>Unicode</strong> 当然是一个很大的集合，现在的规模可以容纳 100 多万个符号，每个符号的编码都不一样，比如：<strong>U+0639</strong> 表示阿拉伯字母 Ain，<strong>U+0041</strong> 表示英语的大写字母 A，<strong>U+4E25</strong> 表示汉字 “严”。</p>
-<p><strong>Unicode</strong> 编码以二进制代码格式规定了符号的唯一标识，<strong>它是一个符号集</strong>，它仅仅是给世界上各个字符规定了编码，但是它没有规定标识这些字母的二进制该如何存储。比如有的字符用 1 个字节就可以标识，但是有的字符要4个字节标识，如果都用4个字节标识每一个字符，那将会造成巨大的存储浪费，但是不这样存储又能有什么更好的存储方法呢？UTF-8 存储方式应运而生。</p>
-<h2 id="三、UTF-8-存储-编码"><a href="#三、UTF-8-存储-编码" class="headerlink" title="三、UTF-8 ( 存储 ) 编码"></a>三、UTF-8 ( 存储 ) 编码</h2><p>我们所知道的 <strong>UTF-8</strong> 编码，实际上它并非规定了字符的编码方式 ( 字符编码是由 <strong>Unicode</strong> 规定的 )，它只是规定怎么存储 <strong>Unicode</strong> 编码好的字符二进制数据，因而 UTF-8 编码默认包含了 <strong>Unicode</strong> 编码，我们通常所说的 UTF-8，实际上就是 <strong>Unicode UTF-8</strong> 编码。</p>
-<p><strong>UTF-8</strong> 是 Unicode 实现存储编码的一种方式，它最大的特点就是它是一种变长的编码方式。它可以使用 1~4 个字节表示一个符号，根据不同的符号而变化字节长度，这也就解决了 <strong>Unicode</strong> 编码用 4 个字节存储而浪费存储资源的问题了。</p>
-<p><strong>UTF-8编码的规则：</strong></p>
-<ol>
-<li>对于单字节的符号，字节的第一位设为0，后面7位为这个符号的 <strong>Unicode</strong> 码。因此对于英文字母，UTF-8 编码和 ASCII 码是相同的。</li>
-<li>对于n字节的符号(n&gt;1),第一个字节的前n位都设为1，第 n+1 位设为0，后面字节的前两位一律设为 10。剩下的所有没有提及的二进制位，全部为这个符号的 <strong>Unicode</strong> 码。</li>
-</ol>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">    Unicode符号范围  |  UTF-8编码存储方式</span><br><span class="line">	(十六进制范围)| (二进制)</span><br><span class="line">0000 0000~0000 007F | 0xxxxxxx</span><br><span class="line">0000 0080~0000 07FF | 110xxxxx 10xxxxxx</span><br><span class="line">0000 0800~0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">0001 0000~0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
-<p>根据上表，以UTF-8 编码，如果一个字节的二进制的第一位是0，则这个字节单独就是一个字符，如果第一位是1，则连续有多少个1就表示该字符占有多少个字节。</p>
-<p>汉字的 <strong>Unicode</strong> 编码表可以查看：<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">http://www.chi2ko.com/tool/CJK.htm</a> 或者 <a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode官网</a> 然后我以汉字 “<strong>吉</strong>” 为例，演示将 “吉” 以 UTF-8 方式存储 “吉” 的 <strong>Unicode</strong> 编码的过程。</p>
-<p>“吉”的Unicode编码十六进制数为 <strong>5409</strong>, 对应的二进制为 <strong>0101 0100 0000 1001</strong>; 因为 <strong>5409</strong> 把前面的全为 0 的 2 字节省略了，我们把它补上就是 <strong>0000 5409</strong>, 现在根据上表的左边一栏，可以知道该数在第三行范围里，所以 “<strong>吉</strong>” 的 UTF-8 编码占 3 字节，我们直接将第三行的右边栏中的 x 号换成 “<strong>吉</strong>” 二进制就可以了，最后结果：<strong>11100101 10010000 10001001</strong>，这个就是 “吉” 字的 Unicode 的 UTF-8 编码的存储字节形式。</p>
-<h2 id="四、解决问题"><a href="#四、解决问题" class="headerlink" title="四、解决问题"></a>四、解决问题</h2><p>讲了这么多问题一点没有提到啊，我们根据上面的UTF-8的存储过程可以知道，中文 “吉” 的 <strong>Unicode</strong> 编码为 <strong>5409</strong>, 不用 <strong>UTF-8</strong> 存储表示时，“吉” 应该只占用两个字节，也就是说 <em>java</em> 中的 <em>char</em> 是 2 个字节完全可以存储的，但是这个存储只能在内存中，而如果写入文件，必须用到编码，而我们用的是 UTF-8 编码，由上面的转换过程可以知道，中文 “<strong>吉</strong>” 字的 <strong>Unicode</strong> 码的 <strong>UTF-8</strong> 形式需要 3 个字节的，所以保存在文件里时文件所占用的存储空间为 <em>3 byte</em>, 到这里我想大家应该都明白了为什么存在文件中的字是3个字节，而读出来的竟然用 char 就可以存储了的原因了。</p>
-<p><em>Java</em> 中在文件数据与内存数据转换时肯定会涉及到编码的，其实不论java语言了其他语言都有的，只不过这些语言的通常做法都是使用默认的编码方式，但是我们必须要明白这其中的原理，不然以后出现一点乱码都将会是头痛的问题！！！</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a></li>
-<li><a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">http://www.chi2ko.com/tool/CJK.htm</a></li>
-<li><a href="http://blog.csdn.net/ocean20/article/details/6743385" target="_blank" rel="noopener">http://blog.csdn.net/ocean20/article/details/6743385</a></li>
+<p><strong>dpi</strong></p>
+<p>要想判别手机屏幕的显示好坏，还要考虑屏幕的宽高(英寸)，也就是用 <em>dpi</em> 即每英寸多少像素来评价屏幕的显示效果。（不然假如手机分辨率是 1920×1080, 但是屏幕是几十寸的，那显示效果将不会很好，甚至你有可能看到小的像素块，那将更影响视觉效果。）</p>
+<p><strong>dp</strong></p>
+<p><em>怎样理解 dp 才好呢 ?</em></p>
+<ul>
+<li>其实 dp 就是为了使得开发者设置的长度能够根据不同屏幕( 分辨率/尺寸也就是 dpi )获得不同的像素 ( px ) 数量。比如：我将一个控件设置长度为 1dp, 那么在 <em>160dpi</em> 上该控件长度为 1px, 在 <em>240dpi</em> 的屏幕上该控件的长度为 1 * 240 / 160 = 1.5 个像素点。</li>
+<li><strong>也就是dp会随着不同屏幕而改变控件长度的像素数量。</strong></li>
+<li>关于dp的官方叙述为当屏幕每英寸有 160个 像素时( 也就是 <em>160dpi</em> )，dp与px等价的。那如果每英寸 240 个像素呢？1dp —&gt;1*240/160=1.5px，即 1dp 与 1.5px 等价了。</li>
+<li>其实记住一点，<strong>dp 最终都要化为像素数量来衡量大小的，因为只有像素数量最直观。</strong></li>
+</ul>
+<p><strong>计算dp的方法:</strong></p>
+<ul>
+<li>通常来说，我们写程序时几乎没用到计算dp，就是直接凭着自己的感觉写的。此处计算dp只是为了大家更好理解dp，如果有的人想精确设置控件大小，也可以这样计算的。</li>
+<li>我直接画张图吧：<br><img src="https://img.godjiyi.cn/csdnblogImage.png" alt></li>
+<li>计算dp往往是由程序员完成的，是创造的过程，顺叙的过程。但是写程序总会有两个历程的，一个是进行写，一个是返回读，这个读的话就用到了将 <em>dp</em> 转换了。</li>
+</ul>
+<p><strong>dp转px—(最常用的方法):</strong></p>
+<ul>
+<li>前面已经看到一个例子了如下(注：等号都是等价，是理解上的等于，不是直接的等于的)：安卓中如果手机每英寸有 <em>160px</em>，即手机是 <em>160dpi</em>，那么此时1dp就可以理解为1px，假如现在手机是240dpi，那么1dp=240/160 px=1.5px，<br><strong>从上可以看出dp转px只与屏幕的dpi有关。</strong></li>
+<li>对于 <strong>Android</strong> 来说，最终我们能读懂或者衡量的都是px，所以最后我们都将dp化为px好理解一点。我总结了dp转px的公式如下：</li>
+<li><strong>公式：dp值×（当前dpi/160dpi）=&gt;得出当前的像素数目</strong></li>
+</ul>
+<h3 id="手机屏幕dp最大值是多少？"><a href="#手机屏幕dp最大值是多少？" class="headerlink" title="手机屏幕dp最大值是多少？"></a>手机屏幕dp最大值是多少？</h3><ul>
+<li>那么问题来了，一个手机屏幕最大有多大的dp呢，我能不能设置成 <em>100000dp</em> 呢？其实这也是我所思考的，下面我慢慢来讲。</li>
+<li>假如现在将控件宽度设置为 160dp, 那不同 <em>dpi</em> 的手机所得到的像素是多少呢？<br><img src="https://img.godjiyi.cn/csdnblogt.png" alt><br><strong>从中可以看出最后所得像素值与dpi值相同，也就是说不管什么屏幕160dp，就相当于1英寸。</strong></li>
+<li>所以要得到全屏最长的的dp，就等于<strong>160*宽(或者高英寸长)</strong><br>如第三个 1080*1920例子，160*3 = 480dp，所以 0-480dp 就是宽的 dp 范围。因为480*360/160=1080 个像素，正好等于宽的最大像素数量。</li>
 </ul>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>Android</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>Encode</tag>
+        <tag>Android</tag>
+        <tag>dp</tag>
+        <tag>px</tag>
+        <tag>像素</tag>
       </tags>
   </entry>
   <entry>
@@ -118,6 +122,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Java 中的编码问题</title>
+    <url>/2016/03/22/Java_encode/</url>
+    <content><![CDATA[<p>今天写 <strong>Java</strong> 读文件时遇到编码问题，搜索了一晚上终于搞懂了这块问题。下面记录一下自己的笔记。</p>
+<h2 id="一、问题："><a href="#一、问题：" class="headerlink" title="一、问题："></a>一、问题：</h2><p>今天用 <strong>Java</strong> 写了一个读文件的，我用 <em>eclipse</em> 新建一个 utf-8 无 bom 编码的 txt 文件，叫做 <strong>ch.txt</strong>, 只写一个汉字: <strong>吉</strong>, 完成后内容：</p>
+<p><img src="https://img.godjiyi.cn/javafile1.png" alt="ch.txt内容"></p>
+<p>然后右击查看文件的属性：</p>
+<p><img src="https://img.godjiyi.cn/javafile222.png" alt="enter image description here"></p>
+<a id="more"></a>
+<p>读文件的代码为：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jiyiren.fileio;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;	</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mfread</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		FileReader fr=<span class="keyword">null</span>;</span><br><span class="line">		File f1=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			f1=<span class="keyword">new</span> File(<span class="string">"ch.txt"</span>);</span><br><span class="line">			fr=<span class="keyword">new</span> FileReader(f1);</span><br><span class="line">			<span class="keyword">char</span>[] c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>((len=fr.read(c))!=-<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">					System.out.println(c[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(fr!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					fr.close();</span><br><span class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">					<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>输出结果为：</p>
+<p><img src="https://img.godjiyi.cn/javafile3.png" alt="enter image description here"></p>
+<p>上面的代码与结果完全正确，那问题是什么呢？我们都知道 <strong>Java</strong> 中的 <em>char</em> 是 2 个字节，但是我们文件里保存的那个中文为 3 字节，读文件时我们也只用</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
+<p><em>一个 char 类型读，但是结果为什么正确呢？java 中的 char 类型是Unicode 型的 2 个字节又是什么意思？文件保存的 utf-8格式与 Unicode 有什么关系呢？</em> 下面我就讲下我的理解。</p>
+<h2 id="二、Unicode-编码"><a href="#二、Unicode-编码" class="headerlink" title="二、Unicode 编码"></a>二、Unicode 编码</h2><p><strong>Unicode</strong> 编码的出现是为了解决世界上各种不同字符编码不一致的问题的，因为互联网的兴起，迫切需要这种统一世界上所有字符的编码。<strong>Unicode</strong> 当然是一个很大的集合，现在的规模可以容纳 100 多万个符号，每个符号的编码都不一样，比如：<strong>U+0639</strong> 表示阿拉伯字母 Ain，<strong>U+0041</strong> 表示英语的大写字母 A，<strong>U+4E25</strong> 表示汉字 “严”。</p>
+<p><strong>Unicode</strong> 编码以二进制代码格式规定了符号的唯一标识，<strong>它是一个符号集</strong>，它仅仅是给世界上各个字符规定了编码，但是它没有规定标识这些字母的二进制该如何存储。比如有的字符用 1 个字节就可以标识，但是有的字符要4个字节标识，如果都用4个字节标识每一个字符，那将会造成巨大的存储浪费，但是不这样存储又能有什么更好的存储方法呢？UTF-8 存储方式应运而生。</p>
+<h2 id="三、UTF-8-存储-编码"><a href="#三、UTF-8-存储-编码" class="headerlink" title="三、UTF-8 ( 存储 ) 编码"></a>三、UTF-8 ( 存储 ) 编码</h2><p>我们所知道的 <strong>UTF-8</strong> 编码，实际上它并非规定了字符的编码方式 ( 字符编码是由 <strong>Unicode</strong> 规定的 )，它只是规定怎么存储 <strong>Unicode</strong> 编码好的字符二进制数据，因而 UTF-8 编码默认包含了 <strong>Unicode</strong> 编码，我们通常所说的 UTF-8，实际上就是 <strong>Unicode UTF-8</strong> 编码。</p>
+<p><strong>UTF-8</strong> 是 Unicode 实现存储编码的一种方式，它最大的特点就是它是一种变长的编码方式。它可以使用 1~4 个字节表示一个符号，根据不同的符号而变化字节长度，这也就解决了 <strong>Unicode</strong> 编码用 4 个字节存储而浪费存储资源的问题了。</p>
+<p><strong>UTF-8编码的规则：</strong></p>
+<ol>
+<li>对于单字节的符号，字节的第一位设为0，后面7位为这个符号的 <strong>Unicode</strong> 码。因此对于英文字母，UTF-8 编码和 ASCII 码是相同的。</li>
+<li>对于n字节的符号(n&gt;1),第一个字节的前n位都设为1，第 n+1 位设为0，后面字节的前两位一律设为 10。剩下的所有没有提及的二进制位，全部为这个符号的 <strong>Unicode</strong> 码。</li>
+</ol>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">    Unicode符号范围  |  UTF-8编码存储方式</span><br><span class="line">	(十六进制范围)| (二进制)</span><br><span class="line">0000 0000~0000 007F | 0xxxxxxx</span><br><span class="line">0000 0080~0000 07FF | 110xxxxx 10xxxxxx</span><br><span class="line">0000 0800~0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">0001 0000~0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
+<p>根据上表，以UTF-8 编码，如果一个字节的二进制的第一位是0，则这个字节单独就是一个字符，如果第一位是1，则连续有多少个1就表示该字符占有多少个字节。</p>
+<p>汉字的 <strong>Unicode</strong> 编码表可以查看：<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">http://www.chi2ko.com/tool/CJK.htm</a> 或者 <a href="http://www.unicode.org/" target="_blank" rel="noopener">Unicode官网</a> 然后我以汉字 “<strong>吉</strong>” 为例，演示将 “吉” 以 UTF-8 方式存储 “吉” 的 <strong>Unicode</strong> 编码的过程。</p>
+<p>“吉”的Unicode编码十六进制数为 <strong>5409</strong>, 对应的二进制为 <strong>0101 0100 0000 1001</strong>; 因为 <strong>5409</strong> 把前面的全为 0 的 2 字节省略了，我们把它补上就是 <strong>0000 5409</strong>, 现在根据上表的左边一栏，可以知道该数在第三行范围里，所以 “<strong>吉</strong>” 的 UTF-8 编码占 3 字节，我们直接将第三行的右边栏中的 x 号换成 “<strong>吉</strong>” 二进制就可以了，最后结果：<strong>11100101 10010000 10001001</strong>，这个就是 “吉” 字的 Unicode 的 UTF-8 编码的存储字节形式。</p>
+<h2 id="四、解决问题"><a href="#四、解决问题" class="headerlink" title="四、解决问题"></a>四、解决问题</h2><p>讲了这么多问题一点没有提到啊，我们根据上面的UTF-8的存储过程可以知道，中文 “吉” 的 <strong>Unicode</strong> 编码为 <strong>5409</strong>, 不用 <strong>UTF-8</strong> 存储表示时，“吉” 应该只占用两个字节，也就是说 <em>java</em> 中的 <em>char</em> 是 2 个字节完全可以存储的，但是这个存储只能在内存中，而如果写入文件，必须用到编码，而我们用的是 UTF-8 编码，由上面的转换过程可以知道，中文 “<strong>吉</strong>” 字的 <strong>Unicode</strong> 码的 <strong>UTF-8</strong> 形式需要 3 个字节的，所以保存在文件里时文件所占用的存储空间为 <em>3 byte</em>, 到这里我想大家应该都明白了为什么存在文件中的字是3个字节，而读出来的竟然用 char 就可以存储了的原因了。</p>
+<p><em>Java</em> 中在文件数据与内存数据转换时肯定会涉及到编码的，其实不论java语言了其他语言都有的，只不过这些语言的通常做法都是使用默认的编码方式，但是我们必须要明白这其中的原理，不然以后出现一点乱码都将会是头痛的问题！！！</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a></li>
+<li><a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">http://www.chi2ko.com/tool/CJK.htm</a></li>
+<li><a href="http://blog.csdn.net/ocean20/article/details/6743385" target="_blank" rel="noopener">http://blog.csdn.net/ocean20/article/details/6743385</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Encode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android 下拉图片变大的 ScrollView</title>
     <url>/2015/08/13/android-scrollview/</url>
     <content><![CDATA[<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p><img src="https://img.godjiyi.cn/csdnblogGIF33.gif" alt></p>
@@ -148,55 +197,6 @@
         <tag>Android</tag>
         <tag>下拉放大</tag>
         <tag>ScrollView</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android 开发中 dp、dpi、px 的区别</title>
-    <url>/2015/07/26/android-dp-dip/</url>
-    <content><![CDATA[<h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><ul>
-<li><strong>dp</strong>：安卓中的相对大小</li>
-<li><strong>dpi</strong>：( <em>dot per inch</em> )每英寸像素多少</li>
-<li><strong>px</strong>：像素点</li>
-</ul>
-<h2 id="二、详细说明"><a href="#二、详细说明" class="headerlink" title="二、详细说明"></a>二、详细说明</h2><h3 id="px和dpi"><a href="#px和dpi" class="headerlink" title="px和dpi"></a>px和dpi</h3><p><strong>px</strong></p>
-<p>平常所说的 <em>1920×1080</em> 只是像素数量，也就是 1920px×1080px, 代表手机高度上有 1920 个像素点，宽度上有 1080 个像素点。</p>
-<a id="more"></a>
-<p><strong>dpi</strong></p>
-<p>要想判别手机屏幕的显示好坏，还要考虑屏幕的宽高(英寸)，也就是用 <em>dpi</em> 即每英寸多少像素来评价屏幕的显示效果。（不然假如手机分辨率是 1920×1080, 但是屏幕是几十寸的，那显示效果将不会很好，甚至你有可能看到小的像素块，那将更影响视觉效果。）</p>
-<p><strong>dp</strong></p>
-<p><em>怎样理解 dp 才好呢 ?</em></p>
-<ul>
-<li>其实 dp 就是为了使得开发者设置的长度能够根据不同屏幕( 分辨率/尺寸也就是 dpi )获得不同的像素 ( px ) 数量。比如：我将一个控件设置长度为 1dp, 那么在 <em>160dpi</em> 上该控件长度为 1px, 在 <em>240dpi</em> 的屏幕上该控件的长度为 1 * 240 / 160 = 1.5 个像素点。</li>
-<li><strong>也就是dp会随着不同屏幕而改变控件长度的像素数量。</strong></li>
-<li>关于dp的官方叙述为当屏幕每英寸有 160个 像素时( 也就是 <em>160dpi</em> )，dp与px等价的。那如果每英寸 240 个像素呢？1dp —&gt;1*240/160=1.5px，即 1dp 与 1.5px 等价了。</li>
-<li>其实记住一点，<strong>dp 最终都要化为像素数量来衡量大小的，因为只有像素数量最直观。</strong></li>
-</ul>
-<p><strong>计算dp的方法:</strong></p>
-<ul>
-<li>通常来说，我们写程序时几乎没用到计算dp，就是直接凭着自己的感觉写的。此处计算dp只是为了大家更好理解dp，如果有的人想精确设置控件大小，也可以这样计算的。</li>
-<li>我直接画张图吧：<br><img src="https://img.godjiyi.cn/csdnblogImage.png" alt></li>
-<li>计算dp往往是由程序员完成的，是创造的过程，顺叙的过程。但是写程序总会有两个历程的，一个是进行写，一个是返回读，这个读的话就用到了将 <em>dp</em> 转换了。</li>
-</ul>
-<p><strong>dp转px—(最常用的方法):</strong></p>
-<ul>
-<li>前面已经看到一个例子了如下(注：等号都是等价，是理解上的等于，不是直接的等于的)：安卓中如果手机每英寸有 <em>160px</em>，即手机是 <em>160dpi</em>，那么此时1dp就可以理解为1px，假如现在手机是240dpi，那么1dp=240/160 px=1.5px，<br><strong>从上可以看出dp转px只与屏幕的dpi有关。</strong></li>
-<li>对于 <strong>Android</strong> 来说，最终我们能读懂或者衡量的都是px，所以最后我们都将dp化为px好理解一点。我总结了dp转px的公式如下：</li>
-<li><strong>公式：dp值×（当前dpi/160dpi）=&gt;得出当前的像素数目</strong></li>
-</ul>
-<h3 id="手机屏幕dp最大值是多少？"><a href="#手机屏幕dp最大值是多少？" class="headerlink" title="手机屏幕dp最大值是多少？"></a>手机屏幕dp最大值是多少？</h3><ul>
-<li>那么问题来了，一个手机屏幕最大有多大的dp呢，我能不能设置成 <em>100000dp</em> 呢？其实这也是我所思考的，下面我慢慢来讲。</li>
-<li>假如现在将控件宽度设置为 160dp, 那不同 <em>dpi</em> 的手机所得到的像素是多少呢？<br><img src="https://img.godjiyi.cn/csdnblogt.png" alt><br><strong>从中可以看出最后所得像素值与dpi值相同，也就是说不管什么屏幕160dp，就相当于1英寸。</strong></li>
-<li>所以要得到全屏最长的的dp，就等于<strong>160*宽(或者高英寸长)</strong><br>如第三个 1080*1920例子，160*3 = 480dp，所以 0-480dp 就是宽的 dp 范围。因为480*360/160=1080 个像素，正好等于宽的最大像素数量。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>dp</tag>
-        <tag>px</tag>
-        <tag>像素</tag>
       </tags>
   </entry>
   <entry>
@@ -289,6 +289,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2015/07/23/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br><a id="more"></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Begain</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用 Hexo 搭建 github 博客</title>
     <url>/2015/07/26/hexogithub/</url>
     <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>本篇将介绍使用 <em>Hexo</em> 框架和 <em>github pages</em> 来搭建简单的博客，主要涉及 <strong>环境搭建、github 空间创建、主题运用(新浪微博秀、多说评论，About 的完成)</strong> 等，其实这也就是个人博客最主要，最核心的组件的。</p>
@@ -347,31 +368,29 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Git</tag>
         <tag>Hexo</tag>
+        <tag>Git</tag>
         <tag>Github</tag>
         <tag>NodeJS</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br><a id="more"></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>日志 随想</title>
+    <url>/2020/06/10/life_think/</url>
+    <content><![CDATA[<p>去年(2019年) 7 月入职，到今天也差不多一年了吧。在公司确实学习到了很多技能，但最令我欣慰的应该是公司的整体环境：Leader 随和，同事友好，工作环境舒适开放，双休不常加班(自愿)，另外有大牛带，每两周都有内部大神分享经验。</p>
+<p>从大学、到研究生，再到工作，一路走来，都很<strong>庆幸</strong>自己没有走太多的弯路。</p>
+<p>本科时，同学关系很铁，这也是本科给我的最有价值的东西，到现在最常联系的也是本科的那一波人。而本科的魄力和能力则十分欠缺。虽然最终保研了，但对于我而言，保研靠的是我那书呆子的”读书“能力。我不认为这是值得表扬的事情，因为这种能力对我而言是比较”畏弱“的表现，没有特色、没有想法、没有表达，只会做题。。。</p>
+<p>读研期，与导师关系很铁。看到网上很多导师压榨学生的新闻，我感觉遇到导师则是用尽了毕生的运气了。从大二开始就加入了导师实验室。谈项目，见客户，去企业做技术支持、企业招标导师都带上我，让我见识到了更多的人与事，真的让这个从农村来的我眼界大开。此外，师弟师妹的加入，让研究生的实验室更加活泼、朝气、美好。让原本孤独的自己有了陪伴，很喜欢那种一起”挥霍时间“的感觉。</p>
+<p>到现在，虽然没有成为什么成功人士，但心性和认知我自认为自己了解了他们是什么。</p>
+<p>公司最近裁员了，实习期认识的同事被迫离职了。。。，不知道自己能干多久。我知道命运应该要掌握在自己手里，如何掌握还需进一步探索。希望刚入行或即将入行的同学提早规划下吧！</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>日志</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
+        <tag>Life</tag>
+        <tag>日志</tag>
+        <tag>Think</tag>
       </tags>
   </entry>
   <entry>
@@ -447,100 +466,6 @@
       <tags>
         <tag>Android</tag>
         <tag>MJoke</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2019-07-28 日志</title>
-    <url>/2019/07/28/life_work/</url>
-    <content><![CDATA[<p>最近，我也毕业入职了，用了一个月时间熟悉了身边新环境，虽说还可以，但仍旧心有不安。</p>
-<p>今年都说工作形式不好，多家互联网企业被爆裁员。互联网，曾今是多么充满活力的名词，基本上是”万众创业”的根本，而现在给人的则是”赢者通吃”的感觉，再无敢与巨头相争，百花齐放的景象了。</p>
-<p>虽说现在巨头当道，创业热情没有以前的高，但互联网仍然是最大的创业领域。目前，移动互联的创业确实少了，但是 5G、IoT、人工智能的创业项目却有很多。</p>
-<p>很多时候我们都在以我们自己能看到的信息进行评判和决策的，由于我们都处于历史长河中的一部分，在那一部分中我们的绝大部分技能、信息都聚焦于某一种东西上，如果时代改变了这种东西的价值，那我们自身的价值也会相应变化，最坏的情况就是贬值，而这正是互联网的特性。</p>
-<p>心有不安，不安在时代正在极速地改变着最吃香的技能，而自己的技能却在逐步被淘汰！很多人怕的不是被裁，而是怕自己已经适应不了社会的需求了！</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
-      <tags>
-        <tag>Life</tag>
-        <tag>日志</tag>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日志 随想</title>
-    <url>/2020/06/10/life_think/</url>
-    <content><![CDATA[<p>去年(2019年) 7 月入职，到今天也差不多一年了吧。在公司确实学习到了很多技能，但最令我欣慰的应该是公司的整体环境：Leader 随和，同事友好，工作环境舒适开放，双休不常加班(自愿)，另外有大牛带，每两周都有内部大神分享经验。</p>
-<p>从大学、到研究生，再到工作，一路走来，都很<strong>庆幸</strong>自己没有走太多的弯路。</p>
-<p>本科时，同学关系很铁，这也是本科给我的最有价值的东西，到现在最常联系的也是本科的那一波人。而本科的魄力和能力则十分欠缺。虽然最终保研了，但对于我而言，保研靠的是我那书呆子的”读书“能力。我不认为这是值得表扬的事情，因为这种能力对我而言是比较”畏弱“的表现，没有特色、没有想法、没有表达，只会做题。。。</p>
-<p>读研期，与导师关系很铁。看到网上很多导师压榨学生的新闻，我感觉遇到导师则是用尽了毕生的运气了。从大二开始就加入了导师实验室。谈项目，见客户，去企业做技术支持、企业招标导师都带上我，让我见识到了更多的人与事，真的让这个从农村来的我眼界大开。此外，师弟师妹的加入，让研究生的实验室更加活泼、朝气、美好。让原本孤独的自己有了陪伴，很喜欢那种一起”挥霍时间“的感觉。</p>
-<p>到现在，虽然没有成为什么成功人士，但心性和认知我自认为自己了解了他们是什么。</p>
-<p>公司最近裁员了，实习期认识的同事被迫离职了。。。，不知道自己能干多久。我知道命运应该要掌握在自己手里，如何掌握还需进一步探索。希望刚入行或即将入行的同学提早规划下吧！</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
-      <tags>
-        <tag>Life</tag>
-        <tag>日志</tag>
-        <tag>Think</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>同个电脑多个 SSH Key 的配置使用</title>
-    <url>/2015/07/26/multiple-ssh-key/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">多平台代码仓库，多账号免密登录</p>
-
-<p>很多时候我们用的代码管理平台有很多，通常我们都会使用不止一个平台账号的。比如我比较喜欢 <a href="https://github.com/" target="_blank" rel="noopener">Github</a> 的开源功能，但是它的私有项目是收费的，所以我也用开源中国的 <a href="https://gitee.com/" target="_blank" rel="noopener">Git Oschina</a> 的平台 ( 因为它的 <em>private</em> 项目是免费的！)。但是，由于我们生成的公钥和私钥只有一份，也就是当前用户目录的 <em>.ssh</em> 文件夹下，如果多平台多账号，生成的时候就会覆盖掉了，那该如何设置多平台账号的公钥和私钥不会相互覆盖同时还能够自动解析免密访问？</p>
-<p>本文就介绍用两个不同平台的 <em>Git</em> 账号来实现，同时免密登录。两个平台分别为 <a href="https://github.com/" target="_blank" rel="noopener">Github</a> 和开源中国的 <a href="https://gitee.com/" target="_blank" rel="noopener">GitSschina</a> 的。详细步骤如下。</p>
-<h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><p>生成 <em>ssh key</em> 的命令我想大家都应该懂：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@email.com"</span></span><br></pre></td></tr></table></figure></div>
-<p>当我们回车时，我想有的人是直接三个回车的吧，当然三个回车是没有问题的，但是我们要了解这三个回车是什么意思。</p>
-<p><strong>第一个回车</strong>：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key &lt;/c/Users/JIYI/.ssh/id_rsa&gt;</span><br></pre></td></tr></table></figure></div>
-<a id="more"></a>
-<p>此处的回车代表将密钥默认存储在 <strong><em>C盘/Users/用户名/.ssh</em></strong> 的文件夹下</p>
-<p><strong>第二个回车</strong>与<strong>第三个回车</strong>：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase&lt;empty <span class="keyword">for</span> no passphrase&gt;:</span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure></div>
-<p>这个是为了设置提交项目的密码，为了避免其他人用你的电脑修改你的项目时提交的，通常直接回车，就代表不需要密码，我也建议这样做，可以避免多次输入密码，省时省力。</p>
-<h2 id="多账号密钥生成"><a href="#多账号密钥生成" class="headerlink" title="多账号密钥生成"></a>多账号密钥生成</h2><p>因为有两个账号，如果生成密钥时都是三个回车则后执行的会替换先执行的。既然第一个回车的意思是保存地址，那我们就不能直接回车了，而是输入保存地址就可以了。</p>
-<p>步骤如下：</p>
-<p><strong>1. 正常生成第一个密钥</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;mygitoschina@qq.com&quot;</span><br></pre></td></tr></table></figure></div>
-<p>连续三个回车，将 <strong>Oschina</strong> 的密钥默认保存</p>
-<p><strong>2. 生成第二个密钥</strong></p>
-<p>先打开 <em>C盘/Users/用户名/.ssh</em> 目录，在里面新建 <em>github</em> 文件夹</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;mygithub@gmail.com&quot;</span><br></pre></td></tr></table></figure></div>
-<p>出现 <code>Enter file in which to save the key</code> 时输入</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">/c/Users/用户名/.ssh/github/id_rsa</span><br></pre></td></tr></table></figure></div>
-<p>也就是将密钥保存在 <em>github</em> 文件夹下</p>
-<p><img src="https://img.godjiyi.cn/csdnblogresultssk.jpg" alt></p>
-<p>这样生成密钥完成</p>
-<h2 id="创建-config-文件"><a href="#创建-config-文件" class="headerlink" title="创建 config 文件"></a>创建 config 文件</h2><p>在 <strong>C盘/Users/用户名/.ssh</strong> 目录下新建 <em>config</em> 文件，该文件没有后缀名的，这是为了配置映射功能的，在里面填入下面代码：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">#github的配置</span><br><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/github/id_rsa</span><br><span class="line">	User git</span><br></pre></td></tr></table></figure></div>
-<p>主要是 <em>HostName</em> 和 <em>IdentityFile</em> 要改，<em>HostName</em> 是服务器域名，<em>IdentityFile</em> 就是密钥的地址了。上面设置，就是刚刚我们新建 <em>github</em> 下的生成密钥，那个 <strong>~</strong> 符号代表当前目录，<em>windows</em> 下默认就是 <strong>C盘/Users/用户名</strong>，所以再加上后面的地址就是我们上面所写的 <strong>C盘/Users/用户名/.ssh/github/id_rsa</strong>.</p>
-<p>当然这里面也可以写多个配置的</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">#github配置</span><br><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/github/id_rsa</span><br><span class="line">	User git</span><br><span class="line">#gitoschina的配置</span><br><span class="line">Host git.oschina.net</span><br><span class="line">	HostName git.oschina.net</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa</span><br><span class="line">	User git</span><br></pre></td></tr></table></figure></div>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试 <em>Github</em> 的</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ssh -t git@github.com</span><br></pre></td></tr></table></figure></div>
-<p>返回成功信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Hi youname! You<span class="string">'ve successfully authenticated, but Github does not provide shell access.</span></span><br></pre></td></tr></table></figure></div>
-<p><img src="https://img.godjiyi.cn/csdnblogsskgithub.jpg" alt></p>
-<p>当然有的时候会问你是否授权连接，选 <em>y</em> 即可。</p>
-<p>测试开源中国的 <em>GitOschina</em>:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.oschina.net</span><br></pre></td></tr></table></figure></div>
-<p>返回成功信息为：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">Welcome to Git@OSC, yourname!</span><br></pre></td></tr></table></figure></div>
-<p><img src="https://img.godjiyi.cn/csdnblogsskgitosc.jpg" alt></p>
-<p>这样在项目中就可以用多个 <strong>Git</strong> 平台的 <em>ssh</em> 了。</p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>Github</tag>
-        <tag>SSH Key</tag>
       </tags>
   </entry>
   <entry>
@@ -683,6 +608,94 @@
       </tags>
   </entry>
   <entry>
+    <title>同个电脑多个 SSH Key 的配置使用</title>
+    <url>/2015/07/26/multiple-ssh-key/</url>
+    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">多平台代码仓库，多账号免密登录</p>
+
+<p>很多时候我们用的代码管理平台有很多，通常我们都会使用不止一个平台账号的。比如我比较喜欢 <a href="https://github.com/" target="_blank" rel="noopener">Github</a> 的开源功能，但是它的私有项目是收费的，所以我也用开源中国的 <a href="https://gitee.com/" target="_blank" rel="noopener">Git Oschina</a> 的平台 ( 因为它的 <em>private</em> 项目是免费的！)。但是，由于我们生成的公钥和私钥只有一份，也就是当前用户目录的 <em>.ssh</em> 文件夹下，如果多平台多账号，生成的时候就会覆盖掉了，那该如何设置多平台账号的公钥和私钥不会相互覆盖同时还能够自动解析免密访问？</p>
+<p>本文就介绍用两个不同平台的 <em>Git</em> 账号来实现，同时免密登录。两个平台分别为 <a href="https://github.com/" target="_blank" rel="noopener">Github</a> 和开源中国的 <a href="https://gitee.com/" target="_blank" rel="noopener">GitSschina</a> 的。详细步骤如下。</p>
+<h2 id="生成-SSH-Key"><a href="#生成-SSH-Key" class="headerlink" title="生成 SSH Key"></a>生成 SSH Key</h2><p>生成 <em>ssh key</em> 的命令我想大家都应该懂：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@email.com"</span></span><br></pre></td></tr></table></figure></div>
+<p>当我们回车时，我想有的人是直接三个回车的吧，当然三个回车是没有问题的，但是我们要了解这三个回车是什么意思。</p>
+<p><strong>第一个回车</strong>：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key &lt;/c/Users/JIYI/.ssh/id_rsa&gt;</span><br></pre></td></tr></table></figure></div>
+<a id="more"></a>
+<p>此处的回车代表将密钥默认存储在 <strong><em>C盘/Users/用户名/.ssh</em></strong> 的文件夹下</p>
+<p><strong>第二个回车</strong>与<strong>第三个回车</strong>：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase&lt;empty <span class="keyword">for</span> no passphrase&gt;:</span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure></div>
+<p>这个是为了设置提交项目的密码，为了避免其他人用你的电脑修改你的项目时提交的，通常直接回车，就代表不需要密码，我也建议这样做，可以避免多次输入密码，省时省力。</p>
+<h2 id="多账号密钥生成"><a href="#多账号密钥生成" class="headerlink" title="多账号密钥生成"></a>多账号密钥生成</h2><p>因为有两个账号，如果生成密钥时都是三个回车则后执行的会替换先执行的。既然第一个回车的意思是保存地址，那我们就不能直接回车了，而是输入保存地址就可以了。</p>
+<p>步骤如下：</p>
+<p><strong>1. 正常生成第一个密钥</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;mygitoschina@qq.com&quot;</span><br></pre></td></tr></table></figure></div>
+<p>连续三个回车，将 <strong>Oschina</strong> 的密钥默认保存</p>
+<p><strong>2. 生成第二个密钥</strong></p>
+<p>先打开 <em>C盘/Users/用户名/.ssh</em> 目录，在里面新建 <em>github</em> 文件夹</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;mygithub@gmail.com&quot;</span><br></pre></td></tr></table></figure></div>
+<p>出现 <code>Enter file in which to save the key</code> 时输入</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">/c/Users/用户名/.ssh/github/id_rsa</span><br></pre></td></tr></table></figure></div>
+<p>也就是将密钥保存在 <em>github</em> 文件夹下</p>
+<p><img src="https://img.godjiyi.cn/csdnblogresultssk.jpg" alt></p>
+<p>这样生成密钥完成</p>
+<h2 id="创建-config-文件"><a href="#创建-config-文件" class="headerlink" title="创建 config 文件"></a>创建 config 文件</h2><p>在 <strong>C盘/Users/用户名/.ssh</strong> 目录下新建 <em>config</em> 文件，该文件没有后缀名的，这是为了配置映射功能的，在里面填入下面代码：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">#github的配置</span><br><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/github/id_rsa</span><br><span class="line">	User git</span><br></pre></td></tr></table></figure></div>
+<p>主要是 <em>HostName</em> 和 <em>IdentityFile</em> 要改，<em>HostName</em> 是服务器域名，<em>IdentityFile</em> 就是密钥的地址了。上面设置，就是刚刚我们新建 <em>github</em> 下的生成密钥，那个 <strong>~</strong> 符号代表当前目录，<em>windows</em> 下默认就是 <strong>C盘/Users/用户名</strong>，所以再加上后面的地址就是我们上面所写的 <strong>C盘/Users/用户名/.ssh/github/id_rsa</strong>.</p>
+<p>当然这里面也可以写多个配置的</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">#github配置</span><br><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/github/id_rsa</span><br><span class="line">	User git</span><br><span class="line">#gitoschina的配置</span><br><span class="line">Host git.oschina.net</span><br><span class="line">	HostName git.oschina.net</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa</span><br><span class="line">	User git</span><br></pre></td></tr></table></figure></div>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试 <em>Github</em> 的</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ssh -t git@github.com</span><br></pre></td></tr></table></figure></div>
+<p>返回成功信息：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">Hi youname! You<span class="string">'ve successfully authenticated, but Github does not provide shell access.</span></span><br></pre></td></tr></table></figure></div>
+<p><img src="https://img.godjiyi.cn/csdnblogsskgithub.jpg" alt></p>
+<p>当然有的时候会问你是否授权连接，选 <em>y</em> 即可。</p>
+<p>测试开源中国的 <em>GitOschina</em>:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.oschina.net</span><br></pre></td></tr></table></figure></div>
+<p>返回成功信息为：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">Welcome to Git@OSC, yourname!</span><br></pre></td></tr></table></figure></div>
+<p><img src="https://img.godjiyi.cn/csdnblogsskgitosc.jpg" alt></p>
+<p>这样在项目中就可以用多个 <strong>Git</strong> 平台的 <em>ssh</em> 了。</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Github</tag>
+        <tag>SSH Key</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019-07-28 日志</title>
+    <url>/2019/07/28/life_work/</url>
+    <content><![CDATA[<p>最近，我也毕业入职了，用了一个月时间熟悉了身边新环境，虽说还可以，但仍旧心有不安。</p>
+<p>今年都说工作形式不好，多家互联网企业被爆裁员。互联网，曾今是多么充满活力的名词，基本上是”万众创业”的根本，而现在给人的则是”赢者通吃”的感觉，再无敢与巨头相争，百花齐放的景象了。</p>
+<p>虽说现在巨头当道，创业热情没有以前的高，但互联网仍然是最大的创业领域。目前，移动互联的创业确实少了，但是 5G、IoT、人工智能的创业项目却有很多。</p>
+<p>很多时候我们都在以我们自己能看到的信息进行评判和决策的，由于我们都处于历史长河中的一部分，在那一部分中我们的绝大部分技能、信息都聚焦于某一种东西上，如果时代改变了这种东西的价值，那我们自身的价值也会相应变化，最坏的情况就是贬值，而这正是互联网的特性。</p>
+<p>心有不安，不安在时代正在极速地改变着最吃香的技能，而自己的技能却在逐步被淘汰！很多人怕的不是被裁，而是怕自己已经适应不了社会的需求了！</p>
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+        <tag>日志</tag>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客界面更新</title>
+    <url>/2017/10/06/picture-group/</url>
+    <content><![CDATA[<p><strong>博客界面更新，应用个性化 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题</strong></p>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="https://img.godjiyi.cn/nextpicdd.jpg" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicee.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpica.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicf.jpg" alt></div></div></div></div>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>随手拍</title>
     <url>/2020/06/13/photo_shot_20200613/</url>
     <content><![CDATA[<p>最近一个月，疫情逐渐缓和了。在公司吃完午饭后走一走是一件很愉悦轻松的事情😊。</p>
@@ -807,19 +820,6 @@
       <tags>
         <tag>project</tag>
         <tag>report</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客界面更新</title>
-    <url>/2017/10/06/picture-group/</url>
-    <content><![CDATA[<p><strong>博客界面更新，应用个性化 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题</strong></p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="https://img.godjiyi.cn/nextpicdd.jpg" alt></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicee.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpica.jpg" alt></div><div class="group-picture-column" style="width: 33.333333333333336%;"><img src="https://img.godjiyi.cn/nextpicf.jpg" alt></div></div></div></div>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -1856,100 +1856,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Kafka</title>
-    <url>/2018/08/04/kafka/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">分布式消息系统，解耦模块的桥梁</p>
-
-<p><strong><a href="http://kafka.apache.org/" target="_blank" rel="noopener">Kafka</a></strong> 是一个基于 <strong>发布-订阅</strong> 的分布式消息系统，主要面向于大数据应用场景。它最初由 <em>LinkedIn</em> 公司开发，之后成为 <em>Apache</em> 项目的一部分。<strong>Kafka</strong> 是一种快速、可扩展、本身就专注于分布式的、实时消息流系统。<strong>Kafka</strong> 在2010 年正式向 <em>Apache</em> 社区开源，目前社区活跃。目前在互联网公司使用非常广泛，已经成为大数据分析的基础服务。</p>
-<a id="more"></a>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>Kafka 是众多消息系统中的一种实现方式，那我们为什么需要用到 <strong>消息系统</strong> ？这里我列出以下几种在业务中常常碰到的场景，分别从 <strong>系统架构视角</strong>、<strong>消息传播视角</strong>、<strong>消息处理视角</strong>、<strong>自身系统结构视角</strong> 共四个角度的应用场景来说明：</p>
-<!-- more -->
-<h3 id="模块解耦"><a href="#模块解耦" class="headerlink" title="模块解耦"></a>模块解耦</h3><blockquote>
-<p>从系统架构视角看</p>
-</blockquote>
-<p>这个我想是最明显的一点了，在业务系统上通常会存在一些系统产生数据，一些系统消费数据，这实际上就是 <strong>生产者–消费者</strong> 模式。这里的解耦是什么意思呢？我把消息系统独立出来了，那我的消息系统则会依赖生产者系统，消费系统则会依赖消息系统，不是多出了两个依赖，何为 <strong>解耦</strong> 呢？</p>
-<p>这里的解耦实际上是解耦 <strong>不等速率依赖</strong> (这个名词是我造的，纯属个人观点)。也就是说生产者系统和消费者系统之间会有 <em>生产和消费速度不一致</em> 而导致消息丢失的情况。而消息系统与生产者系统、消息系统与消费者系统之间则没有这种情况，即使有也不会造成消息丢失(只会暂存下来)。因此，破除了生产者系统和消费者系统的依赖关系就叫 <strong>解耦</strong>，而消息系统正是为此而生。</p>
-<h3 id="异步通信-缓冲队列"><a href="#异步通信-缓冲队列" class="headerlink" title="异步通信/缓冲队列"></a>异步通信/缓冲队列</h3><blockquote>
-<p>从消息传播视角看</p>
-</blockquote>
-<p>很多时候，或并发达到一定量级的时候，系统是不能完全提供 <strong>实时消息</strong> 处理的能力的。这时不能立即处理的消息我们必须把这些请求放入 <strong>缓冲队列</strong> 中以等待处理。这种场景在一个公司中可能会有多种业务都会涉及到，因此，领先者们自然想到可以将缓冲队列设计成一个独立的平台，以满足各种业务的接入，从而，<strong>消息系统作为缓冲异步队列轰然降临</strong>。</p>
-<p>这里我使用的是 <strong>缓冲</strong> 队列而非 <strong>缓存</strong> 队列，主要是因为通常我们所说的缓存都是基于内存的，而 <strong>缓冲</strong> 则更普遍一点，你可以让它基于内存，也可以让它基于 <strong>硬盘</strong> 的。通常消息系统基本上都是基于硬盘存储的，包括 Kafka 其也是持久化到硬盘的。</p>
-<p>那 <strong>缓冲队列</strong> 与我们的 <strong>Redis/Memcached 缓存</strong> 或者 <strong>DB 数据库</strong> 有什么区别呢，为什么不用 Redis/Memcached 或者 DB 实现 <strong>缓冲</strong> 功能呢？</p>
-<p>这里我也大概谈下自己的看法：</p>
-<ol>
-<li>先说 <em>基于内存的缓存</em> 吧，缓存的出现都是为了用昂贵的内存代价换来性能上的提升的，缓存通常是暂存那些常被访问的数据以提升较好的用户体验而设计，我们的 <strong>消息系统</strong> 并不是为了 <strong>快</strong>，而是为了 <strong>数据完整性，不丢失</strong> 而作的缓冲设计。因此，我们无需用如此昂贵的内存来作为消息系统的存储介质。另外一点就是缓冲的队列有可能会很大，达到<strong>千万甚至更多级别</strong>，这样如果用内存，那么代价就更昂贵了。</li>
-<li>再说 <em>DB 数据库</em>，上面讲了内存昂贵，那我用数据库总可以了吧！那我们还是先想想数据库的原生作用：数据库是为持久化，通常是恒久的持久化而生的，也就是数据存下去，基本就不用变了，只会少量的修改删除。我们再想想缓冲队列，它是为 <strong>临时存储</strong> 而生的。用持久化的数据库来存临时数据，那会造成频繁的增删操作，势必会给数据库带来极大的性能消耗。</li>
-<li>总结下，缓冲队列目标是：<strong>数据完整性</strong> (而非存读的快速性，不是缓存)，<strong>临时存储能力</strong> (而非恒久持久性，不是数据库)。</li>
-</ol>
-<h3 id="数据一致性保障"><a href="#数据一致性保障" class="headerlink" title="数据一致性保障"></a>数据一致性保障</h3><blockquote>
-<p>从消息处理视角看</p>
-</blockquote>
-<p>有些情况下，我们将数据提交给某个系统处理，有可能那个系统突然崩溃了，那传给它的数据就都覆灭了，这可是企业不能容忍的！因此，我们可以利用消息系统，作为临时备份处，将消息同时发送给消息系统以及那个处理系统，当处理系统处理成功后，发送确认操作让消息系统删除那条消息，也就是采用 “<strong>插入-获取-删除</strong>“ 范式。这样，假如处理系统崩溃，那数据仍然在消息队里中，重启处理系统就可以了。</p>
-<p>这里，我们都是假设消息系统很可靠，比处理系统更可靠！为什么有这个依据呢？这实际上也是消息系统的另一大特性，就是可扩展性强，部分组件失效可容忍。</p>
-<h3 id="可扩展性强，部分组件失效可容忍"><a href="#可扩展性强，部分组件失效可容忍" class="headerlink" title="可扩展性强，部分组件失效可容忍"></a>可扩展性强，部分组件失效可容忍</h3><blockquote>
-<p>从自身结构视角看</p>
-</blockquote>
-<p>这部分的内容我们在后面几节进行说明。</p>
-<h2 id="消息模式"><a href="#消息模式" class="headerlink" title="消息模式"></a>消息模式</h2><p>消息模式就是消息系统实现时需要考虑的业务场景中的不同情况。由于生产者(系统)和消费者(系统)都可能是多个，那么就会产生一些微妙的不同。这里我们只考虑它们都处理相同的消息。对于多个生产者而言，消息系统就是不断接受消息的一个存储域，因此没有什么不同。而对于多个消费者而言就会有两种情况了：</p>
-<ol>
-<li>一个消息只给一个消费者消费：这个是最常见的情况了，一个消息无法被重复消费的，因此这种情况对应到消息模式就是 <strong>点对点模式或者叫队列模式</strong>。</li>
-<li>一个消息可以给多个消费者消费：这个情况类比订阅付费服务，比如我是一家报社，有很多人订阅了我的报纸，只要我这边有新报纸刊登，我就需要把这些新报纸寄送给每一个订阅的人。因此这种情况对应到消息模式就叫 <strong>发布/订阅模式</strong>。</li>
-</ol>
-<p>以上两种模式就是消息模式最常见的两种，所有的消息系统的实现都会考虑这两种模式的，因此大家在学习一个新的消息系统的时候就可以考虑这个消息系统 <strong>如何实现者两种情况的</strong>。对于 Kafka 我们会在下面讲到其对应的两种模式。</p>
-<h2 id="平台对比"><a href="#平台对比" class="headerlink" title="平台对比"></a>平台对比</h2><p>消息系统目前最有名气的大概有四个：<strong>ActiveMQ</strong>、<strong>RabbitMQ</strong>、<strong>Kafka</strong>、<strong>RocketMQ</strong>. 它们的对比网上也应该有很多了，我就不一一列举了。</p>
-<p>这里我将我之前做过的 PPT 拿过来放这里作下对比，我简单说明下：</p>
-<ul>
-<li>下图各个消息系统从左到右，支持的消息量级越来越大，<strong>ActiveMQ</strong> 最小，<strong>RocketMQ</strong> 最大；</li>
-<li><strong>ActiveMQ、RabbitMQ</strong> 稳定性是相对较好的，<strong>RabbitMQ</strong> 稳定性更好同时数据安全性最高，如果对实时性、数据不允许丢失要求高时，可以用 <strong>RabbitMQ</strong>；</li>
-<li><strong>RocketMQ</strong> 是阿里开源的，其处理量是最高的，但是生态比较少，因此若使用过程中出现问题，你只能找原开发者或维护者了；</li>
-<li><strong>Kafka</strong> 是目前生态链最广、社区最活跃的消息系统了。但是其会存在消息丢失情况，通常应用在分布式日志消息处理等这些对消息丢失可容忍性的场景。目前，大数据已成主流的今天，<em>Kafka 也逐渐成为使用的主流消息系统</em>，因为大数据对消息丢失一般都是可容忍的，比如训练集中丢了几条数据等等，都是无相关的。而对于 <strong>支付、会员</strong> 等这些消息则不推荐用 Kafka ，可转用其他 MQ 系统。</li>
-</ul>
-<p><img src="img.godjiyi.cn/csdnblogdistribute_msg.jpg" alt></p>
-<h2 id="宏观结构"><a href="#宏观结构" class="headerlink" title="宏观结构"></a>宏观结构</h2><p>下图是 Kafka 消息系统的 <strong>分布式宏观架构图</strong>，这里分别讲下各个组件的作用及其关系：</p>
-<ol>
-<li><em>Producer</em>: 数据的生产客户端，生产数据发送到 <strong>Kafka Cluster</strong>；</li>
-<li><em>Zookeeper</em>: 负责整体集群的协调工作，保存 <strong>Broker</strong> 与 <strong>Consumer</strong> 交互的元信息，并进行数据变更监控；</li>
-<li><em>Broker</em>: <strong>Broker</strong> 实际上就是单台服务器，其主要接收 <strong>Producer</strong> 和 <strong>Consumer</strong> 请求，持久化<strong>Message</strong>，其中会通过选举产生一个 <strong>Controller</strong>，来主持协调工作；</li>
-<li><em>Kafka Cluster</em>: 由多个 <strong>Borker</strong> 和一套 <strong>Zookeeper</strong> 组成，<strong>Broker</strong> 之间无主从关系，地位平等，可任意增删节点，这主要由 <strong>Zookeeper</strong> 维护；</li>
-<li><em>Consumer</em>: 数据的消费客户端，用于从 <strong>Broker</strong> 中订阅/拉取消息；</li>
-</ol>
-<p><img src="https://img.godjiyi.cn/csdnblog20180805003823.png" alt></p>
-<h2 id="微观设计"><a href="#微观设计" class="headerlink" title="微观设计"></a>微观设计</h2><p>Kafka <strong>内部消息传递流程</strong> 如下图所示：</p>
-<p><img src="https://img.godjiyi.cn/csdnblogkafka-arc.jpg" alt></p>
-<h3 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a>Topic</h3><p>一个 <strong>消息主题</strong>，也就是一个分布式业务消息队列。不同的生产者将不同的业务消息分发到不同的 <strong>topic</strong> 上，这样，消费者就可以根据 <strong>topic</strong> 进行对应的业务消息消费了。</p>
-<h3 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h3><p>这个就是 topic 分布式的体现，由于一个 topic 就是一个业务消息，这些消息可能会源源不断来，并且有可能会同时并发很大地进入队列，将这些消息合理地分布在分布式机器中则可以保证机器的负载均衡性，同时也可以使得不同的消费者可以同时拉取不同 partition 中的消息，可提升消费者并发性能，这里总结下 <strong>partition</strong> 特性：</p>
-<ul>
-<li>一个 <strong>topic</strong> 分成多个 <strong>partion</strong>；</li>
-<li>多个 <strong>producer</strong> 生产消息可以并行入队，多个 <strong>Consumer</strong> 可并行消费；</li>
-<li>同一个 <strong>partition</strong> 里保证消息有序, 不同 <strong>partition</strong> 则不能完全保证有序；</li>
-</ul>
-<h3 id="Consumer-Group"><a href="#Consumer-Group" class="headerlink" title="Consumer Group"></a>Consumer Group</h3><p>消费者组应该是 Kafka 最大的特色了，消费者组就是消费者组成的一个组，消费者在向 Kafka 拉取数据的时候需要提供一个组名，这个名称就是消费者组名，上面的两种消息模式都可以在消费者组中得到实现：</p>
-<ol>
-<li><em>点对点/队列模式</em>：一个消息只能被一个消费者消费，我们只需要将这些消费者放在同一个消费者组里就可以了，这样消费者在同一个组中，那么 topic 中的一条消息只会向一个消费者组发送一次；</li>
-<li><em>发布-订阅模式</em>：一个消息可被多个消费者消费，这种情况，我们只需要将各个消费者放在各自单独的组中，各个组均订阅了此消息 topic 就可以了。</li>
-</ol>
-<p>这里还有如下注意点：</p>
-<ul>
-<li>一个消费组消费一个 <strong>topic</strong> 的全量数据；</li>
-<li>组内消费者消费一个或多个 <strong>partition</strong> 数据，如果一个组里的消费者数量少于订阅的 topic 的 partition 数量，那么组中必有一个消费者要消费多个 partion 数据；</li>
-<li>一个组里的消费者应小于等于 <strong>topic</strong> 的 <strong>partition</strong> 数量，这是因为一个 partition 最多只能与一个 consumer 连接，那么如果 partition 数量大于 consumer 数量，则必定有 consumer 是空闲的，因此尽量避免这种情况；</li>
-</ul>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
-<li><a href="http://opentsdb.net/docs/build/html/index.html" target="_blank" rel="noopener">http://opentsdb.net/docs/build/html/index.html</a></li>
-<li><a href="http://liubin.org/blog/2016/03/05/tsdb-opentsdb/" target="_blank" rel="noopener">http://liubin.org/blog/2016/03/05/tsdb-opentsdb/</a></li>
-<li><a href="https://www.jianshu.com/p/0bafd0168647" target="_blank" rel="noopener">https://www.jianshu.com/p/0bafd0168647</a></li>
-<li><a href="http://www.nosqlnotes.com/technotes/opentsdb-tabledesign/" target="_blank" rel="noopener">http://www.nosqlnotes.com/technotes/opentsdb-tabledesign/</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Kafka</category>
-      </categories>
-      <tags>
-        <tag>Kafka</tag>
-        <tag>Message</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LAMP 以及 Tomcat 服务器环境搭建</title>
     <url>/2017/02/24/lamp/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">开源一族，与众不同</p>
@@ -2060,6 +1966,100 @@
       </tags>
   </entry>
   <entry>
+    <title>Kafka</title>
+    <url>/2018/08/04/kafka/</url>
+    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">分布式消息系统，解耦模块的桥梁</p>
+
+<p><strong><a href="http://kafka.apache.org/" target="_blank" rel="noopener">Kafka</a></strong> 是一个基于 <strong>发布-订阅</strong> 的分布式消息系统，主要面向于大数据应用场景。它最初由 <em>LinkedIn</em> 公司开发，之后成为 <em>Apache</em> 项目的一部分。<strong>Kafka</strong> 是一种快速、可扩展、本身就专注于分布式的、实时消息流系统。<strong>Kafka</strong> 在2010 年正式向 <em>Apache</em> 社区开源，目前社区活跃。目前在互联网公司使用非常广泛，已经成为大数据分析的基础服务。</p>
+<a id="more"></a>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>Kafka 是众多消息系统中的一种实现方式，那我们为什么需要用到 <strong>消息系统</strong> ？这里我列出以下几种在业务中常常碰到的场景，分别从 <strong>系统架构视角</strong>、<strong>消息传播视角</strong>、<strong>消息处理视角</strong>、<strong>自身系统结构视角</strong> 共四个角度的应用场景来说明：</p>
+<!-- more -->
+<h3 id="模块解耦"><a href="#模块解耦" class="headerlink" title="模块解耦"></a>模块解耦</h3><blockquote>
+<p>从系统架构视角看</p>
+</blockquote>
+<p>这个我想是最明显的一点了，在业务系统上通常会存在一些系统产生数据，一些系统消费数据，这实际上就是 <strong>生产者–消费者</strong> 模式。这里的解耦是什么意思呢？我把消息系统独立出来了，那我的消息系统则会依赖生产者系统，消费系统则会依赖消息系统，不是多出了两个依赖，何为 <strong>解耦</strong> 呢？</p>
+<p>这里的解耦实际上是解耦 <strong>不等速率依赖</strong> (这个名词是我造的，纯属个人观点)。也就是说生产者系统和消费者系统之间会有 <em>生产和消费速度不一致</em> 而导致消息丢失的情况。而消息系统与生产者系统、消息系统与消费者系统之间则没有这种情况，即使有也不会造成消息丢失(只会暂存下来)。因此，破除了生产者系统和消费者系统的依赖关系就叫 <strong>解耦</strong>，而消息系统正是为此而生。</p>
+<h3 id="异步通信-缓冲队列"><a href="#异步通信-缓冲队列" class="headerlink" title="异步通信/缓冲队列"></a>异步通信/缓冲队列</h3><blockquote>
+<p>从消息传播视角看</p>
+</blockquote>
+<p>很多时候，或并发达到一定量级的时候，系统是不能完全提供 <strong>实时消息</strong> 处理的能力的。这时不能立即处理的消息我们必须把这些请求放入 <strong>缓冲队列</strong> 中以等待处理。这种场景在一个公司中可能会有多种业务都会涉及到，因此，领先者们自然想到可以将缓冲队列设计成一个独立的平台，以满足各种业务的接入，从而，<strong>消息系统作为缓冲异步队列轰然降临</strong>。</p>
+<p>这里我使用的是 <strong>缓冲</strong> 队列而非 <strong>缓存</strong> 队列，主要是因为通常我们所说的缓存都是基于内存的，而 <strong>缓冲</strong> 则更普遍一点，你可以让它基于内存，也可以让它基于 <strong>硬盘</strong> 的。通常消息系统基本上都是基于硬盘存储的，包括 Kafka 其也是持久化到硬盘的。</p>
+<p>那 <strong>缓冲队列</strong> 与我们的 <strong>Redis/Memcached 缓存</strong> 或者 <strong>DB 数据库</strong> 有什么区别呢，为什么不用 Redis/Memcached 或者 DB 实现 <strong>缓冲</strong> 功能呢？</p>
+<p>这里我也大概谈下自己的看法：</p>
+<ol>
+<li>先说 <em>基于内存的缓存</em> 吧，缓存的出现都是为了用昂贵的内存代价换来性能上的提升的，缓存通常是暂存那些常被访问的数据以提升较好的用户体验而设计，我们的 <strong>消息系统</strong> 并不是为了 <strong>快</strong>，而是为了 <strong>数据完整性，不丢失</strong> 而作的缓冲设计。因此，我们无需用如此昂贵的内存来作为消息系统的存储介质。另外一点就是缓冲的队列有可能会很大，达到<strong>千万甚至更多级别</strong>，这样如果用内存，那么代价就更昂贵了。</li>
+<li>再说 <em>DB 数据库</em>，上面讲了内存昂贵，那我用数据库总可以了吧！那我们还是先想想数据库的原生作用：数据库是为持久化，通常是恒久的持久化而生的，也就是数据存下去，基本就不用变了，只会少量的修改删除。我们再想想缓冲队列，它是为 <strong>临时存储</strong> 而生的。用持久化的数据库来存临时数据，那会造成频繁的增删操作，势必会给数据库带来极大的性能消耗。</li>
+<li>总结下，缓冲队列目标是：<strong>数据完整性</strong> (而非存读的快速性，不是缓存)，<strong>临时存储能力</strong> (而非恒久持久性，不是数据库)。</li>
+</ol>
+<h3 id="数据一致性保障"><a href="#数据一致性保障" class="headerlink" title="数据一致性保障"></a>数据一致性保障</h3><blockquote>
+<p>从消息处理视角看</p>
+</blockquote>
+<p>有些情况下，我们将数据提交给某个系统处理，有可能那个系统突然崩溃了，那传给它的数据就都覆灭了，这可是企业不能容忍的！因此，我们可以利用消息系统，作为临时备份处，将消息同时发送给消息系统以及那个处理系统，当处理系统处理成功后，发送确认操作让消息系统删除那条消息，也就是采用 “<strong>插入-获取-删除</strong>“ 范式。这样，假如处理系统崩溃，那数据仍然在消息队里中，重启处理系统就可以了。</p>
+<p>这里，我们都是假设消息系统很可靠，比处理系统更可靠！为什么有这个依据呢？这实际上也是消息系统的另一大特性，就是可扩展性强，部分组件失效可容忍。</p>
+<h3 id="可扩展性强，部分组件失效可容忍"><a href="#可扩展性强，部分组件失效可容忍" class="headerlink" title="可扩展性强，部分组件失效可容忍"></a>可扩展性强，部分组件失效可容忍</h3><blockquote>
+<p>从自身结构视角看</p>
+</blockquote>
+<p>这部分的内容我们在后面几节进行说明。</p>
+<h2 id="消息模式"><a href="#消息模式" class="headerlink" title="消息模式"></a>消息模式</h2><p>消息模式就是消息系统实现时需要考虑的业务场景中的不同情况。由于生产者(系统)和消费者(系统)都可能是多个，那么就会产生一些微妙的不同。这里我们只考虑它们都处理相同的消息。对于多个生产者而言，消息系统就是不断接受消息的一个存储域，因此没有什么不同。而对于多个消费者而言就会有两种情况了：</p>
+<ol>
+<li>一个消息只给一个消费者消费：这个是最常见的情况了，一个消息无法被重复消费的，因此这种情况对应到消息模式就是 <strong>点对点模式或者叫队列模式</strong>。</li>
+<li>一个消息可以给多个消费者消费：这个情况类比订阅付费服务，比如我是一家报社，有很多人订阅了我的报纸，只要我这边有新报纸刊登，我就需要把这些新报纸寄送给每一个订阅的人。因此这种情况对应到消息模式就叫 <strong>发布/订阅模式</strong>。</li>
+</ol>
+<p>以上两种模式就是消息模式最常见的两种，所有的消息系统的实现都会考虑这两种模式的，因此大家在学习一个新的消息系统的时候就可以考虑这个消息系统 <strong>如何实现者两种情况的</strong>。对于 Kafka 我们会在下面讲到其对应的两种模式。</p>
+<h2 id="平台对比"><a href="#平台对比" class="headerlink" title="平台对比"></a>平台对比</h2><p>消息系统目前最有名气的大概有四个：<strong>ActiveMQ</strong>、<strong>RabbitMQ</strong>、<strong>Kafka</strong>、<strong>RocketMQ</strong>. 它们的对比网上也应该有很多了，我就不一一列举了。</p>
+<p>这里我将我之前做过的 PPT 拿过来放这里作下对比，我简单说明下：</p>
+<ul>
+<li>下图各个消息系统从左到右，支持的消息量级越来越大，<strong>ActiveMQ</strong> 最小，<strong>RocketMQ</strong> 最大；</li>
+<li><strong>ActiveMQ、RabbitMQ</strong> 稳定性是相对较好的，<strong>RabbitMQ</strong> 稳定性更好同时数据安全性最高，如果对实时性、数据不允许丢失要求高时，可以用 <strong>RabbitMQ</strong>；</li>
+<li><strong>RocketMQ</strong> 是阿里开源的，其处理量是最高的，但是生态比较少，因此若使用过程中出现问题，你只能找原开发者或维护者了；</li>
+<li><strong>Kafka</strong> 是目前生态链最广、社区最活跃的消息系统了。但是其会存在消息丢失情况，通常应用在分布式日志消息处理等这些对消息丢失可容忍性的场景。目前，大数据已成主流的今天，<em>Kafka 也逐渐成为使用的主流消息系统</em>，因为大数据对消息丢失一般都是可容忍的，比如训练集中丢了几条数据等等，都是无相关的。而对于 <strong>支付、会员</strong> 等这些消息则不推荐用 Kafka ，可转用其他 MQ 系统。</li>
+</ul>
+<p><img src="img.godjiyi.cn/csdnblogdistribute_msg.jpg" alt></p>
+<h2 id="宏观结构"><a href="#宏观结构" class="headerlink" title="宏观结构"></a>宏观结构</h2><p>下图是 Kafka 消息系统的 <strong>分布式宏观架构图</strong>，这里分别讲下各个组件的作用及其关系：</p>
+<ol>
+<li><em>Producer</em>: 数据的生产客户端，生产数据发送到 <strong>Kafka Cluster</strong>；</li>
+<li><em>Zookeeper</em>: 负责整体集群的协调工作，保存 <strong>Broker</strong> 与 <strong>Consumer</strong> 交互的元信息，并进行数据变更监控；</li>
+<li><em>Broker</em>: <strong>Broker</strong> 实际上就是单台服务器，其主要接收 <strong>Producer</strong> 和 <strong>Consumer</strong> 请求，持久化<strong>Message</strong>，其中会通过选举产生一个 <strong>Controller</strong>，来主持协调工作；</li>
+<li><em>Kafka Cluster</em>: 由多个 <strong>Borker</strong> 和一套 <strong>Zookeeper</strong> 组成，<strong>Broker</strong> 之间无主从关系，地位平等，可任意增删节点，这主要由 <strong>Zookeeper</strong> 维护；</li>
+<li><em>Consumer</em>: 数据的消费客户端，用于从 <strong>Broker</strong> 中订阅/拉取消息；</li>
+</ol>
+<p><img src="https://img.godjiyi.cn/csdnblog20180805003823.png" alt></p>
+<h2 id="微观设计"><a href="#微观设计" class="headerlink" title="微观设计"></a>微观设计</h2><p>Kafka <strong>内部消息传递流程</strong> 如下图所示：</p>
+<p><img src="https://img.godjiyi.cn/csdnblogkafka-arc.jpg" alt></p>
+<h3 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a>Topic</h3><p>一个 <strong>消息主题</strong>，也就是一个分布式业务消息队列。不同的生产者将不同的业务消息分发到不同的 <strong>topic</strong> 上，这样，消费者就可以根据 <strong>topic</strong> 进行对应的业务消息消费了。</p>
+<h3 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h3><p>这个就是 topic 分布式的体现，由于一个 topic 就是一个业务消息，这些消息可能会源源不断来，并且有可能会同时并发很大地进入队列，将这些消息合理地分布在分布式机器中则可以保证机器的负载均衡性，同时也可以使得不同的消费者可以同时拉取不同 partition 中的消息，可提升消费者并发性能，这里总结下 <strong>partition</strong> 特性：</p>
+<ul>
+<li>一个 <strong>topic</strong> 分成多个 <strong>partion</strong>；</li>
+<li>多个 <strong>producer</strong> 生产消息可以并行入队，多个 <strong>Consumer</strong> 可并行消费；</li>
+<li>同一个 <strong>partition</strong> 里保证消息有序, 不同 <strong>partition</strong> 则不能完全保证有序；</li>
+</ul>
+<h3 id="Consumer-Group"><a href="#Consumer-Group" class="headerlink" title="Consumer Group"></a>Consumer Group</h3><p>消费者组应该是 Kafka 最大的特色了，消费者组就是消费者组成的一个组，消费者在向 Kafka 拉取数据的时候需要提供一个组名，这个名称就是消费者组名，上面的两种消息模式都可以在消费者组中得到实现：</p>
+<ol>
+<li><em>点对点/队列模式</em>：一个消息只能被一个消费者消费，我们只需要将这些消费者放在同一个消费者组里就可以了，这样消费者在同一个组中，那么 topic 中的一条消息只会向一个消费者组发送一次；</li>
+<li><em>发布-订阅模式</em>：一个消息可被多个消费者消费，这种情况，我们只需要将各个消费者放在各自单独的组中，各个组均订阅了此消息 topic 就可以了。</li>
+</ol>
+<p>这里还有如下注意点：</p>
+<ul>
+<li>一个消费组消费一个 <strong>topic</strong> 的全量数据；</li>
+<li>组内消费者消费一个或多个 <strong>partition</strong> 数据，如果一个组里的消费者数量少于订阅的 topic 的 partition 数量，那么组中必有一个消费者要消费多个 partion 数据；</li>
+<li>一个组里的消费者应小于等于 <strong>topic</strong> 的 <strong>partition</strong> 数量，这是因为一个 partition 最多只能与一个 consumer 连接，那么如果 partition 数量大于 consumer 数量，则必定有 consumer 是空闲的，因此尽量避免这种情况；</li>
+</ul>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><a href="http://opentsdb.net/docs/build/html/index.html" target="_blank" rel="noopener">http://opentsdb.net/docs/build/html/index.html</a></li>
+<li><a href="http://liubin.org/blog/2016/03/05/tsdb-opentsdb/" target="_blank" rel="noopener">http://liubin.org/blog/2016/03/05/tsdb-opentsdb/</a></li>
+<li><a href="https://www.jianshu.com/p/0bafd0168647" target="_blank" rel="noopener">https://www.jianshu.com/p/0bafd0168647</a></li>
+<li><a href="http://www.nosqlnotes.com/technotes/opentsdb-tabledesign/" target="_blank" rel="noopener">http://www.nosqlnotes.com/technotes/opentsdb-tabledesign/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Kafka</category>
+      </categories>
+      <tags>
+        <tag>Kafka</tag>
+        <tag>Message</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenTSDB 存储结构</title>
     <url>/2018/07/03/opentsdb-store/</url>
     <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">时序处理数据库，更快的存储和聚合</p>
@@ -2122,154 +2122,6 @@
       <tags>
         <tag>Metric</tag>
         <tag>OpenTSDB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2017/05/08/regex/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">你有你的规则，我有我的正则</p>
-
-<p>开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。</p>
-<h2 id="正则规则"><a href="#正则规则" class="headerlink" title="正则规则"></a>正则规则</h2><hr>
-<p>分四大类来说明: <strong>常用符号说明</strong>、<strong>符号数目匹配</strong>、<strong>逻辑语句符号匹配</strong>、<strong>目标匹配符号</strong>。</p>
-<h3 id="一、常用符号说明"><a href="#一、常用符号说明" class="headerlink" title="一、常用符号说明"></a>一、常用符号说明</h3><ol>
-<li><code>^</code>: <strong>匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹配。</strong></li>
-<li><code>$</code>: <strong>匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与”\n”或”\r”之前的位置匹配。</strong></li>
-<li><code>\</code>: <strong>将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，”n”匹配字符”n”。”\n”匹配换行符</strong></li>
-</ol>
-<a id="more"></a>
-<h3 id="二、符号数目匹配"><a href="#二、符号数目匹配" class="headerlink" title="二、符号数目匹配"></a>二、符号数目匹配</h3><ol>
-<li><code>*</code>: <em>零次或多次</em> 匹配前面的字符或子表达式。例如，”zo*“ 匹配”z”和”zoo”。* 等效于<code>{0,}</code>。</li>
-<li><code>+</code>: <em>一次或多次</em> 匹配前面的字符或子表达式。例如，”zo+”与”zo”和”zoo”匹配，但与”z”不匹配。+ 等效于 <code>{1,}</code>。</li>
-<li><code>?</code>: <em>零次或一次</em> 匹配前面的字符或子表达式。例如，”do(es)?”匹配”do”或”does”中的”do”。? 等效于 <code>{0,1}</code>。</li>
-<li><code>{n}</code>: <strong>n 是非负整数。正好匹配 n 次。例如，”o{2}”表示此匹配两个o</strong></li>
-<li><code>{n,}</code>: <strong>n 是非负整数。至少匹配 n 次。</strong></li>
-<li><code>{n,m}</code>: <strong>n 和 m 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。</strong></li>
-</ol>
-<h3 id="三、逻辑语句符号匹配"><a href="#三、逻辑语句符号匹配" class="headerlink" title="三、逻辑语句符号匹配"></a>三、逻辑语句符号匹配</h3><ol>
-<li><code>x|y</code>: <strong>匹配 x 或 y。例如，’z|food’ 匹配”z”或”food”。’(z|f)ood’ 匹配”zood”或”food”。</strong></li>
-<li><p><code>()</code>: <strong>括号</strong></p>
-<ul>
-<li><code>(pattern)</code>: 匹配 pattern 并捕获该匹配的子表达式</li>
-<li><code>(?:pattern)</code>: 匹配 pattern 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。例如，<code>industr(?:y|ies)</code> 是比 <code>industry|industries</code> 更经济的表达式。</li>
-<li><code>(?=pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?=pattern</a></li>
-<li><code>(?!pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?!pattern</a></li>
-</ul>
-</li>
-</ol>
-<h3 id="四、目标匹配符号"><a href="#四、目标匹配符号" class="headerlink" title="四、目标匹配符号"></a>四、目标匹配符号</h3><ol>
-<li><code>[xyz]</code>: <strong>字符集。匹配包含的任一字符。例如，”[abc]”代表当前位只能是abc三个字符中的一个</strong></li>
-<li><code>[^xyz]</code>: <strong>反向字符集。匹配未包含的任何字符。例如，”<code>[^abc]</code>“ 则当前位不能是abc中的任意一个。</strong></li>
-<li><p><code>[a-z]</code>: <strong>字符范围。匹配指定范围内的任何字符。如：</strong></p>
-<ul>
-<li><code>[a-z]</code>: 当前位匹配从a到z字符</li>
-<li><code>[A-Z]</code>: 当前位匹配从A到Z字符</li>
-<li><code>[0-9]</code>: 当前位匹配从0到9字符</li>
-<li><code>[a-zA-Z0-9]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符</li>
-<li><code>[a-zA-Z0-9_]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>字符</li>
-<li><code>[a-zA-Z0-9_-]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>与<em>-</em>字符</li>
-</ul>
-</li>
-<li><p><code>[^a-z]</code>: <strong>反向范围字符。匹配不在指定的范围内的任何字符.</strong></p>
-</li>
-<li><code>\d</code>: <strong>匹配数字，与<code>[0-9]</code>等效.</strong></li>
-<li><code>\D</code>: <strong>匹配非数字字符，与<code>[^0-9]</code>等效.</strong></li>
-<li><code>\w</code>: <strong>匹配任何字类字符，包括下划线。与”<code>[A-Za-z0-9_]</code>“等效.</strong></li>
-<li><code>\W</code>: <strong>与任何非单词字符匹配。与”<code>[^A-Za-z0-9_]</code>“等效。</strong></li>
-<li><code>.</code>: <strong>匹配除”\r\n”之外的任何单个字符。若要匹配包括”\r\n”在内的任意字符，请使用诸如”[\s\S]”之类的模式。</strong></li>
-<li><code>\b</code>: <strong>匹配一个字边界，即字与空格间的位置。例如，”er\b”匹配”never”中的”er”，但不匹配”verb”中的”er”。多用于java中的正则查找与替换</strong>。</li>
-<li><code>\B</code>: <strong>非字边界匹配。”er\B”匹配”verb”中的”er”，但不匹配”never”中的”er”。</strong></li>
-<li><code>\s</code>: <strong>匹配任何空白字符，包括空格、制表符、换页符等。与 <code>[\f\n\r\t\v]</code> 等效。</strong></li>
-<li><code>\S</code>: <strong>匹配任何非空白字符。与 <code>[^\f\n\r\t\v]</code>等效。</strong></li>
-<li><p>各种空白符：</p>
-<ul>
-<li><code>\f</code>: 换页符匹配。等效于 \x0c 和 \cL。</li>
-<li><code>\n</code>: 换行符匹配。等效于 \x0a 和 \cJ。</li>
-<li><code>\r</code>: 匹配一个回车符。等效于 \x0d 和 \cM。</li>
-<li><code>\t</code>: 制表符匹配。与 \x09 和 \cI 等效。</li>
-<li><code>\v</code>: 垂直制表符匹配。与 \x0b 和 \cK 等效。</li>
-</ul>
-</li>
-<li><p><code>\xn</code>: <strong>匹配 n，此处的 n 是一个十六进制转义码。十六进制转义码必须正好是<em>两位</em>数长。例如，”\x41”匹配”A”。允许在正则表达式中使用 ASCII 代码。</strong></p>
-</li>
-<li><code>\un</code>: <strong>匹配 n，其中 n 是以<em>四位</em>十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。附：<a href="http://jiyiren.github.io/2016/03/22/Java_encode/" target="_blank" rel="noopener">Unicode编码说明</a>,<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">汉字Unicode编码表</a></strong> </li>
-</ol>
-<h2 id="常见正则"><a href="#常见正则" class="headerlink" title="常见正则"></a>常见正则</h2><hr>
-<p>下面分别对常见的邮箱和手机号举例。</p>
-<h3 id="邮箱："><a href="#邮箱：" class="headerlink" title="邮箱："></a>邮箱：</h3><p>常见邮箱形式：</p>
-<ol>
-<li><a href="mailto:`zhangshan@163.com" target="_blank" rel="noopener">`zhangshan@163.com</a>`</li>
-<li><a href="mailto:`abc@sina.com.cn" target="_blank" rel="noopener">`abc@sina.com.cn</a>`</li>
-<li><a href="mailto:`zhangshna.Mr@163.com" target="_blank" rel="noopener">`zhangshna.Mr@163.com</a>`</li>
-<li><a href="mailto:`abc_Wang.dd@sian.com" target="_blank" rel="noopener">`abc_Wang.dd@sian.com</a>`</li>
-<li><a href="mailto:`abc_Wang.dd.cc@sian.com" target="_blank" rel="noopener">`abc_Wang.dd.cc@sian.com</a>`</li>
-</ol>
-<p>网络上正则，仅仅能匹配 1，2 两种格式:</p>
-<p><code>^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></p>
-<p>满足需求正则:</p>
-<ol>
-<li>匹配全部：<code>^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$</code></li>
-<li>等价匹配：<code>^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></li>
-<li>或者：<code>^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$</code></li>
-<li>注意java代码里需要将所有 \ 转义，要在所有 \ 前多加一个 \</li>
-</ol>
-<p>java 代码:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isEmail</span><span class="params">(String email)</span> </span>&#123;</span><br><span class="line">	String regex = <span class="string">"^(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w&#123;2,3&#125;)&#123;1,3&#125;)$"</span>;</span><br><span class="line">	<span class="keyword">return</span> email.matches(regex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码:"></a>手机号码:</h3><p>手机基本格式如下：</p>
-<ol>
-<li>共11位：</li>
-<li><strong>13(0-9)</strong>:13开头手机号第三位0-9全可以</li>
-<li><strong>14(5,7)</strong>:14开头的第三位只有5(联通)，7(移动)</li>
-<li><strong>15(-4)</strong>:15开头的第三位除了4，其他都有，因为(154有谐音“要我死”)</li>
-<li><strong>17(3,5,6,7,8)</strong>:17开头的三位有3,5,6,7,8;其中3,7为电信，5,6为联通,8为移动。</li>
-<li><strong>18(0-9)</strong>:18开头的第三位0-9均可以</li>
-<li><p>而170和171的为虚拟运营商:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">1700/1701/1702(电信)</span><br><span class="line">1703/1705/1706(移动)</span><br><span class="line">1704/1707/1708/1709(联通)</span><br><span class="line">171（联通)</span><br></pre></td></tr></table></figure></div>
-</li>
-</ol>
-<p>虚拟商除外，匹配前三个位置数字正则：</p>
-<ol>
-<li>1与5可以一起写: <strong>1[3,8][0-9]</strong></li>
-<li>第二种: <strong>14[5,7]</strong></li>
-<li>第三种: <strong>15[^4]</strong></li>
-<li>第四种: <strong>17[3,5-8]</strong></li>
-<li>合并为: <code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\d{8}$</code></li>
-<li>注意：\d代表数字，如果要写入 java 代码，则需要多加一条 \ 来转义。如果不想写转义因为\d等价于[0-9]所以也可以换为：<code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]{8}$</code></li>
-</ol>
-<p>Java 代码：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isChinaPhoneLegal</span><span class="params">(String str)</span> <span class="keyword">throws</span> PatternSyntaxException </span>&#123;  </span><br><span class="line">	String regExp = <span class="string">"^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\\d&#123;8&#125;$"</span>; </span><br><span class="line">	<span class="comment">//String regExp = "^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]&#123;8&#125;$";  </span></span><br><span class="line">	Pattern p = Pattern.compile(regExp);  </span><br><span class="line">	Matcher m = p.matcher(str);  </span><br><span class="line">	<span class="keyword">return</span> m.matches();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="占用端口进程"><a href="#占用端口进程" class="headerlink" title="占用端口进程"></a>占用端口进程</h3><p>我们用 Linux 命令获取占用 22 端口信息如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># netstat -tnlp | grep ':22 '</span></span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd          </span><br><span class="line">tcp6       0      0 :::22                   :::*                    LISTEN      21392/sshd</span><br></pre></td></tr></table></figure></div>
-<p>只需要用 Python 中 commands 包执行对应命令，取得第一行结果即可得到字符串，我们直接使用该字符用正则提出进程名：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line">tcp_str = <span class="string">"tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd"</span></span><br><span class="line">reg_p = re.compile(<span class="string">r'.+ (\d+)/(\w+)'</span>)</span><br><span class="line">m = reg_p.match(tcp_str)</span><br><span class="line">ps_str = m.group(<span class="number">2</span>) <span class="comment"># 0 为原字符串，1为进程ID，2为进程名，这里为 sshd</span></span><br></pre></td></tr></table></figure></div>
-<h3 id="获取磁盘挂载信息"><a href="#获取磁盘挂载信息" class="headerlink" title="获取磁盘挂载信息"></a>获取磁盘挂载信息</h3><h4 id="fdisk-命令"><a href="#fdisk-命令" class="headerlink" title="fdisk 命令"></a>fdisk 命令</h4><p>获取插入主机的所有磁盘 <code>fdisk</code> 命令:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l</span></span><br><span class="line"></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk label <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x0008b9e9</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *        2048     1026047      512000   83  Linux</span><br><span class="line">/dev/vda2         1026048    83886079    41430016   8e  Linux LVM</span><br><span class="line"></span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-root: 40.2 GB, 40227569664 bytes, 78569472 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br></pre></td></tr></table></figure></div>
-<p>我们只需要 <code>/dev/vdx</code> 这样的信息，因此需要过滤：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]' | awk -F: '&#123;print $1&#125;' | awk '&#123;print $2&#125;'</span></span><br><span class="line">/dev/vda</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div>
-<p>其中 <code>egrep</code> 是选取符合的行如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]'</span></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br></pre></td></tr></table></figure></div>
-<p>后面两个 <code>awk</code> 则不断 <strong>split</strong> 字符串选取出最终的字符。</p>
-<h4 id="df-命令"><a href="#df-命令" class="headerlink" title="df 命令"></a>df 命令</h4><p>上面的 <code>fdisk</code> 是获取所有的磁盘信息，包括已经挂载以及未挂载的磁盘，而 <code>df</code> 则获取仅仅挂载的信息，这样对于企业中的监控获取未挂载的磁盘，则只需用 <code>fdisk</code> 结果减 <code>df</code> 的结果，这里只介绍用 <code>df</code> 获取磁盘信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -h</span></span><br><span class="line">Filesystem               Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/centos-root   38G  6.5G   32G  18% /</span><br><span class="line">devtmpfs                 3.9G     0  3.9G   0% /dev</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /dev/shm</span><br><span class="line">tmpfs                    3.9G  401M  3.5G  11% /run</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1                497M  150M  348M  31% /boot</span><br><span class="line">/dev/vdb                  99G   61M   94G   1% /data</span><br><span class="line">tmpfs                    783M     0  783M   0% /run/user/0</span><br></pre></td></tr></table></figure></div>
-<p>我们也只需要 <code>/dev/vdx</code> 这样的信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -Th | /usr/bin/egrep '^/dev/[a-z]d[a-z]\d*' | awk '&#123;print $1&#125;'</span></span><br><span class="line">/dev/vda1</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div>
-<h4 id="proc-partitions-文件"><a href="#proc-partitions-文件" class="headerlink" title="/proc/partitions 文件"></a>/proc/partitions 文件</h4><p>这个文件也记录了 Centos 系统的磁盘挂载信息，与 fdisk 命令的结果一致，但是用文件搜索方式比通过 commands 包调用 fdisk 命令效率更高，因此，推荐用此方式来查系统挂载信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/partitions | egrep ' [a-z]d[a-z]+$' | awk '&#123;print $4&#125;'</span></span><br><span class="line">vda</span><br><span class="line">vdb</span><br></pre></td></tr></table></figure></div>
-<h4 id="proc-mounts-文件"><a href="#proc-mounts-文件" class="headerlink" title="/proc/mounts 文件"></a>/proc/mounts 文件</h4><p>这个文件则是与 <code>df</code> 命令相似，只记录已经挂载的磁盘信息，并且效率高于 <code>df</code> 命令：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/mounts | egrep '^/dev/[a-z]d[a-z]+\d*'</span></span><br><span class="line">/dev/vda1 /boot xfs rw,relatime,attr2,inode64,noquota 0 0</span><br><span class="line">/dev/vdb /data ext4 rw,relatime,data=ordered 0 0</span><br></pre></td></tr></table></figure></div>
-<p>这个先查询出行，再用 <code>awk</code> 对行进行截取，这个我就不写了，自己大家可以 <code>awk</code>。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">java正则</a></li>
-<li><a href="http://www.cnblogs.com/liaojie970/p/5714050.html" target="_blank" rel="noopener">回车与换行</a></li>
-<li><a href="http://blog.sina.com.cn/s/blog_4c925dca01009h1a.html" target="_blank" rel="noopener">js正则</a></li>
-<li><a href="http://www.cnblogs.com/hsqdboke/p/4944823.html" target="_blank" rel="noopener">邮箱正则</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Regex</category>
-      </categories>
-      <tags>
-        <tag>Regex</tag>
       </tags>
   </entry>
   <entry>
@@ -2544,6 +2396,154 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2017/05/08/regex/</url>
+    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">你有你的规则，我有我的正则</p>
+
+<p>开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。</p>
+<h2 id="正则规则"><a href="#正则规则" class="headerlink" title="正则规则"></a>正则规则</h2><hr>
+<p>分四大类来说明: <strong>常用符号说明</strong>、<strong>符号数目匹配</strong>、<strong>逻辑语句符号匹配</strong>、<strong>目标匹配符号</strong>。</p>
+<h3 id="一、常用符号说明"><a href="#一、常用符号说明" class="headerlink" title="一、常用符号说明"></a>一、常用符号说明</h3><ol>
+<li><code>^</code>: <strong>匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹配。</strong></li>
+<li><code>$</code>: <strong>匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与”\n”或”\r”之前的位置匹配。</strong></li>
+<li><code>\</code>: <strong>将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，”n”匹配字符”n”。”\n”匹配换行符</strong></li>
+</ol>
+<a id="more"></a>
+<h3 id="二、符号数目匹配"><a href="#二、符号数目匹配" class="headerlink" title="二、符号数目匹配"></a>二、符号数目匹配</h3><ol>
+<li><code>*</code>: <em>零次或多次</em> 匹配前面的字符或子表达式。例如，”zo*“ 匹配”z”和”zoo”。* 等效于<code>{0,}</code>。</li>
+<li><code>+</code>: <em>一次或多次</em> 匹配前面的字符或子表达式。例如，”zo+”与”zo”和”zoo”匹配，但与”z”不匹配。+ 等效于 <code>{1,}</code>。</li>
+<li><code>?</code>: <em>零次或一次</em> 匹配前面的字符或子表达式。例如，”do(es)?”匹配”do”或”does”中的”do”。? 等效于 <code>{0,1}</code>。</li>
+<li><code>{n}</code>: <strong>n 是非负整数。正好匹配 n 次。例如，”o{2}”表示此匹配两个o</strong></li>
+<li><code>{n,}</code>: <strong>n 是非负整数。至少匹配 n 次。</strong></li>
+<li><code>{n,m}</code>: <strong>n 和 m 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。</strong></li>
+</ol>
+<h3 id="三、逻辑语句符号匹配"><a href="#三、逻辑语句符号匹配" class="headerlink" title="三、逻辑语句符号匹配"></a>三、逻辑语句符号匹配</h3><ol>
+<li><code>x|y</code>: <strong>匹配 x 或 y。例如，’z|food’ 匹配”z”或”food”。’(z|f)ood’ 匹配”zood”或”food”。</strong></li>
+<li><p><code>()</code>: <strong>括号</strong></p>
+<ul>
+<li><code>(pattern)</code>: 匹配 pattern 并捕获该匹配的子表达式</li>
+<li><code>(?:pattern)</code>: 匹配 pattern 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。例如，<code>industr(?:y|ies)</code> 是比 <code>industry|industries</code> 更经济的表达式。</li>
+<li><code>(?=pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?=pattern</a></li>
+<li><code>(?!pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?!pattern</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="四、目标匹配符号"><a href="#四、目标匹配符号" class="headerlink" title="四、目标匹配符号"></a>四、目标匹配符号</h3><ol>
+<li><code>[xyz]</code>: <strong>字符集。匹配包含的任一字符。例如，”[abc]”代表当前位只能是abc三个字符中的一个</strong></li>
+<li><code>[^xyz]</code>: <strong>反向字符集。匹配未包含的任何字符。例如，”<code>[^abc]</code>“ 则当前位不能是abc中的任意一个。</strong></li>
+<li><p><code>[a-z]</code>: <strong>字符范围。匹配指定范围内的任何字符。如：</strong></p>
+<ul>
+<li><code>[a-z]</code>: 当前位匹配从a到z字符</li>
+<li><code>[A-Z]</code>: 当前位匹配从A到Z字符</li>
+<li><code>[0-9]</code>: 当前位匹配从0到9字符</li>
+<li><code>[a-zA-Z0-9]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符</li>
+<li><code>[a-zA-Z0-9_]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>字符</li>
+<li><code>[a-zA-Z0-9_-]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>与<em>-</em>字符</li>
+</ul>
+</li>
+<li><p><code>[^a-z]</code>: <strong>反向范围字符。匹配不在指定的范围内的任何字符.</strong></p>
+</li>
+<li><code>\d</code>: <strong>匹配数字，与<code>[0-9]</code>等效.</strong></li>
+<li><code>\D</code>: <strong>匹配非数字字符，与<code>[^0-9]</code>等效.</strong></li>
+<li><code>\w</code>: <strong>匹配任何字类字符，包括下划线。与”<code>[A-Za-z0-9_]</code>“等效.</strong></li>
+<li><code>\W</code>: <strong>与任何非单词字符匹配。与”<code>[^A-Za-z0-9_]</code>“等效。</strong></li>
+<li><code>.</code>: <strong>匹配除”\r\n”之外的任何单个字符。若要匹配包括”\r\n”在内的任意字符，请使用诸如”[\s\S]”之类的模式。</strong></li>
+<li><code>\b</code>: <strong>匹配一个字边界，即字与空格间的位置。例如，”er\b”匹配”never”中的”er”，但不匹配”verb”中的”er”。多用于java中的正则查找与替换</strong>。</li>
+<li><code>\B</code>: <strong>非字边界匹配。”er\B”匹配”verb”中的”er”，但不匹配”never”中的”er”。</strong></li>
+<li><code>\s</code>: <strong>匹配任何空白字符，包括空格、制表符、换页符等。与 <code>[\f\n\r\t\v]</code> 等效。</strong></li>
+<li><code>\S</code>: <strong>匹配任何非空白字符。与 <code>[^\f\n\r\t\v]</code>等效。</strong></li>
+<li><p>各种空白符：</p>
+<ul>
+<li><code>\f</code>: 换页符匹配。等效于 \x0c 和 \cL。</li>
+<li><code>\n</code>: 换行符匹配。等效于 \x0a 和 \cJ。</li>
+<li><code>\r</code>: 匹配一个回车符。等效于 \x0d 和 \cM。</li>
+<li><code>\t</code>: 制表符匹配。与 \x09 和 \cI 等效。</li>
+<li><code>\v</code>: 垂直制表符匹配。与 \x0b 和 \cK 等效。</li>
+</ul>
+</li>
+<li><p><code>\xn</code>: <strong>匹配 n，此处的 n 是一个十六进制转义码。十六进制转义码必须正好是<em>两位</em>数长。例如，”\x41”匹配”A”。允许在正则表达式中使用 ASCII 代码。</strong></p>
+</li>
+<li><code>\un</code>: <strong>匹配 n，其中 n 是以<em>四位</em>十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。附：<a href="http://jiyiren.github.io/2016/03/22/Java_encode/" target="_blank" rel="noopener">Unicode编码说明</a>,<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">汉字Unicode编码表</a></strong> </li>
+</ol>
+<h2 id="常见正则"><a href="#常见正则" class="headerlink" title="常见正则"></a>常见正则</h2><hr>
+<p>下面分别对常见的邮箱和手机号举例。</p>
+<h3 id="邮箱："><a href="#邮箱：" class="headerlink" title="邮箱："></a>邮箱：</h3><p>常见邮箱形式：</p>
+<ol>
+<li><a href="mailto:`zhangshan@163.com" target="_blank" rel="noopener">`zhangshan@163.com</a>`</li>
+<li><a href="mailto:`abc@sina.com.cn" target="_blank" rel="noopener">`abc@sina.com.cn</a>`</li>
+<li><a href="mailto:`zhangshna.Mr@163.com" target="_blank" rel="noopener">`zhangshna.Mr@163.com</a>`</li>
+<li><a href="mailto:`abc_Wang.dd@sian.com" target="_blank" rel="noopener">`abc_Wang.dd@sian.com</a>`</li>
+<li><a href="mailto:`abc_Wang.dd.cc@sian.com" target="_blank" rel="noopener">`abc_Wang.dd.cc@sian.com</a>`</li>
+</ol>
+<p>网络上正则，仅仅能匹配 1，2 两种格式:</p>
+<p><code>^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></p>
+<p>满足需求正则:</p>
+<ol>
+<li>匹配全部：<code>^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$</code></li>
+<li>等价匹配：<code>^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></li>
+<li>或者：<code>^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$</code></li>
+<li>注意java代码里需要将所有 \ 转义，要在所有 \ 前多加一个 \</li>
+</ol>
+<p>java 代码:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isEmail</span><span class="params">(String email)</span> </span>&#123;</span><br><span class="line">	String regex = <span class="string">"^(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w&#123;2,3&#125;)&#123;1,3&#125;)$"</span>;</span><br><span class="line">	<span class="keyword">return</span> email.matches(regex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码:"></a>手机号码:</h3><p>手机基本格式如下：</p>
+<ol>
+<li>共11位：</li>
+<li><strong>13(0-9)</strong>:13开头手机号第三位0-9全可以</li>
+<li><strong>14(5,7)</strong>:14开头的第三位只有5(联通)，7(移动)</li>
+<li><strong>15(-4)</strong>:15开头的第三位除了4，其他都有，因为(154有谐音“要我死”)</li>
+<li><strong>17(3,5,6,7,8)</strong>:17开头的三位有3,5,6,7,8;其中3,7为电信，5,6为联通,8为移动。</li>
+<li><strong>18(0-9)</strong>:18开头的第三位0-9均可以</li>
+<li><p>而170和171的为虚拟运营商:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">1700/1701/1702(电信)</span><br><span class="line">1703/1705/1706(移动)</span><br><span class="line">1704/1707/1708/1709(联通)</span><br><span class="line">171（联通)</span><br></pre></td></tr></table></figure></div>
+</li>
+</ol>
+<p>虚拟商除外，匹配前三个位置数字正则：</p>
+<ol>
+<li>1与5可以一起写: <strong>1[3,8][0-9]</strong></li>
+<li>第二种: <strong>14[5,7]</strong></li>
+<li>第三种: <strong>15[^4]</strong></li>
+<li>第四种: <strong>17[3,5-8]</strong></li>
+<li>合并为: <code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\d{8}$</code></li>
+<li>注意：\d代表数字，如果要写入 java 代码，则需要多加一条 \ 来转义。如果不想写转义因为\d等价于[0-9]所以也可以换为：<code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]{8}$</code></li>
+</ol>
+<p>Java 代码：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isChinaPhoneLegal</span><span class="params">(String str)</span> <span class="keyword">throws</span> PatternSyntaxException </span>&#123;  </span><br><span class="line">	String regExp = <span class="string">"^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\\d&#123;8&#125;$"</span>; </span><br><span class="line">	<span class="comment">//String regExp = "^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]&#123;8&#125;$";  </span></span><br><span class="line">	Pattern p = Pattern.compile(regExp);  </span><br><span class="line">	Matcher m = p.matcher(str);  </span><br><span class="line">	<span class="keyword">return</span> m.matches();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="占用端口进程"><a href="#占用端口进程" class="headerlink" title="占用端口进程"></a>占用端口进程</h3><p>我们用 Linux 命令获取占用 22 端口信息如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># netstat -tnlp | grep ':22 '</span></span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd          </span><br><span class="line">tcp6       0      0 :::22                   :::*                    LISTEN      21392/sshd</span><br></pre></td></tr></table></figure></div>
+<p>只需要用 Python 中 commands 包执行对应命令，取得第一行结果即可得到字符串，我们直接使用该字符用正则提出进程名：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line">tcp_str = <span class="string">"tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd"</span></span><br><span class="line">reg_p = re.compile(<span class="string">r'.+ (\d+)/(\w+)'</span>)</span><br><span class="line">m = reg_p.match(tcp_str)</span><br><span class="line">ps_str = m.group(<span class="number">2</span>) <span class="comment"># 0 为原字符串，1为进程ID，2为进程名，这里为 sshd</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="获取磁盘挂载信息"><a href="#获取磁盘挂载信息" class="headerlink" title="获取磁盘挂载信息"></a>获取磁盘挂载信息</h3><h4 id="fdisk-命令"><a href="#fdisk-命令" class="headerlink" title="fdisk 命令"></a>fdisk 命令</h4><p>获取插入主机的所有磁盘 <code>fdisk</code> 命令:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l</span></span><br><span class="line"></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk label <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x0008b9e9</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *        2048     1026047      512000   83  Linux</span><br><span class="line">/dev/vda2         1026048    83886079    41430016   8e  Linux LVM</span><br><span class="line"></span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-root: 40.2 GB, 40227569664 bytes, 78569472 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br></pre></td></tr></table></figure></div>
+<p>我们只需要 <code>/dev/vdx</code> 这样的信息，因此需要过滤：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]' | awk -F: '&#123;print $1&#125;' | awk '&#123;print $2&#125;'</span></span><br><span class="line">/dev/vda</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div>
+<p>其中 <code>egrep</code> 是选取符合的行如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]'</span></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br></pre></td></tr></table></figure></div>
+<p>后面两个 <code>awk</code> 则不断 <strong>split</strong> 字符串选取出最终的字符。</p>
+<h4 id="df-命令"><a href="#df-命令" class="headerlink" title="df 命令"></a>df 命令</h4><p>上面的 <code>fdisk</code> 是获取所有的磁盘信息，包括已经挂载以及未挂载的磁盘，而 <code>df</code> 则获取仅仅挂载的信息，这样对于企业中的监控获取未挂载的磁盘，则只需用 <code>fdisk</code> 结果减 <code>df</code> 的结果，这里只介绍用 <code>df</code> 获取磁盘信息：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -h</span></span><br><span class="line">Filesystem               Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/centos-root   38G  6.5G   32G  18% /</span><br><span class="line">devtmpfs                 3.9G     0  3.9G   0% /dev</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /dev/shm</span><br><span class="line">tmpfs                    3.9G  401M  3.5G  11% /run</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1                497M  150M  348M  31% /boot</span><br><span class="line">/dev/vdb                  99G   61M   94G   1% /data</span><br><span class="line">tmpfs                    783M     0  783M   0% /run/user/0</span><br></pre></td></tr></table></figure></div>
+<p>我们也只需要 <code>/dev/vdx</code> 这样的信息：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -Th | /usr/bin/egrep '^/dev/[a-z]d[a-z]\d*' | awk '&#123;print $1&#125;'</span></span><br><span class="line">/dev/vda1</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div>
+<h4 id="proc-partitions-文件"><a href="#proc-partitions-文件" class="headerlink" title="/proc/partitions 文件"></a>/proc/partitions 文件</h4><p>这个文件也记录了 Centos 系统的磁盘挂载信息，与 fdisk 命令的结果一致，但是用文件搜索方式比通过 commands 包调用 fdisk 命令效率更高，因此，推荐用此方式来查系统挂载信息：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/partitions | egrep ' [a-z]d[a-z]+$' | awk '&#123;print $4&#125;'</span></span><br><span class="line">vda</span><br><span class="line">vdb</span><br></pre></td></tr></table></figure></div>
+<h4 id="proc-mounts-文件"><a href="#proc-mounts-文件" class="headerlink" title="/proc/mounts 文件"></a>/proc/mounts 文件</h4><p>这个文件则是与 <code>df</code> 命令相似，只记录已经挂载的磁盘信息，并且效率高于 <code>df</code> 命令：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/mounts | egrep '^/dev/[a-z]d[a-z]+\d*'</span></span><br><span class="line">/dev/vda1 /boot xfs rw,relatime,attr2,inode64,noquota 0 0</span><br><span class="line">/dev/vdb /data ext4 rw,relatime,data=ordered 0 0</span><br></pre></td></tr></table></figure></div>
+<p>这个先查询出行，再用 <code>awk</code> 对行进行截取，这个我就不写了，自己大家可以 <code>awk</code>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">java正则</a></li>
+<li><a href="http://www.cnblogs.com/liaojie970/p/5714050.html" target="_blank" rel="noopener">回车与换行</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_4c925dca01009h1a.html" target="_blank" rel="noopener">js正则</a></li>
+<li><a href="http://www.cnblogs.com/hsqdboke/p/4944823.html" target="_blank" rel="noopener">邮箱正则</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Regex</category>
+      </categories>
+      <tags>
+        <tag>Regex</tag>
       </tags>
   </entry>
   <entry>
