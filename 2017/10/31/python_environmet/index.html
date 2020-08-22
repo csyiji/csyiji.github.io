@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">9.2k</span>
+                <span title="本文字数">9.3k</span>
               
 
               
@@ -536,14 +536,14 @@
 <p>通过 <code>which pip</code> 查看 <strong>pip</strong> 路径，然后用 <code>ll</code> 查看文件属性，该文件为非链接文件，其与上面的 <strong>Python</strong> 相对应</p>
 <p><img src="https://img.godjiyi.cn/pyset3.jpg" alt></p>
 <p>我们也可以通过命令来查看 <strong>pip</strong> 目录中有哪些 <code>pip</code>:</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/bin | grep pip</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/bin | grep pip</span><br></pre></td></tr></table></figure></div></div>
 <p>结果：</p>
 <p><img src="https://img.godjiyi.cn/pyset4.jpg" alt></p>
 <p>我们看到上图有好多 <code>pip</code> 命令，到底哪些可用或者一致呢？我们可以看这些命令的 <strong>创建时间</strong> 基本可以判断前三个 <code>pip</code> 是同一时刻安装的，最后一个是另外时间安装的 <code>pip</code> 工具，我们可以通过 <code>pip</code> 命令安装一个已经存在的模块查看其已经安装的模块路径如下图，我们可以知道 <em>pip, pip2, pip2.7</em> 都是 <em>Python2.X 版本的</em> <code>python</code> 命令所对应的 <code>pip</code>.</p>
 <p><img src="https://img.godjiyi.cn/pyset5.jpg" alt></p>
 <p><strong>Python3.X 版本的 pip3</strong></p>
 <p>通过 <code>which pip3</code>查看 <strong>pip</strong> 路径，然后用 <code>ll</code> 查看文件属性如下图，然而，<code>pip3</code> 并没有此命令，但我们从之前的查看命令可知存在 <code>pip3.5</code> 命令</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/bin | grep pip</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /usr/<span class="built_in">local</span>/bin | grep pip</span><br></pre></td></tr></table></figure></div></div>
 <p>再次执行 <code>which pip3.5</code>，情况如下：</p>
 <p><img src="https://img.godjiyi.cn/pyset7.jpg" alt></p>
 <p>我们天真地以为 <code>pip3.5</code> 命令就是我们 <strong>Python3.X 版本的</strong> <code>pip</code>，我们执行安装命令试试 <code>pip3.5 install numpy</code>，结果如下：</p>
@@ -556,9 +556,9 @@
 <p>注意：下面的安装位置仅仅是我自己系统上的环境位置，并非适用你自己的环境，需要自己确定自己的 <strong>Python</strong> 版本和 <strong>pip</strong> 版本</p>
 </blockquote>
 <p><em>Python2.X版本的模块位置</em>:</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure></div></div>
 <p><em>Python3.X版本的模块位置</em>:</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install numpy</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install numpy</span><br></pre></td></tr></table></figure></div></div>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>Python2.X</strong>:</p>
 <p>执行路径: <strong>/usr/bin/python</strong></p>
 <p>pip 路径: <strong>/usr/local/bin/pip</strong>, <strong>/usr/local/bin/pip2</strong>, <strong>/usr/local/bin/pip2.7</strong></p>
@@ -570,7 +570,7 @@
 <p><strong>Python</strong> 存在不统一路径查找的原因：</p>
 <p><em>(1). 通过 pkg 安装包</em>: Python 官网 <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a>, 下载后文件为 <strong>python-3.6.3-macosx10.6.pkg</strong> 形式的文件，这种文件可直接双击安装，其安装的位置通常在 <strong>/Library/Frameworks</strong> 下。</p>
 <p><em>(2). 通过 homebrew 安装</em>: Homebrew 官网 <a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh/</a>, 其安装方式为:</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install python <span class="comment"># 安装python2.X</span></span><br><span class="line">brew install python3 <span class="comment"># 安装python3.X</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install python <span class="comment"># 安装python2.X</span></span><br><span class="line">brew install python3 <span class="comment"># 安装python3.X</span></span><br></pre></td></tr></table></figure></div></div>
 <p>这种方式安装是先将包下载在 <strong>/usr/local/Cellar</strong> 目录下，然后自动在 <strong>/usr/local/bin/</strong> 下新建一个执行链接到 <strong>/usr/local/Cellar</strong>.</p>
 <p>如：我们安装一个wget 工具：<code>brew install wget</code>，然后我们可以查看<em>wget</em>的原路径：</p>
 <p><img src="https://img.godjiyi.cn/pyset11.jpg" alt></p>
@@ -769,7 +769,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1125,7 +1125,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">157k</span>
+    <span title="站点总字数">167k</span>
   
 
   
@@ -1136,7 +1136,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:32</span>
   
 </div>
 

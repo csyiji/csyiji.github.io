@@ -119,7 +119,7 @@
 
 
   <meta name="description" content="A LaTeX Template for Report, With Supporting Chinese Language    项目源码地址：https://github.com/jiyiren/ReportPaper 文档预览地址：https://img.godjiyi.cn/report_paper.pdf">
-<meta name="keywords" content="report,latex">
+<meta name="keywords" content="latex,report">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一份 LaTeX 报告形式模板">
 <meta property="og:url" content="https://www.godjiyi.cn/2018/12/13/report_paper/index.html">
@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.5k</span>
+                <span title="本文字数">5.6k</span>
               
 
               
@@ -519,7 +519,7 @@
 <li>Windows: <a href="http://mirrors.hust.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">TeXLive.iso</a></li>
 </ul>
 <p>安装后将命令加入环境变量，并使之生效，通过 <code>which latex</code> 可查看是否设置成功：</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> latex</span><br><span class="line">/usr/<span class="built_in">local</span>/texlive/2018/bin/x86_64-darwin/latex</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> latex</span><br><span class="line">/usr/<span class="built_in">local</span>/texlive/2018/bin/x86_64-darwin/latex</span><br></pre></td></tr></table></figure></div></div>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p>LaTeX 实际上如果 Java 语言一样，都需要先配置环境，然后选择一款自己喜欢的 IDE 进行编写“代码”。</p>
 <p>当然所有文本编辑器都可以编写 LaTeX 或者 Java 等其他语言“代码”。这里的 IDE 指集成了一些语言本地化的功能，比如编译、特殊符号等等。</p>
 <p>LaTeX 的发行版中会自带一款编辑器，用 TexLive 的话，MacOS 上会有个叫 <strong>TexShop</strong> 的编辑器，而 Windows 上则会是一个叫 <strong>TexWorker</strong> 的编辑器，这些是都可以胜任编写工作的。</p>
@@ -533,13 +533,13 @@
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>上面两点都讲了没实际作用的环境配置，对于使用本项目实际上很简单：</p>
 <ul>
 <li><p>使用 XeLaTeX 编译：</p>
-  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex report_paper.tex</span><br></pre></td></tr></table></figure></div>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex report_paper.tex</span><br></pre></td></tr></table></figure></div></div>
 </li>
 <li><p>用 BiBTeX 再次编译生成的 <code>report_paper.aux</code> 文件：</p>
-  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bibtex report_paper.aux</span><br></pre></td></tr></table></figure></div>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bibtex report_paper.aux</span><br></pre></td></tr></table></figure></div></div>
 </li>
 <li><p>之后再次用 XeLaTeX 编译：</p>
-  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex report_paper.tex</span><br></pre></td></tr></table></figure></div>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex report_paper.tex</span><br></pre></td></tr></table></figure></div></div>
 </li>
 </ul>
 <p>这时候生成的 <code>pdf</code> 文件是最全和完整的文档。</p>
@@ -572,6 +572,15 @@
 
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2020-08-22</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2020/08/22/latex_use/" rel="bookmark">LaTeX 介绍和使用</a></div>
+      
+    </li>
   
     <li class="popular-posts-item">
       
@@ -644,9 +653,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/report/" rel="tag"># report</a>
-          
             <a href="/tags/latex/" rel="tag"># latex</a>
+          
+            <a href="/tags/report/" rel="tag"># report</a>
           
         </div>
       
@@ -766,7 +775,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1122,7 +1131,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">157k</span>
+    <span title="站点总字数">167k</span>
   
 
   
@@ -1133,7 +1142,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:32</span>
   
 </div>
 

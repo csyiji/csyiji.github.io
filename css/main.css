@@ -2010,7 +2010,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #95a4c7;
+  background: #ff0fc9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3256,4 +3256,7 @@ li p {
 .highlight {
   margin: 0 0;
   padding-top: 22px;
+}
+.jiyicode .highlight-wrap {
+  position: initial;
 }

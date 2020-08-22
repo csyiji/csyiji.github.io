@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.7k</span>
+                <span title="本文字数">6.9k</span>
               
 
               
@@ -535,26 +535,26 @@
 <p><img src="https://img.godjiyi.cn/nexus7nexus_sdk_jieya.png" alt></p>
 <p>我们要加入环境变量的是 <em>platform-tools</em> 目录。</p>
 <p>打开终端输入：</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br></pre></td></tr></table></figure></div></div>
 <p>加入：</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ANDROID_SDK_TOOL=~/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;ANDROID_SDK_TOOL&#125;</span>/platform-tools:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ANDROID_SDK_TOOL=~/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;ANDROID_SDK_TOOL&#125;</span>/platform-tools:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></div></div>
 <p>然后重新打开终端</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb version</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb version</span><br></pre></td></tr></table></figure></div></div>
 <p>出现版本号就说明环境搭建成功了。</p>
 <h3 id="4、刷机"><a href="#4、刷机" class="headerlink" title="4、刷机"></a>4、刷机</h3><p>将设备用 <em>usb</em> 连接到电脑，然后在终端输入以下命令让设备进入 <strong>bootloader</strong> 模式</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure></div></div>
 <blockquote>
 <p>(或者按住按住设备的电源键和音量减键，两个要一起按住不放，知道重启到 <strong>bootloader</strong> 界面)</p>
 </blockquote>
 <p><img src="https://img.godjiyi.cn/nexus7nexus7_bootloader.png" alt></p>
 <p>最下面的红字为 <strong>LOCK STATE - UNLOCKED</strong>, 就说明 <em>bootloader</em> 解锁了，但是通常的设备在出厂之前都是未解锁；但是不管解锁没解锁都可以用下面的命令：</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem unlock</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem unlock</span><br></pre></td></tr></table></figure></div></div>
 <p>我建议大家都应该输入该命令。</p>
 <p>然后切换到之前下载镜像解压后的目录：</p>
 <p><img src="https://img.godjiyi.cn/nexus7nexus7_jieyajingxiang.png" alt></p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads/nexus7/google/nakasi-5.0/nakasi-lrx21p</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads/nexus7/google/nakasi-5.0/nakasi-lrx21p</span><br></pre></td></tr></table></figure></div></div>
 <p>执行刷机命令 ( 执行的是 <em>flash-all.sh</em> 后缀是 <strong>.sh</strong> 不要执行成 bat 了 )</p>
-<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./flash-all.sh</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./flash-all.sh</span><br></pre></td></tr></table></figure></div></div>
 <p>然后就是静静的等待了。</p>
 <h3 id="5、进入系统前验证"><a href="#5、进入系统前验证" class="headerlink" title="5、进入系统前验证"></a>5、进入系统前验证</h3><p>这个是刷谷歌官方镜像的最大缺点，因为谷歌在国内被墙了，所以通常的 <em>wifi</em> 都不能连接谷歌的。但是 <em>Cyanogenmod</em> 系统就不强制连接 <em>wifi</em> 的，所以如果有同学在这里实在是找不到代理连接到谷歌的就刷 <strong>Cyanogenmod</strong> 的镜像吧。但是还是要讲下怎么连接吧：</p>
 <p><strong>连接无线网</strong></p>
@@ -591,19 +591,19 @@
   
     <li class="popular-posts-item">
       
-        <div class="popular-posts-date">2015-08-13</div>
+        <div class="popular-posts-date">2015-07-25</div>
       
       
-      <div class="popular-posts-title"><a href="/2015/08/13/android-scrollview/" rel="bookmark">Android 下拉图片变大的 ScrollView</a></div>
+      <div class="popular-posts-title"><a href="/2015/07/25/android-multiselected-listview/" rel="bookmark">Android 中多选 ListView 的实现</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
-        <div class="popular-posts-date">2015-07-25</div>
+        <div class="popular-posts-date">2015-08-13</div>
       
       
-      <div class="popular-posts-title"><a href="/2015/07/25/android-multiselected-listview/" rel="bookmark">Android 中多选 ListView 的实现</a></div>
+      <div class="popular-posts-title"><a href="/2015/08/13/android-scrollview/" rel="bookmark">Android 下拉图片变大的 ScrollView</a></div>
       
     </li>
   
@@ -809,7 +809,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1165,7 +1165,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">157k</span>
+    <span title="站点总字数">167k</span>
   
 
   
@@ -1176,7 +1176,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:32</span>
   
 </div>
 
