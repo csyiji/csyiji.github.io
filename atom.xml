@@ -367,9 +367,9 @@
       <category term="NoSQL" scheme="https://www.godjiyi.cn/categories/NoSQL/"/>
     
     
-      <category term="Metric" scheme="https://www.godjiyi.cn/tags/Metric/"/>
-    
       <category term="OpenTSDB" scheme="https://www.godjiyi.cn/tags/OpenTSDB/"/>
+    
+      <category term="Metric" scheme="https://www.godjiyi.cn/tags/Metric/"/>
     
   </entry>
   
