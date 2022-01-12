@@ -2010,7 +2010,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c163c8;
+  background: #2a7449;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3259,4 +3259,87 @@ li p {
 }
 .jiyicode .highlight-wrap {
   position: initial;
+}
+#busuanzi_value_site_uv {
+  color: #fc625d;
+  font-weight: bold;
+}
+#busuanzi_value_site_pv {
+  color: #fc625d;
+  font-weight: bold;
+}
+.main {
+  padding-bottom: 750px;
+}
+.footer {
+  padding: 0 0;
+}
+.footer-inner {
+  padding: 60px 0;
+}
+.subscriber {
+  background-color: rgba(0,179,254,0.8);
+  padding: 50px 0 50px 0;
+}
+.subscriber-title h3 {
+  width: 100%;
+  text-align: center;
+  color: #333;
+}
+.subscriber-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscriber-intro {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscriber-intro-inner {
+  max-width: 600px;
+  text-align: left;
+  color: #fff;
+}
+.subscriber-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscriber-image-inner {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (max-width: 769px) {
+  .main {
+    padding-bottom: 850px;
+  }
+  .subscriber-description {
+    flex-direction: column;
+  }
+  .subscriber-intro {
+    width: 90%;
+  }
+  .subscriber-image {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 1199px) {
+  .subscriber-intro {
+    padding: 0 60px;
+  }
+  .subscriber-image {
+    padding: 0 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .subscriber-intro {
+    padding: 0 100px;
+  }
+  .subscriber-image {
+    padding: 0 100px;
+  }
 }
