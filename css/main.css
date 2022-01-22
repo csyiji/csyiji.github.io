@@ -1250,17 +1250,6 @@ pre .javascript .function {
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
 }
-.use-motion .post-block,
-.use-motion .pagination,
-.use-motion .comments {
-  opacity: 0;
-}
-.use-motion .post-header {
-  opacity: 0;
-}
-.use-motion .post-body {
-  opacity: 0;
-}
 .use-motion .collection-title {
   opacity: 0;
 }
@@ -2010,7 +1999,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2a7449;
+  background: #6c833d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3042,7 +3031,7 @@ body {
   background-color: rgba(148,0,211,0);
 }
 .container {
-  background-color: rgba(216,208,114,0.22);
+  background-color: #fff;
 }
 .header {
   background-color: #fff;
@@ -3326,6 +3315,18 @@ li p {
   .subscriber-image {
     width: 80%;
   }
+  .post-line-row {
+    display: inherit;
+  }
+  .post-line-one {
+    display: inline-block;
+    box-shadow: #ccc 0 0 16px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .post-home-titleinfo {
+    text-align: center;
+  }
 }
 @media screen and (min-width: 770px) and (max-width: 1199px) {
   .subscriber-intro {
@@ -3333,6 +3334,18 @@ li p {
   }
   .subscriber-image {
     padding: 0 60px;
+  }
+  .post-line-row {
+    display: flex;
+  }
+  .container .main-inner {
+    width: 95%;
+  }
+  .post-line-one {
+    display: inline-block;
+    box-shadow: #ccc 0 0 16px;
+    margin: 5px;
+    width: 33%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -3342,4 +3355,49 @@ li p {
   .subscriber-image {
     padding: 0 100px;
   }
+  .post-line-row {
+    display: flex;
+  }
+  .post-line-one {
+    display: inline-block;
+    box-shadow: #ccc 0 0 16px;
+    margin: 5px;
+    width: 33%;
+  }
+}
+@media (min-width: 1200px) {
+  .container .main-inner {
+    width: 1050px;
+  }
+}
+@media (min-width: 1600px) {
+  .container .main-inner {
+    width: 1200px;
+  }
+}
+.post-home-image {
+  height: 170px;
+}
+.post-home-titleinfo {
+  line-height: 1.55rem;
+  padding: 0 1rem 1rem 1rem;
+}
+.post-home-title {
+  color: #e5004e;
+}
+.post-home-info {
+  font-size: 0.95rem;
+}
+.post-home-cat-title {
+  text-align: center;
+  font-size: 25px;
+  overflow: hidden;
+}
+.post-home-cat-titleword {
+  color: #0a8ede;
+}
+.post-home-cat-title-link {
+  float: right;
+  font-size: 20px;
+  margin-right: 20px;
 }

@@ -99,7 +99,7 @@
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":false,"transition":{"coll_header":"slideLeftIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -118,23 +118,23 @@
 
 
 
-  <meta name="description" content="最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。 简介1 . 七十年代末，">
+  <meta name="description" content="最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。">
 <meta name="keywords" content="latex,report">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX 介绍和使用">
 <meta property="og:url" content="https://www.hackersee.com/2022/01/09/latex_use/index.html">
 <meta property="og:site_name" content="HackerSee">
-<meta property="og:description" content="最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。 简介1 . 七十年代末，">
+<meta property="og:description" content="最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_latex_role.jpg">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20190412161057.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20190414145200.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20190414152444.png">
 <meta property="og:image" content="https://img.godjiyi.cn/jy_20190414152703.png">
-<meta property="og:updated_time" content="2022-01-09T07:54:01.141Z">
+<meta property="og:updated_time" content="2022-01-22T10:26:00.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX 介绍和使用">
-<meta name="twitter:description" content="最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。 简介1 . 七十年代末，">
+<meta name="twitter:description" content="最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。">
 <meta name="twitter:image" content="https://img.godjiyi.cn/jy_latex_role.jpg">
 
 
@@ -514,6 +514,7 @@
 
       
         <p>最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。</p>
+<a id="more"></a>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1 . 七十年代末，<em>Donald E. Knuth（高德纳</em>） 在看到其多卷巨著 <em>“The Art of Computer Programming”</em> 第二卷的校样时，对由计算机排版的校样的低质量感到无法忍受。因此决定自己来开发一个高质量的计算机排版系统，这样就有了 <strong>TeX</strong> 。</p>
 <p>2 . <strong>TeX</strong> 的第一版于 1978 年面世，<strong>TeX</strong> 的源程序是用 <code>Pascal</code> 写成的，原因是 Knuth 希望 <strong>TeX</strong> 尽可能方便地移植到其它的操作系统中去。当时 <code>Pascal</code> 是最适合于这一要求的编程语言。这也使得 <strong>TeX</strong> 现在已经在几乎所有的计算机系统中得到实现。</p>
 <p>3 . <strong>TeX</strong> 的另一个重要的特征就是它的输出是与 <strong>设备无关</strong> 的。<strong>TeX</strong> 的输出文件称为 <strong>DVI</strong> 文件，即是 <em>“Device Independent”</em> 。一旦 <strong>TeX</strong> 处理了你的文件，你所得到的 <strong>DVI</strong> 文件就可以被送到任何输出设备如打印机，屏幕等并且总会得到相同的结果，而这与这些输出设备的限制没有任何关系。这说明 <strong>DVI</strong> 文件中所有的元素，从页面设置到文本中字符的位置都被固定，不能更改。</p>
@@ -525,7 +526,6 @@
 <li><strong>XeTeX</strong> : 2005年，Jonathan Kew 在 <em>e-TeX</em> 基础上添加 <strong>Unicode</strong> 支持，并且连接 Mac OS X 的各种技术。<strong>XeTeX</strong> 在2005/6年陆续发布了它的 Windows 和 Linux 版本，最终集成在 <strong>TeXLive 2007</strong> 当中，标志着它被广泛地认可。在 <strong>XeTeX</strong> 中，使用多国语言，变得非常轻松。</li>
 <li><strong>LuaTeX</strong> : 2007年，是 Aleph 与 <strong>PDFTeX</strong> 项目的继任者，主要由 Taco Hoekwater 开发，是 Lua 脚本语言和 TeX 的结合。</li>
 </ul>
-<a id="more"></a>
 <p>5 . <strong>LaTex 发型版本</strong>：</p>
 <ul>
 <li><strong><a href="https://tug.org/texlive/" target="_blank" rel="noopener">TeXLive</a></strong> : <strong>【官方】</strong>是由国际 TeX 用户组织 <strong>TUG</strong> 开发的 TeX 系统，支持不同的操作系统平台。其 Windows 版本又称 fpTeX ， Unix/Linux 版本即著名的 teTeX, Mac 版本为 <strong><a href="https://tug.org/mactex" target="_blank" rel="noopener">MacTeX</a></strong>。ISO 镜像下载地址：<a href="http://mirrors.ibiblio.org/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">点我</a></li>
@@ -887,7 +887,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -906,7 +906,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -929,7 +937,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1059,7 +1083,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -1070,7 +1094,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
   
 </div>
 
