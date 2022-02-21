@@ -1999,7 +1999,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6354ff;
+  background: #a8b9ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3306,6 +3306,9 @@ li p {
   .main {
     padding-bottom: 850px;
   }
+  .main-inner {
+    margin-top: 10px;
+  }
   .subscriber-description {
     flex-direction: column;
   }
@@ -3327,6 +3330,23 @@ li p {
   .post-home-titleinfo {
     text-align: center;
   }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 0 1px 0 #000;
+    height: 50px;
+  }
+  .header-inner {
+    box-shadow: 0 0 1px 0 #000;
+  }
+  #slogan-image-inner-id {
+    display: none;
+  }
+  .about-bg {
+    height: 200px;
+  }
 }
 @media screen and (min-width: 770px) and (max-width: 1199px) {
   .subscriber-intro {
@@ -3347,6 +3367,16 @@ li p {
     margin: 5px;
     width: 33%;
   }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 0 1px 0 #000;
+  }
+  .about-bg {
+    height: 250px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .subscriber-intro {
@@ -3364,15 +3394,39 @@ li p {
     margin: 5px;
     width: 33%;
   }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 0 1px 0 #000;
+  }
+  .about-bg {
+    height: 350px;
+  }
 }
 @media (min-width: 1200px) {
   .container .main-inner {
     width: 1050px;
   }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 0 1px 0 #000;
+  }
 }
 @media (min-width: 1600px) {
   .container .main-inner {
     width: 1200px;
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 0 1px 0 #000;
   }
 }
 .post-home-image {
@@ -3392,12 +3446,69 @@ li p {
   text-align: center;
   font-size: 25px;
   overflow: hidden;
+  position: relative;
+  margin-top: 50px;
 }
 .post-home-cat-titleword {
   color: #0a8ede;
+  font-weight: bold;
 }
 .post-home-cat-title-link {
-  float: right;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.25rem;
   font-size: 20px;
-  margin-right: 20px;
+}
+.posts-expand .post-meta {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.weekly-all-page .page-post-detail .post-title,
+.page-post-detail .post-meta {
+  text-align: left;
+}
+.posts-expand .page {
+  padding: 0;
+  box-shadow: 0 0 0 0 #000;
+  background-color: #fff;
+}
+.post-product-slogan {
+  margin-bottom: 10px;
+}
+.slogan-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slogan-image-inner {
+  height: 240px;
+  width: 320px;
+  display: block;
+  border-bottom: 2px solid #4daff8;
+}
+.slogan-title {
+  text-align: center;
+}
+.slogan-btn {
+  color: #fff;
+  background-color: #ff5722;
+  padding: 5px 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 0;
+}
+.container {
+  padding: 90px 0 0 0;
+}
+.sidebar {
+  background-color: #fff;
+}
+.header-inner {
+  background-color: #fff;
+}
+.local-search-pop-overlay {
+  z-index: 18;
+}
+.posts-collapse {
+  z-index: 19;
 }

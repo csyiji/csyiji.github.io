@@ -11,10 +11,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,12 +92,12 @@
     root: '/',
     scheme: 'Mist',
     version: '6.3.0',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"coll_header":"slideLeftIn"}},
+    motion: {"enable":false,"async":false,"transition":{"coll_header":"slideLeftIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -130,6 +128,8 @@
 <meta name="twitter:title" content="分类">
 <meta name="twitter:description" content="独立开发和创业资讯">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="HackerSee" type="application/atom+xml">
@@ -252,33 +252,25 @@
         
         
           
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+          <li class="menu-item menu-item-weekly">
+    <a href="/weekly/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>信息周刊</a>
   </li>
         
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+          <li class="menu-item menu-item-story">
+    <a href="/story/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-grav"></i> <br>创业故事</a>
   </li>
         
         
         
           
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-links">
-    <a href="/links/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+          <li class="menu-item menu-item-tools">
+    <a href="/tools/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br>工具分享</a>
   </li>
         
         
@@ -306,9 +298,6 @@
     
 
     
-    
-      
-      
     
       
       
@@ -416,26 +405,10 @@
                     
                   
                 
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                目前共计 7 个分类
+                目前共计 3 个分类
             </div>
             <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/History/">History</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LaTeX/">LaTeX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NoSQL/">NoSQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Regex/">Regex</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文/">论文</a><span class="category-list-count">1</span></li></ul>
+              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/信息周刊/">信息周刊</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/创业故事/">创业故事</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具分享/">工具分享</a><span class="category-list-count">1</span></li></ul>
             </div>
           </div>
         
@@ -492,9 +465,9 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -513,15 +486,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -560,7 +525,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -674,7 +651,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">7k</span>
   
 
   
@@ -685,7 +662,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
   
 </div>
 

@@ -1,815 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>整理一些博客链接</title>
-    <url>/2021/11/06/links_ok/</url>
-    <content><![CDATA[<h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><ul>
-<li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰</a>: 中国区 github followers 第一, 教程、新闻、想法很多;</li>
-<li><a href="https://coolshell.cn/" target="_blank" rel="noopener">陈皓</a>: 网名 <em>左耳朵耗子</em>，元老级程序员专家，对技术理解比较深刻;</li>
-<li><a href="http://www.yinwang.org/" target="_blank" rel="noopener">王垠</a>: 思想奇葩;</li>
-<li><a href="https://yihui.org/" target="_blank" rel="noopener">谢益辉</a>: 有个性的一个人，R 语言高手;</li>
-<li><a href="http://column.hongliangjie.com/about/" target="_blank" rel="noopener">洪亮劼</a>: 人工智能专家，LinkedIn 工程总监，学习学习算法从业者想法;</li>
-<li><a href="https://haohailong.net/" target="_blank" rel="noopener">郝海龙</a>: 英文翻译专家，创立《林中来信》付费文章，作家。当时是被<a href="http://haohailong.github.io/mac-app-papers/" target="_blank" rel="noopener">【用 Papers for Mac 搞学术】</a> 文章吸引了的，原博客已删掉了此文章，链接里为作者的 github 博客;</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><a href="http://zhangtielei.com/about.html" target="_blank" rel="noopener">张铁蕾</a>: 阿里后端开发者，会写小说、诗词;</li>
-<li><a href="https://liujiacai.net/about/" target="_blank" rel="noopener">刘家财</a>: 擅长 Emacs，独立做了 EmacsTalk 节目;</li>
-<li><a href="http://yangyingming.com/about/" target="_blank" rel="noopener">杨英明</a>: 博客主题不错;</li>
-<li><a href="https://diygod.me/about/" target="_blank" rel="noopener">DIYgod</a>: 开源 star 量多，博客主题很个性;</li>
-<li><a href="https://88250.b3log.org/about" target="_blank" rel="noopener">丁亮</a>: 自主创业者，每年会出个人总结，感觉是很有想法的人;</li>
-<li><a href="https://byvoid.com/zhs/about/" target="_blank" rel="noopener">郭家宝</a>: 谷歌员工，当时被其游记吸引了;</li>
-<li><a href="https://www.cs.princeton.edu/~danqic/" target="_blank" rel="noopener">陈丹琦</a>: NLP 专家，获得 2021 Google AI 研究学者计划;</li>
-<li><a href="https://pluskid.org/" target="_blank" rel="noopener">张驰原</a>: 谷歌大脑研究者;</li>
-<li><a href="https://camarts.cn/" target="_blank" rel="noopener">翁天信</a>: 一个未上过学的自学者，摄影精美;</li>
-<li><a href="https://bean-li.github.io/about/" target="_blank" rel="noopener">李彬</a>: Linux 后端工程师，从事存储行业;</li>
-<li><a href="https://www.codedump.info/" target="_blank" rel="noopener">codedump</a>: Lua 高手，出过书;</li>
-<li><a href="https://www.ixiqin.com/" target="_blank" rel="noopener">白宦成</a>: 网名 <em>西秦公子</em>，自由职业者;</li>
-<li><a href="https://www.changhai.org/articles/introduction/personal_data.php" target="_blank" rel="noopener">卢昌海</a>: 物理学家、科普作家，发表作品无数 👍;</li>
-<li><a href="https://github.com/1c7/chinese-independent-developer" target="_blank" rel="noopener">中国独立开发者合集</a>: 开源独立开发者合集;</li>
-</ul>
-<h2 id="独立开发者-项目"><a href="#独立开发者-项目" class="headerlink" title="独立开发者/项目"></a>独立开发者/项目</h2><ul>
-<li><a href="https://blog.t9t.io/" target="_blank" rel="noopener">透明创业实验室</a>: 一位独立开发者 @timqian 坚持每周更新独立开发进度;</li>
-<li><a href="https://www.ixiqin.com/aboutme/" target="_blank" rel="noopener">毒蘑菇</a>: 吴掌柜个人开发短文、名言、鸡汤网站;</li>
-<li><a href="https://w2solo.com/" target="_blank" rel="noopener">W2Solo</a>: 独立开发者信息交流社区，人不是很多，但有自己不了解的信息;</li>
-</ul>
-<h2 id="博刊-日-周-月刊"><a href="#博刊-日-周-月刊" class="headerlink" title="博刊(日/周/月刊)"></a>博刊(日/周/月刊)</h2><ul>
-<li>【周刊】<a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">科技爱好者周刊</a>: 阮一峰创作，每周五发布;</li>
-<li>【月刊】<a href="https://hellogithub.com/" target="_blank" rel="noopener">HelloGithub</a>: 有趣的开源项目合集;</li>
-<li>【周刊】<a href="http://fex.baidu.com/" target="_blank" rel="noopener">FEX 前端</a>: 前端技术分享;</li>
-<li>【周刊】<a href="https://github.com/ascoders/weekly" target="_blank" rel="noopener">Weekly 前端</a>: 前端精读文章合集;</li>
-<li>【日/周报】<a href="https://openingsource.org/" target="_blank" rel="noopener">开源工厂</a>: 开源项目介绍合集;</li>
-<li>【日报】<a href="https://wanqu.co/" target="_blank" rel="noopener">湾区日报</a>: 关注创业与技术;</li>
-<li><a href="https://tech.meituan.com/" target="_blank" rel="noopener">美团技术团队</a>: 美团企业分享合集;</li>
-<li><a href="https://tech.youzan.com/" target="_blank" rel="noopener">有赞技术团队</a>: 有赞企业分享合集;</li>
-<li><a href="https://www.jiqizhixin.com/" target="_blank" rel="noopener">机器之心</a>: 人工智能新闻合集;</li>
-<li><a href="https://github.com/phodal/growth-ebook" target="_blank" rel="noopener">全栈工程师增长指南</a>: 全栈工程师指南;</li>
-<li><a href="https://github.com/stanzhai/be-a-professional-programmer" target="_blank" rel="noopener">专业程序员必看书籍指南</a>: 程序员书籍指南;</li>
-<li><a href="https://github.com/niezhiyang/open_source_team" target="_blank" rel="noopener">大厂技术分享目录合集</a>: 大厂分享目录合集;</li>
-</ul>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LaTeX 介绍和使用</title>
-    <url>/2022/01/09/latex_use/</url>
-    <content><![CDATA[<p>最近在整理自己的收藏夹和知识集合，总感觉很多文档放本地或者印象笔记、有道笔记不是很好，遇到问题本能总是先 Google，不曾想过有时候自己已经花大量时间整理了，并且可能会出现在本地多个文档中整理了同一知识点，或者在不同笔记里都有记录相关问题，导致相关信息杂乱。因此，我规划从现在起将自己收藏的东西整理出来，全部放博客中，便于查找和统一更新。今天先更新 LaTeX 整理记录。</p>
-<a id="more"></a>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1 . 七十年代末，<em>Donald E. Knuth（高德纳</em>） 在看到其多卷巨著 <em>“The Art of Computer Programming”</em> 第二卷的校样时，对由计算机排版的校样的低质量感到无法忍受。因此决定自己来开发一个高质量的计算机排版系统，这样就有了 <strong>TeX</strong> 。</p>
-<p>2 . <strong>TeX</strong> 的第一版于 1978 年面世，<strong>TeX</strong> 的源程序是用 <code>Pascal</code> 写成的，原因是 Knuth 希望 <strong>TeX</strong> 尽可能方便地移植到其它的操作系统中去。当时 <code>Pascal</code> 是最适合于这一要求的编程语言。这也使得 <strong>TeX</strong> 现在已经在几乎所有的计算机系统中得到实现。</p>
-<p>3 . <strong>TeX</strong> 的另一个重要的特征就是它的输出是与 <strong>设备无关</strong> 的。<strong>TeX</strong> 的输出文件称为 <strong>DVI</strong> 文件，即是 <em>“Device Independent”</em> 。一旦 <strong>TeX</strong> 处理了你的文件，你所得到的 <strong>DVI</strong> 文件就可以被送到任何输出设备如打印机，屏幕等并且总会得到相同的结果，而这与这些输出设备的限制没有任何关系。这说明 <strong>DVI</strong> 文件中所有的元素，从页面设置到文本中字符的位置都被固定，不能更改。</p>
-<p><img src="https://img.godjiyi.cn/jy_latex_role.jpg" alt></p>
-<p>4 . <strong>TeX</strong> 现在已经被它的开发者 Knuth 所 “冰封”(frozen)，基本不再开发了。但新的变种版本不断出现，</p>
-<ul>
-<li><strong>LaTeX</strong>: 1984 年，由 Lamport 开发, 适合论文书籍, 对 TeX 推广贡献巨大，由于其标准的格式控制，latex 逐渐成为主流的 TeX 文档排版命令。LaTeX 时代开启。</li>
-<li><strong>PDFTeX</strong> : 1997 年，由 H.T. Thanh 开发，完全兼容标准的 <strong>TeX</strong> ，但能够给出 PDF 输出。它也可以输出标准的 DVI 。</li>
-<li><strong>XeTeX</strong> : 2005年，Jonathan Kew 在 <em>e-TeX</em> 基础上添加 <strong>Unicode</strong> 支持，并且连接 Mac OS X 的各种技术。<strong>XeTeX</strong> 在2005/6年陆续发布了它的 Windows 和 Linux 版本，最终集成在 <strong>TeXLive 2007</strong> 当中，标志着它被广泛地认可。在 <strong>XeTeX</strong> 中，使用多国语言，变得非常轻松。</li>
-<li><strong>LuaTeX</strong> : 2007年，是 Aleph 与 <strong>PDFTeX</strong> 项目的继任者，主要由 Taco Hoekwater 开发，是 Lua 脚本语言和 TeX 的结合。</li>
-</ul>
-<p>5 . <strong>LaTex 发型版本</strong>：</p>
-<ul>
-<li><strong><a href="https://tug.org/texlive/" target="_blank" rel="noopener">TeXLive</a></strong> : <strong>【官方】</strong>是由国际 TeX 用户组织 <strong>TUG</strong> 开发的 TeX 系统，支持不同的操作系统平台。其 Windows 版本又称 fpTeX ， Unix/Linux 版本即著名的 teTeX, Mac 版本为 <strong><a href="https://tug.org/mactex" target="_blank" rel="noopener">MacTeX</a></strong>。ISO 镜像下载地址：<a href="http://mirrors.ibiblio.org/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">点我</a></li>
-<li><strong><a href="http://www.miktex.org" target="_blank" rel="noopener">MiKTeX</a></strong> : 原来是 Windows 系统平台上的一个发行版本，之后也扩展支持到 Linux 和 MacOS 了。其本身集成了一个编辑器  <strong>TeXworks</strong>。</li>
-<li><strong><a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">CTex</a></strong> : 这个很多人谈论到中文 LaTeX 的时候会提到，但是 <strong>CTeX</strong> 发行版是民间为早期 LaTeX 不支持中文而基于 MiKTeX 开发的支持中文版本。其本身就是 <strong>MiKTeX</strong>。但现在 Unicode 支持的 XeTeX 和其他 TeX 已经趋于成熟，<strong>因此，现在不推荐再用 CTeX 版本了</strong>。</li>
-<li><strong>CTeX 宏集</strong> : 这里要提一下 <strong>CTeX 宏集</strong>，这个宏集与 CTeX 发行版本/套装 是完全不一样的东西，CTeX 宏集是 <strong>Chinese Support TeX</strong>，是为支持中文的 TeX 库，这个是在用到中文时必须要用的库，因此，千万不要混淆这两者。现今所说的 CTeX 一般都是指这个 CTeX 宏集。</li>
-</ul>
-<h2 id="发行版本"><a href="#发行版本" class="headerlink" title="发行版本"></a>发行版本</h2><p>发行版本就是 LaTeX 多种标准实现类型。主要是分为 <strong>TeXLive</strong> 和 <strong>MiKTeX</strong>，其他版本都是基于这两个主流版本衍生而来的。这两大发行版本都是全平台支持的。MacTeX 实际上就是 TeXLive 的 MacOS 系统上的实现，因此这里归类其为 TeXLive。相关说明如下：</p>
-<ul>
-<li><strong>TeXLive</strong>: <a href="https://tug.org/texlive" target="_blank" rel="noopener">https://tug.org/texlive</a>,<strong>【官方】</strong>发行，自带 <strong>TeXShop</strong>;</li>
-<li><strong>MacTeX</strong>: <a href="https://tug.org/mactex" target="_blank" rel="noopener">https://tug.org/mactex</a>, 实际上属于TeXLive，因为支持 MacOS 较迟，因此给了新名称，自带 <strong>TeXShop</strong>;</li>
-<li><strong>MiKTeX</strong>: <a href="http://www.miktex.org" target="_blank" rel="noopener">http://www.miktex.org</a>, 自带 <strong>TeXWorks</strong>;</li>
-<li><del><strong>CTeX</strong>: <a href="http://www.ctex.org/HomePage" target="_blank" rel="noopener">http://www.ctex.org/HomePage</a>，XeTeX 出现之前民间中文支持的版本，基于 MiKTeX，不再维护</del>。目前中文文档用 <strong>XeTeX + CTeX</strong> 宏包即可支持了。</li>
-</ul>
-<p>如果需要安装的话，大家看官网实际上都能找到地址的，为方便这里列下不同发行版本的不同平台下载地址:</p>
-<ul>
-<li><p><strong>TeXLive</strong></p>
-<ul>
-<li>Windows: <a href="https://tug.org/texlive/windows.html" target="_blank" rel="noopener">https://tug.org/texlive/windows.html</a></li>
-<li>MacOS: <a href="https://tug.org/mactex/" target="_blank" rel="noopener">https://tug.org/mactex/</a></li>
-<li>Linux: <a href="https://www.tug.org/texlive/quickinstall.html" target="_blank" rel="noopener">https://www.tug.org/texlive/quickinstall.html</a></li>
-</ul>
-</li>
-<li><p><strong>MiKTeX</strong>, 这个资源简单，同一个页面选择不同系统即可</p>
-<ul>
-<li>Windows: <a href="https://miktex.org/download" target="_blank" rel="noopener">https://miktex.org/download</a></li>
-<li>MacOS: <a href="https://miktex.org/download" target="_blank" rel="noopener">https://miktex.org/download</a></li>
-<li>Linux: <a href="https://miktex.org/download" target="_blank" rel="noopener">https://miktex.org/download</a>  </li>
-</ul>
-</li>
-</ul>
-<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>LaTeX 实际上和 Java 语言一样，都是需要先配置环境，然后选择一款自己喜欢的编辑器或 IDE 进行编写“代码”。当然所有文本编辑器都可以编写 LaTeX 或者 Java 等其他语言“代码”。这里的 IDE 指集成了一些语言本地化的功能，比如编译、特殊符号等等。</p>
-<p>LaTeX 的发行版中会自带一款编辑器，用 TexLive 的话，MacOS 上会有个叫 TexShop 的编辑器，而 Windows 上则会是一个叫 TexWorker 的编辑器，这些是都可以胜任编写工作的。另外，也有第三的 LaTeX 编辑器，下面我整理出所有编辑器说明，我个人用的也推荐程度也放上了，这是个人喜好，大家根据自己的偏好选择。</p>
-<ul>
-<li><strong>TeXMaker</strong>: <a href="http://www.xm1math.net/texmaker/" target="_blank" rel="noopener">http://www.xm1math.net/texmaker/</a> , 全平台，免费，强烈推荐👍👍👍；</li>
-<li><strong>TeXStudio</strong>: <a href="http://texstudio.sourceforge.net/" target="_blank" rel="noopener">http://texstudio.sourceforge.net/</a> , 全平台，免费，推荐👍👍；</li>
-<li><strong>WinEdit</strong>: <a href="http://www.winedt.com/index.html" target="_blank" rel="noopener">http://www.winedt.com/index.html</a> , 只支持 Windows，收费，自己选👍👍🍚；</li>
-<li><strong>TeXWorks</strong>: <a href="http://www.tug.org/texworks/" target="_blank" rel="noopener">http://www.tug.org/texworks/</a> ，<strong>MiKTeX</strong> 自带编辑器，免费👍；</li>
-<li><strong>TeXShop</strong>: <a href="https://pages.uoregon.edu/koch/texshop/" target="_blank" rel="noopener">https://pages.uoregon.edu/koch/texshop/</a> ，<strong>TeXLive</strong> 自带编辑器，免费👍；</li>
-</ul>
-<p>我个人推荐前两个，因为第三个收费且不跨平台，之所以写上第三个，主要是因为网络上很多博客或用户都推荐用第三个，这个我使用时也感觉不错，但每次我使用都得到 Windows 上使用，比较麻烦。当然，如果你使用 Windows 且有钱，WinEdt 确实使用体验和功能都是比较好的。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><strong>Windows / MacOS</strong>: 建议安装 <strong><a href="https://tug.org/texlive" target="_blank" rel="noopener">TeXLive</a></strong>，根据自己的系统选择对应的安装包。Mac 系统对应 <strong><a href="https://tug.org/mactex" target="_blank" rel="noopener">MacTeX</a></strong>。</li>
-<li><p><strong>MacOS</strong>: 安装后会自动将命令加入到环境变量, 并自带 <strong>TeXShop</strong> 编辑器。</p>
-  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">which</span> latex</span><br><span class="line">/Library/TeX/texbin/latex</span><br></pre></td></tr></table></figure></div></div>
-</li>
-<li><p><strong>MacOS</strong>: TeXShop 是 MacTeX 自带的编辑器，我个人倾向于再安装一个编辑器 <strong><a href="http://www.xm1math.net/texmaker/" target="_blank" rel="noopener">TeXMaker</a></strong>，其内置较多可视化符号，可点击插入，简单便捷。</p>
-</li>
-<li><strong>Windows</strong>: 推荐 <strong><a href="http://www.xm1math.net/texmaker/" target="_blank" rel="noopener">TeXMaker</a></strong> 和 <strong><a href="http://www.winedt.com/index.html" target="_blank" rel="noopener">WinEdt</a></strong> , 专门针对 TeX 开发, 提供许多便捷功能, 有助于提高排版效率</li>
-<li><p><strong>编译推荐</strong>: 用 <code>pdflatex</code> ( <strong>英文文档</strong> ) 或 <code>xelatex</code> ( <strong>中文文档</strong> ) 编译, 生成相应的 pdf 文件。</p>
-<p><img src="https://img.godjiyi.cn/jy_20190412161057.png" alt></p>
-</li>
-</ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="基础框架"><a href="#基础框架" class="headerlink" title="基础框架"></a>基础框架</h3><p>1 . <strong>基本结构</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\documentclass[a4paper]&#123;article&#125; % 指定文档类型</span><br><span class="line">% 导言区: 全局设置, 宏包调用等</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">% 正文部分</span><br><span class="line">Hi, this is my first \LaTeX&#123;&#125; file.</span><br><span class="line">\end&#123;document&#125; % 结束</span><br></pre></td></tr></table></figure></div></div>
-<ul>
-<li>LaTeX 源文件：<strong>正文 + 命令 + 注解</strong>。</li>
-<li><strong>排版命令</strong>（简称：<strong>命令</strong>）：<strong>反斜杠</strong> 开头的字符串。</li>
-<li><strong>注解符号</strong>：百分号 %</li>
-<li><strong>文档类型</strong>：<code>\documentclass{...}</code>(论文、书籍、幻灯片、海报)</li>
-<li><strong>环境</strong>：<code>\beigin{...}</code> 开头，<code>\end{...}</code> 结尾。</li>
-<li>附：<code>\documentclass[]{}</code> 就是引用模板，默认提供 article 等模板。</li>
-</ul>
-<p>2 . <strong>排版命令</strong></p>
-<ul>
-<li><p>方括号中的是<strong>可选</strong>的 (称为选项), 花括号中的参数是<strong>必需</strong>的</p>
-  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\command</span><br><span class="line">\command[option]&#123;arguments&#125;</span><br><span class="line">% 一些常用命令：</span><br><span class="line">\documentcalss, \title, \author, \date, \usepackage </span><br><span class="line">\begin&#123;环境名&#125;, \end&#123;环境名&#125; % 组成一个环境</span><br></pre></td></tr></table></figure></div></div>
-</li>
-<li><p>定义新命令</p>
-  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\newcommand&#123;新命令&#125;&#123;命令内容&#125;</span><br><span class="line">\renewcommand&#123;已有命令&#125;&#123;命令内容&#125;</span><br><span class="line">% 举例</span><br><span class="line">\newcommand&#123;\eps&#125;&#123;\varepsilon&#125; % $\eps$ → ε</span><br></pre></td></tr></table></figure></div></div>
-</li>
-<li><p>文档类型：<code>\documentclass[选项]{文档类}</code></p>
-<ul>
-<li>位于源文件的最前面, 用于指定文档的整体结构和布局, 必须且只能选一种 <ul>
-<li>常用 <strong>文档类</strong>: article, book, beamer, ctexart, ctexbook, ctexbeamer</li>
-<li>常用 <strong>选项</strong>:</li>
-</ul>
-<ul>
-<li><em>10pt(缺省值), 11pt, 12pt → 指定基本字体的大小</em></li>
-<li><em>letterpaper(缺省值), a4paper, a5paper, … → 指定纸张的大小</em></li>
-<li><em>单双面选项: oneside, twoside, openright, openany</em></li>
-<li><em>数学公式: leqno (公式编号在左边), fleqn (靠左显示行间公式)</em></li>
-</ul>
-</li>
-<li>导言区: \documentclass 和 \begin{document} 之间的区域<ul>
-<li>导言区用于放置 全局控制命令, 如: 调用宏包, 设置页面大小, …</li>
-<li>放在导言区的命令对整个文档都起作用</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>3 . <strong>中文排版</strong></p>
-<ul>
-<li><strong>CTEX</strong> 宏集中提供了三个中文文档类: <strong>texart, ctexbook, ctexbeamer</strong></li>
-<li><p>用 <code>xelatex</code> 编译! 用 xelatex 编译! 用 xelatex 编译! </p>
-  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\documentclass[12pt,a4paper]&#123;ctexart&#125; </span><br><span class="line">\usepackage&#123;amsmath&#125;  % AMS 数学公式 宏包 </span><br><span class="line">\usepackage&#123;amssymb&#125;  % AMS 数学符号 宏包 </span><br><span class="line">\usepackage&#123;amsfonts&#125; % AMS 数学字体 宏包 </span><br><span class="line">\usepackage&#123;graphicx&#125; % 插图 宏包 </span><br><span class="line">\usepackage&#123;xcolor&#125;   % 彩色 宏包</span><br><span class="line">\begin&#123;document&#125; </span><br><span class="line">欧拉公式是</span><br><span class="line">$$ e^&#123;ix&#125; = \cos(x) + i\sin(x).$$</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></div></div>
-</li>
-</ul>
-<h3 id="常用包和命令"><a href="#常用包和命令" class="headerlink" title="常用包和命令"></a>常用包和命令</h3><p>1 . 代码和注释：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">% 页面布局：页面宽度, 页面高度, 页眉高度, 页脚高度，各种边距等等</span><br><span class="line">% \usepackage[a4paper,scale=0.8,hcentering,bindingoffset=8mm]&#123;geometry&#125; % A4纸大小，缩放80%，设置奇数页右边留空多一点</span><br><span class="line">\usepackage&#123;geometry&#125; % 页面布局 宏包</span><br><span class="line">% 定制页眉页脚: \pagestyle, \thispagestyle</span><br><span class="line">\usepackage&#123;francyhdr&#125; % 页眉页脚高级定制 宏包 </span><br><span class="line">%</span><br><span class="line">\usepackage&#123;amsmath&#125; % AMS 数学公式 宏包 </span><br><span class="line">\usepackage&#123;amssymb&#125; % AMS 数学符号 宏包 </span><br><span class="line">\usepackage&#123;amsfonts&#125; % AMS 数学字体 宏包</span><br><span class="line">\usepackage&#123;amsthm, bm&#125; % 数学</span><br><span class="line">%</span><br><span class="line">\usepackage&#123;algorithm&#125; % 算法</span><br><span class="line">\usepackage&#123;algpseudocode&#125; % 伪代码</span><br><span class="line">\usepackage&#123;listings&#125; % 各种语言的代码块</span><br><span class="line">%</span><br><span class="line">\usepackage&#123;graphicx&#125;   % 插图 宏包 </span><br><span class="line">\usepackage&#123;subfigure&#125;  % 使用子图像或者子表格 宏包</span><br><span class="line">\usepackage&#123;subcaption&#125; % 图片描述</span><br><span class="line">%</span><br><span class="line">\usepackage&#123;courier&#125;    % 字体</span><br><span class="line">\usepackage&#123;fontspec&#125;   % 字体</span><br><span class="line">%</span><br><span class="line">\usepackage&#123;titlesec&#125; % 章节定制 宏包</span><br><span class="line">\usepackage&#123;titletoc&#125; % 目录定制 宏包</span><br><span class="line">\usepackage&#123;cite&#125;     % 引用  宏包</span><br><span class="line">\usepackage&#123;natbib&#125;   % 参考文件定制 宏包</span><br><span class="line">\usepackage&#123;longtable, diagbox, colortbl, booktabs&#125; % 表格定制 宏包</span><br><span class="line">%</span><br><span class="line">\usepackage&#123;list&#125;     % 无序列表定制 宏包</span><br><span class="line">\usepackage&#123;enumitem&#125; % 有序列表定制 宏包</span><br><span class="line">%</span><br><span class="line">\usepackage[选项列表]&#123;hyperref&#125; % 超链接 宏包</span><br><span class="line">\usepackage&#123;xcolor&#125;   % 彩色 宏包</span><br><span class="line">%</span><br><span class="line">% ====================== 常用命令 =================</span><br><span class="line">%%%%%%%%%% 标题部分： 标题, 作者, 日期, 脚注等命令 %%%%%%%%%%</span><br><span class="line">\title&#123;标题&#125;  % 标题</span><br><span class="line">\author&#123;作者&#125; % 作者</span><br><span class="line">\date&#123;日期&#125;   % 日期</span><br><span class="line">% \date&#123;&#125; % 留空则不输出日期，不填则自动加上默认日期，所以要不显示日期需要这句命令</span><br><span class="line">\thanks&#123;...&#125; % 脚注，这个必须放在上面命令的&#123;&#125;内</span><br><span class="line">\maketitle   % 必不可少，生成标题命令，以上命令只是声明，这句才可生成</span><br><span class="line">%%%%%%%%%%%%% 摘要 %%%%%%%%%%%%</span><br><span class="line">\begin&#123;abstract&#125; % 开始，book 类型没有摘要</span><br><span class="line">%... ...</span><br><span class="line">\end&#123;abstract&#125;   % 结束</span><br><span class="line">%%%%%%%%%%%%% 目录 %%%%%%%%%%%%%</span><br><span class="line">\tableofcontents % 生成目录</span><br><span class="line">% \setcounter&#123;tocdepth&#125;&#123;层次号&#125; % 设置目录中生成的章节层次</span><br><span class="line">%%%%%%%%%%% 章节命令 %%%%%%%%%%%</span><br><span class="line">\part % 篇</span><br><span class="line">\chapter % 章 : article 中没有 chapter，在 book 中有 </span><br><span class="line">\section, \subsection, \subsubsection % 节</span><br><span class="line">\paragraph, \subparagraph % 段落</span><br><span class="line">%%%%%%%%%% 参考文献 %%%%%%%%%%%</span><br><span class="line">\begin&#123;thebibliography&#125;&#123;编号样本&#125; </span><br><span class="line">\bibitem[编号]&#123;标签&#125; 文献条目 </span><br><span class="line">\bibitem[编号]&#123;标签&#125; 文献条目</span><br><span class="line">\end&#123;thebibliography&#125;</span><br><span class="line">%%%%%%%%%% 表格命令 %%%%%%%%%%%</span><br><span class="line">\begin&#123;tabular&#125;[竖向位置]&#123;列格式&#125; </span><br><span class="line">%first line \\</span><br><span class="line">%last line \\</span><br><span class="line">\end&#123;tabular&#125;</span><br><span class="line">%%%%%%%%%% 编号命令 %%%%%%%%%%</span><br><span class="line">% 无序编号</span><br><span class="line">\begin&#123;itemize&#125; </span><br><span class="line">\item[标签] 条目内容</span><br><span class="line">\end&#123;itemize&#125;</span><br><span class="line">% 有序编号</span><br><span class="line">\begin&#123;enumerate&#125; </span><br><span class="line">\item[标签] 条目内容</span><br><span class="line">\end&#123;enumerate&#125;</span><br><span class="line">%%%%%%%% 脚注 %%%%%%%%%</span><br><span class="line"> \footnote&#123;脚注文本&#125; % 自动编号脚注，紧接在需要标注的文字之后</span><br><span class="line"> \footnote[标记]&#123;脚注文本&#125; % 手工指定脚注标记</span><br></pre></td></tr></table></figure></div></div>
-<p>2 . <strong>特殊说明</strong> </p>
-<ul>
-<li><em>短标题: 用于显示在目录和页眉中, 缺省与标题相同</em></li>
-<li><p><em>带星号的章节命令: 不参与自动编号</em></p>
-  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\章节命令[短标题]&#123;标题&#125; </span><br><span class="line">\章节命令*&#123;标题&#125;</span><br></pre></td></tr></table></figure></div></div>
-</li>
-<li><p>章节举例<br>  <img src="https://img.godjiyi.cn/jy_20190414145200.png" alt> </p>
-</li>
-<li><p>文本对齐方式 (缺省为左对齐)</p>
-<ul>
-<li>左对齐: <code>\raggedright</code> 或使用 <code>flushleft</code> 环境 </li>
-<li>右对齐: <code>\raggedleft</code> 或使用 <code>flushright</code> 环境 </li>
-<li>文本居中: <code>\centering</code> 或使用 <code>center</code> 环境</li>
-</ul>
-</li>
-<li><p>字体大小</p>
-<ul>
-<li><p>英文/中文都适用</p>
-<p>   <img src="https://img.godjiyi.cn/jy_20190414152444.png" alt></p>
-</li>
-<li><p>中文字体: <code>ctex</code> 提供的命令和字号命令如下</p>
-   <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\heiti, \songti, \fangsong, \kaishu, \lishu, \youyuan, \yahei</span><br></pre></td></tr></table></figure></div></div>
-<p>  <img src="https://img.godjiyi.cn/jy_20190414152703.png" alt></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>1 . <code>\usepackage[选项列表]{hyperref}</code></p>
-<ul>
-<li>在有交叉引用的地方 (如目录, 书签, 参考文献, 公式等) 建立链接</li>
-<li>提供对外部文件, 互联网网址, 邮件地址的链接</li>
-<li>常用选项 (也可通过 <code>\hypersetup{选项列表}</code> 来设置) <ul>
-<li><code>bookmarks</code> → 创建书签, 缺省为 true</li>
-<li><code>CJKbookmarks</code> → 支持中日韩文字的书签</li>
-<li><code>colorlinks</code> → 使用彩色显示链接, 缺省为红色方框</li>
-<li><code>linkcolor</code> → 内部普通链接 (如页码) 的颜色, 缺省为 red </li>
-<li><code>citecolor</code> → 文献引用链接的颜色, 缺省为 green</li>
-<li><code>urlcolor</code> → URL 链接的颜色, 缺省为 magenta</li>
-<li><code>breaklinks</code> → 允许在链接中断行, 缺省不允许</li>
-</ul>
-</li>
-</ul>
-<p>2 . 例子：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\usepackage&#123;hyperref&#125; </span><br><span class="line">\hypersetup&#123;CJKbookmarks=true,  % 支持中文书签</span><br><span class="line">            colorlinks=true,    % 使用彩色链接</span><br><span class="line">            citecolor=blue,     % 引用标记颜色</span><br><span class="line">            linkcolor=blue,     % 内部普通链接的颜色</span><br><span class="line">            urlcolor=blue,      % url 链接的颜色</span><br><span class="line">            breaklinks=true &#125;   % 允许在链接处换行</span><br></pre></td></tr></table></figure></div></div>
-<p>3 . 创建网页链接: <code>\url</code> 和 <code>\href</code> </p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\url&#123;网址&#125;</span><br><span class="line">\href&#123;网址&#125;&#123;文本&#125;</span><br></pre></td></tr></table></figure></div></div>
-<ul>
-<li><code>\url</code> → 生成 <strong>网址</strong> 的同时在页面上输出其内容</li>
-<li><code>\href</code> → 生成 <strong>网址</strong> 的同时在页面上输出 <strong>文本</strong> 的内容</li>
-</ul>
-<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><blockquote>
-<p><a href="https://www.jianshu.com/p/d184caa2cf15" target="_blank" rel="noopener">https://www.jianshu.com/p/d184caa2cf15</a></p>
+    <title>八大无版权图库资源收集</title>
+    <url>/2022/02/20/tools_1_openimage/</url>
+    <content><![CDATA[<p>平常自己在写文章时，常常会搭配一些图片来展示。一般我都会去 <strong>无版权图片库</strong> 找一张搭配。之所以需要无版权图库，就是担心从网络上随意搜到的图片使用，很有可能被版权费投诉。因此，为了尽量减少不必要的麻烦，图片还是去无版权图库搜索比较好。</p>
+<p>下面整理了中文和英文两大类系的图库，以便适合更多人使用，若还有更多好的图片网站，欢迎评论区评论。</p>
+<h1 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h1><blockquote>
+<p>共 2 个网站</p>
 </blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;xeCJK&#125;</span><br><span class="line">\usepackage&#123;mathpazo&#125;</span><br><span class="line">\usepackage&#123;color,xcolor&#125;</span><br><span class="line">% predefined color---black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.</span><br><span class="line"></span><br><span class="line">\definecolor&#123;light-gray&#125;&#123;gray&#125;&#123;0.95&#125;    % 1.灰度</span><br><span class="line">\definecolor&#123;orange&#125;&#123;rgb&#125;&#123;1,0.5,0&#125;      % 2.rgb</span><br><span class="line">\definecolor&#123;orange&#125;&#123;RGB&#125;&#123;255,127,0&#125;    % 3.RGB</span><br><span class="line">\definecolor&#123;orange&#125;&#123;HTML&#125;&#123;FF7F00&#125;      % 4.HTML</span><br><span class="line">\definecolor&#123;orange&#125;&#123;cmyk&#125;&#123;0,0.5,1,0&#125;   % 5.cmyk</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">%\pagecolor&#123;yellow&#125;          %设置背景色为黄色</span><br><span class="line">\textcolor&#123;green&#125;&#123;绿色&#125;     %1.方法一</span><br><span class="line">&#123;\color&#123;orange&#125; 橙色&#125;       %2.方法二</span><br><span class="line"></span><br><span class="line">\colorbox&#123;red&#125;&#123;\color&#123;black&#125;红底黑字&#125;</span><br><span class="line">\fcolorbox&#123;red&#125;&#123;green&#125;&#123;红框绿背景&#125; %框色+背景色</span><br><span class="line"></span><br><span class="line">\color&#123;blue!20&#125;</span><br><span class="line">\color&#123;blue!20!black&#125;</span><br><span class="line">\color&#123;blue!20!black!30!green&#125;  %a mixture of (20*0.3) percent blue, ((100-20)*0.3) percent black and (100-30) percent green</span><br><span class="line"></span><br><span class="line">&#123;\color[rgb]&#123;1,0,0&#125; This text will appear red-colored&#125;          % 直接使用</span><br><span class="line">\textcolor[rgb]&#123;0,1,0&#125;&#123;This text will appear green-colored&#125;     % 直接使用</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></div></div>
-<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><ul>
-<li><strong>LaTeX 工作室</strong> : <a href="http://www.latexstudio.net" target="_blank" rel="noopener">http://www.latexstudio.net</a> (模板、方法、教程)</li>
-<li><strong>LaTeX 模板收集</strong> : <a href="http://www.latextemplates.co" target="_blank" rel="noopener">http://www.latextemplates.com</a> (各种模板)</li>
-<li><strong>LaTeX 颜色定义</strong> : <a href="http://latexcolor.com" target="_blank" rel="noopener">http://latexcolor.com</a></li>
-<li><strong>华东师大 LaTeX 官网</strong> : <a href="http://math.ecnu.edu.cn/~latex" target="_blank" rel="noopener">http://math.ecnu.edu.cn/~latex</a> (丰富教学资源)</li>
-<li><strong>华东师大–潘建瑜</strong> : <a href="http://math.ecnu.edu.cn/~jypan/Teaching/Latex" target="_blank" rel="noopener">http://math.ecnu.edu.cn/~jypan/Teaching/Latex</a> (各种分享、教程、资料) 👍👍👍<ul>
-<li>本文很多截图来源于 潘建瑜 PPT 中。 </li>
+<h2 id="pexels"><a href="#pexels" class="headerlink" title="pexels"></a>pexels</h2><ul>
+<li><strong>推荐</strong>：★★★★★</li>
+<li>内容: 全类风格;</li>
+<li>地址：<a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_tools_1_pexels.jpg" alt></li>
 </ul>
-</li>
-<li><strong>武汉大学–黄正华</strong> : <a href="http://aff.whu.edu.cn/huangzh" target="_blank" rel="noopener">http://aff.whu.edu.cn/huangzh</a> (各种教学资料)</li>
-<li><strong>[英] LaTeX 使用技巧</strong> : <a href="http://latex-cookbook.net" target="_blank" rel="noopener">http://latex-cookbook.net</a></li>
-<li><strong>[英] TeX Users Group</strong> : <a href="http://www.tug.org" target="_blank" rel="noopener">http://www.tug.org</a></li>
-<li><strong>[英] LaTeX Packages</strong> : <a href="https://www.ctan.org" target="_blank" rel="noopener">https://www.ctan.org</a></li>
+<h2 id="pxhere"><a href="#pxhere" class="headerlink" title="pxhere"></a>pxhere</h2><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>内容: 多风景、建筑、静物风格;</li>
+<li>地址：<a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pxhere.jpg" alt></li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.ctex.org/documents/shredder/tex_start.html" target="_blank" rel="noopener">http://www.ctex.org/documents/shredder/tex_start.html</a></li>
-<li><a href="http://www.latexstudio.net/page/introduction-to-latex/" target="_blank" rel="noopener">http://www.latexstudio.net/page/introduction-to-latex/</a></li>
-<li><a href="https://liam.page/texlive/" target="_blank" rel="noopener">https://liam.page/texlive/</a></li>
-<li><a href="http://www.latexstudio.net/archives/51537.html" target="_blank" rel="noopener">http://www.latexstudio.net/archives/51537.html</a></li>
-<li><a href="http://math.ecnu.edu.cn/~jypan/Teaching/Latex/" target="_blank" rel="noopener">http://math.ecnu.edu.cn/~jypan/Teaching/Latex/</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>LaTeX</category>
-      </categories>
-      <tags>
-        <tag>latex</tag>
-        <tag>report</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>国际标准化组织发展史</title>
-    <url>/2020/05/09/standards_organization/</url>
-    <content><![CDATA[<p>最近在了解 HTTP 协议的时候知道了 <strong>IETF</strong> 标准化组织，而前端中的 <strong>W3C</strong>，以及 <strong>EMCA</strong> 这些组织也在网上经常看到，还有国际标准化组织 <strong>ISO</strong> 这些到底有什么关系呢？下面记录下自己的了解。</p>
-<a id="more"></a>
-<p>主要关键词: <strong>IEC、ISA、ISO、ITU、EMCA 、IETF、W3C</strong> 等说明;</p>
-<ul>
-<li>IEC: 国际电工委员会</li>
-<li>ISA: 国家标准化协会的国际联盟</li>
-<li>ISO: 国际标准化组织</li>
-<li>ITU: 国际电信联盟</li>
-<li>EMCA: 欧洲计算机制造商协会</li>
-<li>IETF: 互联网工程任务组</li>
-<li>W3C: 万维网联盟</li>
-</ul>
-<p>时间线图示:</p>
-<p><img src="https://img.godjiyi.cn/jy_20200509001118.png" alt></p>
-<p>下面会分别对各个组织进行详细介绍。</p>
-<h2 id="国际电工委员会-IEC"><a href="#国际电工委员会-IEC" class="headerlink" title="国际电工委员会( IEC )"></a>国际电工委员会( IEC )</h2><ul>
-<li>英文: International Electrotechnical Commission ( <strong>IEC</strong> ) </li>
-<li>主页: <a href="https://www.iec.ch/" target="_blank" rel="noopener">https://www.iec.ch/</a></li>
-<li>成立时间: <strong>1906 年</strong></li>
-<li>设立总部: <strong>日内瓦</strong></li>
-<li>标准内容: <strong>负责有关电工、电子领域的国际标准化工作</strong></li>
-</ul>
-<p><strong>IEC</strong> 成立于 <strong>1906</strong> 年，是世界上最早的国际性电工标准化机构，总部设在日内瓦。但由于 IEC 只关注电工领域标准化，而其他方面缺少标准化组织进行全球化规范。而直到 <strong>1947 年</strong> 国际化标准组织 ISO(下面会介绍) 成立，其关注全方面的标准化内容。</p>
-<p>而 <strong>IEC</strong> 既然已经在电工领域进行标准化运作了，因此，IEC 作为电工部门并入 ISO，但在技术上、财务上仍保持其独立性。根据 1976 年 ISO 与 <strong>IEC</strong> 的新协议，两组织都是法律上独立的组织，<strong>IEC</strong> 负责有关电工、电子领域的国际标准化工作，其他领域则由 ISO 负责。 <strong>IEC</strong> 的工作领域包括了电力、电子、电信和原子能方面的电工技术。现已制订国际电工标准 3000 多个。</p>
-<p><strong>IEC</strong> 是世界上最早的国际性标准化组织了，也是因为全球化的发展起源于电力的运用，因此电力领域是最早进行规范化的部分，而其他部分随着历史的发展也不得不成立新的组织。</p>
-<h2 id="国家标准化协会的国际联盟-ISA-已终止"><a href="#国家标准化协会的国际联盟-ISA-已终止" class="headerlink" title="国家标准化协会的国际联盟 ( ISA ) (已终止)"></a><del>国家标准化协会的国际联盟 ( ISA ) (已终止)</del></h2><ul>
-<li>英文: International Federation of the National Standardizing Associations ( <strong>ISA</strong> ) </li>
-<li>成立时间: <strong>1926 年</strong></li>
-<li>标准内容: <strong>负责有关机械工程方面</strong></li>
-<li>终止时间: <strong>1942 年</strong></li>
-</ul>
-<p>前面 <strong>1906 年</strong> 成立的国际电工委员会 ( <strong>IEC</strong> ) 是世界上最早的国际标准化机构， 但它主要专注于<strong>电子领域</strong>。其他技术领域的工作还没有标准化组织进行规定约束，因此在 <strong>1926 年</strong>成立了 <strong>国家标准化协会的国际联盟 ( ISA )</strong> 来承担该角色，<strong>ISA</strong> 的重点在于<strong>机械工程</strong>方面。直到 <strong>1939.9.1-1945.9.2</strong> 爆发的第二次世界大战，<strong>ISA</strong> 的工作最终在 <strong>1942 年</strong>终止运行。</p>
-<h2 id="国际标准化组织-ISO"><a href="#国际标准化组织-ISO" class="headerlink" title="国际标准化组织 ( ISO )"></a>国际标准化组织 ( ISO )</h2><ul>
-<li>英文: International Organization for Standardization ( <strong>ISO</strong> ) </li>
-<li>主页: <a href="https://www.iso.org/home.html" target="_blank" rel="noopener">https://www.iso.org/home.html</a></li>
-<li>成立时间: <strong>1947 年</strong></li>
-<li>设立总部: <strong>日内瓦</strong></li>
-<li>标准内容: <strong>负责有关工业方面的国际标准化工作</strong></li>
-</ul>
-<p>上面也说了 <strong>ISA</strong> 由于二战最终终止运行了，那非电子领域的国际标准化工作总的有人来做吧。于是，在二战后一年的 1946 年，来自 25 个国家的代表在伦敦召开会议，决定成立一个新的国际组织，其目的是促进国际间的合作和<strong>工业标准的统一</strong>。于是，<strong>ISO</strong> 这一新组织于<strong>1947年2月23日</strong>正式成立，总部设在瑞士的日内瓦。</p>
-<p>ISO 标准的内容涉及广泛，从基础的紧固件、轴承各种原材料到半成品和成品，其技术领域涉及信息技术、交通运输、农业、保健和环境等。</p>
-<p>多人注意到<strong>国际标准化组织( International Organization for Standardization )</strong>的全名与缩写之间存在差异，为什么不是“IOS”呢? 其实，“ISO”并不是首字母缩写，而是一个词 ，它来源于希腊语，意为“相等”，现在有一系列用它作前缀的词，诸如“isometric”(意为“尺寸相等”)、“isonomy”(意为“法律平等”)。从“相等”到“标准”，内涵上的联系使“ISO”成为组织的名称。</p>
-<p>说到 ISO 作为计算机专业的大家是不是一下子就能想到一个互联网基础协议– <strong>OSI 七层网络互联协议</strong>，这里的 OSI 是指<strong>开放系统互联( Open System Interconnection )</strong> 的意思，也是英文缩写，并且该标准就是 ISO 这一标准组织设定的。虽然这七层互联协议在工业实践中被 <strong>TCP/IP</strong> (<em>注: TCP/IP 协议不是由组织定义的而由罗伯特·卡恩、温顿·瑟夫在1978年发明的</em>)协议超越，但它提供的分层设计思想为后来很多系统和协议提供了很大的帮助。</p>
-<p>目前，ISO已经发布了至少 17000多个国际标准，如 <strong>ISO公制螺纹</strong>、<strong>ISO的A4纸张尺寸</strong>、<strong>ISO的集装箱系列（世界上95%的海运集装箱都符合ISO标准）</strong>、<strong>ISO的胶片速度代码</strong>，以及最出名的<strong>ISO9000 品质保证标准</strong>也是由 ISO 发布的。</p>
-<p>由于 ISO 是国际标准，有的时候并不适合国内，因此我国一般会对国际标准进行修改以适应国内情况，为避免国内标准与国际标准不一致，因此国内命名的标准一般以 <strong>GB/T</strong> (<em>GB 国标的首字母，T 表示推荐标准</em>) 开头，对于国际标准的，一般后面接 1+ 国际标准代号，如 <strong>ISO9000</strong> 在国内则叫 <strong>GB/T19000</strong>。</p>
-<h2 id="国际电信联盟-ITU"><a href="#国际电信联盟-ITU" class="headerlink" title="国际电信联盟 ( ITU )"></a>国际电信联盟 ( ITU )</h2><ul>
-<li>英文: International Telecommunications Union ( <strong>ITU</strong> ) </li>
-<li>主页: <a href="https://www.itu.int/zh/Pages/default.aspx" target="_blank" rel="noopener">https://www.itu.int/zh/Pages/default.aspx</a></li>
-<li>成立时间: <strong>1934 年</strong></li>
-<li>设立总部: <strong>日内瓦</strong></li>
-<li>标准内容: <strong>负责有关电信(电通信)方面的国际标准化工作</strong></li>
-</ul>
-<p><strong>ITU</strong> 的历史可追溯到 1865 年。为了顺利实现国际电报通信(<em>注: 1864年，麦克斯韦建立电磁理论</em>)，<strong>1865年5月17日</strong>。当时有20个国家的代表在巴黎签订了一个<strong>《国际电报公约》</strong>。</p>
-<p>之后，</p>
-<ul>
-<li>1875年，<strong>贝尔</strong>发明<strong>电话</strong>。</li>
-<li>1887年，<strong>赫兹</strong>证明<strong>电磁波</strong>的存在。</li>
-<li>1896年，<strong>马可尼</strong>发明无线电报。</li>
-</ul>
-<p>这使得电通信得到长足发展，而无线通信也逐渐步入人类生活。于是，</p>
-<ul>
-<li><strong>1906年</strong>有27个国家代表在柏林签订了一个<strong>《国际无线电报公约》</strong>。</li>
-<li>1924年在巴黎成立了国际电话咨询委员会。</li>
-<li>1925年成立了国际电报咨询委员会。</li>
-<li>1927年在华盛顿成立了国际无线电咨询委员会。</li>
-</ul>
-<p><strong>1932年</strong>, 70多个国家代表在西班牙马德里开会，决定把上述两个公约合并为一个《国际电信公约》，并将电报、电话、无线电咨询委员会改为“国际电信联盟”。并决定自<strong>1934年1月1日</strong>起正式改称为<strong>“国际电信联盟 (ITU)”</strong>。</p>
-<p><strong>1947年10月15日</strong>，经联合国统一，<strong>国际电信联盟( ITU )</strong>成为联合国的一个专门机构，其总部由瑞士伯尔尼迁至到<strong>日内瓦</strong>。ITU 是联合国的15个专门机构之一，但在法律上不是联合国附属机构，它的决议和活动不需联合国批准，但每年要向联合国提出工作报告。</p>
-<p>对于 ITU 的标准规范，我们最熟悉的莫过于无线网络的传输方面的规划了，比如频谱管理、无线电波传播、卫星业务等。未来的 5G 相关传输标准和频率划分也离不开 ITU 的规范。</p>
-<h2 id="ECMA"><a href="#ECMA" class="headerlink" title="ECMA"></a>ECMA</h2><ul>
-<li>英文: European Computer Manufacturers Association ( <strong>ECMA</strong> ) </li>
-<li>中文: 欧洲计算机制造商协会</li>
-<li>主页: <a href="https://www.ecma-international.org/" target="_blank" rel="noopener">https://www.ecma-international.org/</a></li>
-<li>成立时间: <strong>1961 年</strong></li>
-<li>设立总部: <strong>日内瓦</strong></li>
-<li>标准内容: <strong>目标是评估、开发和认可电信和计算机标准</strong></li>
-</ul>
-<p>这个机构我们一般都比较熟悉其下的一个标准 <strong>ECMA-262 ECMAScript 标准</strong>，因为 <strong>JavaScript</strong> 语法就是由其标准化的。</p>
-<p><strong>ECMA</strong> 是 <strong>1961 年</strong> 成立的，与前面的 <strong>IEC、ISO、ITU</strong> 等机构不同，它本身并不是官方机构，而是由主流厂商组成的一个非盈利组织。旨在建立统一的电脑操作格式标准(包括程序语言和输入输出)的组织。该组织的目标是<strong>评估、开发和认可电信和计算机标准</strong>。</p>
-<p>简单说吧，就是 <strong>IEC、ISO、ITU</strong> 等官方机构定义基础设施标准，比如安全级别、通用尺寸、频谱划分等，各种类别都有定义，而 <strong>ECMA</strong> 则只关注计算机方面的基础设施标准，并进一步对应用层方面进行更细致的标准定义，一般由谷歌、微软、苹果等大厂通过实践经验进行提交参议稿，大家可以看<a href="https://baike.baidu.com/item/ECMA" target="_blank" rel="noopener">百度百科 ECMA</a>, 已发布的标准名单里基本都是编码、磁带、软盘、磁盘、文件系统等与计算机相关的标准。</p>
-<p>由于 <strong>ECMA</strong> 也是跟随国际组织的标准的，为便于跟进国际标准，大家决定把 <strong>ECMA</strong> 的总部设在日内瓦，因为这样能够让它与其它与之协同工作的标准制定组织更接近一些，比方说国际标准化组织（<strong>ISO</strong>）和国际电工委员会（<strong>IEC</strong>）。</p>
-<p>对于前面讲的 <strong>ECMAScript</strong> 标准与 <strong>JavaScript</strong> 的关系这里也说下。在 1995 年时，网景公司发布了世界上第一个商用浏览器 <strong>Netscape</strong>, 并同时发明了 <strong>JavaScript</strong> 以便于用户网页动态交互。之后微软发现浏览器的重要性，于是就爆发了世界著名的浏览器大战。微软在 <strong>IE</strong> 中也发布自家的 <strong>JScript</strong> 脚本，之后还有其他的脚本语言出现，如: CEnvi 的 <strong>ScriptEase</strong>。</p>
-<p>这么多脚本语言的出现，导致不同浏览器的脚本写法各不相同，因此，急需一个标准来规范各种网页脚本语言。</p>
-<ul>
-<li>1997 年，JavaScript 1.1 作为一个草案提交给 ECMA，ECMA 的第 39 技术委员会（TC39）被委派来“标准化一个通用、跨平台、中立于厂商的脚本语言的语法和语义”。 锤炼出了 <strong>ECMA-262</strong> 第一版( <strong>ES1</strong> )。而 ECMA 为了避免 JavaScript 版权名问题，于是就将标准定义为 <strong>ECMAScript</strong>，作为全新脚本语言规范。</li>
-<li>1998 年，国际标准化组织及国际电工委员会（ <strong>ISO/IEC</strong> ）也采纳 <strong>ECMAScript</strong> 作为标准（ISO/IEC-16262）。同年发布了 <strong>ECMA-262</strong> 第二个版( <strong>ES2</strong> )</li>
-<li>2002 年，ECMA-262 第三版( <strong>ES3</strong> )，新增引入了强大的正则表达式，更好的字符串处理，新的控制语句，<code>try / catch</code> 异常处理，更严格的错误定义，数字输出的格式化以及预期未来语言增长的微小变化。第三版在当时应用非常广泛，几乎所有的浏览器都支持 <strong>ES3</strong> 的标准。</li>
-</ul>
-<p>ECMA-262 第四版本( <strong>ES4</strong> )夭折，部分功能被迁移到ES6中。</p>
-<ul>
-<li>2009 年：ECMA-262 第五版( <strong>ES5</strong> )发布。在 <strong>ES3</strong> 的基础上增加了很多功能：包括访问器属性，对象的反射创建和检查，属性的程序控制，附加的数组操作函数，对 JSON 对象编码格式的支持以及提供增强的错误检查和程序安全性的严格模式。</li>
-<li>2011 年：被批准为国际标准 ISO/IEC 16262，同年发布 <strong>ES5.1</strong> 版本（对 <strong>ES5</strong> 做一些升级优化）同时被 MCMA-262 和 ISO/IEC 批准</li>
-<li>2015 年：ECMA-262 第六版（ <strong>ES6</strong> 或者叫 <strong>ES 2015 语言规范</strong>），ES6 可以说从2000 年，<strong>ES3</strong> 发布之后就开始沉淀，由于 <strong>ES4</strong> 的夭折，<strong>ES4</strong> 中的一些功能特性一直等到 <strong>ES6</strong> 才发布，所以第六版的完全是十五年的努力的结果。</li>
-</ul>
-<p><strong>ES6</strong> 主要新增了如下功能：主要增强包括模块，类声明，词法块范围，迭代器和生成器，异步编程的承诺，解构模式和适当的尾部调用。内置的 ECMAScript 库被扩展为支持额外的数据抽象，包括映射，集合和二进制数值数组，以及对字符串和正则表达式的使用。</p>
-<p>从 <strong>ES1 到 ES6</strong> ( <strong>ES4</strong> 除外)，不管大家有没有亲身经历过，至少到现在为止我们可以使用由 ECMA 制定好的标准规范，而无需担心各种兼容性问题了。</p>
-<h2 id="互联网工程任务组"><a href="#互联网工程任务组" class="headerlink" title="互联网工程任务组"></a>互联网工程任务组</h2><ul>
-<li>英文: The Internet Engineering Task Force ( <strong>IETF</strong> ) </li>
-<li>主页: <a href="https://www.ietf.org/" target="_blank" rel="noopener">https://www.ietf.org/</a></li>
-<li>成立时间: <strong>1985 年</strong></li>
-<li>标准内容: <strong>负责互联网相关技术规范的研发和制定</strong></li>
-</ul>
-<p><strong>IETF</strong> 也是<strong>非官方机构</strong>，它也只是一个公开性质的<strong>大型民间国际团体</strong>，汇集了与互联网架构和互联网顺利运作相关的网络设计者、运营者、投资人和研究人员，并欢迎所有对此行业感兴趣的人士参与。</p>
-<p>IETF 内部引领者也基本都是苹果、谷歌、微软等公司员工。因为 IETF 的目标是互联网中的技术规范，而互联网中最具影响力的就是操作系统与浏览器(包括搜索引擎)，而这些工具都被苹果、微软、谷歌牢牢掌握住了。也正因为此，这些巨头也希望规范标准向着有利于自身的利益方向发展，从而很多新的规范标准得建议稿以及代码实现、测评也都是由这些巨头公司完成的，毕竟他们的用户都是覆盖全球的、网络流量也都是数一数二的，从这些公司中测试的结果中才能更好地体现标准的性能或优劣。</p>
-<p>就比如我们最常用的 HTTP 协议吧，从 <strong>1999 年</strong> HTTP 1.1 标准发布后，经过了 16 年，直到 <strong>2015 年</strong>才发布 HTTP2。而其中对其贡献最大的莫过于 Google 公司了。因为 <strong>HTTP2</strong> 是基于 Google 在 2009 年提出的 <strong>Spdy</strong> 协议的。而未来的 <strong>HTTP3</strong> 也是基于 Google 提出的 <strong>QUIC</strong> 协议进行设计的，<strong>HTTP3</strong> 的草案也是由 Google 在 2015 年提交给 IETF 的。</p>
-<p>为什么谷歌能引领 HTTP 协议呢？最主要的就是谷歌浏览器占有时长 80% 以上的市场份额，因为 HTTP 新协议的测试必须有两个要素，第一个就是浏览器、第二个就是服务端。服务端很好控制，新协议部署就行，但是浏览器要修改新协议则必须是自家的才行。而 Google 正是因为拥有了大量的浏览器市场份额，才能很早就设计并实验超高性能的新协议。</p>
-<p>正因为有这些巨头乐意参与标准的制定，才会推出性能越来越好、适用范围越来越广的标准规范，推动着时代进步。</p>
-<p><strong>IETF</strong> 制定的是整个互联网的标准，比下面讲的 W3C 机构的范围更广。因为 21 世纪是“万物基于互联网”的时代，而 <strong>W3C</strong> 负责的仅仅是网页内容的规范制定，虽然网页是互联网中最大的应用场景，但仍然有很多其他互联网应用，比如：FTP，邮件，DNS 等等。简单来说，W3C 制定的仅仅是基于 HTTP 协议的网页方面的规范标准，而 IETF 则制定互联网互联互通规范标准，包括各种协议，比如 HTTP 就是 IETF 制定的。另外 IP（包括 IPv4, IPv6）、DNS、SMTP 也都是由 IETF 制定。目前 IETF 的最新工作内容则是 <strong>HTTP3</strong>，还没有发布正式版本。</p>
-<h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><ul>
-<li>英文: World Wide Web Consortium ( <strong>WWWC</strong> 又称 <strong>W3C</strong> ) </li>
-<li>中文: 万维网联盟</li>
-<li>主页: <a href="https://www.w3.org/" target="_blank" rel="noopener">https://www.w3.org/</a></li>
-<li>成立时间: <strong>1994 年</strong></li>
-<li>成立地点: <strong>麻省理工学院计算机科学实验室</strong></li>
-<li>标准内容: <strong>最重要的工作是发展 Web 规范，主要包括 HTML、CSS的规范标准</strong></li>
-</ul>
-<p>万维网联盟，又称 <strong>W3C 理事会</strong>。<strong>1994 年</strong>10月在麻省理工学院计算机科学实验室成立。建立者是万维网的发明者<strong>蒂姆·伯纳斯·李</strong>。到目前，W3C 已成为 Web 技术领域最具权威和影响力的<strong>国际中立性技术标准机构</strong>。到目前为止，W3C 已发布了200多项影响深远的 Web 技术标准及实施指南，包括 HTML、XML、WCAG，而最新的 <strong>HTML5</strong>、<strong>CSS3</strong> 分别在 <strong>2014年10月28日</strong>和 <strong>2015年5月20日</strong>由 W3C 组织正式发布。</p>
-<p>W3C 主要关注前端 Web 方面的规范制定，基本上都是静态渲染的语言规范。JavaScript 这个则不是由 W3C 制定的，这个是由前面的<strong>欧洲计算机制造商协会( ECMA )</strong> 制定的，目前已到 <strong>ECMAScript6</strong>，也是 2015 年提出的。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.dqzyxy.net/bzh/info/1024/2489.htm" target="_blank" rel="noopener">全球常见十大标准化组织，你都知道吗？</a></li>
-<li><a href="https://www.woyaoce.cn/news/465859.html" target="_blank" rel="noopener">全球常见标准化组织TOP10</a></li>
-<li><a href="http://www.ccsa.org.cn/organization/index.php3" target="_blank" rel="noopener">国际标准化组织</a></li>
-<li><a href="https://www.un.org/chinese/aboutun/uninbrief/institutions.shtml" target="_blank" rel="noopener">联合国专门机构</a></li>
-<li><a href="https://www.jianshu.com/p/8c0cdcb21789" target="_blank" rel="noopener">国际三大标准化组织</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>History</category>
-      </categories>
-      <tags>
-        <tag>国际组织</tag>
-        <tag>standardization</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenTSDB 存储结构</title>
-    <url>/2018/07/03/opentsdb-store/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">时序处理数据库，更快的存储和聚合</p>
-
-<p><strong>OpenTSDB</strong> 是为存储时序数据而设计的，它基于 <strong>HBase</strong> 存储数据，充分发挥了 <strong>HBase</strong> 的分布式列存储特性，支持数百万每秒的读写，支持千万数目的 <strong>Metric</strong>，它的特点就是容易扩展，具有灵活的 <em>Tag</em> 机制。其主要用途，就是做监控系统，譬如收集大规模集群（ 包括网络设备、操作系统、应用程序 ）的 <strong>监控数据</strong> 并进行存储和聚合查询，在目前的 <strong>IoT</strong> 方面具有很大的应用价值。</p>
-<a id="more"></a>
-<h2 id="Hbase-Schema"><a href="#Hbase-Schema" class="headerlink" title="Hbase Schema"></a>Hbase Schema</h2><p><strong>OpenTSDB</strong> 是基于 <strong>Hbase</strong> 存储系统的，主要利用了 Hbase <strong>数据自动排序</strong> 以及 <strong>可靠的分布式特性</strong>。 <strong>OpenTSDB</strong> 在安装启动时，默认在 <strong>Hbase</strong> 里面创建 <strong>四张</strong> 表。分别为：</p>
-<ol>
-<li><em>tsdb</em>: 存储数据点表，也就是存储实际的时序数据，绝大部分的数据是存在这个表中；</li>
-<li><em>tsdb-uid</em>: 存储 <strong>name</strong> 和 <strong>uid</strong> 的映射关系，也就是给字符串的键、值映射成数值，通常包括 <strong>metric</strong>、<strong>tagk</strong>、<strong>tagv</strong> 等字符串映射。</li>
-<li><em>tsdb-meta</em>: 元数据表，这个只有通过配置文件开启才会存储数据的，默认不开启。如果开启了存储的就是你传过来的<strong>完整的 json 格式数据</strong>，没有经过解析的，这就是元数据。</li>
-<li><em>tsdb-tree</em>: 树形表，这个也是只有开启配置文件选项才能使用，开启后可以由自己创建和管理自己的树形 <strong>metric</strong> 结构，需要自己设计管理的。</li>
-</ol>
-<p>下面主要说明下 <em>tsdb</em> 和 <em>tsdb-uid</em> 的表结构。</p>
-<h2 id="UID-Table-Schema"><a href="#UID-Table-Schema" class="headerlink" title="UID Table Schema"></a>UID Table Schema</h2><p>这里我们主要分析下 OpenTSDB 存储 <strong>UID</strong> 的表 – <strong>tsdb-uid</strong>。</p>
-<p>首先，看下 <em>tsdb-uid</em> 的表结构。其存储的是字符串到 <strong>UID</strong> 的映射关系。</p>
-<p>我们可以通过 <code>hbase shell</code> 通过 <strong>Hbase</strong> 访问数据库入口查看小 <em>tsdb-uid</em> 的表结构：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">list <span class="string">'tsdb-uid'</span></span><br><span class="line"><span class="comment"># == 结果如下 ==</span></span><br><span class="line">Table tsdb-uid is ENABLED                                                                                                                                     </span><br><span class="line">tsdb-uid                                                                                                                                                      </span><br><span class="line">COLUMN FAMILIES DESCRIPTION                                                                                                                                   </span><br><span class="line">&#123;NAME =&gt; <span class="string">'id'</span>, BLOOMFILTER =&gt; <span class="string">'ROW'</span>, VERSIONS =&gt; <span class="string">'1'</span>,... &#125;                                               </span><br><span class="line">&#123;NAME =&gt; <span class="string">'name'</span>, BLOOMFILTER =&gt; <span class="string">'ROW'</span>, VERSIONS =&gt; <span class="string">'1'</span>,... &#125;                                             </span><br><span class="line">2 row(s) <span class="keyword">in</span> 0.0360 seconds</span><br></pre></td></tr></table></figure></div></div>
-<p>上面结果我只列出了少量信息，主要看 <em>NAME</em> 就可以了，表示该表的 <strong>Column Family</strong>, 分别为 <em>name</em> 列族和 <em>id</em> 列族。那具体怎么将字符串映射为 <strong>UID</strong> ? 这里就需要通过实际的例子来说明。</p>
-<p>我们先上传一个数据，格式内容如下，可以通过 <strong>Postman</strong> 进行上传测试，<strong>OpenTSDB</strong> 默认上传地址为 <code>http://ip:4242/api/put?details</code>，后缀 <em>details</em> 是为了查看上传反馈。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><div class="jiyicode"><figure class="iseeu highlight /json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"metric"</span>: <span class="string">"sys.test.metric"</span>,</span><br><span class="line">        <span class="attr">"timestamp"</span>: <span class="number">1528784369</span>,</span><br><span class="line">        <span class="attr">"value"</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">"tags"</span>: &#123;</span><br><span class="line">           <span class="attr">"hostname"</span>: <span class="string">"jiyiren"</span>,</span><br><span class="line">           <span class="attr">"area"</span>: <span class="string">"shanghai"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div></div>
-<p>上传成功后返回：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><div class="jiyicode"><figure class="iseeu highlight /json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"success"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"failed"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"errors"</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>
-<p>我们先看下我们上传的数据格式，需要进行映射的字符串是对应 <code>metric</code>, <code>tagkey</code>, <code>tagvalue</code> 的，这里 <code>tag</code> 有两组，所以要映射的有 5 个字符串，分别为： <em>sys.test.metric</em>, <em>hostname</em>, <em>jiyiren</em>, <em>area</em>, <em>shanghai</em>.</p>
-<p>那我们就再用 <strong>Hbase Shell</strong> 查看表内容：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">scan <span class="string">'tsdb-uid'</span></span><br><span class="line"><span class="comment"># === 结果如下 ===</span></span><br><span class="line">ROW                                      COLUMN+CELL </span><br><span class="line">\x00\x00\x01  column=name:metrics, timestamp=1528517476774, value=sys.test.metric</span><br><span class="line">\x00\x00\x01  column=name:tagk, timestamp=1528517476790, value=area </span><br><span class="line">\x00\x00\x01  column=name:tagv, timestamp=1528517476803, value=shanghai</span><br><span class="line">\x00\x00\x02  column=name:tagk, timestamp=1528517476816, value=hostname                                              </span><br><span class="line">\x00\x00\x02  column=name:tagv, timestamp=1528517476830, value=jiyiren </span><br><span class="line">area      column=id:tagk, timestamp=1528517476793, value=\x00\x00\x01</span><br><span class="line">hostname  column=id:tagk, timestamp=1528517476819, value=\x00\x00\x02</span><br><span class="line">jiyiren   column=id:tagv, timestamp=1528517476832, value=\x00\x00\x02</span><br><span class="line">shanghai  column=id:tagv, timestamp=1528517476806, value=\x00\x00\x01</span><br><span class="line">sys.test.metric column=id:metrics, timestamp=1528517476778, value=\x00\x00\x01</span><br></pre></td></tr></table></figure></div></div>
-<p>从中我们可以看到，数据总是成对出现的，包括 <strong>UID 映射字符串</strong> 和 <strong>字符串映射 UID</strong>。上面 5 组是 <strong>UID</strong> 映射成字符串，下面 5 组是字符串映射为 <strong>UID</strong>. 前面已经看过 <strong>tsdb-uid</strong> 表有两个列族，而其中的 <code>name</code> 列族对应的就是 <strong>UID</strong> 映射成字符串，而 <code>id</code> 列族对应字符串映射为 <strong>UID</strong>, 这正是这两个列族的作用，这样对于正反查找速度都是极快的。</p>
-<p>此外，对于 <strong>UID 映射字符串</strong>的，每行数据，也就是 <code>rowkey</code> 相同的，至少包含三个列，分别是 <code>metrics</code>, <code>tagk</code>, <code>tagv</code>. 我们可以通过前三行结果看出。</p>
-<p>到这里我们知道了 <strong>UID</strong> 与字符串间是怎么映射以便于查询的，但是 <strong>UID</strong> 到底是怎么生成的呢？</p>
-<p>实际上大家在前面操作 <code>scan &#39;tsdb-uid&#39;</code> 的时候，结果会列出额外三行以 <code>\x00</code> 开头的数据：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">ROW                                      COLUMN+CELL </span><br><span class="line">\x00    column=id:metrics, timestamp=1528517476737, value=\x00\x00\x00\x00\x00\x00\x00\x01                                  </span><br><span class="line">\x00    column=id:tagk, timestamp=1528517476811, value=\x00\x00\x00\x00\x00\x00\x00\x02                                      </span><br><span class="line">\x00    column=id:tagv, timestamp=1528517476825, value=\x00\x00\x00\x00\x00\x00\x00\x02</span><br></pre></td></tr></table></figure></div></div>
-<p>实际上 <strong>UID</strong> 是用 <strong>3 bytes</strong> 表示的非负整型数，并且是自增的，而自增的就要依赖于上一次插入的最新 <code>ID</code> 值，这三行就是分别保存 <em>metrics</em>, <em>tagk</em>, <em>tagv</em> 插入的最新数据的 <strong>UID</strong>，这样下次插入新的数据只要在对应的值上加 1 就能得到其对应的 <strong>UID</strong> 了。</p>
-<h2 id="Data-Table-Schema"><a href="#Data-Table-Schema" class="headerlink" title="Data Table Schema"></a>Data Table Schema</h2><p>我们再看看 OpenTSDB 的实际存储时序数据的表 – <strong>tsdb</strong>。</p>
-<p>既然 <strong>UID</strong> 与字符串的映射关系搞定了，那么真实的时序数据存储就好理解了。<em>tsdb</em> 保存了所有的时序数据，其 <code>rowkey</code> 就是由各个字段对应的 <strong>UID</strong> 组成的。</p>
-<p>先查看下 <em>tsdb</em> 数据库结果：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">scan <span class="string">'tsdb'</span></span><br><span class="line"><span class="comment"># == 结果如下 ==</span></span><br><span class="line">ROW                COLUMN+CELL </span><br><span class="line">\x00\x00\x01[\x1Fa`\x00\x00\x01\x00\x00\x01\x00\x00\x02\x00\x00\x02		 column=t:I\x00, timestamp=1528521000278, value=\x0A</span><br></pre></td></tr></table></figure></div></div>
-<p>结果值太长了，可以分开看，先看列族里的数据【18.7.10 更正为】:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">column=t:I\x00, timestamp=1528521000278, value=\x0A</span><br></pre></td></tr></table></figure></div></div>
-<p>其中 <code>value=\x0A</code> 而 <code>0X0A</code> 化为十进制就是 <strong>10</strong>, 正好是我们前面上传的 <code>metric</code> 的值。</p>
-<p>再看看 <strong>rowkey</strong>：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">\x00\x00\x01[\x1Fa`\x00\x00\x01\x00\x00\x01\x00\x00\x02\x00\x00\x02</span><br></pre></td></tr></table></figure></div></div>
-<p><code>rowkey</code> 是 <code>OpenTSDB</code> 设计的独特之处，其构成规则为：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">[salt]&lt;metric_uid&gt;&lt;timestamp&gt;&lt;tagk1&gt;&lt;tagv1&gt;[...&lt;tagkN&gt;&lt;tagvN&gt;]</span><br></pre></td></tr></table></figure></div></div>
-<p><code>salt</code> 是为了更好的分布式，</p>
-<p>我们的上面添加的 <code>metric</code> 为，其中 <code>tagk</code> 会自动按字母排序，所以 <em>area</em> 排在前面：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line"># 字符串对应</span><br><span class="line">sys.test.metric 1528784369 area shanghai hostname jiyiren</span><br><span class="line"># UID 对应 ( timestamp 先不变 )</span><br><span class="line">000001 1528784369 000001 000001 000002 000002</span><br></pre></td></tr></table></figure></div></div>
-<p>除了 <em>timestamp</em> 和上面结果完全对应，而 <em>timestamp</em> 则是按小时存储的，也就是取 <strong>3600</strong> 的整数倍的 <em>timestamp</em> 作为当前时间戳。计算方法 <em>timestamp - timestamp % 3600</em>.</p>
-<p>这样，我们应该对 <strong>OpenTSDB</strong> 的 <strong>UID</strong> 以及 <strong>Rowkey</strong> 的生成和存储结构都基本了解了。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
-<li><a href="http://opentsdb.net/docs/build/html/index.html" target="_blank" rel="noopener">http://opentsdb.net/docs/build/html/index.html</a></li>
-<li><a href="http://liubin.org/blog/2016/03/05/tsdb-opentsdb/" target="_blank" rel="noopener">http://liubin.org/blog/2016/03/05/tsdb-opentsdb/</a></li>
-<li><a href="https://www.jianshu.com/p/0bafd0168647" target="_blank" rel="noopener">https://www.jianshu.com/p/0bafd0168647</a></li>
-<li><a href="http://www.nosqlnotes.com/technotes/opentsdb-tabledesign/" target="_blank" rel="noopener">http://www.nosqlnotes.com/technotes/opentsdb-tabledesign/</a></li>
-</ul>
-<p>img.godjiyi.cn</p>
-]]></content>
-      <categories>
-        <category>NoSQL</category>
-      </categories>
-      <tags>
-        <tag>OpenTSDB</tag>
-        <tag>Metric</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论文收录平台 ( SCI、EI 等 ) 详细说明</title>
-    <url>/2017/11/18/papersci/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">学术论文平台一点通，毕业论文不再是难事</p>
-
-<p>最近发论文的需求逐渐被提高上来，身边的同学也在忙碌自己的研究，准备发篇论文以应对论文开题。但我们学校对发的论文有一定要求，需要被至少 <strong>SCI、EI、北大核刊</strong> 录入才可以，但是全球期刊和会议多之又多，<em>怎么确定哪个会议被哪个平台是否录入，哪个学术会议或期刊价值更高点，以及怎么对各个平台进行索引搜索</em>，这就需要自己详细地了解各种平台以及各个名词，下面记录下自己的了解。</p>
-<a id="more"></a>
-<ul>
-<li>主要关键词：<strong>ISI、SCI、SCIE、SSCI、JCR、ESI、EI、ISTP、IEEE、CCF</strong>等说明；</li>
-<li>各个服务的<strong>检索网址说明</strong>；</li>
-<li><strong>中国索引服务</strong>介绍</li>
-</ul>
-<h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><hr>
-<h3 id="SCI"><a href="#SCI" class="headerlink" title="SCI"></a>SCI</h3><p><strong>SCI</strong> 的英文全称为 <em>Science Citation Index</em> ，即 <strong>《科学引文索引》</strong>，简称 <strong>《SCI》</strong>，是美国科技情报研究所（ <em>Institute for Scientific Information</em> 简称“ <strong>ISI</strong> ” ）于 1961 年创办的国际权威检索系统，其创始人为 <strong>尤金·加菲尔德</strong>（ Eugene Garfield, September 16, 1925～2017 ）。</p>
-<h3 id="SCIE"><a href="#SCIE" class="headerlink" title="SCIE"></a>SCIE</h3><p><strong>SCIE</strong> 即 <em>SCI Expanded</em> 为 《科学引文索引扩展版》（即网络版），上面的 <strong>SCI</strong> 则主要 <em>指来源刊为3700多种的SCI印刷版和SCI光盘版</em>；而 <strong>SCIE</strong> <em>则收录了5600多种来源期刊，提供WEB检索服务</em>，随着网络的普及，现在我们 <strong>高校所讲的SCI</strong> 通常是包 <strong>原SCI+SCIE</strong> 的,而网络上能检索的通常是 <strong>SCIE</strong>，所以一般网上讲的 SCI 通常都是指 <strong>SCIE</strong>。</p>
-<h3 id="SSCI"><a href="#SSCI" class="headerlink" title="SSCI"></a>SSCI</h3><p><strong>SSCI</strong> 即 <em>Social Sciences Citation Index</em> 为 <strong>《社会科学引文索引》</strong>，也由 <strong>ISI</strong> 创建，是 <strong>SCI(原SCI+SCIE)</strong> 的姊妹篇。主要收录 1809 种世界最重要的 <strong>社会科学</strong> 期刊，内容覆盖包括人类学、法律、经济、历史、地理、心理学等 55 个领域。收录文献类型包括：研究论文，书评，专题讨论，社论，人物自传，书信等。选择收录 ( Selectively Covered ) 期刊为 1300 多种。</p>
-<h3 id="JCR"><a href="#JCR" class="headerlink" title="JCR"></a>JCR</h3><p><strong>JCR</strong> 即 <em>Journal Citation Reports</em> 为 <strong>《期刊引用报告》</strong>，也由 <strong>ISI</strong> 出版，每年出版一次，其主要是对 <strong>SCIE</strong> 和 <strong>SSCI</strong> 收录的期刊的引用和被引用数据进行统计、运算，并针对每种期刊定义了 <em>影响因子（Impact Factor，缩写IF）</em> 等指数加以报道。该指数主要作为 <strong>期刊(并非论文)的评价工具</strong>。一种刊物的影响因子越高，也即其刊载的文献被引用率越高，一方面说明这些文献报道的研究成果影响力大，另一方面也反映该刊物的学术水平高。</p>
-<h3 id="ESI"><a href="#ESI" class="headerlink" title="ESI"></a>ESI</h3><p><strong>ESI</strong> 即 <em>Essential Science Indicators</em> 为 <strong>《基本科学指标》</strong>,也由 <strong>ISI</strong> 出版，于 2001 年推出的衡量科学研究绩效、跟踪科学发展趋势的基本分析评价工具，也是基于 SCI 和 SSCI 所收录的 12000 多种学术期刊的1000多万条文献记录而建立的计量分析数据库，这个可用于 <strong>评价论文、作者、高校、学术机构、国家/地区国际学术水平及影响力的重要评价指标</strong>，因此很多学校很看重这个。</p>
-<p><strong>ESI</strong> 指标会每 <em>两个月更新一次</em>，其每次都会将评判的所有期刊和会议列表成文档，放在官网提供下载，因此也会有很多高校会要求学生发表的论文期刊或会议在此列表中。<strong>ESI</strong> 每次更新的文档下载地址：<a href="http://ipscience-help.thomsonreuters.com/incitesLive/ESIGroup/overviewESI/esiJournalsList.html" target="_blank" rel="noopener">ESI评价期刊列表下载</a></p>
-<h3 id="Web-of-Science"><a href="#Web-of-Science" class="headerlink" title="Web of Science"></a>Web of Science</h3><p><strong>Web of Science</strong> 简称 <strong>WOS</strong> 是由 <strong>Thomson Scientific(汤姆森科技信息集团)</strong> 推出的综合性学术信息资源平台，其具有丰富而强大的检索功能–普通检索、被引文献检索、化学结构检索，您可以方便快速地找到有价值的科研信息，即可以越查越旧，也可以越查越新，全面了解有关某一学科、某一课题的研究信息。它的资源库 <em>除了SCIE，还有SSCI，还有A&amp;HCI ( 人文和艺术引文索引 ),也包括其他扩充的数据资源库 ( 如：KCI,韩国期刊数据库 )</em>。</p>
-<h3 id="Web-of-Knowledge"><a href="#Web-of-Knowledge" class="headerlink" title="Web of Knowledge"></a>Web of Knowledge</h3><p><strong>Web of Knowledge</strong> 是由 <strong>Thomson Scientific(汤姆森科技信息集团)</strong> 开发的信息检索平台，该平台包含了 <strong>Web of Science(主要是学术论文、会议录和新增的学术图书数据库)</strong>，还有 <strong>专利数据库</strong>，还有 <strong>JCR(Journal Citation Reports)</strong>，以及 <strong>ESI(Essential Science Indicators)</strong> 等数据检索服务。这个是所有检索服务的入口平台，官网为：<a href="http://www.webofknowledge.com" target="_blank" rel="noopener">http://www.webofknowledge.com</a>。</p>
-<p><em>对于 Web of Science 和 Web of Knowledge区别?</em>，可以打个比方：<em>Web of Knowledge</em> 就相当于Microsoft Windows操作系统，而 <em>Web of Science</em> 则相当于Microsoft Office一套办公软件，正如Microsoft Windows平台除了可以跑Microsoft Office之外，还可以跑各种应用程序一样，Web of Knowledge平台除了 <em>Web of Science</em> 还包括 <em>专利数据库服务</em>、<em>JCR服务</em>、<em>ESI服务</em> 等。详细说明可以查看 <a href="http://blog.sciencenet.cn/blog-408109-548440.html" target="_blank" rel="noopener">这里</a>。</p>
-<blockquote>
-<p><em>注意</em>：这个网址 <em>不是免费的</em>，各大高校访问会根据学校 ip 自动登录就可以检索了，因为高校通常购买了使用权，但如果使用的普通外网则不能够访问。</p>
+<h1 id="英文"><a href="#英文" class="headerlink" title="英文"></a>英文</h1><blockquote>
+<p>共 6 个网站</p>
 </blockquote>
-<p>官网首页–默认为 <strong>Web of Science</strong> 板块,查询 <strong>SCI</strong> 文章:</p>
-<p><img src="https://img.godjiyi.cn/sciarticle2.jpg" alt></p>
-<p>其次– <strong>JCR</strong> 板块，查询期刊影响因子:</p>
-<p><img src="https://img.godjiyi.cn/sciarticle3.jpg" alt></p>
-<p>另外– <strong>ESI</strong> 板块，查询论文、作者、机构等排名:</p>
-<p><img src="https://img.godjiyi.cn/sciarticle4.jpg" alt></p>
-<h3 id="EI"><a href="#EI" class="headerlink" title="EI"></a>EI</h3><p><strong>EI</strong> 即 <em>The Engineering Index</em> 为 <strong>《工程索引》</strong>，由 <em>美国工程师学会联合会</em> 于 1884 年创办的历史上最悠久的一部大型综合性检索工具,<strong>EI</strong> 每月出版1期，文摘 1.3 万至 1.4 万条；每期附有主题索引与作者索引；每年还另外出版年卷本和年度索引，年度索引还增加了作者单位索引。收录文献几乎涉及 <strong>工程技术</strong> 各个领域。例如：动力、电工、电子、自动控制、矿冶、金属工艺、机械制造、土建、水利等。它具有综合性强、资料来源广、地理覆盖面广、报道量大、报道质量高、权威性强等特点。</p>
+<h2 id="pixabay"><a href="#pixabay" class="headerlink" title="pixabay"></a>pixabay</h2><ul>
+<li><strong>推荐</strong>：★★★★★</li>
+<li>内容: 多风景、建筑风格;</li>
+<li>地址：<a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-pixabay.jpg" alt></li>
+</ul>
+<h2 id="isorepublic"><a href="#isorepublic" class="headerlink" title="isorepublic"></a>isorepublic</h2><ul>
+<li><strong>推荐</strong>：★★★★★</li>
+<li>内容: 全类风格;</li>
+<li>地址：<a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-isorepublic.jpg" alt></li>
+</ul>
+<h2 id="gratisography"><a href="#gratisography" class="headerlink" title="gratisography"></a>gratisography</h2><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>内容: 静物风格;</li>
+<li>地址：<a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-gratisography.jpg" alt></li>
+</ul>
+<h2 id="rawpixel"><a href="#rawpixel" class="headerlink" title="rawpixel"></a>rawpixel</h2><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>内容: 艺术、人物风格;</li>
+<li>地址：<a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-rawpixel.jpg" alt></li>
+</ul>
+<h2 id="visualhunt"><a href="#visualhunt" class="headerlink" title="visualhunt"></a>visualhunt</h2><ul>
+<li><strong>推荐</strong>：★★★★</li>
+<li>内容: 室内风格;</li>
+<li>地址：<a href="https://visualhunt.com/" target="_blank" rel="noopener">https://visualhunt.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_tools_1_visualhunt.jpg" alt></li>
+</ul>
+<h2 id="picjumbo"><a href="#picjumbo" class="headerlink" title="picjumbo"></a>picjumbo</h2><ul>
+<li><strong>推荐</strong>：★★★</li>
+<li>内容: 风景风格;</li>
+<li>地址：<a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
+<li>主页：<img src="https://img.godjiyi.cn/jy_open-picjumbo.jpg" alt></li>
+</ul>
+<h2 id="polayoutu"><a href="#polayoutu" class="headerlink" title="polayoutu"></a><del>polayoutu</del></h2><ul>
+<li><del><strong>推荐</strong>：已下线关闭，已没有图库了</del>;</li>
+<li><del>地址：<a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></del></li>
+<li><del>主页：</del><img src="https://img.godjiyi.cn/jy_open-polayoutu.jpg" alt></li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a></li>
+<li><a href="https://www.pexels.com" target="_blank" rel="noopener">https://www.pexels.com/</a></li>
+<li><a href="https://isorepublic.com/" target="_blank" rel="noopener">https://isorepublic.com/</a></li>
+<li><a href="https://gratisography.com/" target="_blank" rel="noopener">https://gratisography.com/</a></li>
+<li><a href="https://www.rawpixel.com/" target="_blank" rel="noopener">https://www.rawpixel.com/</a></li>
+<li><a href="http://www.polayoutu.com/collections" target="_blank" rel="noopener">http://www.polayoutu.com/collections</a></li>
+<li><a href="https://pxhere.com/" target="_blank" rel="noopener">https://pxhere.com/</a></li>
+<li><a href="https://picjumbo.com/" target="_blank" rel="noopener">https://picjumbo.com/</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>工具分享</category>
+      </categories>
+      <tags>
+        <tag>无版权图库</tag>
+        <tag>图库</tag>
+        <tag>工具分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>信息周刊第一期</title>
+    <url>/2022/02/20/weekly_1/</url>
+    <content><![CDATA[<p>分享最新信息和工具，每周末发布:</p>
 <ul>
-<li>这个是 <em>EI数据库官网</em>：<a href="http://www.engineeringvillage.com" target="_blank" rel="noopener">http://www.engineeringvillage.com</a></li>
-<li>这个是 <em>EI公司的官网</em>：<a href="http://www.elsevier.com/" target="_blank" rel="noopener">http://www.elsevier.com</a> （ <em>查 EI 论文，这个网址不需要</em> ）</li>
-<li>检索 <em>说明教程</em>：<a href="http://www.eipaperbx.com/mod_static-view-sc_id-3.html" target="_blank" rel="noopener">图文说明</a></li>
+<li><a href="#新闻">新闻</a><ul>
+<li><a href="#1-最让你震惊的科学真相是什么？">1. 最让你震惊的科学真相是什么？</a></li>
+<li><a href="#2-Windows-11-将要求必须联网才能安装启动">2. Windows 11 将要求必须联网才能安装启动</a></li>
+<li><a href="#3-OpenSea-被攻击，被盗-254-个-NFT，价值超百万美元">3. OpenSea 被攻击，被盗 254 个 NFT，价值超百万美元</a></li>
+<li><a href="#4-仓鼠感染新冠病毒后睾丸会缩小">4. 仓鼠感染新冠病毒后睾丸会缩小</a></li>
+<li><a href="#5-利用太阳能将二氧化碳转化为燃料的突破">5. 利用太阳能将二氧化碳转化为燃料的突破</a></li>
 </ul>
-<h3 id="ISTP"><a href="#ISTP" class="headerlink" title="ISTP"></a>ISTP</h3><p><strong>ISTP</strong> 即 <em>Index to Scientific &amp; Technical Proceedings</em>，为<strong>《科技会议录索引》</strong> 简称 <strong>ISTP</strong>，创刊于 1978 年，由 <em>美国科学情报研究所(ISI)</em> 编辑出版。<strong>SCI、EI、ISTP是世界著名的三大科技文献检索系统</strong>，是国际公认的进行科学统计与科学评价的主要检索工具,其中以SCI最为重要。<strong>ISI</strong> 基于 Web of Science 的检索平台，将 ISTP（ 科学技术会议录索引 ）和 ISSHP（ 社会科学及人文科学会议录索引 ）两大会议录索引集成为 ISI Proceedings。集成之后 ISTP 分为文科和理科两种检索，分别是 CPCI-SSH 和 CPCI-S。所以它们还统称为 <strong>ISTP</strong>，也有人叫它们 <strong>CPCI</strong>。</p>
-<h3 id="IEEE"><a href="#IEEE" class="headerlink" title="IEEE"></a>IEEE</h3><p><strong>IEEE</strong> 即 <em>Instituteof Electrical and Electronics Engineers</em> 为 <strong>美国电气和电子工程师协会</strong> 是一个国际性的电子技术与信息科学工程师的协会，是世界上最大的专业技术组织之一（ 成员人数 ），拥有来自 175 个国家的 36 万会员( 到2005年 )。该组织在太空、计算机、电信、生物医学、电力及消费性电子产品等领域中都是主要的权威。</p>
-<ol>
-<li><em>IEEE</em> 就和IEE（现在是IET）是英国的，IEICE是日本，CIE（中国电子协会）是中国的一样，它属于一个 <em>学术组织</em> ，不是数据库</li>
-<li>既然是学术组织，一般都有自己的学术刊物，对于IEEE主要有 <em>Transactions（汇刊，会刊或学报），Journal（学报），Magazine（杂志）和Letters（快报，通讯）等</em></li>
-<li>而SCI和EI只是检索工具，严格来讲其不是论文内容数据库，因为检索内容和论文内容不是一个意思，例如：<em>你可以用SCI工具检索到大部分IEEE刊物论文信息，但是SCI（ISI<br>Thompson）是无法提供论文内容的，因为他们的检索信息是各个刊物提供的</em>，你要获取全文需要访问付费数据库，例如IEEExplore,Elsevier数据库等。</li>
-<li>与IEEE相似概念的有：<strong>ACM</strong> (<em>Association for Computing Machinery</em> ) 中文：<em>国际计算机学会</em>。ACM是一个世界性的计算机从业员专业组织，创立于1947年。 <strong>CCF</strong> (<em>China Computer Federation</em>),<em>中国计算机学会</em>,成立于1962年，是中国计算机科学与技术领域群众性学术团体。</li>
-</ol>
-<h3 id="CCF"><a href="#CCF" class="headerlink" title="CCF"></a>CCF</h3><p><strong>CCF</strong> : 即 <em>China Computer Federation</em> 为 <strong>中国计算机学会</strong>，成立于 1962 年，是中国 <strong>计算机科学与技术领域</strong> 群众性学术团体。注意此处是专注 <strong>计算机科学与技术</strong>，因此很多计算机专业的学院都会要求发表的论文为 <em><a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" target="_blank" rel="noopener">CCF推荐会议或期刊</a></em> 论文,CCF自动将各个期刊和会议分为 <em>A、B、C类</em>，A 类为顶会期刊或会议。</p>
-<p><img src="https://img.godjiyi.cn/sciarticle5.jpg" alt></p>
-<h3 id="中科院JCR期刊分区"><a href="#中科院JCR期刊分区" class="headerlink" title="中科院JCR期刊分区"></a>中科院JCR期刊分区</h3><p><strong>中科院JCR期刊分区</strong> : 分区是为了区别期刊的影响力等级，这与 <strong>CCF</strong> 中的 A类、B类、C类是同一个意思，只不过这里通常划分为四个分区。而分区主要还是基于 <em>汤森路透公司</em>(ISI隶属于此公司)的 <em>JCR(《期刊引用报告》)</em>, JCR 中定义了的 <em>影响因子</em> ( Impact Factor 简称 IF )就是决定分区方法的主要因素。分区也主要分为两种分区方式，一个就是汤森路透公司自己的分区方法 – <strong>汤森路透分区法</strong>，另外就是我们中国中科院的分区方法– <strong>中国科学院分区法</strong>，两者分区区别请看 <a href="http://blog.163.com/ly7148@126/blog/static/16646527620153154302991/" target="_blank" rel="noopener">SCI汤森路透分区法和中国科学院分区法的区别</a></p>
-<p>(1). <strong>汤森路透分区法</strong> : 检索是通过上文提到的 <em><a href="http://www.webofknowledge.com" target="_blank" rel="noopener">Web of Knowledge</a></em> 中的 JCR模块查询。</p>
-<p>(2). <strong>中科院JCR期刊分区</strong> : 检索地址为：<a href="http://www.fenqubiao.com/" target="_blank" rel="noopener">http://www.fenqubiao.com/</a>,这也需要账号的，高校通常会提供。</p>
-<p><em>首页登录</em></p>
-<p><img src="https://img.godjiyi.cn/sciarticle6.jpg" alt></p>
-<p><em>浏览期刊排名</em></p>
-<p><img src="https://img.godjiyi.cn/sciarticle7.jpg" alt></p>
-<p><em>检索服务</em></p>
-<p><img src="https://img.godjiyi.cn/sciarticle8.jpg" alt><br><img src="https://img.godjiyi.cn/sciarticle9.jpg" alt></p>
-<h3 id="国内索引服务"><a href="#国内索引服务" class="headerlink" title="国内索引服务"></a>国内索引服务</h3><p>上面讲的核心都是国外提供的索引服务，对于国内的(比如:北大核刊)，也是有的,下面这些来源于知乎，地址：<a href="https://www.zhihu.com/question/31558495" target="_blank" rel="noopener">https://www.zhihu.com/question/31558495</a></p>
-<ol>
-<li><strong>中文核心期刊要目总览</strong> ( <em>PKU</em> ): 因是北京大学 图书馆主持发布的，俗称中文核心，北大核心。内容包含全面，既有自然科学类又有人文社会科学类。(<em>北大图书馆带领一堆专家玩小聚会，玩出了境界，门类齐全但每个门类都很少，两千种左右。武林至尊谁敢不从，一般没有特别要求的核心都是说它</em>)</li>
-<li><strong>中文社会科学引文索引</strong> ( <em>CSSCI</em> )，因为是南京大学 中国社会科学研究评价中心主持发布的，俗称南大核心。只包含人文社会科学类。(十几所高校联合起来搞高级酒会，搞出了高度，社科类就玩五百多种期刊啦，文科仔们都气冒烟了)</li>
-<li><strong>中国科技论文统计源期刊</strong> ( <em>ISTIC</em> )，是中国科技部 中国科学技术信息研究所主持发布的 中国科技期刊引证报告 中的核心部分，俗称统计源核心，中国科技核心。包含自然科学类，极少部分人文社科类的。一千六百左右吧。( 还是我科技部的敞亮，理工仔们扬眉吐气了，自然期刊比北大多了不少种嘛。尤其吸收的医学生物学，医学类比例都占三分之一了，外号叫医学核心也不是没有道理。但后来竟然吸收了社科的我也不懂为什么。)</li>
-<li><strong>中国科学引文数据库来源期刊</strong> ( <em>CSCD</em> )，是由中国科学院 文献情报中心发布的统计源的核心部分，俗称中科院核心。好像是申请国家基金项目的硬指标啊。只是包含自然科学类的。核心部分八百种左右。( 科学院也不想让理工仔们活的潇洒啊，勒紧你们的紧箍咒 )</li>
-<li><strong>中国人文社会科学核心期刊</strong> ( <em>CHSSCD</em> )，中国社科院 文献计量与科学评价研究中心发布的 中国人文科学核心期刊要览 中的核心部分，俗称应该就是人文社科核心，社科院核心吧，包含人文社会科学类。五百种左右。(社科院的姿态，怒刷存在感)</li>
-<li><strong>中国人文社会科学报核心期刊</strong>,评选出的都是大学学报的社科版啦，好像不受关注的样子。(大学学报们这也能搞出来个学会，城会玩。也来开个party，我发现社科仔们真会玩啊)</li>
-<li><strong>中国核心期刊(遴选)数据库</strong>，<em><a href="http://www.wanfangdata.com.cn/" target="_blank" rel="noopener">万方数据</a>股份有限公司</em> 的(开个私人会所，没背景也没NB评审团的，倒是起了个招摇的名字，我服了你了，印在封面上唬人一来一来的。)</li>
-<li><strong>中国期刊全文数据库</strong> ( <em>CJFD</em> )，<em><a href="http://www.cnki.net/" target="_blank" rel="noopener">中国知网CNKI</a></em>，原名中国期刊网，同方知网技术有限公司，全国八千多种期刊，(什么叫闷声发大财，垄断就在你的屏幕上摆着呢，我就问你买不买？)</li>
-<li><strong>中国科技期刊数据库</strong>，<em><a href="http://qikan.cqvip.com/" target="_blank" rel="noopener">维普</a>，重庆维普资讯有限公司</em>，尽收一万两千多种期刊。(收破烂专家的样子)。</li>
-<li><strong>中国权威学术期刊</strong> ( <em>RCCSE</em> )，在武汉大学中国科学评价研究中心与武汉大学图书馆和信息管理学院联合研发完成的 RCCSE 中国学术期刊评价研究报告——权威、核心学术期刊排行榜，俗称武大核心。三百多种。(威呜呜呜呜，权威两个字就问你们怕不怕，哈哈)</li>
-<li><strong>中国学术期刊综合评价数据库</strong>，以中国学术期刊（光盘版）和中国期刊网专题全文数据库的评价数据为基础而建立起来的大型数据库。<em>中国知识资源总库（ CNKI ）</em>、清华大学主办、中国学术期刊（ 光盘版 ）电子杂志社出版、清华同方知网（ 北京 ）技术有限公司发行、数百位科学家、院士、学者参与建设，精心打造的大型知识服务平台和数字化学习系统。(圈地，<em>知网</em> 这步棋走的好啊，一统江湖)</li>
-<li><strong>人大报刊复印资料</strong>，中国人民大学《复印报刊资料》由中国人民大学书报资料中心出版，该数据库从国内公开出版的近六千种核心期刊与专业特色期刊中精选全文并汇编而成，囊括了人文社会科学领域中的各个学科。( 普遍是白皮封装，文章被其收录是刊物和论文的一种荣誉吧 )</li>
-<li><strong>新华文摘</strong>，新华文摘是人民出版社主办的是一个大型的综合性、学术性、资料性的文摘半月刊，其选登文章代表了诸领域的前沿思想。同上，收录的也是其他期刊已经发表的优秀文章。在有的职称评选条件中，人大复印资料和新华文摘被承认国家级核心刊物。</li>
-</ol>
-<h3 id="本校要求的索引平台"><a href="#本校要求的索引平台" class="headerlink" title="本校要求的索引平台"></a>本校要求的索引平台</h3><p>下面是我自己学校研究生论文要求平台而提供的说明：</p>
-<p><img src="https://img.godjiyi.cn/sciarticle10.jpg" alt></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://www.zhihu.com/question/21111557" target="_blank" rel="noopener">SCI、EI、IEEE 是什么关系？国际会议、期刊、快报又有什么区别？</a></li>
-<li><a href="http://blog.sciencenet.cn/blog-408109-548440.html" target="_blank" rel="noopener">Web of Knowledge 与 Web of Science 以及 SCIE 之间的关系</a></li>
-<li><a href="http://blog.sciencenet.cn/blog-408109-902187.html" target="_blank" rel="noopener">影响因子本来是干什么的？看看SCI之父怎么说</a></li>
-<li><a href="http://www.webofknowledge.com/" target="_blank" rel="noopener">Web of Knowledge 官网</a></li>
-<li><a href="http://www.dxy.cn/bbs/thread/29300006#29300006" target="_blank" rel="noopener">SCI 与 SCIE 区别扫盲!</a></li>
-<li><a href="http://www.lib.whu.edu.cn/dc/viewdc.asp?id=17" target="_blank" rel="noopener">工程索引网络版</a></li>
-<li><a href="http://www.eipaperbx.com/mod_static-view-sc_id-3.html" target="_blank" rel="noopener">EI 检索查询</a></li>
-<li><a href="https://www.douban.com/group/topic/11186089/" target="_blank" rel="noopener">IEEE 和 SCI 等的通俗简介</a></li>
-<li><a href="http://blog.163.com/ly7148@126/blog/static/16646527620153154302991/" target="_blank" rel="noopener">SCI 汤森路透分区法和中国科学院分区法的区别</a></li>
-<li><a href="https://www.zhihu.com/question/31558495" target="_blank" rel="noopener">SCI、EI、核心期刊 这些东西等级是怎么区分的？</a></li>
+</li>
+<li><a href="#工具">工具</a><ul>
+<li><a href="#1-国外身份生成工具">1. 国外身份生成工具</a></li>
+<li><a href="#2-ai人工智能图片放大">2. AI人工智能图片放大</a></li>
+<li><a href="#3-天象模拟软件">3. 天象模拟软件</a></li>
+<li><a href="#4-有趣的天文奇观">4. 有趣的天文奇观</a></li>
+<li><a href="#5-故宫博物馆藏品总目">5. 故宫博物馆藏品总目</a></li>
+<li><a href="#6-九一一袭击事件">6. 九一一袭击事件</a></li>
 </ul>
-]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>SCI</tag>
-        <tag>EI</tag>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2017/05/08/regex/</url>
-    <content><![CDATA[<p align="center" style="margin: 30px 0 35px;">你有你的规则，我有我的正则</p>
-
-<p>开发中经常用到正则表达式，但总是靠搜索，有的结果过时或者不正确，导致浪费很多时间。与其将时间浪费在搜索上倒不如自己好好地掌握它。</p>
-<a id="more"></a>
-<h2 id="正则规则"><a href="#正则规则" class="headerlink" title="正则规则"></a>正则规则</h2><hr>
-<p>分四大类来说明: <strong>常用符号说明</strong>、<strong>符号数目匹配</strong>、<strong>逻辑语句符号匹配</strong>、<strong>目标匹配符号</strong>。</p>
-<h3 id="一、常用符号说明"><a href="#一、常用符号说明" class="headerlink" title="一、常用符号说明"></a>一、常用符号说明</h3><ol>
-<li><code>^</code>: <strong>匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与”\n”或”\r”之后的位置匹配。</strong></li>
-<li><code>$</code>: <strong>匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与”\n”或”\r”之前的位置匹配。</strong></li>
-<li><code>\</code>: <strong>将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，”n”匹配字符”n”。”\n”匹配换行符</strong></li>
-</ol>
-<h3 id="二、符号数目匹配"><a href="#二、符号数目匹配" class="headerlink" title="二、符号数目匹配"></a>二、符号数目匹配</h3><ol>
-<li><code>*</code>: <em>零次或多次</em> 匹配前面的字符或子表达式。例如，”zo*“ 匹配”z”和”zoo”。* 等效于<code>{0,}</code>。</li>
-<li><code>+</code>: <em>一次或多次</em> 匹配前面的字符或子表达式。例如，”zo+”与”zo”和”zoo”匹配，但与”z”不匹配。+ 等效于 <code>{1,}</code>。</li>
-<li><code>?</code>: <em>零次或一次</em> 匹配前面的字符或子表达式。例如，”do(es)?”匹配”do”或”does”中的”do”。? 等效于 <code>{0,1}</code>。</li>
-<li><code>{n}</code>: <strong>n 是非负整数。正好匹配 n 次。例如，”o{2}”表示此匹配两个o</strong></li>
-<li><code>{n,}</code>: <strong>n 是非负整数。至少匹配 n 次。</strong></li>
-<li><code>{n,m}</code>: <strong>n 和 m 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。</strong></li>
-</ol>
-<h3 id="三、逻辑语句符号匹配"><a href="#三、逻辑语句符号匹配" class="headerlink" title="三、逻辑语句符号匹配"></a>三、逻辑语句符号匹配</h3><ol>
-<li><code>x|y</code>: <strong>匹配 x 或 y。例如，’z|food’ 匹配”z”或”food”。’(z|f)ood’ 匹配”zood”或”food”。</strong></li>
-<li><p><code>()</code>: <strong>括号</strong></p>
+</li>
+</ul>
+<h2 id="新闻"><a href="#新闻" class="headerlink" title="新闻"></a>新闻</h2><h3 id="1-最让你震惊的科学真相是什么？"><a href="#1-最让你震惊的科学真相是什么？" class="headerlink" title="1. 最让你震惊的科学真相是什么？"></a>1. <a href="https://www.reddit.com/r/AskReddit/comments/ss2pkt/what_is_a_scientific_fact_that_absolutely_blows/" target="_blank" rel="noopener">最让你震惊的科学真相是什么？</a></h3><p>最近，Reddit 上有人发出了 “最让你震惊的科学真相是什么？” 问题，一群网友说出曾让他们世界观“破灭”的知识。</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_question2.png" alt></p>
+<p>部分回答:</p>
 <ul>
-<li><code>(pattern)</code>: 匹配 pattern 并捕获该匹配的子表达式</li>
-<li><code>(?:pattern)</code>: 匹配 pattern 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。例如，<code>industr(?:y|ies)</code> 是比 <code>industry|industries</code> 更经济的表达式。</li>
-<li><code>(?=pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?=pattern</a></li>
-<li><code>(?!pattern)</code>: <a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">?!pattern</a></li>
+<li>“人的身体里至少有 1500 亿个神经元。你肚子里也有神经元。肚子里的细菌用化学信号与身体交流，告诉你需要吃哪种食物。如果你把细菌都换了，那么喜欢吃的食物也会变”</li>
+<li>“霸王龙生活在 6600 万年前，剑龙则生活在 15500 万年前。霸王龙和剑龙之间相隔的时间，比霸王龙和我们人类之间的时间还要长 1600 万年。”</li>
+<li>“如果把每种动物都抓一只放到一个口袋里，你再随便掏出一只来，有 1/5 的概率会掏到甲虫。”“而且有一半的概率你抓到的是昆虫。这么说吧：所有动物物种中，有一半是昆虫，其中 40% 是甲虫。”</li>
+<li>“黏菌没有脑子，也没有神经系统，但它们可以存储信息，以此做出判断。更疯狂的是，它们可以和其他黏菌融合，共享信息。”</li>
+<li>“如果两片相同的金属在太空接触，它们会贴在一起，再也分不开。这叫做’太空焊接‘(冷焊)” (<em>注：金属能否焊接，取决于金属的原子和原子之间是否存在阻挡物。在地球上，因为有空气，金属原子之间是有大量阻挡物的，电焊技术就是将阻挡物清理掉，使其融合到一起。在太空中，因为什么都没有，阻挡物自然不存在，所以两块金属贴在一起就能被焊住。</em>)</li>
+<li>“旅行者旅行者一号以大于每小时 3 万英里的速度飞行了 43 年，但到目前为止，它只飞了20个光时（光时，光在真空中一小行走的距离)”。“最近的恒星是在4.3光年外，所以它只需要再飞8万年。”</li>
+<li>“在地球和月亮之间，你可以把所有的太阳系行星(包括冥王星)都放进去。”；“把地球和太阳之间的距离比作一枚十分硬币的厚度，那么最近的恒星就在10英里开外。”</li>
+<li>“如果在距离地球8000万光年远的星球上，有个超高科技的外星人文明，建了一个超高科技的望远镜。他们此时去看地球，看到的全是恐龙。”，“也许这就是它们不来的原因……它们一看到恐龙，就大喊，啥玩意儿啊我们绝对不去那里！”</li>
 </ul>
-</li>
-</ol>
-<h3 id="四、目标匹配符号"><a href="#四、目标匹配符号" class="headerlink" title="四、目标匹配符号"></a>四、目标匹配符号</h3><ol>
-<li><code>[xyz]</code>: <strong>字符集。匹配包含的任一字符。例如，”[abc]”代表当前位只能是abc三个字符中的一个</strong></li>
-<li><code>[^xyz]</code>: <strong>反向字符集。匹配未包含的任何字符。例如，”<code>[^abc]</code>“ 则当前位不能是abc中的任意一个。</strong></li>
-<li><p><code>[a-z]</code>: <strong>字符范围。匹配指定范围内的任何字符。如：</strong></p>
-<ul>
-<li><code>[a-z]</code>: 当前位匹配从a到z字符</li>
-<li><code>[A-Z]</code>: 当前位匹配从A到Z字符</li>
-<li><code>[0-9]</code>: 当前位匹配从0到9字符</li>
-<li><code>[a-zA-Z0-9]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符</li>
-<li><code>[a-zA-Z0-9_]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>字符</li>
-<li><code>[a-zA-Z0-9_-]</code>: 当前位匹配从a到z，从A到Z以及从0-9的字符和<em>_</em>与<em>-</em>字符</li>
-</ul>
-</li>
-<li><p><code>[^a-z]</code>: <strong>反向范围字符。匹配不在指定的范围内的任何字符.</strong></p>
-</li>
-<li><code>\d</code>: <strong>匹配数字，与<code>[0-9]</code>等效.</strong></li>
-<li><code>\D</code>: <strong>匹配非数字字符，与<code>[^0-9]</code>等效.</strong></li>
-<li><code>\w</code>: <strong>匹配任何字类字符，包括下划线。与”<code>[A-Za-z0-9_]</code>“等效.</strong></li>
-<li><code>\W</code>: <strong>与任何非单词字符匹配。与”<code>[^A-Za-z0-9_]</code>“等效。</strong></li>
-<li><code>.</code>: <strong>匹配除”\r\n”之外的任何单个字符。若要匹配包括”\r\n”在内的任意字符，请使用诸如”[\s\S]”之类的模式。</strong></li>
-<li><code>\b</code>: <strong>匹配一个字边界，即字与空格间的位置。例如，”er\b”匹配”never”中的”er”，但不匹配”verb”中的”er”。多用于java中的正则查找与替换</strong>。</li>
-<li><code>\B</code>: <strong>非字边界匹配。”er\B”匹配”verb”中的”er”，但不匹配”never”中的”er”。</strong></li>
-<li><code>\s</code>: <strong>匹配任何空白字符，包括空格、制表符、换页符等。与 <code>[\f\n\r\t\v]</code> 等效。</strong></li>
-<li><code>\S</code>: <strong>匹配任何非空白字符。与 <code>[^\f\n\r\t\v]</code>等效。</strong></li>
-<li><p>各种空白符：</p>
-<ul>
-<li><code>\f</code>: 换页符匹配。等效于 \x0c 和 \cL。</li>
-<li><code>\n</code>: 换行符匹配。等效于 \x0a 和 \cJ。</li>
-<li><code>\r</code>: 匹配一个回车符。等效于 \x0d 和 \cM。</li>
-<li><code>\t</code>: 制表符匹配。与 \x09 和 \cI 等效。</li>
-<li><code>\v</code>: 垂直制表符匹配。与 \x0b 和 \cK 等效。</li>
-</ul>
-</li>
-<li><p><code>\xn</code>: <strong>匹配 n，此处的 n 是一个十六进制转义码。十六进制转义码必须正好是<em>两位</em>数长。例如，”\x41”匹配”A”。允许在正则表达式中使用 ASCII 代码。</strong></p>
-</li>
-<li><code>\un</code>: <strong>匹配 n，其中 n 是以<em>四位</em>十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。附：<a href="http://jiyiren.github.io/2016/03/22/Java_encode/" target="_blank" rel="noopener">Unicode编码说明</a>,<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener">汉字Unicode编码表</a></strong> </li>
-</ol>
-<h2 id="常见正则"><a href="#常见正则" class="headerlink" title="常见正则"></a>常见正则</h2><hr>
-<p>下面分别对常见的邮箱和手机号举例。</p>
-<h3 id="邮箱："><a href="#邮箱：" class="headerlink" title="邮箱："></a>邮箱：</h3><p>常见邮箱形式：</p>
-<ol>
-<li><a href="mailto:`zhangshan@163.com" target="_blank" rel="noopener">`zhangshan@163.com</a>`</li>
-<li><a href="mailto:`abc@sina.com.cn" target="_blank" rel="noopener">`abc@sina.com.cn</a>`</li>
-<li><a href="mailto:`zhangshna.Mr@163.com" target="_blank" rel="noopener">`zhangshna.Mr@163.com</a>`</li>
-<li><a href="mailto:`abc_Wang.dd@sian.com" target="_blank" rel="noopener">`abc_Wang.dd@sian.com</a>`</li>
-<li><a href="mailto:`abc_Wang.dd.cc@sian.com" target="_blank" rel="noopener">`abc_Wang.dd.cc@sian.com</a>`</li>
-</ol>
-<p>网络上正则，仅仅能匹配 1，2 两种格式:</p>
-<p><code>^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></p>
-<p>满足需求正则:</p>
-<ol>
-<li>匹配全部：<code>^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$</code></li>
-<li>等价匹配：<code>^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$</code></li>
-<li>或者：<code>^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$</code></li>
-<li>注意java代码里需要将所有 \ 转义，要在所有 \ 前多加一个 \</li>
-</ol>
-<p>java 代码:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><div class="jiyicode"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isEmail</span><span class="params">(String email)</span> </span>&#123;</span><br><span class="line">	String regex = <span class="string">"^(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w&#123;2,3&#125;)&#123;1,3&#125;)$"</span>;</span><br><span class="line">	<span class="keyword">return</span> email.matches(regex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>
-<h3 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码:"></a>手机号码:</h3><p>手机基本格式如下：</p>
-<ol>
-<li>共11位：</li>
-<li><strong>13(0-9)</strong>:13开头手机号第三位0-9全可以</li>
-<li><strong>14(5,7)</strong>:14开头的第三位只有5(联通)，7(移动)</li>
-<li><strong>15(-4)</strong>:15开头的第三位除了4，其他都有，因为(154有谐音“要我死”)</li>
-<li><strong>17(3,5,6,7,8)</strong>:17开头的三位有3,5,6,7,8;其中3,7为电信，5,6为联通,8为移动。</li>
-<li><strong>18(0-9)</strong>:18开头的第三位0-9均可以</li>
-<li><p>而170和171的为虚拟运营商:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><div class="jiyicode"><figure class="iseeu highlight /plain"><table><tr><td class="code"><pre><span class="line">1700/1701/1702(电信)</span><br><span class="line">1703/1705/1706(移动)</span><br><span class="line">1704/1707/1708/1709(联通)</span><br><span class="line">171（联通)</span><br></pre></td></tr></table></figure></div></div>
-</li>
-</ol>
-<p>虚拟商除外，匹配前三个位置数字正则：</p>
-<ol>
-<li>1与5可以一起写: <strong>1[3,8][0-9]</strong></li>
-<li>第二种: <strong>14[5,7]</strong></li>
-<li>第三种: <strong>15[^4]</strong></li>
-<li>第四种: <strong>17[3,5-8]</strong></li>
-<li>合并为: <code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\d{8}$</code></li>
-<li>注意：\d代表数字，如果要写入 java 代码，则需要多加一条 \ 来转义。如果不想写转义因为\d等价于[0-9]所以也可以换为：<code>^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]{8}$</code></li>
-</ol>
-<p>Java 代码：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><div class="jiyicode"><figure class="iseeu highlight /java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isChinaPhoneLegal</span><span class="params">(String str)</span> <span class="keyword">throws</span> PatternSyntaxException </span>&#123;  </span><br><span class="line">	String regExp = <span class="string">"^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))\\d&#123;8&#125;$"</span>; </span><br><span class="line">	<span class="comment">//String regExp = "^((1[3,8][0-9])|(14[5,7])|(15[^4])|(17[3,5-8]))[0-9]&#123;8&#125;$";  </span></span><br><span class="line">	Pattern p = Pattern.compile(regExp);  </span><br><span class="line">	Matcher m = p.matcher(str);  </span><br><span class="line">	<span class="keyword">return</span> m.matches();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>
-<h3 id="占用端口进程"><a href="#占用端口进程" class="headerlink" title="占用端口进程"></a>占用端口进程</h3><p>我们用 Linux 命令获取占用 22 端口信息如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># netstat -tnlp | grep ':22 '</span></span><br><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd          </span><br><span class="line">tcp6       0      0 :::22                   :::*                    LISTEN      21392/sshd</span><br></pre></td></tr></table></figure></div></div>
-<p>只需要用 Python 中 commands 包执行对应命令，取得第一行结果即可得到字符串，我们直接使用该字符用正则提出进程名：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><div class="jiyicode"><figure class="iseeu highlight /python"><table><tr><td class="code"><pre><span class="line">tcp_str = <span class="string">"tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21392/sshd"</span></span><br><span class="line">reg_p = re.compile(<span class="string">r'.+ (\d+)/(\w+)'</span>)</span><br><span class="line">m = reg_p.match(tcp_str)</span><br><span class="line">ps_str = m.group(<span class="number">2</span>) <span class="comment"># 0 为原字符串，1为进程ID，2为进程名，这里为 sshd</span></span><br></pre></td></tr></table></figure></div></div>
-<h3 id="获取磁盘挂载信息"><a href="#获取磁盘挂载信息" class="headerlink" title="获取磁盘挂载信息"></a>获取磁盘挂载信息</h3><h4 id="fdisk-命令"><a href="#fdisk-命令" class="headerlink" title="fdisk 命令"></a>fdisk 命令</h4><p>获取插入主机的所有磁盘 <code>fdisk</code> 命令:</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l</span></span><br><span class="line"></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk label <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x0008b9e9</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *        2048     1026047      512000   83  Linux</span><br><span class="line">/dev/vda2         1026048    83886079    41430016   8e  Linux LVM</span><br><span class="line"></span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-root: 40.2 GB, 40227569664 bytes, 78569472 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/mapper/centos-swap: 2147 MB, 2147483648 bytes, 4194304 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br></pre></td></tr></table></figure></div></div>
-<p>我们只需要 <code>/dev/vdx</code> 这样的信息，因此需要过滤：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]' | awk -F: '&#123;print $1&#125;' | awk '&#123;print $2&#125;'</span></span><br><span class="line">/dev/vda</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div></div>
-<p>其中 <code>egrep</code> 是选取符合的行如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># fdisk -l | egrep '^Disk /dev/[a-z]d[a-z]'</span></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Disk /dev/vdb: 107.4 GB, 107374182400 bytes, 209715200 sectors</span><br></pre></td></tr></table></figure></div></div>
-<p>后面两个 <code>awk</code> 则不断 <strong>split</strong> 字符串选取出最终的字符。</p>
-<h4 id="df-命令"><a href="#df-命令" class="headerlink" title="df 命令"></a>df 命令</h4><p>上面的 <code>fdisk</code> 是获取所有的磁盘信息，包括已经挂载以及未挂载的磁盘，而 <code>df</code> 则获取仅仅挂载的信息，这样对于企业中的监控获取未挂载的磁盘，则只需用 <code>fdisk</code> 结果减 <code>df</code> 的结果，这里只介绍用 <code>df</code> 获取磁盘信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -h</span></span><br><span class="line">Filesystem               Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/centos-root   38G  6.5G   32G  18% /</span><br><span class="line">devtmpfs                 3.9G     0  3.9G   0% /dev</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /dev/shm</span><br><span class="line">tmpfs                    3.9G  401M  3.5G  11% /run</span><br><span class="line">tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1                497M  150M  348M  31% /boot</span><br><span class="line">/dev/vdb                  99G   61M   94G   1% /data</span><br><span class="line">tmpfs                    783M     0  783M   0% /run/user/0</span><br></pre></td></tr></table></figure></div></div>
-<p>我们也只需要 <code>/dev/vdx</code> 这样的信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># df -Th | /usr/bin/egrep '^/dev/[a-z]d[a-z]\d*' | awk '&#123;print $1&#125;'</span></span><br><span class="line">/dev/vda1</span><br><span class="line">/dev/vdb</span><br></pre></td></tr></table></figure></div></div>
-<h4 id="proc-partitions-文件"><a href="#proc-partitions-文件" class="headerlink" title="/proc/partitions 文件"></a>/proc/partitions 文件</h4><p>这个文件也记录了 Centos 系统的磁盘挂载信息，与 fdisk 命令的结果一致，但是用文件搜索方式比通过 commands 包调用 fdisk 命令效率更高，因此，推荐用此方式来查系统挂载信息：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/partitions | egrep ' [a-z]d[a-z]+$' | awk '&#123;print $4&#125;'</span></span><br><span class="line">vda</span><br><span class="line">vdb</span><br></pre></td></tr></table></figure></div></div>
-<h4 id="proc-mounts-文件"><a href="#proc-mounts-文件" class="headerlink" title="/proc/mounts 文件"></a>/proc/mounts 文件</h4><p>这个文件则是与 <code>df</code> 命令相似，只记录已经挂载的磁盘信息，并且效率高于 <code>df</code> 命令：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">[root@vm]<span class="comment"># cat /proc/mounts | egrep '^/dev/[a-z]d[a-z]+\d*'</span></span><br><span class="line">/dev/vda1 /boot xfs rw,relatime,attr2,inode64,noquota 0 0</span><br><span class="line">/dev/vdb /data ext4 rw,relatime,data=ordered 0 0</span><br></pre></td></tr></table></figure></div></div>
-<p>这个先查询出行，再用 <code>awk</code> 对行进行截取，这个我就不写了，自己大家可以 <code>awk</code>。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">java正则</a></li>
-<li><a href="http://www.cnblogs.com/liaojie970/p/5714050.html" target="_blank" rel="noopener">回车与换行</a></li>
-<li><a href="http://blog.sina.com.cn/s/blog_4c925dca01009h1a.html" target="_blank" rel="noopener">js正则</a></li>
-<li><a href="http://www.cnblogs.com/hsqdboke/p/4944823.html" target="_blank" rel="noopener">邮箱正则</a></li>
-</ul>
+<h3 id="2-Windows-11-将要求必须联网才能安装启动"><a href="#2-Windows-11-将要求必须联网才能安装启动" class="headerlink" title="2. Windows 11 将要求必须联网才能安装启动"></a>2. <a href="https://www.techradar.com/news/upcoming-windows-11-pro-update-will-force-you-to-have-an-internet-connection" target="_blank" rel="noopener">Windows 11 将要求必须联网才能安装启动</a></h3><p><img src="https://img.godjiyi.cn/jy_widows11.jpg" alt></p>
+<p>Windows 11已经推出大约六个月了，虽然自推出以来它需要家庭版的互联网连接，但微软保留了 Windows 11 Pro 的离线选项，因为它是 IT 专业人员使用的操作系统版本，但在最新的 Windows 11 Preview 版本中，微软指出，Windows 11 Pro 现在在您首次设置设备时需要互联网连接。</p>
+<h3 id="3-OpenSea-被攻击，被盗-254-个-NFT，价值超百万美元"><a href="#3-OpenSea-被攻击，被盗-254-个-NFT，价值超百万美元" class="headerlink" title="3. OpenSea 被攻击，被盗 254 个 NFT，价值超百万美元"></a>3. <a href="https://news.slashdot.org/story/22/02/20/1951229/phishing-attack-tricks-32-opensea-users-out-of-254-nfts" target="_blank" rel="noopener">OpenSea 被攻击，被盗 254 个 NFT，价值超百万美元</a></h3><p><img src="https://img.godjiyi.cn/jy_story_4_opensea.jpg" alt="OpenSea首页"></p>
+<p>美国东部时间下午 5 点到晚上 8 点之间，黑客对 OpenSea 共 32 个用户发起攻击。其中 Molly White 账号估计被盗代币的价值超过 170 万美元。</p>
+<p>攻击者利用了 Wyvern 协议的灵活性，该协议是大多数 NFT 智能合约（包括在 OpenSea 上制定的合约）的基础开源标准。攻击分两部分：首先，目标签署了部分合同，具有一般授权，大部分内容留空。签名到位后，攻击者通过调用他们自己的合约来完成合约，该合约无需付款即可转移 NFT 的所有权。从本质上讲，攻击的目标已经签署了一张空白支票——一旦签署，攻击者就会填写支票的其余部分来拿走他们的财产。</p>
+<h3 id="4-仓鼠感染新冠病毒后睾丸会缩小"><a href="#4-仓鼠感染新冠病毒后睾丸会缩小" class="headerlink" title="4. 仓鼠感染新冠病毒后睾丸会缩小"></a>4. <a href="https://www.vice.com/en/article/jgmb97/covid-19-testicles-damage" target="_blank" rel="noopener">仓鼠感染新冠病毒后睾丸会缩小</a></h3><p><img src="https://img.godjiyi.cn/jy_weekly_1_4_shu.jpg" alt></p>
+<p>由香港大学的研究人员在最近的调查中发现 COVID-19 对仓鼠睾丸的影响很大。研究人员发现，未接种疫苗的仓鼠在感染 COVID-19 后 4 至 7 天精子数量和睾酮水平“急剧下降”。与此同时，睾丸组织的“损伤”——包括炎症、退化和坏死——早在感染后一周就被观察到，并持续存在于第 120 天收集的样本中。感染后还发现睾丸大小和重量减少。而接种过病毒疫苗的仓鼠则没有表现出睾丸损伤。 </p>
+<p>而 Twitter 上也已经有人报道人类男性在感染新冠后也会出现类似情况。</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_4_shugao.jpg" alt></p>
+<h3 id="5-利用太阳能将二氧化碳转化为燃料的突破"><a href="#5-利用太阳能将二氧化碳转化为燃料的突破" class="headerlink" title="5. 利用太阳能将二氧化碳转化为燃料的突破"></a>5. <a href="https://www.sciencedaily.com/releases/2022/02/220216103024.htm" target="_blank" rel="noopener">利用太阳能将二氧化碳转化为燃料的突破</a></h3><p>一个研究小组展示了太阳能如何通过使用先进材料和超快激光光谱法将二氧化碳转化为燃料。这一突破可能是未来减少大气中温室气体水平的重要组成部分。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="1-国外身份生成工具"><a href="#1-国外身份生成工具" class="headerlink" title="1. 国外身份生成工具"></a>1. <a href="http://haoweichi.com/" target="_blank" rel="noopener">国外身份生成工具</a></h3><p>一个可以生成模拟的国外身份信息，可以用于注册一些国外必须用户信息的网站。</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_duoweit.jpg" alt></p>
+<h3 id="2-AI人工智能图片放大"><a href="#2-AI人工智能图片放大" class="headerlink" title="2. AI人工智能图片放大"></a>2. <a href="https://bigjpg.com/" target="_blank" rel="noopener">AI人工智能图片放大</a></h3><p>一个通过人工智能进行图片智能放大的工具，放大的图片会自动高清化。</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_bigjpg_home.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_bigjpg_eg.jpg" alt></p>
+<h3 id="3-天象模拟软件"><a href="#3-天象模拟软件" class="headerlink" title="3. 天象模拟软件"></a>3. <a href="https://stellarium.org/zh_CN/" target="_blank" rel="noopener">天象模拟软件</a></h3><p>一款开源的天象模拟软件。它以3D形式展示了极为逼真的星空，就像你在真实世界使用裸眼，双筒望远镜或天文望远镜看到的一样。</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_d3_stahome.jpg" alt></p>
+<h3 id="4-有趣的天文奇观"><a href="#4-有趣的天文奇观" class="headerlink" title="4. 有趣的天文奇观"></a>4. <a href="https://interesting-sky.china-vo.org/" target="_blank" rel="noopener">有趣的天文奇观</a></h3><p>这个网站整理最新的天文信息和各种预告，做的很精致。</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_d4_youqu.jpg" alt></p>
+<h3 id="5-故宫博物馆藏品总目"><a href="#5-故宫博物馆藏品总目" class="headerlink" title="5. 故宫博物馆藏品总目"></a>5. <a href="https://zm-digicol.dpm.org.cn/" target="_blank" rel="noopener">故宫博物馆藏品总目</a></h3><p>故宫博物馆藏品线上网站</p>
+<p><img src="https://img.godjiyi.cn/jy_weekly_1_d5_bjbowug.jpg" alt></p>
+<h3 id="6-九一一袭击事件"><a href="#6-九一一袭击事件" class="headerlink" title="6. 九一一袭击事件"></a>6. <a href="https://www.wikiwand.com/zh-cn/%E4%B9%9D%E4%B8%80%E4%B8%80%E8%A2%AD%E5%87%BB%E4%BA%8B%E4%BB%B6" target="_blank" rel="noopener">九一一袭击事件</a></h3><p>这个网站将当年 911 事件讲解的非常详细。</p>
 ]]></content>
       <categories>
-        <category>Regex</category>
+        <category>信息周刊</category>
       </categories>
       <tags>
-        <tag>Regex</tag>
+        <tag>reddit</tag>
+        <tag>科学事实</tag>
+        <tag>信息周刊</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world2/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>Charactercreator 小项目收入 3000 元/月</title>
+    <url>/2021/06/06/story_6_charactercreator/</url>
+    <content><![CDATA[<p>今天介绍一个独立开发者–<strong>弗雷德里克</strong>，他原是一名漫画艺术家，做过一段时间的漫画书铅笔工。后来学习了电脑编程，并最终成为了一名 Web 开发人员。而他所创建的网站就是集合了他自身的这两种技能。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_home.jpg" alt></p>
+<p>【弗雷德里克】创立的网站是: <strong>charactercreator.org</strong> ，主要功能就是在线创建自定义的角色。可帮助用户以统一、逼真的手绘风格形象化他们的角色。操作也很简单，只需单击网站侧边的选项与菜单，然后根据选择的身体部分进行装扮。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_man.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_women.jpg" alt></p>
+<p>当然，网站提供了下载按钮，不仅可以保存成图片，也可以保存成 SVG  矢量图，可以应用在需要放大而不失真的场景。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_download.jpg" alt></p>
+<p>目前，网站的单日最高访问(UV)记录是 9525 个用户，30天内最高有  21 万名用户访问使用，而用户的平均浏览时长是 5:03 分钟，用户基数还是可以的。作者并非全职做这个网站，因此为了收入，在网站的底部增加了广告，大家访问时，应该能看见，本文的截图没有是因为被我关闭了。</p>
+<p>而这些广告给作者带来了 <strong>3000 元/月</strong>的收入。当然，作者还有其他方式的变现方式，比如在 Patreon 上增加订阅收入等，这些收入还在逐渐增长，当成副业被动收入已经很不错了。这个网站作者的维护成本只有 120 元/月，主要是服务器费用。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_server.jpg" alt></p>
+<p>上面的【弗雷德里克】经历给我们一个启发: <strong>有艺术能力的人完全可以将自己的艺术输出成为服务，生在互联网中，一门互联网编程技术还是有必要掌握以下的~~</strong>。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_code.jpg" alt></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>创业故事</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
+        <tag>独立开发</tag>
+        <tag>charactercreator</tag>
+        <tag>角色创作</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world5/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>Remotive 实现月入 75000 元</title>
+    <url>/2021/06/05/story_5_remotive/</url>
+    <content><![CDATA[<p>今天介绍一个独立创业者–<strong>鲁道夫·杜特尔</strong>，作者不是程序员，也不会敲代码，但却能抓住远程工作的需求，创立了 <strong><a href="https://www.remotive.io" target="_blank" rel="noopener">https://www.remotive.io</a></strong> 网站，这个网站主要提供远程工作职位，供所有想在家工作的职业人员。作者靠这个网站实现了 <strong>75000 元/月</strong> 的收入。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_5_home.jpg" alt></p>
+<p><strong>【鲁道夫·杜特尔】</strong>是法国人，在大学毕业后就加入了谷歌，当然不是搞技术，而是做广告相关的产品，但在谷歌里谈的最多的却是“技术足以在任何地方工作！”理念，作者也清楚技术的重要性。于是就加入了一个创业公司当运营总监，主要负责招聘技术人员。在这个过程中，作者遇到很多对“远程工作”有需求的求职者，于是作者就把收集可远程工作的公司招聘信息当成爱好发布在博客上。</p>
+<p>逐渐地浏览和评论的人越来越多，作者意识到“远程工作”招聘需求会很大，于是创立了 <strong>remotive.io</strong>，专门提供远程工作的招聘信息。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_5_mony.png" alt></p>
+<p>一开始收入并不是很高，年收入只有 12 万人民币。之后随着可远程工作公司的增加，每年收入达到 14 万美元左右，约合人民币 88 万，其主要收入来源于对公司招聘信息的费用收取，一个公司的招聘信息，每个月需要支付 300 美元。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_5_category.jpg" alt></p>
+<p>目前我看这个网站已经有 300+ 个公司了，每个月可收入 54 万人民币，一年妥妥的 550 万，真是做平台赚钱呀~~</p>
+<p>通过鲁道夫·杜特尔的经历可以看出：<strong>做平台确实贼赚钱，但是难点在于能满足很多人的需求。这个机遇就看自己能否尽早发现，且行动快速，否则自己永远会落后一步</strong>。</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>创业故事</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
+        <tag>独立开发</tag>
+        <tag>remotive</tag>
+        <tag>远程工作</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world3/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>通过制作 NFT 一天内赚了 150 万</title>
+    <url>/2021/06/04/story_4_weirdwhales/</url>
+    <content><![CDATA[<p>今天介绍一个小朋友–<strong>本雅明·艾哈迈德</strong>，他虽然才 12 岁，却在一天之内赚了 25 万美元，折合人民币  150 万。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_author.jpg" alt></p>
+<p>他做的作品系列称作“奇怪鲸鱼”，实际上就是“像素化鲸鱼”图片，只不过作者将其制作成了基于以太坊的 NFT (翻译为: 非同质化代币)，并在 <strong>OpenSea.io</strong> 这个网站售卖。作者当时只制作了 3350 条“像素鲸鱼”，在今年7月份一上架，就在 9 个小时之内以平均约 450 元/个价格被抢购一空，共收入 150 万人民币。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_project.jpg" alt="奇怪鲸鱼首页"></p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_zuopin.jpg" alt="奇怪鲸鱼合集"></p>
+<p><strong><a href="https://opensea.io" target="_blank" rel="noopener">https://opensea.io</a></strong> 是目前全球最大的 NFT 交易网站了，这个上面用户可以制作自己的艺术品，然后平台帮助用户将作品上到以太坊区块链上，所有用户都可以买你的作品，一旦购买，就是永久版权，因为交易记录写入到区块链了，无法修改，这也就是 NFT 的由来。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_opensea.jpg" alt="OpenSea首页"></p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_opensea_upload.png" alt="OpenSea创作"></p>
+<p><strong>【本雅明·艾哈迈德】</strong>才12岁，就拥有超越同年人的能力，与他的家庭环境是离不开的。在小【艾哈迈德】5岁时就跟着他父亲学习编程了，他父亲从事 Web 开发工作，并从 HTML和CSS 程序语言开始教他，他已基本能熟练编写简单静态网页了。现在小【艾哈迈德】也学会了 JavaScript 和更多其他语言。小【艾哈迈德】对程序的理解已经超越了相当多的同年人，从而在他听说区块链的 NFT 时，立马就对其着迷了，小孩子毕竟好奇心强大，而正因为他前面学习程序的基础，才使得他能在产生好奇心时立马做出作品，正如一句话所说【机遇总是留给有准备的人的】。</p>
+<p>小【艾哈迈德】在社交网站上粉丝已达 1.9 万了，俨然成了一个小网红了~~</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_twitter.jpg" alt></p>
+<p>提醒: 上面示例的区块链 NFT 不构成投资推荐，大家要谨慎尝试。</p>
+<p>从上面的事件经历中可以看出：学习了解全球最新的知识和趋势是很有必要的，因为最先吃蛋糕的都是第一批人。</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>创业故事</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
+        <tag>独立开发</tag>
+        <tag>nft</tag>
+        <tag>奇怪鲸鱼</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>Instapainting 实现 21 万元/月的收益</title>
+    <url>/2021/06/03/story_3_instapainting/</url>
+    <content><![CDATA[<p>今天介绍一个独立开发者–<strong>克里斯申</strong>， 通过 <strong><a href="https://instapainting.com" target="_blank" rel="noopener">https://instapainting.com</a></strong> 实现了月收入 21 万元。</p>
+<p><img src="http://img.godjiyi.cn/jy_story_3_home2.jpg" alt></p>
+<p>这个网站主要向大家提供“<strong>照片转手绘油画</strong>“的服务，用户可以通过这项服务，将上传的照片转变成真实的手绘艺术品，真正的出自现实生活中的画家之手。</p>
+<p>作者有一个朋友从中国购买油画然后在美国销售，销售还不错，这促使作者想到将用户照片转为油画的点子。于是作者花了三天时间，建好网站、做了测试，然后正式发布了网站。页面刚一发布，销售额就超过了2000美元。</p>
+<p>但关键是怎么找到绘画艺术家，作者聘请了当地的一些艺术家，但一开始销售额都付给了艺术家了，无法得到利润。恰巧，他看到中国有很多艺术供应商的消息，于是就在网站上发布了招募的消息，这给他带来了极大地改变。在消息发布后不久后，许多中国艺术家联系了作者。访问流量随之增大：</p>
+<p><img src="https://img.godjiyi.cn/jy_story_3_flow.png" alt></p>
+<p>这促使作者改变了原有靠卖油画服务赚钱的想法，而是变成了一个平台，他邀请艺术家入住，促成用户和艺术家交易，平台抽取手续费即可。没过几周，instapainting 就实现了 3.2 万美元的月利润，约合 21 万人民币/月。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_3_price.jpg" alt></p>
+<p>目前，网站上有多种艺术画转换服务，不同服务的价格如上所示。最便宜的也需要 49 美元，约合人民币 300 元左右。但毕竟画作是是真实艺术家的作品，而非电脑合成转换的，物有所值用户自己评价。</p>
+<p>上面的故事经历告诉我们: 朋友、眼界也很重要，这些能给我们打开创业的一种可行方案。此外就是平台的建成需要根据用户需求来，而不能一上来就做平台。用户的需求才是第一位。</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>创业故事</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
+        <tag>独立开发</tag>
+        <tag>instapainting</tag>
+        <tag>油画</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2015/07/23/hello-world4/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><div class="jiyicode"><figure class="iseeu highlight /bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div></div>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>Park.io 实现 12.5 万美元/月的收益</title>
+    <url>/2021/06/02/story_2_parkio/</url>
+    <content><![CDATA[<p>今天介绍一个独立开发者，只将一个点子开发成了小工具，就轻易地实现了 12.5 万美元/月的收益。</p>
+<p>作者名叫<strong>迈克·卡森</strong>，是一名计算机程序员，同时是一位黑客。事情的起因是作者想要购买域名 <strong>smile.io</strong> ，但这个域名被别人注册了，而恰巧这个域名马上就要到期了，但具体什么时间点被释放是不知道的。为此，作者写了一个每秒自动检测的脚本，一旦发现这个域名可以被注册，就会发送邮件给自己。</p>
+<p>有一天，作者和他妻子正在吃晚饭，手机上收到了邮件，显示1分钟以前这个域名被开放出来可以再注册了，作者急忙打开电脑准备注册，但这个时候还是晚了，域名已经被注册掉了。作者很不甘心，于是思考并优化了脚本，到后来这个脚本变得非常高效，基本上可以抢注到任何想要的域名。</p>
+<p>通过这次经历，作者也意识到这个需求很普遍，所以，他决定做一次尝试，将它作为一个收费服务开放给别人用。因此，作者只用了一周时间就开发完这个服务，网站为 <strong><a href="https://park.io" target="_blank" rel="noopener">https://park.io</a></strong>， 为便于支付，也接入了在线付款功能，在上线的第一天就收到了好几个订单。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_2_home.jpg" alt></p>
+<p>这个小工具确实很有用，因此作者定价是每抢注成功一个域名，需付费 99 美元，抢注不成功不要钱。 一个月大概有 1300 单成交，约 12.8 万美元，因为这个小工具网页基本不要什么维护费，这就相当于纯利润了。下面是官网的定价截图。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_2_price.jpg" alt></p>
+<p>这个经历告诉我们：即使是自己的需求，也有可能是大众的需求，思维开放一下，将工具变成服务吧，一旦成功，一年的收入也能达到别人的顶峰。</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>创业故事</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Begain</tag>
+        <tag>独立开发</tag>
+        <tag>parkio</tag>
+        <tag>域名注册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sidebar实现月入近3万元</title>
+    <url>/2021/06/01/story_1_sidebar/</url>
+    <content><![CDATA[<p>今天介绍一位来自法国的独立开发者–<strong>萨沙·格雷夫</strong>，他创立的网站是 <strong><a href="https://sidebar.io/" target="_blank" rel="noopener">https://sidebar.io/</a></strong> 。这个网站每天会推送人工筛选的设计相关文章到订阅者的邮箱，让用户及早地了解设计界的最新动向，目前网站有40000+ 活跃用户。作者也实现了月入3万的副业目标。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_home.jpg" alt></p>
+<p><strong>Sidebar</strong> 是作者从 2012 年 10 创立的网站，主要收集、分享每天最好的设计内容以及趋势，用户只需要填写自己的 email 邮箱，网站每天会推送人工筛选的最新设计界动向文章给用户，这个过程完全是免费的，那这个网站怎么赚钱的？</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_mony.jpeg" alt></p>
+<p>其实<strong>商业模式</strong>非常简单，就是赞助商给钱，作者会将链接放在每日邮件底部，一个赞助商链接会放置 1 周，每个月只有 4 个赞助商被选中。每个赞助费用为 950 美元。一个月就是 3800 美元，约 2.6 万人民币。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_juankuan.jpg" alt></p>
+<p>作者最初收取的赞助费用是 250 美元/链接，然后涨价到 400 美元/链接，但即使是 400 美元/链接，网站的库存也提前六个月售罄。所以作者又选择提高到 950 美元/链接，但即使这样链接仍然被提前一月预定完了，有流量就是任性，真正实现了被动收入。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_auth.jpg" alt></p>
+<p>作者萨沙·格雷夫来自法国，十几岁的时候就可以用 Photoshop 做些简单的设计，并能建立蹩脚的网站。在 2006 年移居中国，在北京做过网页设计师。2007 年回归法国，成为一名自由UI设计，曾在法国设计公司呆过。目前作者住在京都，在 Zens 做兼职工作，更多时间是从事自己的事业。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_projects.jpg" alt></p>
+<p>他的个人网站是 <strong><a href="https://www.sachagreif.com" target="_blank" rel="noopener">https://www.sachagreif.com</a></strong>，个人定位很准确，明白自己需要什么。作为独立开发者，也做了好几个产品，大家可以去他博客浏览下~~。</p>
+<p>希望大家也能找到适合自己的小产品~~</p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>sidebar</tag>
+        <tag>设计</tag>
+        <tag>独立开发</tag>
       </tags>
   </entry>
 </search>
