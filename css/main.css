@@ -1999,7 +1999,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a8b9ff;
+  background: #4f5912;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3359,7 +3359,7 @@ li p {
     display: flex;
   }
   .container .main-inner {
-    width: 95%;
+    width: 700px;
   }
   .post-line-one {
     display: inline-block;
@@ -3407,7 +3407,7 @@ li p {
 }
 @media (min-width: 1200px) {
   .container .main-inner {
-    width: 1050px;
+    width: 950px;
   }
   .header {
     position: fixed;
@@ -3419,7 +3419,7 @@ li p {
 }
 @media (min-width: 1600px) {
   .container .main-inner {
-    width: 1200px;
+    width: 1000px;
   }
   .header {
     position: fixed;
@@ -3511,4 +3511,7 @@ li p {
 }
 .posts-collapse {
   z-index: 19;
+}
+.post-body img {
+  width: 60%;
 }
