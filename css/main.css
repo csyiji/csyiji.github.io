@@ -1999,7 +1999,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #91dd52;
+  background: #f411a8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3330,14 +3330,6 @@ li p {
   .post-home-titleinfo {
     text-align: center;
   }
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 0 1px 0 #000;
-    height: 50px;
-  }
   .header-inner {
     box-shadow: 0 0 1px 0 #000;
   }
@@ -3359,6 +3351,7 @@ li p {
     display: flex;
   }
   .container .main-inner {
+    margin-top: 20px;
     width: 700px;
   }
   .post-line-one {
@@ -3366,13 +3359,6 @@ li p {
     box-shadow: #ccc 0 0 16px;
     margin: 5px;
     width: 33%;
-  }
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 0 1px 0 #000;
   }
   .about-bg {
     height: 250px;
@@ -3394,13 +3380,6 @@ li p {
     margin: 5px;
     width: 33%;
   }
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 0 1px 0 #000;
-  }
   .about-bg {
     height: 350px;
   }
@@ -3408,25 +3387,13 @@ li p {
 @media (min-width: 1200px) {
   .container .main-inner {
     width: 950px;
-  }
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 0 1px 0 #000;
+    margin-top: 20px;
   }
 }
 @media (min-width: 1600px) {
   .container .main-inner {
     width: 1000px;
-  }
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 0 1px 0 #000;
+    margin-top: 20px;
   }
 }
 .post-home-image {
@@ -3447,7 +3414,7 @@ li p {
   font-size: 25px;
   overflow: hidden;
   position: relative;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .post-home-cat-titleword {
   color: #0a8ede;
@@ -3497,9 +3464,6 @@ li p {
   font-size: 16px;
   border: 0;
 }
-.container {
-  padding: 90px 0 0 0;
-}
 .sidebar {
   background-color: #fff;
 }
@@ -3511,7 +3475,4 @@ li p {
 }
 .posts-collapse {
   z-index: 19;
-}
-.post-body img {
-  width: 60%;
 }
