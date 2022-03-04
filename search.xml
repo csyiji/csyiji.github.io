@@ -1,148 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Sidebar实现月入近3万元</title>
-    <url>/2021/06/01/story_1_sidebar/</url>
-    <content><![CDATA[<p>今天介绍一位来自法国的独立开发者–<strong>萨沙·格雷夫</strong>，他创立的网站是 <strong><a href="https://sidebar.io/" target="_blank" rel="noopener">https://sidebar.io/</a></strong> 。这个网站每天会推送人工筛选的设计相关文章到订阅者的邮箱，让用户及早地了解设计界的最新动向，目前网站有40000+ 活跃用户。作者也实现了月入3万的副业目标。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_1_home.jpg" alt></p>
-<p><strong>Sidebar</strong> 是作者从 2012 年 10 创立的网站，主要收集、分享每天最好的设计内容以及趋势，用户只需要填写自己的 email 邮箱，网站每天会推送人工筛选的最新设计界动向文章给用户，这个过程完全是免费的，那这个网站怎么赚钱的？</p>
-<p><img src="https://img.godjiyi.cn/jy_story_1_mony.jpeg" alt></p>
-<p>其实<strong>商业模式</strong>非常简单，就是赞助商给钱，作者会将链接放在每日邮件底部，一个赞助商链接会放置 1 周，每个月只有 4 个赞助商被选中。每个赞助费用为 950 美元。一个月就是 3800 美元，约 2.6 万人民币。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_1_juankuan.jpg" alt></p>
-<p>作者最初收取的赞助费用是 250 美元/链接，然后涨价到 400 美元/链接，但即使是 400 美元/链接，网站的库存也提前六个月售罄。所以作者又选择提高到 950 美元/链接，但即使这样链接仍然被提前一月预定完了，有流量就是任性，真正实现了被动收入。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_1_auth.jpg" alt></p>
-<p>作者萨沙·格雷夫来自法国，十几岁的时候就可以用 Photoshop 做些简单的设计，并能建立蹩脚的网站。在 2006 年移居中国，在北京做过网页设计师。2007 年回归法国，成为一名自由UI设计，曾在法国设计公司呆过。目前作者住在京都，在 Zens 做兼职工作，更多时间是从事自己的事业。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_1_projects.jpg" alt></p>
-<p>他的个人网站是 <strong><a href="https://www.sachagreif.com" target="_blank" rel="noopener">https://www.sachagreif.com</a></strong>，个人定位很准确，明白自己需要什么。作为独立开发者，也做了好几个产品，大家可以去他博客浏览下~~。</p>
-<p>希望大家也能找到适合自己的小产品~~</p>
-]]></content>
-      <categories>
-        <category>创业故事</category>
-      </categories>
-      <tags>
-        <tag>sidebar</tag>
-        <tag>设计</tag>
-        <tag>独立开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Park.io 实现 12.5 万美元/月的收益</title>
-    <url>/2021/06/02/story_2_parkio/</url>
-    <content><![CDATA[<p>今天介绍一个独立开发者，只将一个点子开发成了小工具，就轻易地实现了 12.5 万美元/月的收益。</p>
-<p>作者名叫<strong>迈克·卡森</strong>，是一名计算机程序员，同时是一位黑客。事情的起因是作者想要购买域名 <strong>smile.io</strong> ，但这个域名被别人注册了，而恰巧这个域名马上就要到期了，但具体什么时间点被释放是不知道的。为此，作者写了一个每秒自动检测的脚本，一旦发现这个域名可以被注册，就会发送邮件给自己。</p>
-<p>有一天，作者和他妻子正在吃晚饭，手机上收到了邮件，显示1分钟以前这个域名被开放出来可以再注册了，作者急忙打开电脑准备注册，但这个时候还是晚了，域名已经被注册掉了。作者很不甘心，于是思考并优化了脚本，到后来这个脚本变得非常高效，基本上可以抢注到任何想要的域名。</p>
-<p>通过这次经历，作者也意识到这个需求很普遍，所以，他决定做一次尝试，将它作为一个收费服务开放给别人用。因此，作者只用了一周时间就开发完这个服务，网站为 <strong><a href="https://park.io" target="_blank" rel="noopener">https://park.io</a></strong>， 为便于支付，也接入了在线付款功能，在上线的第一天就收到了好几个订单。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_2_home.jpg" alt></p>
-<p>这个小工具确实很有用，因此作者定价是每抢注成功一个域名，需付费 99 美元，抢注不成功不要钱。 一个月大概有 1300 单成交，约 12.8 万美元，因为这个小工具网页基本不要什么维护费，这就相当于纯利润了。下面是官网的定价截图。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_2_price.jpg" alt></p>
-<p>这个经历告诉我们：即使是自己的需求，也有可能是大众的需求，思维开放一下，将工具变成服务吧，一旦成功，一年的收入也能达到别人的顶峰。</p>
-]]></content>
-      <categories>
-        <category>创业故事</category>
-      </categories>
-      <tags>
-        <tag>独立开发</tag>
-        <tag>parkio</tag>
-        <tag>域名注册</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instapainting 实现 21 万元/月的收益</title>
-    <url>/2021/06/03/story_3_instapainting/</url>
-    <content><![CDATA[<p>今天介绍一个独立开发者–<strong>克里斯申</strong>， 通过 <strong><a href="https://instapainting.com" target="_blank" rel="noopener">https://instapainting.com</a></strong> 实现了月收入 21 万元。</p>
-<p><img src="http://img.godjiyi.cn/jy_story_3_home2.jpg" alt></p>
-<p>这个网站主要向大家提供“<strong>照片转手绘油画</strong>“的服务，用户可以通过这项服务，将上传的照片转变成真实的手绘艺术品，真正的出自现实生活中的画家之手。</p>
-<p>作者有一个朋友从中国购买油画然后在美国销售，销售还不错，这促使作者想到将用户照片转为油画的点子。于是作者花了三天时间，建好网站、做了测试，然后正式发布了网站。页面刚一发布，销售额就超过了2000美元。</p>
-<p>但关键是怎么找到绘画艺术家，作者聘请了当地的一些艺术家，但一开始销售额都付给了艺术家了，无法得到利润。恰巧，他看到中国有很多艺术供应商的消息，于是就在网站上发布了招募的消息，这给他带来了极大地改变。在消息发布后不久后，许多中国艺术家联系了作者。访问流量随之增大：</p>
-<p><img src="https://img.godjiyi.cn/jy_story_3_flow.png" alt></p>
-<p>这促使作者改变了原有靠卖油画服务赚钱的想法，而是变成了一个平台，他邀请艺术家入住，促成用户和艺术家交易，平台抽取手续费即可。没过几周，instapainting 就实现了 3.2 万美元的月利润，约合 21 万人民币/月。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_3_price.jpg" alt></p>
-<p>目前，网站上有多种艺术画转换服务，不同服务的价格如上所示。最便宜的也需要 49 美元，约合人民币 300 元左右。但毕竟画作是是真实艺术家的作品，而非电脑合成转换的，物有所值用户自己评价。</p>
-<p>上面的故事经历告诉我们: 朋友、眼界也很重要，这些能给我们打开创业的一种可行方案。此外就是平台的建成需要根据用户需求来，而不能一上来就做平台。用户的需求才是第一位。</p>
-]]></content>
-      <categories>
-        <category>创业故事</category>
-      </categories>
-      <tags>
-        <tag>独立开发</tag>
-        <tag>instapainting</tag>
-        <tag>油画</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>通过制作 NFT 一天内赚了 150 万</title>
-    <url>/2021/06/04/story_4_weirdwhales/</url>
-    <content><![CDATA[<p>今天介绍一个小朋友–<strong>本雅明·艾哈迈德</strong>，他虽然才 12 岁，却在一天之内赚了 25 万美元，折合人民币  150 万。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_4_author.jpg" alt></p>
-<p>他做的作品系列称作“奇怪鲸鱼”，实际上就是“像素化鲸鱼”图片，只不过作者将其制作成了基于以太坊的 NFT (翻译为: 非同质化代币)，并在 <strong>OpenSea.io</strong> 这个网站售卖。作者当时只制作了 3350 条“像素鲸鱼”，在今年7月份一上架，就在 9 个小时之内以平均约 450 元/个价格被抢购一空，共收入 150 万人民币。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_4_project.jpg" alt="奇怪鲸鱼首页"></p>
-<p><img src="https://img.godjiyi.cn/jy_story_4_zuopin.jpg" alt="奇怪鲸鱼合集"></p>
-<p><strong><a href="https://opensea.io" target="_blank" rel="noopener">https://opensea.io</a></strong> 是目前全球最大的 NFT 交易网站了，这个上面用户可以制作自己的艺术品，然后平台帮助用户将作品上到以太坊区块链上，所有用户都可以买你的作品，一旦购买，就是永久版权，因为交易记录写入到区块链了，无法修改，这也就是 NFT 的由来。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_4_opensea.jpg" alt="OpenSea首页"></p>
-<p><img src="https://img.godjiyi.cn/jy_story_4_opensea_upload.png" alt="OpenSea创作"></p>
-<p><strong>【本雅明·艾哈迈德】</strong>才12岁，就拥有超越同年人的能力，与他的家庭环境是离不开的。在小【艾哈迈德】5岁时就跟着他父亲学习编程了，他父亲从事 Web 开发工作，并从 HTML和CSS 程序语言开始教他，他已基本能熟练编写简单静态网页了。现在小【艾哈迈德】也学会了 JavaScript 和更多其他语言。小【艾哈迈德】对程序的理解已经超越了相当多的同年人，从而在他听说区块链的 NFT 时，立马就对其着迷了，小孩子毕竟好奇心强大，而正因为他前面学习程序的基础，才使得他能在产生好奇心时立马做出作品，正如一句话所说【机遇总是留给有准备的人的】。</p>
-<p>小【艾哈迈德】在社交网站上粉丝已达 1.9 万了，俨然成了一个小网红了~~</p>
-<p><img src="https://img.godjiyi.cn/jy_story_4_twitter.jpg" alt></p>
-<p>提醒: 上面示例的区块链 NFT 不构成投资推荐，大家要谨慎尝试。</p>
-<p>从上面的事件经历中可以看出：学习了解全球最新的知识和趋势是很有必要的，因为最先吃蛋糕的都是第一批人。</p>
-]]></content>
-      <categories>
-        <category>创业故事</category>
-      </categories>
-      <tags>
-        <tag>独立开发</tag>
-        <tag>nft</tag>
-        <tag>奇怪鲸鱼</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Remotive 实现月入 75000 元</title>
-    <url>/2021/06/05/story_5_remotive/</url>
-    <content><![CDATA[<p>今天介绍一个独立创业者–<strong>鲁道夫·杜特尔</strong>，作者不是程序员，也不会敲代码，但却能抓住远程工作的需求，创立了 <strong><a href="https://www.remotive.io" target="_blank" rel="noopener">https://www.remotive.io</a></strong> 网站，这个网站主要提供远程工作职位，供所有想在家工作的职业人员。作者靠这个网站实现了 <strong>75000 元/月</strong> 的收入。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_5_home.jpg" alt></p>
-<p><strong>【鲁道夫·杜特尔】</strong>是法国人，在大学毕业后就加入了谷歌，当然不是搞技术，而是做广告相关的产品，但在谷歌里谈的最多的却是“技术足以在任何地方工作！”理念，作者也清楚技术的重要性。于是就加入了一个创业公司当运营总监，主要负责招聘技术人员。在这个过程中，作者遇到很多对“远程工作”有需求的求职者，于是作者就把收集可远程工作的公司招聘信息当成爱好发布在博客上。</p>
-<p>逐渐地浏览和评论的人越来越多，作者意识到“远程工作”招聘需求会很大，于是创立了 <strong>remotive.io</strong>，专门提供远程工作的招聘信息。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_5_mony.png" alt></p>
-<p>一开始收入并不是很高，年收入只有 12 万人民币。之后随着可远程工作公司的增加，每年收入达到 14 万美元左右，约合人民币 88 万，其主要收入来源于对公司招聘信息的费用收取，一个公司的招聘信息，每个月需要支付 300 美元。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_5_category.jpg" alt></p>
-<p>目前我看这个网站已经有 300+ 个公司了，每个月可收入 54 万人民币，一年妥妥的 550 万，真是做平台赚钱呀~~</p>
-<p>通过鲁道夫·杜特尔的经历可以看出：<strong>做平台确实贼赚钱，但是难点在于能满足很多人的需求。这个机遇就看自己能否尽早发现，且行动快速，否则自己永远会落后一步</strong>。</p>
-]]></content>
-      <categories>
-        <category>创业故事</category>
-      </categories>
-      <tags>
-        <tag>独立开发</tag>
-        <tag>remotive</tag>
-        <tag>远程工作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Charactercreator 小项目收入 3000 元/月</title>
-    <url>/2021/06/06/story_6_charactercreator/</url>
-    <content><![CDATA[<p>今天介绍一个独立开发者–<strong>弗雷德里克</strong>，他原是一名漫画艺术家，做过一段时间的漫画书铅笔工。后来学习了电脑编程，并最终成为了一名 Web 开发人员。而他所创建的网站就是集合了他自身的这两种技能。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_6_home.jpg" alt></p>
-<p>【弗雷德里克】创立的网站是: <strong>charactercreator.org</strong> ，主要功能就是在线创建自定义的角色。可帮助用户以统一、逼真的手绘风格形象化他们的角色。操作也很简单，只需单击网站侧边的选项与菜单，然后根据选择的身体部分进行装扮。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_6_man.jpg" alt></p>
-<p><img src="https://img.godjiyi.cn/jy_story_6_women.jpg" alt></p>
-<p>当然，网站提供了下载按钮，不仅可以保存成图片，也可以保存成 SVG  矢量图，可以应用在需要放大而不失真的场景。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_6_download.jpg" alt></p>
-<p>目前，网站的单日最高访问(UV)记录是 9525 个用户，30天内最高有  21 万名用户访问使用，而用户的平均浏览时长是 5:03 分钟，用户基数还是可以的。作者并非全职做这个网站，因此为了收入，在网站的底部增加了广告，大家访问时，应该能看见，本文的截图没有是因为被我关闭了。</p>
-<p>而这些广告给作者带来了 <strong>3000 元/月</strong>的收入。当然，作者还有其他方式的变现方式，比如在 Patreon 上增加订阅收入等，这些收入还在逐渐增长，当成副业被动收入已经很不错了。这个网站作者的维护成本只有 120 元/月，主要是服务器费用。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_6_server.jpg" alt></p>
-<p>上面的【弗雷德里克】经历给我们一个启发: <strong>有艺术能力的人完全可以将自己的艺术输出成为服务，生在互联网中，一门互联网编程技术还是有必要掌握以下的~~</strong>。</p>
-<p><img src="https://img.godjiyi.cn/jy_story_6_code.jpg" alt></p>
-]]></content>
-      <categories>
-        <category>创业故事</category>
-      </categories>
-      <tags>
-        <tag>独立开发</tag>
-        <tag>charactercreator</tag>
-        <tag>角色创作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>八大无版权图库资源收集</title>
     <url>/2022/02/20/tools_1_openimage/</url>
     <content><![CDATA[<p>平常自己在写文章时，常常会搭配一些图片来展示。一般我都会去 <strong>无版权图片库</strong> 找一张搭配。之所以需要无版权图库，就是担心从网络上随意搜到的图片使用，很有可能被版权费投诉。因此，为了尽量减少不必要的麻烦，图片还是去无版权图库搜索比较好。</p>
@@ -292,6 +150,148 @@
         <tag>reddit</tag>
         <tag>科学事实</tag>
         <tag>信息周刊</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Charactercreator 小项目收入 3000 元/月</title>
+    <url>/2021/06/06/story_6_charactercreator/</url>
+    <content><![CDATA[<p>今天介绍一个独立开发者–<strong>弗雷德里克</strong>，他原是一名漫画艺术家，做过一段时间的漫画书铅笔工。后来学习了电脑编程，并最终成为了一名 Web 开发人员。而他所创建的网站就是集合了他自身的这两种技能。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_home.jpg" alt></p>
+<p>【弗雷德里克】创立的网站是: <strong>charactercreator.org</strong> ，主要功能就是在线创建自定义的角色。可帮助用户以统一、逼真的手绘风格形象化他们的角色。操作也很简单，只需单击网站侧边的选项与菜单，然后根据选择的身体部分进行装扮。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_man.jpg" alt></p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_women.jpg" alt></p>
+<p>当然，网站提供了下载按钮，不仅可以保存成图片，也可以保存成 SVG  矢量图，可以应用在需要放大而不失真的场景。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_download.jpg" alt></p>
+<p>目前，网站的单日最高访问(UV)记录是 9525 个用户，30天内最高有  21 万名用户访问使用，而用户的平均浏览时长是 5:03 分钟，用户基数还是可以的。作者并非全职做这个网站，因此为了收入，在网站的底部增加了广告，大家访问时，应该能看见，本文的截图没有是因为被我关闭了。</p>
+<p>而这些广告给作者带来了 <strong>3000 元/月</strong>的收入。当然，作者还有其他方式的变现方式，比如在 Patreon 上增加订阅收入等，这些收入还在逐渐增长，当成副业被动收入已经很不错了。这个网站作者的维护成本只有 120 元/月，主要是服务器费用。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_server.jpg" alt></p>
+<p>上面的【弗雷德里克】经历给我们一个启发: <strong>有艺术能力的人完全可以将自己的艺术输出成为服务，生在互联网中，一门互联网编程技术还是有必要掌握以下的~~</strong>。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_6_code.jpg" alt></p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>独立开发</tag>
+        <tag>charactercreator</tag>
+        <tag>角色创作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Remotive 实现月入 75000 元</title>
+    <url>/2021/06/05/story_5_remotive/</url>
+    <content><![CDATA[<p>今天介绍一个独立创业者–<strong>鲁道夫·杜特尔</strong>，作者不是程序员，也不会敲代码，但却能抓住远程工作的需求，创立了 <strong><a href="https://www.remotive.io" target="_blank" rel="noopener">https://www.remotive.io</a></strong> 网站，这个网站主要提供远程工作职位，供所有想在家工作的职业人员。作者靠这个网站实现了 <strong>75000 元/月</strong> 的收入。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_5_home.jpg" alt></p>
+<p><strong>【鲁道夫·杜特尔】</strong>是法国人，在大学毕业后就加入了谷歌，当然不是搞技术，而是做广告相关的产品，但在谷歌里谈的最多的却是“技术足以在任何地方工作！”理念，作者也清楚技术的重要性。于是就加入了一个创业公司当运营总监，主要负责招聘技术人员。在这个过程中，作者遇到很多对“远程工作”有需求的求职者，于是作者就把收集可远程工作的公司招聘信息当成爱好发布在博客上。</p>
+<p>逐渐地浏览和评论的人越来越多，作者意识到“远程工作”招聘需求会很大，于是创立了 <strong>remotive.io</strong>，专门提供远程工作的招聘信息。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_5_mony.png" alt></p>
+<p>一开始收入并不是很高，年收入只有 12 万人民币。之后随着可远程工作公司的增加，每年收入达到 14 万美元左右，约合人民币 88 万，其主要收入来源于对公司招聘信息的费用收取，一个公司的招聘信息，每个月需要支付 300 美元。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_5_category.jpg" alt></p>
+<p>目前我看这个网站已经有 300+ 个公司了，每个月可收入 54 万人民币，一年妥妥的 550 万，真是做平台赚钱呀~~</p>
+<p>通过鲁道夫·杜特尔的经历可以看出：<strong>做平台确实贼赚钱，但是难点在于能满足很多人的需求。这个机遇就看自己能否尽早发现，且行动快速，否则自己永远会落后一步</strong>。</p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>独立开发</tag>
+        <tag>remotive</tag>
+        <tag>远程工作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>通过制作 NFT 一天内赚了 150 万</title>
+    <url>/2021/06/04/story_4_weirdwhales/</url>
+    <content><![CDATA[<p>今天介绍一个小朋友–<strong>本雅明·艾哈迈德</strong>，他虽然才 12 岁，却在一天之内赚了 25 万美元，折合人民币  150 万。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_author.jpg" alt></p>
+<p>他做的作品系列称作“奇怪鲸鱼”，实际上就是“像素化鲸鱼”图片，只不过作者将其制作成了基于以太坊的 NFT (翻译为: 非同质化代币)，并在 <strong>OpenSea.io</strong> 这个网站售卖。作者当时只制作了 3350 条“像素鲸鱼”，在今年7月份一上架，就在 9 个小时之内以平均约 450 元/个价格被抢购一空，共收入 150 万人民币。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_project.jpg" alt="奇怪鲸鱼首页"></p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_zuopin.jpg" alt="奇怪鲸鱼合集"></p>
+<p><strong><a href="https://opensea.io" target="_blank" rel="noopener">https://opensea.io</a></strong> 是目前全球最大的 NFT 交易网站了，这个上面用户可以制作自己的艺术品，然后平台帮助用户将作品上到以太坊区块链上，所有用户都可以买你的作品，一旦购买，就是永久版权，因为交易记录写入到区块链了，无法修改，这也就是 NFT 的由来。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_opensea.jpg" alt="OpenSea首页"></p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_opensea_upload.png" alt="OpenSea创作"></p>
+<p><strong>【本雅明·艾哈迈德】</strong>才12岁，就拥有超越同年人的能力，与他的家庭环境是离不开的。在小【艾哈迈德】5岁时就跟着他父亲学习编程了，他父亲从事 Web 开发工作，并从 HTML和CSS 程序语言开始教他，他已基本能熟练编写简单静态网页了。现在小【艾哈迈德】也学会了 JavaScript 和更多其他语言。小【艾哈迈德】对程序的理解已经超越了相当多的同年人，从而在他听说区块链的 NFT 时，立马就对其着迷了，小孩子毕竟好奇心强大，而正因为他前面学习程序的基础，才使得他能在产生好奇心时立马做出作品，正如一句话所说【机遇总是留给有准备的人的】。</p>
+<p>小【艾哈迈德】在社交网站上粉丝已达 1.9 万了，俨然成了一个小网红了~~</p>
+<p><img src="https://img.godjiyi.cn/jy_story_4_twitter.jpg" alt></p>
+<p>提醒: 上面示例的区块链 NFT 不构成投资推荐，大家要谨慎尝试。</p>
+<p>从上面的事件经历中可以看出：学习了解全球最新的知识和趋势是很有必要的，因为最先吃蛋糕的都是第一批人。</p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>独立开发</tag>
+        <tag>nft</tag>
+        <tag>奇怪鲸鱼</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instapainting 实现 21 万元/月的收益</title>
+    <url>/2021/06/03/story_3_instapainting/</url>
+    <content><![CDATA[<p>今天介绍一个独立开发者–<strong>克里斯申</strong>， 通过 <strong><a href="https://instapainting.com" target="_blank" rel="noopener">https://instapainting.com</a></strong> 实现了月收入 21 万元。</p>
+<p><img src="http://img.godjiyi.cn/jy_story_3_home2.jpg" alt></p>
+<p>这个网站主要向大家提供“<strong>照片转手绘油画</strong>“的服务，用户可以通过这项服务，将上传的照片转变成真实的手绘艺术品，真正的出自现实生活中的画家之手。</p>
+<p>作者有一个朋友从中国购买油画然后在美国销售，销售还不错，这促使作者想到将用户照片转为油画的点子。于是作者花了三天时间，建好网站、做了测试，然后正式发布了网站。页面刚一发布，销售额就超过了2000美元。</p>
+<p>但关键是怎么找到绘画艺术家，作者聘请了当地的一些艺术家，但一开始销售额都付给了艺术家了，无法得到利润。恰巧，他看到中国有很多艺术供应商的消息，于是就在网站上发布了招募的消息，这给他带来了极大地改变。在消息发布后不久后，许多中国艺术家联系了作者。访问流量随之增大：</p>
+<p><img src="https://img.godjiyi.cn/jy_story_3_flow.png" alt></p>
+<p>这促使作者改变了原有靠卖油画服务赚钱的想法，而是变成了一个平台，他邀请艺术家入住，促成用户和艺术家交易，平台抽取手续费即可。没过几周，instapainting 就实现了 3.2 万美元的月利润，约合 21 万人民币/月。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_3_price.jpg" alt></p>
+<p>目前，网站上有多种艺术画转换服务，不同服务的价格如上所示。最便宜的也需要 49 美元，约合人民币 300 元左右。但毕竟画作是是真实艺术家的作品，而非电脑合成转换的，物有所值用户自己评价。</p>
+<p>上面的故事经历告诉我们: 朋友、眼界也很重要，这些能给我们打开创业的一种可行方案。此外就是平台的建成需要根据用户需求来，而不能一上来就做平台。用户的需求才是第一位。</p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>独立开发</tag>
+        <tag>instapainting</tag>
+        <tag>油画</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Park.io 实现 12.5 万美元/月的收益</title>
+    <url>/2021/06/02/story_2_parkio/</url>
+    <content><![CDATA[<p>今天介绍一个独立开发者，只将一个点子开发成了小工具，就轻易地实现了 12.5 万美元/月的收益。</p>
+<p>作者名叫<strong>迈克·卡森</strong>，是一名计算机程序员，同时是一位黑客。事情的起因是作者想要购买域名 <strong>smile.io</strong> ，但这个域名被别人注册了，而恰巧这个域名马上就要到期了，但具体什么时间点被释放是不知道的。为此，作者写了一个每秒自动检测的脚本，一旦发现这个域名可以被注册，就会发送邮件给自己。</p>
+<p>有一天，作者和他妻子正在吃晚饭，手机上收到了邮件，显示1分钟以前这个域名被开放出来可以再注册了，作者急忙打开电脑准备注册，但这个时候还是晚了，域名已经被注册掉了。作者很不甘心，于是思考并优化了脚本，到后来这个脚本变得非常高效，基本上可以抢注到任何想要的域名。</p>
+<p>通过这次经历，作者也意识到这个需求很普遍，所以，他决定做一次尝试，将它作为一个收费服务开放给别人用。因此，作者只用了一周时间就开发完这个服务，网站为 <strong><a href="https://park.io" target="_blank" rel="noopener">https://park.io</a></strong>， 为便于支付，也接入了在线付款功能，在上线的第一天就收到了好几个订单。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_2_home.jpg" alt></p>
+<p>这个小工具确实很有用，因此作者定价是每抢注成功一个域名，需付费 99 美元，抢注不成功不要钱。 一个月大概有 1300 单成交，约 12.8 万美元，因为这个小工具网页基本不要什么维护费，这就相当于纯利润了。下面是官网的定价截图。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_2_price.jpg" alt></p>
+<p>这个经历告诉我们：即使是自己的需求，也有可能是大众的需求，思维开放一下，将工具变成服务吧，一旦成功，一年的收入也能达到别人的顶峰。</p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>独立开发</tag>
+        <tag>parkio</tag>
+        <tag>域名注册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sidebar实现月入近3万元</title>
+    <url>/2021/06/01/story_1_sidebar/</url>
+    <content><![CDATA[<p>今天介绍一位来自法国的独立开发者–<strong>萨沙·格雷夫</strong>，他创立的网站是 <strong><a href="https://sidebar.io/" target="_blank" rel="noopener">https://sidebar.io/</a></strong> 。这个网站每天会推送人工筛选的设计相关文章到订阅者的邮箱，让用户及早地了解设计界的最新动向，目前网站有40000+ 活跃用户。作者也实现了月入3万的副业目标。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_home.jpg" alt></p>
+<p><strong>Sidebar</strong> 是作者从 2012 年 10 创立的网站，主要收集、分享每天最好的设计内容以及趋势，用户只需要填写自己的 email 邮箱，网站每天会推送人工筛选的最新设计界动向文章给用户，这个过程完全是免费的，那这个网站怎么赚钱的？</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_mony.jpeg" alt></p>
+<p>其实<strong>商业模式</strong>非常简单，就是赞助商给钱，作者会将链接放在每日邮件底部，一个赞助商链接会放置 1 周，每个月只有 4 个赞助商被选中。每个赞助费用为 950 美元。一个月就是 3800 美元，约 2.6 万人民币。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_juankuan.jpg" alt></p>
+<p>作者最初收取的赞助费用是 250 美元/链接，然后涨价到 400 美元/链接，但即使是 400 美元/链接，网站的库存也提前六个月售罄。所以作者又选择提高到 950 美元/链接，但即使这样链接仍然被提前一月预定完了，有流量就是任性，真正实现了被动收入。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_auth.jpg" alt></p>
+<p>作者萨沙·格雷夫来自法国，十几岁的时候就可以用 Photoshop 做些简单的设计，并能建立蹩脚的网站。在 2006 年移居中国，在北京做过网页设计师。2007 年回归法国，成为一名自由UI设计，曾在法国设计公司呆过。目前作者住在京都，在 Zens 做兼职工作，更多时间是从事自己的事业。</p>
+<p><img src="https://img.godjiyi.cn/jy_story_1_projects.jpg" alt></p>
+<p>他的个人网站是 <strong><a href="https://www.sachagreif.com" target="_blank" rel="noopener">https://www.sachagreif.com</a></strong>，个人定位很准确，明白自己需要什么。作为独立开发者，也做了好几个产品，大家可以去他博客浏览下~~。</p>
+<p>希望大家也能找到适合自己的小产品~~</p>
+]]></content>
+      <categories>
+        <category>创业故事</category>
+      </categories>
+      <tags>
+        <tag>sidebar</tag>
+        <tag>设计</tag>
+        <tag>独立开发</tag>
       </tags>
   </entry>
 </search>
