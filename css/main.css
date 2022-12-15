@@ -1999,7 +1999,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6ca882;
+  background: #ffcfff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3250,24 +3250,27 @@ li p {
   position: initial;
 }
 #busuanzi_value_site_uv {
-  color: #fc625d;
+  color: #df160f;
   font-weight: bold;
 }
 #busuanzi_value_site_pv {
-  color: #fc625d;
+  color: #df160f;
   font-weight: bold;
 }
 .main {
-  padding-bottom: 750px;
+  padding-bottom: 450px;
 }
 .footer {
   padding: 0 0;
 }
+.all-footer {
+  background-color: rgba(0,179,254,0.8);
+}
 .footer-inner {
-  padding: 60px 0;
+  color: #fff;
+  padding: 10px 0;
 }
 .subscriber {
-  background-color: rgba(0,179,254,0.8);
   padding: 50px 0 50px 0;
 }
 .subscriber-title h3 {
@@ -3304,7 +3307,7 @@ li p {
 }
 @media screen and (max-width: 769px) {
   .main {
-    padding-bottom: 850px;
+    padding-bottom: 650px;
   }
   .main-inner {
     margin-top: 10px;
