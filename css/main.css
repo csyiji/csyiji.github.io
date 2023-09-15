@@ -1999,7 +1999,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff8b;
+  background: #328bff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3077,6 +3077,31 @@ body {
   font-weight: blob;
   text-align: center;
 }
+.selfpost {
+  overflow: hidden;
+}
+.selfpost-bg {
+  height: 600px;
+  position: relative;
+  animation: zoom 30s linear;
+  animation-fill-mode: forwards;
+}
+.selfpost-bg::before {
+  content: "";
+  background-color: rgba(25,25,25,0.62);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+.selfpost-expand {
+  z-index: 10;
+  position: relative;
+  margin-top: -400px;
+}
 .home-post-footer {
   padding: 0 15px 10px 15px;
 }
@@ -3084,6 +3109,13 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.home-post-footer .home-post-tags a {
+  padding: 0 4px 0 4px;
+  text-decoration: none;
+}
+.post-toc .nav .nav-child {
+  display: block;
 }
 .menu .menu-item a {
   font-size: 15px;
